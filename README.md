@@ -1,28 +1,50 @@
-# Saint-Bonnet-de-Condat
+# Saint-Bonnet-de-Condat — site de la commune
 
-Page non officielle qui rassemble les informations publiées par la mairie de Saint-Bonnet-de-Condat (Cantal, 15190) sur PanneauPocket.
+Site officiel de la commune de Saint-Bonnet-de-Condat (Cantal, 15190), publié avec GitHub Pages :
+https://victorleblondd.github.io/saint-bonnet-de-condat/
 
-## Contenu
+GitHub construit le site automatiquement (Jekyll) à chaque modification de la branche `main`.
+Aucune installation n'est nécessaire.
 
-- La dernière alerte et la chronologie des problèmes d'eau de septembre 2026 (châteaux d'eau du Chancel, de Laurus et de Régheat)
-- Les 12 publications de la rubrique « Infos & Alertes », en entier, affiches retranscrites en texte
-- La mairie : contact, horaires d'ouverture, services
-- Le conseil municipal
-- L'annuaire local
-- L'affichage légal (6 documents)
-- L'agenda et la boîte à idées
+## Ajouter un avis « Infos & Alertes »
 
-## Source
+1. Déposer le PDF dans le dossier `documents/infos-alertes/`, nommé `AAAA-MM-JJ-sujet-court.pdf`
+   (sans accents ni espaces).
+2. Ouvrir `_data/infos_alertes.yml` et copier le modèle (en tête du fichier) **tout en haut de la liste** :
+   date, type (`alerte` ou `info`), thème, titre, résumé, nom du PDF.
 
-Application PanneauPocket, relevé du mardi 22 septembre 2026 vers 8h40.
+L'avis apparaît alors sur la page Infos & Alertes et sur l'accueil ; son titre et son bouton ouvrent le PDF.
+Une alerte récente s'affiche aussi en bandeau rouge sur l'accueil pendant 3 jours
+(ou jusqu'à la date indiquée dans `bandeau_jusquau`).
 
-La page n'est pas mise à jour automatiquement. Pour une information à jour, consultez PanneauPocket ou contactez la mairie au 04 71 78 41 64.
+**Affiche disponible en ligne (image ou PDF) :** au lieu de déposer le fichier, ajouter une ligne
+`adresse  documents/infos-alertes/AAAA-MM-JJ-sujet.pdf` dans `outils/fichiers-a-recuperer.txt`.
+GitHub télécharge le fichier, convertit une image en PDF A4 et l'ajoute au site
+(`.github/workflows/recuperer-fichiers.yml`).
 
-## Mettre la page en ligne
+## Modifier les informations
 
-Dans le dépôt : **Settings → Pages**, puis « Deploy from a branch », branche `main`, dossier `/ (root)`.
-La page sera alors publiée sur https://victorleblondd.github.io/saint-bonnet-de-condat/
+| À modifier | Fichier |
+|---|---|
+| Adresse, téléphone, horaires de la mairie | `_data/mairie.yml` |
+| Élus, permanences, personnel communal | `_data/elus.yml` |
+| Menu principal | `_data/navigation.yml` |
+| Actualités | `_posts/AAAA-MM-JJ-titre.html` (un fichier par article) |
+| Pages | `mairie.html`, `vie-pratique.html`, `vie-locale.html`, `decouvrir.html`… |
+| Apparence | `assets/css/site.css` |
 
-## Fichiers
+## Organisation
 
-- `index.html` : la page complète (HTML, CSS et JavaScript dans un seul fichier, polices Google Fonts)
+- `_layouts/` : gabarits communs (en-tête, pied de page, pages, articles)
+- `_includes/` : éléments réutilisés (avis, cartes, horaires, icônes, dates en français)
+- `assets/images/` : photos du site
+- `documents/infos-alertes/` : avis en PDF
+
+## Nom de domaine
+
+Pour relier un nom de domaine (par exemple celui de la commune), indiquer l'adresse dans
+**Settings → Pages → Custom domain**, puis dans `_config.yml` : `url: "https://le-domaine.fr"` et `baseurl: ""`.
+
+## Crédits
+
+Photo de la mairie-école : Père Igor, Wikimedia Commons, licence CC BY-SA 4.0.

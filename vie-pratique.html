@@ -1,0 +1,157 @@
+---
+title: "Vie pratique"
+permalink: /vie-pratique/
+chapo: "Eau potable, restrictions en cas de sécheresse, déchetteries, horaires des travaux bruyants, éclairage public, fibre optique et France Services."
+description: "Vie pratique à Saint-Bonnet-de-Condat : eau potable et assainissement, sécheresse, déchetteries de Condat et Riom-ès-Montagnes, bruit, éclairage public, fibre, France Services."
+---
+{%- assign m = site.data.mairie -%}
+<nav class="sommaire" aria-label="Sur cette page">
+  <ul>
+    <li><a href="#eau">Eau et assainissement</a></li>
+    <li><a href="#secheresse">Sécheresse</a></li>
+    <li><a href="#dechets">Déchets et déchetteries</a></li>
+    <li><a href="#bruit">Bruit et travaux</a></li>
+    <li><a href="#eclairage">Éclairage public</a></li>
+    <li><a href="#fibre">Fibre optique</a></li>
+    <li><a href="#france-services">France Services</a></li>
+  </ul>
+</nav>
+
+<section class="bloc" id="eau" aria-labelledby="titre-eau">
+  <h2 id="titre-eau" class="titre-decore">Eau potable et assainissement</h2>
+  <p class="bloc-intro">Plusieurs captages alimentent la commune. Leur entretien et la qualité de l'eau distribuée sont une priorité de l'équipe municipale : préserver aujourd'hui la ressource de demain.</p>
+  <div class="grille-2">
+    <div class="panneau panneau--alerte">
+      <h3>Un problème d'eau ?</h3>
+      <p>Fuite, coupure, eau trouble : prévenez la mairie au <a href="tel:{{ m.telephone_lien }}"><strong>{{ m.telephone }}</strong></a>.</p>
+      <p>Laurent Golliard, 1<sup>er</sup> adjoint chargé de l'eau et de l'assainissement : <a href="tel:+33678336617"><strong>06 78 33 66 17</strong></a>.</p>
+      <p><a class="lien-fleche" href="{{ '/infos-alertes/' | relative_url }}">Coupures et avis en cours{% include icone.html nom="fleche" %}</a></p>
+    </div>
+    <div class="panneau" id="factures-eau">
+      <h3>Régler sa facture d'eau</h3>
+      <p><strong>Les chèques ne sont plus acceptés.</strong> Vous pouvez payer par carte bancaire, par virement ou par prélèvement automatique.</p>
+      <p>Pour être prélevé, apportez en mairie un relevé d'identité bancaire (RIB) à votre nom, une pièce d'identité et, si besoin, un justificatif de domicile.</p>
+    </div>
+    <div class="panneau" id="agriculteurs">
+      <h3>Agriculteurs : citernes pour les animaux</h3>
+      <p>Les citernes pour l'abreuvement des animaux se remplissent à <strong>l'ancien château d'eau du Frayssinet</strong>. Merci d'en respecter le bon fonctionnement, pour que les suivants puissent s'en servir aussi.</p>
+      <p>Il est <strong>interdit de remplir des cuves avec l'eau du réseau communal</strong>.</p>
+    </div>
+    <div class="panneau panneau--vert">
+      <h3>Les actions engagées en 2026</h3>
+      <ul class="liste-coches">
+        <li>Nettoyage et débroussaillage des captages et de leurs périmètres de protection</li>
+        <li>Remise en service des pompes de chloration</li>
+        <li>Interventions sur les pompes de relevage de l'assainissement</li>
+        <li>Suivi de la qualité de l'eau distribuée</li>
+      </ul>
+      <p><a class="lien-fleche" href="{{ '/actualites/eau-potable-des-captages-entretenus-et-securises/' | relative_url }}">Lire l'article{% include icone.html nom="fleche" %}</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="bloc" id="secheresse" aria-labelledby="titre-secheresse">
+  <h2 id="titre-secheresse" class="titre-decore">Sécheresse : restrictions d'usage de l'eau</h2>
+  <div class="panneau panneau--or">
+    <p class="mise-en-avant">Par arrêté préfectoral du 26 juin 2026, la commune est placée en niveau « alerte ». Ces mesures s'appliquent jusqu'au 31 octobre 2026 inclus, sauf nouvel arrêté.</p>
+    <p>Les restrictions peuvent évoluer. Pour connaître celles qui s'appliquent aujourd'hui, consultez <a href="https://vigieau.gouv.fr" rel="noopener">vigieau.gouv.fr</a>, le site officiel de l'État. L'arrêté complet est affiché sur les panneaux de la commune.</p>
+  </div>
+  <div class="tableau-defilant">
+    <table>
+      <caption class="visuellement-cache">Restrictions d'usage de l'eau selon l'arrêté préfectoral du 26 juin 2026</caption>
+      <thead><tr><th scope="col">Usage</th><th scope="col">Règle</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Arrosage des jardins potagers (y compris serres non agricoles)</th><td>Interdit de 13 h à 20 h</td></tr>
+        <tr><th scope="row">Arrosage des pelouses, massifs fleuris, jardins d'agrément et espaces verts</th><td>Interdit de 8 h à 20 h</td></tr>
+        <tr><th scope="row">Arbres et arbustes plantés depuis moins de 3 ans</th><td>Arrosage autorisé uniquement de 20 h à 8 h</td></tr>
+        <tr><th scope="row">Terrains de sport</th><td>Arrosage interdit de 13 h à 20 h</td></tr>
+        <tr><th scope="row">Lavage des véhicules</th><td>Interdit pour les particuliers, sauf impératif sanitaire. Autorisé pour les professionnels équipés d'un matériel haute pression ou d'un système de recyclage de l'eau.</td></tr>
+        <tr><th scope="row">Piscines familiales</th><td>Remplissage interdit, sauf remise à niveau ou premier remplissage si le chantier avait débuté avant les premières restrictions. Vidange interdite.</td></tr>
+        <tr><th scope="row">Piscines ouvertes au public</th><td>Remplissage interdit, sauf remise à niveau, premier remplissage (chantier débuté avant les restrictions) et impératif sanitaire validé par l'ARS.</td></tr>
+        <tr><th scope="row">Fontaines publiques et privées</th><td>Interdites, sauf si elles fonctionnent en circuit fermé.</td></tr>
+        <tr><th scope="row">Nettoyage des façades, toitures, trottoirs, voiries et surfaces imperméabilisées</th><td>Interdit, sauf impératif sanitaire, de sécurité ou lié à des travaux.</td></tr>
+        <tr><th scope="row">Canyoning et randonnée aquatique</th><td>Interdits, sauf protocole départemental spécifique.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Le non-respect des restrictions est passible de sanctions.</p>
+</section>
+
+<section class="bloc" id="dechets" aria-labelledby="titre-dechets">
+  <h2 id="titre-dechets" class="titre-decore">Déchets et déchetteries</h2>
+  <div class="grille-2">
+    <div class="panneau">
+      <h3>Déchetterie de Condat</h3>
+      <dl class="horaires">
+        <div data-jour="1"><dt>Lundi</dt><dd>14 h – 17 h 30</dd></div>
+        <div data-jour="2"><dt>Mardi</dt><dd>14 h – 17 h 30</dd></div>
+        <div data-jour="3"><dt>Mercredi</dt><dd>14 h – 17 h 30</dd></div>
+        <div data-jour="4"><dt>Jeudi</dt><dd>14 h – 17 h 30</dd></div>
+        <div data-jour="5"><dt>Vendredi</dt><dd>13 h 30 – 17 h 30</dd></div>
+        <div data-jour="6"><dt>Samedi</dt><dd>9 h – 12 h</dd></div>
+      </dl>
+      <p class="note">Encombrants, végétaux, bois, déchets diffus spécifiques, déchets dangereux, électroménager : vos déchets ont leur place à la déchetterie.</p>
+    </div>
+    <div class="pile">
+      <div class="panneau">
+        <h3>Déchetterie de Riom-ès-Montagnes</h3>
+        <p>Horaires habituels : 8 h 30 – 12 h et 14 h – 17 h 30.</p>
+      </div>
+      <div class="panneau">
+        <h3>Encombrants</h3>
+        <p>Collecte par la commune le dernier vendredi de chaque mois, sur inscription en mairie avant la collecte (<a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a>).</p>
+      </div>
+      <div class="panneau">
+        <h3>Point de collecte du cimetière</h3>
+        <p>Le point de collecte des déchets du parking du cimetière a été réorganisé en 2026. Merci de trier vos déchets et de garder le site propre.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bloc" id="bruit" aria-labelledby="titre-bruit">
+  <h2 id="titre-bruit" class="titre-decore">Bruit et travaux : respectons nos voisins</h2>
+  <p class="bloc-intro">Tonte, jardinage, bricolage : les travaux bruyants sont permis aux horaires suivants.</p>
+  <div class="grille-3">
+    <div class="panneau"><h3>Du lundi au vendredi</h3><p class="mise-en-avant">8 h 30 – 12 h<br>14 h – 19 h</p></div>
+    <div class="panneau"><h3>Le samedi</h3><p class="mise-en-avant">9 h – 12 h<br>15 h – 19 h</p></div>
+    <div class="panneau"><h3>Dimanche et jours fériés</h3><p class="mise-en-avant">10 h – 12 h</p></div>
+  </div>
+</section>
+
+<div class="grille-2 bloc">
+  <section class="panneau" id="eclairage" aria-labelledby="titre-eclairage">
+    <h2 id="titre-eclairage" class="h3-like">Éclairage public</h2>
+    <p>Les horaires de l'éclairage public ont été adaptés :</p>
+    <ul class="liste-coches">
+      <li>allumage dès 6 h du matin, jusqu'au lever du jour ;</li>
+      <li>éclairage le soir jusqu'à minuit ;</li>
+      <li>secteur des Rochers éclairé jusqu'à minuit pendant l'été et les vacances scolaires.</li>
+    </ul>
+    <p>Une panne ? Prévenez la mairie. Nathalie Metayer, 2<sup>e</sup> adjointe, suit l'éclairage public.</p>
+  </section>
+  <section class="panneau" id="fibre" aria-labelledby="titre-fibre">
+    <h2 id="titre-fibre" class="h3-like">Fibre optique</h2>
+    <p>Le déploiement de la fibre optique est engagé sur la commune : la pose des poteaux et des câbles a débuté dans plusieurs secteurs, au bourg et dans les hameaux.</p>
+    <p>La mise en service est prévue pour l'automne 2026.</p>
+  </section>
+</div>
+
+<section class="bloc" id="france-services" aria-labelledby="titre-fs">
+  <h2 id="titre-fs" class="titre-decore">France Services du Pays Gentiane</h2>
+  <div class="grille-asymetrique">
+    <div>
+      <p>À la Maison France Services de Riom-ès-Montagnes, une équipe vous accompagne gratuitement dans vos démarches du quotidien : santé, retraite, impôts, emploi, logement, démarches en ligne. De nombreux organismes (CAF, CPAM, MSA, CARSAT, France Travail, Mission locale…) y reçoivent sur rendez-vous.</p>
+      <p>Des permanences ont aussi lieu dans les mairies voisines. Le planning du mois est publié dans les <a href="{{ '/infos-alertes/' | relative_url }}">Infos &amp; Alertes</a>.</p>
+    </div>
+    <div class="panneau panneau--info">
+      <h3>Maison France Services</h3>
+      <div class="coordonnees">
+        <p>{% include icone.html nom="lieu" %}<span>Place de la Gare<br>15400 Riom-ès-Montagnes</span></p>
+        <p>{% include icone.html nom="telephone" %}<a href="tel:+33471782950">04 71 78 29 50</a></p>
+        <p>{% include icone.html nom="email" %}<a href="mailto:efs@pays-gentiane.com">efs@<wbr>pays-gentiane.com</a></p>
+        <p>{% include icone.html nom="horloge" %}<span>Du lundi au jeudi, 9 h – 12 h et 14 h – 17 h ; le vendredi, 9 h – 12 h</span></p>
+      </div>
+    </div>
+  </div>
+</section>
