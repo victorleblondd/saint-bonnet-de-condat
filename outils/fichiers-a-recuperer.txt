@@ -5,10 +5,8 @@
 # - Si le chemin se termine par .pdf et que la source est une image (affiche), elle est convertie en PDF A4.
 # - Un fichier déjà présent dans le site n'est jamais téléchargé une deuxième fois.
 
-# Photo de la mairie-école : Père Igor, CC BY-SA 4.0, Wikimedia Commons
-https://upload.wikimedia.org/wikipedia/commons/5/55/Saint-Bonnet-de-Condat_mairie-%C3%A9cole.jpg  assets/images/mairie-ecole.jpg  1600
-
 # Infos & Alertes : affiches de la mairie
+https://panneau-pocket.s3.gra.perf.cloud.ovh.net/cache/sign_image/10713130766ac4ecf25303a9.89388826-1791290610.jpg/62a151549d8b2c8972d2fe9fd93cd891  documents/infos-alertes/2026-10-06-fermeture-mairie-point-poste.pdf
 https://panneau-pocket.s3.gra.perf.cloud.ovh.net/cache/sign_image/21308716376ac49b976a8280.42024875-1791269783.jpg/a636419d77a3234d17b62b1cdcaf2c23  documents/infos-alertes/2026-10-06-degrevement-impots-directs.pdf
 https://panneau-pocket.s3.gra.perf.cloud.ovh.net/cache/sign_image/14765403576ac49b67a0a453.14769809-1791269735.jpg/4573210af7d82bb6cc81e82d8c2828cc  documents/infos-alertes/2026-10-06-cartouches-d-encre.pdf
 https://panneau-pocket.s3.gra.perf.cloud.ovh.net/cache/sign_image/2712047866abf897c538ff9.11187774-1790937468.jpg/af4365aac65ae11563038c2b94945d80  documents/infos-alertes/2026-10-02-circulation-rue-des-rochers.pdf

@@ -4,7 +4,7 @@ permalink: /bulletin-municipal/
 chapo: "La Gazette des Saint-Bonnetoux paraît deux fois par an, avec une édition estivale et une édition hivernale."
 description: "La Gazette des Saint-Bonnetoux, bulletin municipal de Saint-Bonnet-de-Condat : le mot du maire et les articles du n°1 (été 2026)."
 ---
-<div class="grille-asymetrique">
+<div class="grille-asymetrique bloc">
   <section class="bloc" aria-labelledby="titre-mot">
     <p class="surtitre">Édition n°1 · été 2026</p>
     <h2 id="titre-mot">Le mot du maire</h2>
@@ -21,17 +21,26 @@ description: "La Gazette des Saint-Bonnetoux, bulletin municipal de Saint-Bonnet
     <ul class="liste-simple">
       <li><a href="{{ '/conseil-municipal/' | relative_url }}">Notre équipe municipale</a></li>
       <li><a href="{{ '/mairie/' | relative_url }}#services">Les services aux habitants</a></li>
-      <li><a href="{{ '/actualites/eau-potable-des-captages-entretenus-et-securises/' | relative_url }}">Eau potable et assainissement</a></li>
-      <li><a href="{{ '/actualites/cimetiere-et-parking-communal-un-site-reamenage/' | relative_url }}">Cimetière et parking communal</a></li>
-      <li><a href="{{ '/actualites/entretien-des-hameaux-le-four-de-regheat/' | relative_url }}">Entretien et embellissement des hameaux</a></li>
-      <li><a href="{{ '/actualites/fleurissement-et-embellissement-du-village/' | relative_url }}">Fleurissement du village</a></li>
-      <li><a href="{{ '/actualites/eclairage-public-et-fibre-optique/' | relative_url }}">Éclairage public et fibre optique</a></li>
-      <li><a href="{{ '/actualites/visite-des-senateurs-du-cantal/' | relative_url }}">Rencontres et vie locale</a></li>
-      <li><a href="{{ '/actualites/commemoration-du-8-mai/' | relative_url }}">Commémoration du 8 mai</a></li>
+      <li><a href="{{ '/bulletin-municipal/eau-potable-des-captages-entretenus-et-securises/' | relative_url }}">Eau potable et assainissement</a></li>
+      <li><a href="{{ '/bulletin-municipal/cimetiere-et-parking-communal-un-site-reamenage/' | relative_url }}">Cimetière et parking communal</a></li>
+      <li><a href="{{ '/bulletin-municipal/entretien-des-hameaux-le-four-de-regheat/' | relative_url }}">Entretien et embellissement des hameaux</a></li>
+      <li><a href="{{ '/bulletin-municipal/fleurissement-et-embellissement-du-village/' | relative_url }}">Fleurissement du village</a></li>
+      <li><a href="{{ '/bulletin-municipal/eclairage-public-et-fibre-optique/' | relative_url }}">Éclairage public et fibre optique</a></li>
+      <li><a href="{{ '/bulletin-municipal/visite-des-senateurs-du-cantal/' | relative_url }}">Rencontres et vie locale</a></li>
+      <li><a href="{{ '/bulletin-municipal/commemoration-du-8-mai/' | relative_url }}">Commémoration du 8 mai</a></li>
       <li><a href="{{ '/vie-locale/' | relative_url }}">Vie associative et manifestations</a></li>
       <li><a href="{{ '/decouvrir/' | relative_url }}#raconte-moi">Raconte-moi Saint-Bonnet</a></li>
-      <li><a href="{{ '/actualites/bilan-des-trois-premiers-mois-de-mandat/' | relative_url }}">Bilan des trois premiers mois de mandat</a></li>
+      <li><a href="{{ '/bulletin-municipal/bilan-des-trois-premiers-mois-de-mandat/' | relative_url }}">Bilan des trois premiers mois de mandat</a></li>
       <li><a href="{{ '/vie-pratique/' | relative_url }}">Informations pratiques</a></li>
     </ul>
   </aside>
 </div>
+
+<section class="bloc" id="articles" aria-labelledby="titre-articles">
+  <h2 id="titre-articles" class="titre-decore">Les articles du n°1</h2>
+  <div class="grille-cartes">
+    {%- for p in site.posts %}
+    {% include carte-article.html article=p %}
+    {%- endfor %}
+  </div>
+</section>

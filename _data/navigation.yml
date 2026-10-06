@@ -1,8 +1,8 @@
 # Menu principal du site (dans l'ordre d'affichage)
 - titre: "Infos & Alertes"
   url: /infos-alertes/
-- titre: "Actualités"
-  url: /actualites/
+- titre: "Affichage légal"
+  url: /affichage-legal/
 - titre: "Mairie"
   url: /mairie/
 - titre: "Conseil municipal"

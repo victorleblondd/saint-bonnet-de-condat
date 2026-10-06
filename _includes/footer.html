@@ -22,6 +22,7 @@
       <h2 id="pied-liens" class="pied-titre">Accès rapides</h2>
       <ul>
         <li><a href="{{ '/infos-alertes/' | relative_url }}">Infos &amp; Alertes</a></li>
+        <li><a href="{{ '/affichage-legal/' | relative_url }}">Affichage légal</a></li>
         <li><a href="{{ '/mairie/' | relative_url }}">La mairie et ses services</a></li>
         <li><a href="{{ '/conseil-municipal/' | relative_url }}">Le conseil municipal</a></li>
         <li><a href="{{ '/vie-pratique/' | relative_url }}">Vie pratique</a></li>
@@ -32,7 +33,7 @@
       <h2 id="pied-infos" class="pied-titre">Restez informés</h2>
       <ul class="pied-infos">
         <li>Les <a href="{{ '/infos-alertes/' | relative_url }}">Infos &amp; Alertes</a> de la mairie sur ce site</li>
-        <li>La page Facebook « {{ m.facebook_nom }} »</li>
+        <li>La <a href="{{ m.facebook_url }}" rel="noopener">page Facebook</a> de la mairie</li>
         <li><a href="{{ '/bulletin-municipal/' | relative_url }}">La Gazette des Saint-Bonnetoux</a>, deux fois par an</li>
         <li>Les panneaux d'affichage de la commune</li>
       </ul>

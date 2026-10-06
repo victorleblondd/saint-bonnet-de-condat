@@ -6,7 +6,7 @@ layout: default
     <nav class="fil-ariane" aria-label="Fil d'Ariane">
       <ol>
         <li><a href="{{ '/' | relative_url }}">Accueil</a></li>
-        <li><a href="{{ '/actualites/' | relative_url }}">Actualités</a></li>
+        <li><a href="{{ '/bulletin-municipal/' | relative_url }}">Bulletin municipal</a></li>
         <li><span aria-current="page">{{ page.title }}</span></li>
       </ol>
     </nav>
@@ -30,7 +30,7 @@ layout: default
   <div class="article-corps">
 {{ content }}
   </div>
-  <p class="article-retour"><a href="{{ '/actualites/' | relative_url }}">{% include icone.html nom="fleche" classe="icone--retournee" %}Toutes les actualités</a></p>
+  <p class="article-retour"><a href="{{ '/bulletin-municipal/' | relative_url }}">{% include icone.html nom="fleche" classe="icone--retournee" %}Le bulletin municipal</a></p>
 </article>
 <section class="conteneur autres-articles" aria-labelledby="a-lire-aussi">
   <h2 id="a-lire-aussi">À lire aussi</h2>

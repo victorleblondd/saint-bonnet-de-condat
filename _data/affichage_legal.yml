@@ -1,0 +1,40 @@
+# =====================================================================
+#  AFFICHAGE LÉGAL
+#  Le document le plus récent se place TOUT EN HAUT de la liste « documents ».
+#
+#  Ajouter un document :
+#    1. Déposer le fichier PDF dans le dossier  documents/affichage-legal/
+#       Nom conseillé : AAAA-MM-JJ-sujet-court.pdf  (sans accents ni espaces)
+#    2. Copier le modèle ci-dessous en tête de la liste « documents », puis le remplir.
+#
+#  - date: "AAAA-MM-JJ"                date de l'acte
+#    type: arrete-municipal            arrete-municipal, arrete-prefectoral,
+#                                      deliberation, proces-verbal ou divers
+#    numero: "AR 016 2026"             facultatif
+#    titre: "Objet du document"
+#    pdf: "AAAA-MM-JJ-sujet-court.pdf"  nom exact du fichier déposé
+# =====================================================================
+
+# Types de documents proposés dans le filtre
+types:
+  - code: arrete-municipal
+    nom: "Arrêté municipal"
+    pluriel: "Arrêtés municipaux"
+  - code: arrete-prefectoral
+    nom: "Arrêté préfectoral"
+    pluriel: "Arrêtés préfectoraux"
+  - code: deliberation
+    nom: "Délibération"
+    pluriel: "Délibérations"
+  - code: proces-verbal
+    nom: "Procès-verbal"
+    pluriel: "Procès-verbaux"
+  - code: divers
+    nom: "Divers"
+    pluriel: "Divers"
+
+# Années proposées dans le filtre
+annees: [2026, 2027]
+
+# Documents publiés (aucun pour le moment)
+documents: []

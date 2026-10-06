@@ -14,8 +14,8 @@ description: "Mairie de Saint-Bonnet-de-Condat : adresse, téléphone, horaires 
         <p>{% include icone.html nom="lieu" %}<span>{{ m.nom }}<br>{{ m.adresse_ligne1 }}<br>{{ m.adresse_ligne2 }}</span></p>
         <p>{% include icone.html nom="telephone" %}<a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a></p>
         <p>{% include icone.html nom="email" %}<a href="mailto:{{ m.email }}">{{ m.email | replace: "@", "@<wbr>" }}</a></p>
+        <p>{% include icone.html nom="externe" %}<a href="{{ m.facebook_url }}" rel="noopener">Page Facebook de la mairie</a></p>
       </div>
-      <p class="note">Sur Facebook : page « {{ m.facebook_nom }} ».</p>
     </div>
     <div class="panneau">
       <h3>Horaires d'ouverture</h3>
@@ -49,12 +49,12 @@ description: "Mairie de Saint-Bonnet-de-Condat : adresse, téléphone, horaires 
     </div>
     <div class="panneau" id="encombrants">
       <h3>Ramassage des encombrants</h3>
-      <p>La commune collecte les objets encombrants <strong>le dernier vendredi de chaque mois</strong>.</p>
+      <p>La commune collecte les objets encombrants <strong>le dernier vendredi du mois</strong>. À partir de janvier 2027, la collecte aura lieu <strong>une fois tous les deux mois</strong>.</p>
       <p><strong>Inscription obligatoire en mairie avant la collecte</strong>, au <a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a>.</p>
     </div>
     <div class="panneau" id="photocopies">
       <h3>Photocopies gratuites</h3>
-      <p>La mairie met gratuitement à la disposition des habitants un service de photocopie pour leurs démarches administratives courantes. Renseignements auprès du secrétariat.</p>
+      <p>La mairie met gratuitement à la disposition des habitants un service de photocopie <strong>en noir et blanc uniquement</strong> (pas de photocopie couleur) pour leurs démarches administratives courantes. Renseignements auprès du secrétariat.</p>
     </div>
     <div class="panneau" id="cartouches">
       <h3>Cartouches d'encre usagées</h3>

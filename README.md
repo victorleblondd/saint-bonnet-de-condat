@@ -22,14 +22,30 @@ Une alerte récente s'affiche aussi en bandeau rouge sur l'accueil pendant 3 jou
 GitHub télécharge le fichier, convertit une image en PDF A4 et l'ajoute au site
 (`.github/workflows/recuperer-fichiers.yml`).
 
+## Ajouter un document à l'affichage légal
+
+1. Déposer le PDF dans le dossier `documents/affichage-legal/`, nommé `AAAA-MM-JJ-sujet-court.pdf`.
+2. Ouvrir `_data/affichage_legal.yml` et copier le modèle **en tête de la liste `documents`** :
+   date, type (`arrete-municipal`, `arrete-prefectoral`, `deliberation`, `proces-verbal` ou `divers`),
+   numéro (facultatif), titre, nom du PDF.
+
+Les années proposées dans le filtre se règlent dans le même fichier (`annees`).
+Un document disponible en ligne peut aussi être récupéré par `outils/fichiers-a-recuperer.txt`.
+
+## Publier une version (Release)
+
+Pour marquer une version importante, ajouter un fichier `outils/versions/vX.Y.Z.md`
+(par exemple `v1.1.0.md`) sur le modèle de `v1.0.0.md` : titre, commit marqué, puis les notes.
+GitHub crée alors la Release correspondante (`.github/workflows/publier-version.yml`).
+
 ## Modifier les informations
 
 | À modifier | Fichier |
 |---|---|
-| Adresse, téléphone, horaires de la mairie | `_data/mairie.yml` |
+| Adresse, téléphone, horaires de la mairie, page Facebook | `_data/mairie.yml` |
 | Élus, permanences, personnel communal | `_data/elus.yml` |
 | Menu principal | `_data/navigation.yml` |
-| Actualités | `_posts/AAAA-MM-JJ-titre.html` (un fichier par article) |
+| Articles du bulletin municipal | `_posts/AAAA-MM-JJ-titre.html` (un fichier par article) |
 | Pages | `mairie.html`, `vie-pratique.html`, `vie-locale.html`, `decouvrir.html`… |
 | Apparence | `assets/css/site.css` |
 
@@ -39,12 +55,10 @@ GitHub télécharge le fichier, convertit une image en PDF A4 et l'ajoute au sit
 - `_includes/` : éléments réutilisés (avis, cartes, horaires, icônes, dates en français)
 - `assets/images/` : photos du site
 - `documents/infos-alertes/` : avis en PDF
+- `documents/affichage-legal/` : documents de l'affichage légal en PDF
 
 ## Nom de domaine
 
-Pour relier un nom de domaine (par exemple celui de la commune), indiquer l'adresse dans
-**Settings → Pages → Custom domain**, puis dans `_config.yml` : `url: "https://le-domaine.fr"` et `baseurl: ""`.
-
-## Crédits
-
-Photo de la mairie-école : Père Igor, Wikimedia Commons, licence CC BY-SA 4.0.
+Pour relier un nom de domaine (par exemple `saint-bonnet-de-condat.fr`), indiquer l'adresse dans
+**Settings → Pages → Custom domain**, puis dans `_config.yml` : `url: "https://saint-bonnet-de-condat.fr"` et `baseurl: ""`.
+Si l'hébergeur change, mettre à jour la rubrique « Hébergement » des mentions légales.

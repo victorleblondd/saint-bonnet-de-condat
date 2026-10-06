@@ -26,7 +26,7 @@ description: "Site officiel de la commune de Saint-Bonnet-de-Condat (Cantal) : i
 </div>
 {%- endif %}
 
-<section class="heros" style="--image-heros: url('{{ '/assets/images/mairie-ecole.jpg' | relative_url }}')" aria-labelledby="titre-accueil">
+<section class="heros" style="--image-heros: url('{{ '/assets/images/mairie.jpg' | relative_url }}')" aria-labelledby="titre-accueil">
   <div class="conteneur">
     <div class="heros-contenu">
       <p class="heros-surtitre">Commune du Cantal</p>
@@ -34,7 +34,6 @@ description: "Site officiel de la commune de Saint-Bonnet-de-Condat (Cantal) : i
       <p>Un village de 113 habitants dans la vallée de la Santoire, à la croisée du Cézallier et des monts du Cantal.</p>
     </div>
   </div>
-  <p class="heros-credit"><span class="heros-credit-titre">La mairie-école · </span>photo <a href="https://commons.wikimedia.org/wiki/File:Saint-Bonnet-de-Condat_mairie-%C3%A9cole.jpg">Père Igor</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr">CC BY-SA 4.0</a></p>
 </section>
 
 <nav class="conteneur acces-rapides" aria-label="Accès rapides">
@@ -78,14 +77,14 @@ description: "Site officiel de la commune de Saint-Bonnet-de-Condat (Cantal) : i
   </div>
 </section>
 
-<section class="section section--teintee" aria-labelledby="titre-actualites">
+<section class="section section--teintee" aria-labelledby="titre-bulletin">
   <div class="conteneur">
     <div class="section-entete">
       <div>
-        <h2 id="titre-actualites">Actualités</h2>
-        <p>Travaux, projets et vie de la commune.</p>
+        <h2 id="titre-bulletin">Le bulletin municipal</h2>
+        <p>Les articles de <em>La Gazette des Saint-Bonnetoux</em> n°1, été 2026.</p>
       </div>
-      <a class="lien-fleche" href="{{ '/actualites/' | relative_url }}">Toutes les actualités{% include icone.html nom="fleche" %}</a>
+      <a class="lien-fleche" href="{{ '/bulletin-municipal/' | relative_url }}">Le bulletin municipal{% include icone.html nom="fleche" %}</a>
     </div>
     <div class="grille-cartes">
       {%- for p in site.posts limit: 3 %}

@@ -1,0 +1,47 @@
+name: Publier une version
+
+# Crée une Release GitHub pour chaque fichier outils/versions/vX.Y.Z.md
+# qui n'a pas encore la sienne. Le nom du fichier donne le numéro de version ;
+# l'en-tête donne le titre et le commit marqué, la suite donne les notes.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "outils/versions/**"
+      - ".github/workflows/publier-version.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publier-version
+  cancel-in-progress: false
+
+jobs:
+  publier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Créer les Releases manquantes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          shopt -s nullglob
+          for fichier in outils/versions/v*.md; do
+            version="$(basename "$fichier" .md)"
+            if gh release view "$version" > /dev/null 2>&1; then
+              echo "Déjà publiée : $version"
+              continue
+            fi
+            titre="$(sed -n 's/^titre: *//p' "$fichier" | head -n 1)"
+            commit="$(sed -n 's/^commit: *//p' "$fichier" | head -n 1)"
+            awk 'n >= 2 { print } /^---$/ { n++ }' "$fichier" > notes.md
+            gh release create "$version" \
+              --target "${commit:-$GITHUB_SHA}" \
+              --title "${titre:-$version}" \
+              --notes-file notes.md
+            echo "Publiée : $version"
+          done

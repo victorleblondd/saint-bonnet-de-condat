@@ -24,6 +24,16 @@
 - date: "2026-10-06"
   type: info
   theme: vie
+  titre: "Fermeture de la mairie et du Point Poste du 12 au 18 octobre"
+  resume: "Le secrétariat de mairie et le Point Poste seront fermés du 12 au 18 octobre 2026 inclus."
+  pdf: "2026-10-06-fermeture-mairie-point-poste.pdf"
+  texte: |
+    <p>Le secrétariat de mairie sera fermé <strong>du 12 au 18 octobre 2026 inclus</strong>. Le Point Poste, installé à la mairie, sera également fermé.</p>
+    <p>Merci de votre compréhension.</p>
+
+- date: "2026-10-06"
+  type: info
+  theme: vie
   titre: "Dégrèvement d'impôts directs"
   resume: "Pertes de récoltes dues à la sécheresse : les listes des parcelles concernées par un dégrèvement de taxe foncière sur les propriétés non bâties, et le montant des dégrèvements accordés, sont consultables en mairie."
   pdf: "2026-10-06-degrevement-impots-directs.pdf"

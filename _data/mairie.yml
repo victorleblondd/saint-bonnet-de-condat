@@ -7,7 +7,8 @@ adresse_ligne2: "15190 Saint-Bonnet-de-Condat"
 telephone: "04 71 78 41 64"
 telephone_lien: "+33471784164"
 email: "mairie.stbonnetdecondat@orange.fr"
-facebook_nom: "Mairie de Saint-Bonnet-de-Condat"
+facebook_nom: "Mairie Saint Bonnet de Condat"
+facebook_url: "https://www.facebook.com/mairiesaintbonnetdecondat/"
 
 # Horaires du secrétariat de mairie et du Point Poste (depuis le 1er octobre 2026)
 horaires_court: "le lundi, mardi, jeudi et vendredi, de 9 h à 12 h"

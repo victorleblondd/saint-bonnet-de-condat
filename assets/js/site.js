@@ -90,6 +90,45 @@
     });
   }
 
+  /* ----- Affichage légal : filtres par type et par année ----- */
+  var filtresActes = document.querySelector('[data-filtres-actes]');
+  if (filtresActes) {
+    var actes = Array.prototype.slice.call(document.querySelectorAll('.liste-actes .acte'));
+    var titresAnnees = Array.prototype.slice.call(document.querySelectorAll('.liste-actes .annee'));
+    var videActes = document.querySelector('[data-actes-vide]');
+    var choix = { type: 'tout', annee: 'tout' };
+    var boutonsActes = Array.prototype.slice.call(filtresActes.querySelectorAll('button[data-critere]'));
+    filtresActes.hidden = false;
+    var appliquerActes = function () {
+      var visibles = 0;
+      actes.forEach(function (a) {
+        var ok = (choix.type === 'tout' || a.getAttribute('data-type') === choix.type) &&
+                 (choix.annee === 'tout' || a.getAttribute('data-annee') === choix.annee);
+        a.hidden = !ok;
+        if (ok) { visibles++; }
+      });
+      titresAnnees.forEach(function (titre) {
+        var el = titre.nextElementSibling, garde = false;
+        while (el && !el.classList.contains('annee')) {
+          if (el.classList.contains('acte') && !el.hidden) { garde = true; }
+          el = el.nextElementSibling;
+        }
+        titre.hidden = !garde;
+      });
+      if (videActes) { videActes.hidden = visibles !== 0; }
+    };
+    boutonsActes.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var critere = b.getAttribute('data-critere');
+        choix[critere] = b.getAttribute('data-valeur');
+        boutonsActes.forEach(function (x) {
+          if (x.getAttribute('data-critere') === critere) { x.setAttribute('aria-pressed', String(x === b)); }
+        });
+        appliquerActes();
+      });
+    });
+  }
+
   /* ----- Ouvrir l'avis ciblé par un lien (#ancre) ----- */
   function ouvrirCible() {
     if (!location.hash) { return; }

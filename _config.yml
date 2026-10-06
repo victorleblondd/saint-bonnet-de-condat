@@ -14,8 +14,8 @@ baseurl: "/saint-bonnet-de-condat"
 timezone: Europe/Paris
 encoding: utf-8
 
-# Les actualités (dossier _posts) sont publiées sous /actualites/nom-de-l-article/
-permalink: /actualites/:title/
+# Les articles du bulletin municipal (dossier _posts) sont publiés sous /bulletin-municipal/nom-de-l-article/
+permalink: /bulletin-municipal/:title/
 
 defaults:
   - scope:
