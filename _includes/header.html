@@ -16,9 +16,10 @@
       <span class="marque-sous-titre">Commune du Cantal</span>
       <span class="visuellement-cache"> – accueil</span>
     </a>
+    <img class="logo-cezallier" src="{{ '/assets/images/logo-massif-du-cezallier.png' | relative_url }}" alt="Massif du Cézallier" width="300" height="283">
     <button class="bouton-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
-      <span class="bouton-menu-ouvrir">{% include icone.html nom="menu" %}Menu</span>
-      <span class="bouton-menu-fermer">{% include icone.html nom="fermer" %}Fermer</span>
+      <span class="bouton-menu-ouvrir">{% include icone.html nom="menu" %}<span class="bouton-menu-libelle">Menu</span></span>
+      <span class="bouton-menu-fermer">{% include icone.html nom="fermer" %}<span class="bouton-menu-libelle">Fermer</span></span>
     </button>
   </div>
   <nav class="navigation" id="menu-principal" aria-label="Menu principal">

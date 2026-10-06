@@ -154,6 +154,8 @@ time, .chiffre { font-variant-numeric: tabular-nums; }
 .marque-nom { font-family: var(--police-titre); font-weight: 700; font-size: clamp(1.45rem, 1.05rem + 1.6vw, 2.15rem); line-height: 1.05; color: var(--accent); letter-spacing: -.01em; }
 .marque-sous-titre { font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--vert); }
 .marque:hover .marque-nom { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.logo-cezallier { display: block; flex: none; width: auto; height: 80px; margin-left: auto; }
+@media (prefers-color-scheme: dark) { .logo-cezallier { background: #fff; border-radius: 12px; padding: 4px; } }
 
 .bouton-menu {
   display: none; align-items: center; gap: 8px; flex: none;
@@ -186,7 +188,9 @@ time, .chiffre { font-variant-numeric: tabular-nums; }
   .navigation li:last-child a { border-bottom: 0; }
   .navigation a:hover, .navigation a[aria-current] { box-shadow: inset 4px 0 0 var(--accent); padding-left: 14px; }
 }
-@media (max-width: 520px) { .marque-nom { font-size: 1.22rem; } .marque-sous-titre { font-size: .72rem; letter-spacing: .08em; } .bouton-menu { padding: 9px 12px; } }
+@media (max-width: 1010px) { .logo-cezallier { height: 60px; } }
+@media (max-width: 520px) { .marque-nom { font-size: 1.22rem; } .marque-sous-titre { font-size: .72rem; letter-spacing: .08em; } .bouton-menu { padding: 10px; } .logo-cezallier { height: 46px; } .entete-interieur { gap: 10px; }
+  .bouton-menu-libelle { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } }
 
 /* ---------- Bandeau d'alerte (accueil) ---------- */
 .bandeau-alerte { background: var(--alerte); color: var(--sur-alerte); }
@@ -212,13 +216,14 @@ time, .chiffre { font-variant-numeric: tabular-nums; }
 .heros-contenu { padding-block: 64px 120px; max-width: 760px; }
 .heros h1 { font-size: clamp(2.1rem, 1.4rem + 3.2vw, 3.6rem); line-height: 1.05; margin-bottom: .35em; color: #fff; text-shadow: 0 2px 18px rgba(0, 0, 0, .25); }
 .heros p { font-size: clamp(1.05rem, .95rem + .5vw, 1.3rem); color: rgba(255, 255, 255, .92); max-width: 46ch; margin-bottom: 0; }
-.heros-surtitre { font-size: .86rem !important; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #F5D68A !important; margin-bottom: 10px !important; }
+.heros-blason { display: block; width: auto; height: 92px; margin-bottom: 18px; filter: drop-shadow(0 2px 8px rgba(0, 0, 0, .35)); }
 .heros h1 .nom-commune { display: block; }
 @media (min-width: 420px) { .heros h1 .nom-commune { white-space: nowrap; } }
 @media (max-width: 700px) {
   .heros { background-image: linear-gradient(0deg, rgba(12, 19, 46, .92) 0%, rgba(12, 19, 46, .55) 50%, rgba(12, 19, 46, .1) 100%), var(--image-heros, none); background-position: 60% center; }
   .heros-contenu { padding-block: 150px 96px; }
   .heros h1 { font-size: clamp(1.7rem, 7.4vw, 2.2rem); }
+  .heros-blason { height: 64px; margin-bottom: 14px; }
 }
 .pile-laterale { position: sticky; top: 20px; }
 @media (max-width: 900px) { .pile-laterale { position: static; } }

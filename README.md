@@ -62,3 +62,7 @@ GitHub crée alors la Release correspondante (`.github/workflows/publier-version
 Pour relier un nom de domaine (par exemple `saint-bonnet-de-condat.fr`), indiquer l'adresse dans
 **Settings → Pages → Custom domain**, puis dans `_config.yml` : `url: "https://saint-bonnet-de-condat.fr"` et `baseurl: ""`.
 Si l'hébergeur change, mettre à jour la rubrique « Hébergement » des mentions légales.
+
+## Crédits
+
+Blason du Cantal : dessin de Gretaz et contributeurs (Wikimedia Commons), licence CC BY-SA 3.0, image adaptée.

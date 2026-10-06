@@ -1,12 +1,12 @@
 # Menu principal du site (dans l'ordre d'affichage)
 - titre: "Infos & Alertes"
   url: /infos-alertes/
-- titre: "Affichage légal"
-  url: /affichage-legal/
 - titre: "Mairie"
   url: /mairie/
 - titre: "Conseil municipal"
   url: /conseil-municipal/
+- titre: "Affichage légal"
+  url: /affichage-legal/
 - titre: "Vie pratique"
   url: /vie-pratique/
 - titre: "Vie locale"
