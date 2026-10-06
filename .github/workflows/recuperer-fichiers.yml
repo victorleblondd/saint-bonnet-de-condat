@@ -1,0 +1,59 @@
+name: Récupérer les fichiers du site
+
+# Va chercher les affiches (converties en PDF) et les photos listées dans
+# outils/fichiers-a-recuperer.txt, puis les ajoute au site.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "outils/fichiers-a-recuperer.txt"
+      - ".github/workflows/recuperer-fichiers.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: recuperer-fichiers
+  cancel-in-progress: false
+
+jobs:
+  recuperer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installer les outils
+        run: pip install --quiet img2pdf pillow
+
+      - name: Télécharger et convertir
+        id: recup
+        run: python outils/recuperer_fichiers.py
+
+      - name: Enregistrer dans le site
+        if: steps.recup.outputs.ajoutes != '0'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Ajoute ${{ steps.recup.outputs.ajoutes }} fichier(s) : affiches et photos"
+          git pull --rebase
+          git push
+
+      - name: Republier le site
+        if: steps.recup.outputs.ajoutes != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/${{ github.repository }}/pages/builds" || echo "La publication se fera au prochain envoi."
+
+      - name: Signaler les fichiers non récupérés
+        if: steps.recup.outputs.echecs != '0'
+        run: |
+          echo "${{ steps.recup.outputs.echecs }} fichier(s) n'ont pas pu être récupérés : voir l'étape « Télécharger et convertir »."
+          exit 1
