@@ -1,0 +1,20 @@
+---
+layout: default
+---
+<div class="entete-page">
+  <div class="conteneur">
+    <nav class="fil-ariane" aria-label="Fil d'Ariane">
+      <ol>
+        <li><a href="{{ '/' | relative_url }}">Accueil</a></li>
+        <li><span aria-current="page">{{ page.title }}</span></li>
+      </ol>
+    </nav>
+    <h1>{{ page.title }}</h1>
+    {%- if page.chapo %}
+    <p class="chapo">{{ page.chapo }}</p>
+    {%- endif %}
+  </div>
+</div>
+<div class="conteneur corps-page">
+{{ content }}
+</div>

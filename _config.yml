@@ -1,0 +1,39 @@
+# Site officiel de la commune de Saint-Bonnet-de-Condat (Cantal)
+# Publié avec GitHub Pages (Jekyll). Voir README.md pour la mise à jour.
+
+title: "Saint-Bonnet-de-Condat"
+description: "Site officiel de la commune de Saint-Bonnet-de-Condat (Cantal, 15190) : mairie, infos et alertes, vie pratique, vie locale et patrimoine."
+lang: fr-FR
+locale: fr_FR
+
+# Adresse du site. Si un nom de domaine est relié un jour (ex. saint-bonnet-de-condat.fr),
+# mettre url: "https://saint-bonnet-de-condat.fr" et baseurl: ""
+url: "https://victorleblondd.github.io"
+baseurl: "/saint-bonnet-de-condat"
+
+timezone: Europe/Paris
+encoding: utf-8
+
+# Les actualités (dossier _posts) sont publiées sous /actualites/nom-de-l-article/
+permalink: /actualites/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: article
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - outils

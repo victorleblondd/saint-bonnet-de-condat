@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="fr">
+<head>
+{% include head.html %}
+</head>
+<body class="{{ page.classe_corps | default: 'page-interieure' }}">
+{% include header.html %}
+<main id="contenu" tabindex="-1">
+{{ content }}
+</main>
+{% include footer.html %}
+<script src="{{ '/assets/js/site.js' | relative_url }}?v=1" defer></script>
+</body>
+</html>

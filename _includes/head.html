@@ -1,0 +1,20 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{%- if page.url == "/" %}
+<title>{{ site.title }} – Site officiel de la commune</title>
+{%- else %}
+<title>{{ page.title }} – {{ site.title }}</title>
+{%- endif %}
+{%- assign description = page.description | default: page.resume | default: site.description | strip_html | strip_newlines | truncate: 200 %}
+<meta name="description" content="{{ description | escape }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+<meta name="theme-color" content="#1E2B5E">
+<meta property="og:type" content="{% if page.layout == 'article' %}article{% else %}website{% endif %}">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="{{ site.title }}">
+<meta property="og:title" content="{% if page.url == '/' %}{{ site.title }}{% else %}{{ page.title | escape }}{% endif %}">
+<meta property="og:description" content="{{ description | escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:image" content="{{ page.image | default: '/assets/images/mairie-ecole.jpg' | absolute_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v=2">
+<script>document.documentElement.className += ' js';</script>

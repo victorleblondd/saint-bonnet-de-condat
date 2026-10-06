@@ -1,0 +1,38 @@
+{%- comment -%}
+  Une publication « Infos & Alertes ».
+  Paramètres : item (une entrée de _data/infos_alertes.yml), compact=true (page d'accueil)
+{%- endcomment -%}
+{%- assign it = include.item -%}
+{%- capture ancre -%}{{ it.date }}-{{ it.titre | slugify: "latin" }}{%- endcapture -%}
+{%- if it.pdf -%}{%- assign lien_pdf = "/documents/infos-alertes/" | append: it.pdf | relative_url -%}{%- endif -%}
+<article class="avis avis--{{ it.type }}{% if include.compact %} avis--compact{% endif %}" id="{{ ancre }}" data-type="{{ it.type }}" data-theme="{{ it.theme }}">
+  <div class="avis-meta">
+    {% if it.type == "alerte" -%}
+    <span class="etiquette etiquette--alerte">{% include icone.html nom="alerte" %}Alerte</span>
+    {%- else -%}
+    <span class="etiquette etiquette--info">Info</span>
+    {%- endif %}
+    <time datetime="{{ it.date }}{% if it.heure %}T{{ it.heure }}{% endif %}">{% include date-fr.html date=it.date jour=true %}{% if it.heure %} à {{ it.heure | replace: ":", " h " }}{% endif %}</time>
+  </div>
+  <h3 class="avis-titre">
+    {%- if it.pdf -%}
+    <a href="{{ lien_pdf }}" target="_blank" rel="noopener">{{ it.titre }}<span class="visuellement-cache"> (avis en PDF, nouvel onglet)</span></a>
+    {%- elsif include.compact -%}
+    <a href="{{ '/infos-alertes/' | relative_url }}#{{ ancre }}">{{ it.titre }}</a>
+    {%- else -%}
+    {{ it.titre }}
+    {%- endif -%}
+  </h3>
+  {% if it.resume %}<p class="avis-resume">{{ it.resume }}</p>{% endif %}
+  {%- if it.pdf %}
+  <p class="avis-actions"><a class="bouton bouton--pdf" href="{{ lien_pdf }}" target="_blank" rel="noopener">{% include icone.html nom="document" %}Ouvrir l'avis (PDF)<span class="visuellement-cache"> : {{ it.titre }}, nouvel onglet</span></a></p>
+  {%- endif %}
+  {%- if it.texte %}{% unless include.compact %}
+  <details class="avis-texte">
+    <summary>{% if it.pdf %}Lire le texte de l'avis{% else %}Lire l'avis complet{% endif %}</summary>
+    <div class="avis-texte-corps">
+{{ it.texte }}
+    </div>
+  </details>
+  {%- endunless %}{% endif %}
+</article>

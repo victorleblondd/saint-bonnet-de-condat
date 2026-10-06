@@ -1,0 +1,12 @@
+{%- assign a = include.article -%}
+<article class="carte carte-article">
+  {%- if a.image %}
+  <div class="carte-article-image"><img src="{{ a.image | relative_url }}" alt="" loading="lazy" width="600" height="360"></div>
+  {%- endif %}
+  <div class="carte-article-corps">
+    {%- if a.categorie %}<p class="surtitre">{{ a.categorie }}</p>{% endif %}
+    <h3><a class="lien-etendu" href="{{ a.url | relative_url }}">{{ a.title }}</a></h3>
+    {%- if a.resume %}<p>{{ a.resume | truncate: 160 }}</p>{% endif %}
+    <p class="carte-date">{% if a.date_affichee %}{{ a.date_affichee }}{% else %}{% include date-fr.html date=a.date %}{% endif %}</p>
+  </div>
+</article>

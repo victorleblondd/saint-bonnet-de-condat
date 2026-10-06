@@ -1,0 +1,46 @@
+---
+layout: default
+---
+<div class="entete-page entete-page--article">
+  <div class="conteneur conteneur--etroit">
+    <nav class="fil-ariane" aria-label="Fil d'Ariane">
+      <ol>
+        <li><a href="{{ '/' | relative_url }}">Accueil</a></li>
+        <li><a href="{{ '/actualites/' | relative_url }}">Actualités</a></li>
+        <li><span aria-current="page">{{ page.title }}</span></li>
+      </ol>
+    </nav>
+    {%- if page.categorie %}
+    <p class="surtitre">{{ page.categorie }}</p>
+    {%- endif %}
+    <h1>{{ page.title }}</h1>
+    <p class="article-date">{% include icone.html nom="calendrier" %}<span>{% if page.date_affichee %}{{ page.date_affichee }}{% else %}{% include date-fr.html date=page.date %}{% endif %}</span></p>
+  </div>
+</div>
+<article class="conteneur conteneur--etroit article">
+  {%- if page.image %}
+  <figure class="article-image">
+    <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | escape }}" width="{{ page.image_largeur | default: 1200 }}" height="{{ page.image_hauteur | default: 640 }}">
+    {%- if page.image_legende %}<figcaption>{{ page.image_legende }}</figcaption>{% endif %}
+  </figure>
+  {%- endif %}
+  {%- if page.resume %}
+  <p class="chapo">{{ page.resume }}</p>
+  {%- endif %}
+  <div class="article-corps">
+{{ content }}
+  </div>
+  <p class="article-retour"><a href="{{ '/actualites/' | relative_url }}">{% include icone.html nom="fleche" classe="icone--retournee" %}Toutes les actualités</a></p>
+</article>
+<section class="conteneur autres-articles" aria-labelledby="a-lire-aussi">
+  <h2 id="a-lire-aussi">À lire aussi</h2>
+  <div class="grille-cartes">
+    {%- assign n = 0 %}
+    {%- for p in site.posts %}
+    {%- if p.url != page.url and n < 3 %}
+    {% include carte-article.html article=p %}
+    {%- assign n = n | plus: 1 %}
+    {%- endif %}
+    {%- endfor %}
+  </div>
+</section>

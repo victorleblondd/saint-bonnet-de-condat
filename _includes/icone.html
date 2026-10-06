@@ -1,0 +1,38 @@
+<svg class="icone{% if include.classe %} {{ include.classe }}{% endif %}" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">{% case include.nom %}
+{% when "telephone" %}<path d="M5 4h3.5l1.8 4.6-2.3 1.5a11 11 0 0 0 5.9 5.9l1.5-2.3L20 15.5V19a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>
+{% when "email" %}<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/>
+{% when "horloge" %}<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/>
+{% when "lieu" %}<path d="M12 21s-7-6.2-7-11.2a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.6"/>
+{% when "alerte" %}<path d="M10.3 4.2 2.6 18a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 4.2a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4.5M12 17.2h.01"/>
+{% when "info" %}<circle cx="12" cy="12" r="9"/><path d="M12 11v5.5M12 7.8h.01"/>
+{% when "document" %}<path d="M14 3H6.5A1.5 1.5 0 0 0 5 4.5v15A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V8z"/><path d="M14 3v5h5M8.5 13h7M8.5 16.5h5"/>
+{% when "goutte" %}<path d="M12 3s6.5 6.6 6.5 11.3a6.5 6.5 0 0 1-13 0C5.5 9.6 12 3 12 3z"/><path d="M9 14.5a3 3 0 0 0 3 3"/>
+{% when "dechets" %}<path d="M4 7h16M9.5 7V4.5h5V7M6 7l1.1 13h9.8L18 7M10 11v5M14 11v5"/>
+{% when "maison" %}<path d="M3.5 11 12 4l8.5 7"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-5.5h4V20"/>
+{% when "mairie" %}<path d="M3 9.5 12 4l9 5.5"/><path d="M4 20h16M5.5 11v7M9.8 11v7M14.2 11v7M18.5 11v7"/>
+{% when "personnes" %}<circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.4 2.7-6 6-6s6 2.6 6 6"/><circle cx="17.2" cy="9" r="2.5"/><path d="M16.5 14.1c2.6.4 4.5 2.7 4.5 5.4"/>
+{% when "fleche" %}<path d="M5 12h14M13 6l6 6-6 6"/>
+{% when "chevron" %}<path d="m9 6 6 6-6 6"/>
+{% when "externe" %}<path d="M14 4h6v6M20 4l-8.5 8.5"/><path d="M18 14v4.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 4 18.5v-11A1.5 1.5 0 0 1 5.5 6H10"/>
+{% when "bulle" %}<path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v9a1.5 1.5 0 0 1-1.5 1.5H10l-4.5 4v-4h0A1.5 1.5 0 0 1 4 14.5z"/>
+{% when "menu" %}<path d="M4 7h16M4 12h16M4 17h16"/>
+{% when "fermer" %}<path d="M6 6l12 12M18 6 6 18"/>
+{% when "calendrier" %}<rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/>
+{% when "feuille" %}<path d="M5 19.5c0-8.5 5.2-13.6 14.5-14.5 0 9.3-5.2 14.5-13.6 14.5z"/><path d="M5 19.5l8-8"/>
+{% when "ampoule" %}<path d="M9.2 18h5.6M10.2 21h3.6"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.6 1 1.3 1 2.2h5.2c0-.9.3-1.6 1-2.2A6 6 0 0 0 12 3z"/>
+{% when "fibre" %}<path d="M2.5 9.2a14 14 0 0 1 19 0M5.8 12.6a9.4 9.4 0 0 1 12.4 0M9.1 16a4.6 4.6 0 0 1 5.8 0"/><circle cx="12" cy="19.2" r=".9" fill="currentColor"/>
+{% when "livre" %}<path d="M4 4.5h5.5A2.5 2.5 0 0 1 12 7v13a2 2 0 0 0-2-2H4zM20 4.5h-5.5A2.5 2.5 0 0 0 12 7v13a2 2 0 0 1 2-2h6z"/>
+{% when "copie" %}<rect x="8.5" y="8.5" width="11.5" height="11.5" rx="1.5"/><path d="M15.5 8.5V5.5A1.5 1.5 0 0 0 14 4H5.5A1.5 1.5 0 0 0 4 5.5V14a1.5 1.5 0 0 0 1.5 1.5h3"/>
+{% when "colis" %}<path d="M3.5 7.6 12 3.5l8.5 4.1v8.8L12 20.5l-8.5-4.1z"/><path d="M3.5 7.6 12 11.8l8.5-4.2M12 11.8v8.7"/>
+{% when "camion" %}<path d="M3 6.5h11v9.5H3zM14 10h3.8l3.2 3.2V16H14"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17.2" cy="17.5" r="1.8"/>
+{% when "bruit" %}<path d="M4 9.5v5h3.2l4.8 4V5.5L7.2 9.5z"/><path d="M15.5 9a4.2 4.2 0 0 1 0 6M18.3 6.4a8 8 0 0 1 0 11.2"/>
+{% when "soleil" %}<circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/>
+{% when "montagne" %}<path d="M2.5 19.5 9.5 7.5l4.3 7 2.2-3.3 5.5 8.3z"/><path d="M7.6 10.8l1.9 1.7 1.6-1.4"/>
+{% when "eglise" %}<path d="M12 2.5v4M10.2 4.2h3.6"/><path d="M7 20.5V12l5-5 5 5v8.5"/><path d="M3.5 20.5h17M10.2 20.5v-3.7a1.8 1.8 0 0 1 3.6 0v3.7"/>
+{% when "telecharger" %}<path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 20h14"/>
+{% when "urgence" %}<circle cx="12" cy="12" r="9"/><path d="M12 7.5v9M7.5 12h9"/>
+{% when "carte" %}<path d="M9 4.5 3.5 6.5v13L9 17.5l6 2 5.5-2v-13L15 6.5z"/><path d="M9 4.5v13M15 6.5v13"/>
+{% when "journal" %}<path d="M4.5 5.5h12v13a2 2 0 0 0 2 2h-12a2 2 0 0 1-2-2z"/><path d="M16.5 9h3v9.5a2 2 0 0 1-2 2M8 9h5M8 12.5h5M8 16h3.5"/>
+{% when "fleur" %}<circle cx="12" cy="9" r="2.4"/><path d="M12 6.6c0-2.2 1-3.6 2.4-3.6s2.2 1.6 1.2 3.4M14.3 8.2c1.9-1.1 3.6-.9 4.1.4s-.7 2.6-2.8 2.6M13.7 11.2c1.3 1.8 1.2 3.5 0 4.1s-2.4-.3-2.3-2.3M10 11.1c-1.5 1.6-3.2 1.8-3.8.7s.6-2.6 2.7-2.9M9.7 7.8C7.6 7 6.6 5.6 7.3 4.4s2.5-.8 3.5 1.1M12 13.5V21M12 18c-2.5-1.6-4.5-1.6-6 0M12 17c2.2-1.4 4-1.3 5.5.2"/>
+{% when "outil" %}<path d="M14.6 6.1a4 4 0 0 0-5.2 5.2L4 16.7 7.3 20l5.4-5.4a4 4 0 0 0 5.2-5.2l-2.6 2.6-2.4-.7-.7-2.4z"/>
+{% endcase %}</svg>

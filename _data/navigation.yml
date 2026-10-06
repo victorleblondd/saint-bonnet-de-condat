@@ -1,0 +1,15 @@
+# Menu principal du site (dans l'ordre d'affichage)
+- titre: "Infos & Alertes"
+  url: /infos-alertes/
+- titre: "Actualités"
+  url: /actualites/
+- titre: "Mairie"
+  url: /mairie/
+- titre: "Conseil municipal"
+  url: /conseil-municipal/
+- titre: "Vie pratique"
+  url: /vie-pratique/
+- titre: "Vie locale"
+  url: /vie-locale/
+- titre: "Découvrir"
+  url: /decouvrir/

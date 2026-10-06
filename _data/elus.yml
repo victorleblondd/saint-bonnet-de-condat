@@ -1,0 +1,40 @@
+# Conseil municipal installé le 22 mars 2026
+
+maire:
+  nom: "Sarah Chabrier"
+  fonction: "Maire"
+  telephone: "06 60 97 55 67"
+  telephone_lien: "+33660975567"
+  permanence: "Présente en mairie tous les jeudis matin, sans rendez-vous. Les autres jours, sur rendez-vous."
+
+adjoints:
+  - nom: "Laurent Golliard"
+    fonction: "1er adjoint"
+    telephone: "06 78 33 66 17"
+    telephone_lien: "+33678336617"
+    permanence: "Uniquement sur rendez-vous."
+    domaines: "la voirie, l'assainissement et l'eau"
+  - nom: "Nathalie Metayer"
+    fonction: "2e adjointe"
+    telephone: "06 63 19 54 51"
+    telephone_lien: "+33663195451"
+    permanence: "Sur rendez-vous les mardis et jeudis."
+    domaines: "l'urbanisme, l'éclairage public et les questions sociales"
+
+conseillers:
+  - "Alain Boutal"
+  - "Germain Derobert"
+  - "Evelyne Gauthier"
+  - "Jean-Louis Gendre"
+  - "Muriel Gimmig"
+  - "Laetitia Leblond"
+  - "Claude Legrand"
+  - "Jean-Paul Malbec"
+
+personnel:
+  - nom: "Nadège Rodde"
+    fonction: "Secrétaire de mairie"
+  - nom: "Sébastien Martrenchard"
+    fonction: "Agent technique"
+  - nom: "Dominique Benoit"
+    fonction: "Agent technique (mi-temps, période estivale)"

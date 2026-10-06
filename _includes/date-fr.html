@@ -1,0 +1,17 @@
+{%- comment -%}
+  Affiche une date en français.
+  Paramètres : date (obligatoire), jour=true (ajoute le jour de la semaine), sans_annee=true, mois_seul=true
+{%- endcomment -%}
+{%- assign _mois = "janvier,février,mars,avril,mai,juin,juillet,août,septembre,octobre,novembre,décembre" | split: "," -%}
+{%- assign _jours = "dimanche,lundi,mardi,mercredi,jeudi,vendredi,samedi" | split: "," -%}
+{%- assign _m = include.date | date: "%-m" | minus: 1 -%}
+{%- assign _w = include.date | date: "%w" | plus: 0 -%}
+{%- assign _d = include.date | date: "%-d" -%}
+{%- if _d == "1" -%}{%- assign _d = "1er" -%}{%- endif -%}
+{%- if include.mois_seul -%}
+{{- _mois[_m] }} {{ include.date | date: "%Y" -}}
+{%- else -%}
+{%- if include.jour -%}{{ _jours[_w] }} {% endif -%}
+{{- _d }} {{ _mois[_m] -}}
+{%- unless include.sans_annee %} {{ include.date | date: "%Y" }}{% endunless -%}
+{%- endif -%}

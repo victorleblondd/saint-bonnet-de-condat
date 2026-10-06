@@ -1,0 +1,36 @@
+{%- assign m = site.data.mairie -%}
+<a class="lien-evitement" href="#contenu">Aller au contenu</a>
+<div class="bandeau-haut">
+  <div class="conteneur bandeau-haut-interieur">
+    <p class="bandeau-haut-horaires">{% include icone.html nom="horloge" %}<span>Mairie ouverte {{ m.horaires_court }}</span></p>
+    <p class="bandeau-haut-contacts">
+      <a href="tel:{{ m.telephone_lien }}">{% include icone.html nom="telephone" %}<span>{{ m.telephone }}</span></a>
+      <a href="mailto:{{ m.email }}">{% include icone.html nom="email" %}<span>Écrire à la mairie</span></a>
+    </p>
+  </div>
+</div>
+<header class="entete">
+  <div class="conteneur entete-interieur">
+    <a class="marque" href="{{ '/' | relative_url }}">
+      <span class="marque-nom">Saint-Bonnet-de-Condat</span>
+      <span class="marque-sous-titre">Commune du Cantal</span>
+      <span class="visuellement-cache"> – accueil</span>
+    </a>
+    <button class="bouton-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
+      <span class="bouton-menu-ouvrir">{% include icone.html nom="menu" %}Menu</span>
+      <span class="bouton-menu-fermer">{% include icone.html nom="fermer" %}Fermer</span>
+    </button>
+  </div>
+  <nav class="navigation" id="menu-principal" aria-label="Menu principal">
+    <div class="conteneur">
+      <ul>
+        <li><a href="{{ '/' | relative_url }}"{% if page.url == "/" %} aria-current="page"{% endif %}>Accueil</a></li>
+        {%- for lien in site.data.navigation %}
+        {%- assign courant = "" %}
+        {%- if page.url == lien.url %}{% assign courant = "page" %}{% elsif page.url contains lien.url %}{% assign courant = "true" %}{% endif %}
+        <li><a href="{{ lien.url | relative_url }}"{% if courant != "" %} aria-current="{{ courant }}"{% endif %}>{{ lien.titre }}</a></li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </nav>
+</header>

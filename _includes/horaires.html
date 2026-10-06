@@ -1,0 +1,6 @@
+{%- assign m = site.data.mairie -%}
+<dl class="horaires">
+  {%- for h in m.horaires %}{% unless include.semaine_complete != true and h.ferme and h.jour != "Mercredi" %}
+  <div data-jour="{{ forloop.index }}"{% if h.ferme %} class="ferme"{% endif %}><dt>{{ h.jour }}</dt><dd>{{ h.heures }}</dd></div>
+  {%- endunless %}{% endfor %}
+</dl>

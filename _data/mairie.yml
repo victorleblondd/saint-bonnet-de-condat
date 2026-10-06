@@ -1,0 +1,31 @@
+# Coordonnées et horaires de la mairie — utilisés dans l'en-tête, le pied de page et les pages.
+# Modifier ici une seule fois : tout le site se met à jour.
+
+nom: "Mairie de Saint-Bonnet-de-Condat"
+adresse_ligne1: "2 rue de la Santoire"
+adresse_ligne2: "15190 Saint-Bonnet-de-Condat"
+telephone: "04 71 78 41 64"
+telephone_lien: "+33471784164"
+email: "mairie.stbonnetdecondat@orange.fr"
+facebook_nom: "Mairie de Saint-Bonnet-de-Condat"
+
+# Horaires du secrétariat de mairie et du Point Poste (depuis le 1er octobre 2026)
+horaires_court: "le lundi, mardi, jeudi et vendredi, de 9 h à 12 h"
+horaires:
+  - jour: Lundi
+    heures: "9 h – 12 h"
+  - jour: Mardi
+    heures: "9 h – 12 h"
+  - jour: Mercredi
+    heures: "Fermée"
+    ferme: true
+  - jour: Jeudi
+    heures: "9 h – 12 h"
+  - jour: Vendredi
+    heures: "9 h – 12 h"
+  - jour: Samedi
+    heures: "Fermée"
+    ferme: true
+  - jour: Dimanche
+    heures: "Fermée"
+    ferme: true

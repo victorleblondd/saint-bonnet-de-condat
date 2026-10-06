@@ -1,0 +1,50 @@
+{%- assign m = site.data.mairie -%}
+<footer class="pied">
+  <div class="conteneur pied-grille">
+    <section class="pied-bloc" aria-labelledby="pied-mairie">
+      <h2 id="pied-mairie" class="pied-titre">{{ m.nom }}</h2>
+      <address>
+        <p>{% include icone.html nom="lieu" %}<span>{{ m.adresse_ligne1 }}<br>{{ m.adresse_ligne2 }}</span></p>
+        <p>{% include icone.html nom="telephone" %}<a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a></p>
+        <p>{% include icone.html nom="email" %}<a href="mailto:{{ m.email }}">{{ m.email | replace: "@", "@<wbr>" }}</a></p>
+      </address>
+    </section>
+    <section class="pied-bloc" aria-labelledby="pied-horaires">
+      <h2 id="pied-horaires" class="pied-titre">Horaires de la mairie</h2>
+      <dl class="pied-horaires">
+        {%- for h in m.horaires %}{% unless h.jour == "Samedi" or h.jour == "Dimanche" %}
+        <div{% if h.ferme %} class="ferme"{% endif %}><dt>{{ h.jour }}</dt><dd>{{ h.heures }}</dd></div>
+        {%- endunless %}{% endfor %}
+      </dl>
+      <p class="pied-note">Le Point Poste est ouvert aux mêmes horaires.</p>
+    </section>
+    <nav class="pied-bloc" aria-labelledby="pied-liens">
+      <h2 id="pied-liens" class="pied-titre">Accès rapides</h2>
+      <ul>
+        <li><a href="{{ '/infos-alertes/' | relative_url }}">Infos &amp; Alertes</a></li>
+        <li><a href="{{ '/mairie/' | relative_url }}">La mairie et ses services</a></li>
+        <li><a href="{{ '/conseil-municipal/' | relative_url }}">Le conseil municipal</a></li>
+        <li><a href="{{ '/vie-pratique/' | relative_url }}">Vie pratique</a></li>
+        <li><a href="{{ '/bulletin-municipal/' | relative_url }}">Le bulletin municipal</a></li>
+      </ul>
+    </nav>
+    <section class="pied-bloc" aria-labelledby="pied-infos">
+      <h2 id="pied-infos" class="pied-titre">Restez informés</h2>
+      <ul class="pied-infos">
+        <li>Les <a href="{{ '/infos-alertes/' | relative_url }}">Infos &amp; Alertes</a> de la mairie sur ce site</li>
+        <li>La page Facebook « {{ m.facebook_nom }} »</li>
+        <li><a href="{{ '/bulletin-municipal/' | relative_url }}">La Gazette des Saint-Bonnetoux</a>, deux fois par an</li>
+        <li>Les panneaux d'affichage de la commune</li>
+      </ul>
+    </section>
+  </div>
+  <div class="pied-bas">
+    <div class="conteneur pied-bas-interieur">
+      <p>© {{ site.time | date: "%Y" }} Commune de Saint-Bonnet-de-Condat</p>
+      <ul>
+        <li><a href="{{ '/mentions-legales/' | relative_url }}">Mentions légales</a></li>
+        <li><a href="{{ '/mentions-legales/' | relative_url }}#accessibilite">Accessibilité : non conforme</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
