@@ -1,0 +1,203 @@
+# =====================================================================
+#  INFOS & ALERTES DE LA MAIRIE
+#  La publication la plus récente se place TOUT EN HAUT de la liste.
+#
+#  Ajouter un avis en PDF :
+#    1. Déposer le fichier PDF dans le dossier  documents/infos-alertes/
+#       Nom conseillé : AAAA-MM-JJ-sujet-court.pdf  (sans accents ni espaces)
+#    2. Copier le modèle ci-dessous tout en haut de la liste, puis le remplir.
+#
+#  - date: "AAAA-MM-JJ"               date de l'avis
+#    heure: "HH:MM"                   facultatif
+#    type: alerte                     alerte (rouge) ou info (bleu)
+#    theme: eau                       eau, travaux, vie (services et vie locale)
+#    titre: "Titre de l'avis"
+#    resume: "Une ou deux phrases qui disent l'essentiel."
+#    pdf: "AAAA-MM-JJ-sujet-court.pdf"    nom exact du fichier déposé
+#    bandeau_jusquau: "AAAA-MM-JJ"    facultatif : bandeau rouge sur l'accueil
+#                                     jusqu'à cette date incluse (alertes)
+#
+#  Champ facultatif « texte » : le texte complet de l'avis (version lisible
+#  sans ouvrir le PDF). Les avis sans PDF affichent ce texte.
+# =====================================================================
+
+- date: "2026-10-06"
+  type: info
+  theme: vie
+  titre: "Dégrèvement d'impôts directs"
+  resume: "Pertes de récoltes dues à la sécheresse : les listes des parcelles concernées par un dégrèvement de taxe foncière sur les propriétés non bâties, et le montant des dégrèvements accordés, sont consultables en mairie."
+  pdf: "2026-10-06-degrevement-impots-directs.pdf"
+  texte: |
+    <p><strong>Avis aux contribuables – dégrèvement d'impôts directs pour pertes de récoltes consécutives à la sécheresse.</strong></p>
+    <p>Les listes des parcelles concernées par un dégrèvement de taxe foncière sur les propriétés non bâties (TFPNB), ainsi que le montant des dégrèvements accordés, peuvent être consultés en mairie.</p>
+
+- date: "2026-10-06"
+  type: info
+  theme: vie
+  titre: "Cartouches d'encre : déposez-les en mairie"
+  resume: "La mairie récupère toute l'année vos cartouches d'encre usagées. Elles sont remises à l'école de Lugarde pour être recyclées et aider à financer les activités des enfants."
+  pdf: "2026-10-06-cartouches-d-encre.pdf"
+  texte: |
+    <p><strong>Ne jetez plus vos cartouches d'encre !</strong> La mairie de Saint-Bonnet-de-Condat les récupère toute l'année afin de leur donner une seconde vie.</p>
+    <p>Déposez vos cartouches en mairie. Elles seront ensuite remises à l'école de Lugarde, qui les fait recycler : elles aident à financer les sorties, les transports scolaires, le matériel et les activités des enfants.</p>
+    <p>Un petit geste pour vous, un vrai coup de pouce pour l'école. Merci à tous pour votre participation et votre soutien.</p>
+
+- date: "2026-10-02"
+  type: info
+  theme: travaux
+  titre: "Circulation limitée rue des Rochers, du 5 au 9 octobre"
+  resume: "Du lundi 5 au vendredi 9 octobre 2026 inclus, la circulation est limitée rue des Rochers. Les véhicules légers sont invités à passer par la rue du Frêne ou le chemin du Ruisseau."
+  pdf: "2026-10-02-circulation-rue-des-rochers.pdf"
+  texte: |
+    <p>Du <strong>lundi 5 octobre au vendredi 9 octobre 2026 inclus</strong>, la circulation sera limitée sur la rue des Rochers afin de maintenir une voie de passage libre et de garantir la sécurité de tous (arrêté municipal temporaire n° AR 016 2026 du 2 octobre 2026).</p>
+    <p>Nous invitons les véhicules légers à emprunter de préférence <strong>la rue du Frêne</strong> ou <strong>le chemin du Ruisseau</strong>.</p>
+    <p>L'accès aux riverains, aux services publics et aux véhicules de secours reste maintenu. Merci de votre compréhension.</p>
+
+- date: "2026-10-02"
+  type: info
+  theme: travaux
+  titre: "Travaux d'élagage et d'abattage près des lignes électriques"
+  resume: "À partir du 8 octobre 2026, des travaux d'élagage et d'abattage ont lieu aux abords des lignes électriques aériennes (HTA 20 kV), pour la sécurité des personnes et du réseau."
+  pdf: "2026-10-02-elagage-lignes-electriques.pdf"
+  texte: |
+    <p>La commune informe les habitants que des travaux d'élagage et d'abattage seront réalisés aux abords des lignes aériennes HTA 20 kV, afin d'assurer la sécurité des personnes et du réseau électrique.</p>
+    <ul>
+      <li>Début des travaux : à compter du <strong>8 octobre 2026</strong></li>
+      <li>Entreprise chargée des travaux : SARL Rivière Jean Marie, Lavergne, 15200 Chalvignac – <a href="tel:+33687351777">06 87 35 17 77</a></li>
+      <li>Responsable des travaux : M. Rousset – <a href="tel:+33648662289">06 48 66 22 89</a></li>
+    </ul>
+    <p>Pour toute information complémentaire, vous pouvez contacter l'entreprise chargée des travaux. Merci de votre compréhension.</p>
+
+- date: "2026-10-02"
+  type: info
+  theme: vie
+  titre: "France Services : permanences d'octobre"
+  resume: "Le planning d'octobre des permanences à la Maison France Services de Riom-ès-Montagnes et dans les mairies voisines (Menet, Saint-Étienne-de-Chomeil, Trizac, Collandres)."
+  pdf: "2026-10-02-france-services-octobre.pdf"
+  texte: |
+    <p>La Maison France Services du Pays Gentiane vous accompagne gratuitement dans vos démarches du quotidien : santé, retraite, impôts, emploi, logement, démarches en ligne…</p>
+    <p><strong>Maison France Services</strong>, place de la Gare, 15400 Riom-ès-Montagnes · <a href="tel:+33471782950">04 71 78 29 50</a> · <a href="mailto:efs@pays-gentiane.com">efs@pays-gentiane.com</a>. Ouverte du lundi au jeudi de 9 h à 12 h et de 14 h à 17 h, le vendredi de 9 h à 12 h.</p>
+    <p><strong>Permanences délocalisées en octobre :</strong></p>
+    <ul>
+      <li>mardi 6 octobre : mairie de Menet, de 14 h à 16 h 30 ;</li>
+      <li>jeudi 8 octobre : mairie de Saint-Étienne-de-Chomeil, de 14 h à 16 h 30 ;</li>
+      <li>vendredi 16 octobre : agence postale de Trizac, de 9 h 30 à 11 h 30 ;</li>
+      <li>nouveau : mairie de Collandres, le 2 novembre puis le premier lundi tous les deux mois, de 9 h 30 à 11 h 30.</li>
+    </ul>
+    <p>Les organismes partenaires (CAF, CPAM, MSA, CARSAT, France Travail, Mission locale…) reçoivent sur rendez-vous : le détail figure dans le planning en PDF.</p>
+
+- date: "2026-09-28"
+  type: info
+  theme: vie
+  titre: "Repas des Rochers en Folie, samedi 24 octobre"
+  resume: "Truffade, jambon de pays, salade et tarte feuilletée aux pommes à la salle des fêtes, le samedi 24 octobre 2026. 15 € par personne, 40 places, sur réservation uniquement."
+  pdf: "2026-09-28-repas-rochers-en-folie.pdf"
+  texte: |
+    <p>L'association Les Rochers en Folie organise un repas le <strong>samedi 24 octobre 2026</strong> à la salle des fêtes de Saint-Bonnet-de-Condat.</p>
+    <p>Au menu : truffade, jambon de pays, salade et tarte feuilletée aux pommes. Tarif : 15 € par personne (café et vin non compris).</p>
+    <p><strong>Seulement 40 places, sur réservation uniquement</strong>, par SMS au <a href="sms:+33681925132">06 81 92 51 32</a> avec vos nom, prénom et nombre de repas souhaités.</p>
+
+- date: "2026-09-26"
+  type: info
+  theme: vie
+  titre: "Nouveaux horaires de la mairie et du Point Poste"
+  resume: "Depuis le jeudi 1er octobre 2026, le secrétariat de mairie et le Point Poste sont ouverts au public de 9 h à 12 h, les lundis, mardis, jeudis et vendredis."
+  pdf: "2026-09-26-horaires-mairie-point-poste.pdf"
+  texte: |
+    <p>À compter du jeudi 1er octobre 2026, le secrétariat de mairie et le Point Poste seront ouverts au public <strong>de 9 h à 12 h</strong>, les lundis, mardis, jeudis et vendredis (jours d'ouverture inchangés).</p>
+    <p>Merci de votre compréhension.</p>
+
+- date: "2026-09-21"
+  heure: "20:17"
+  type: alerte
+  theme: eau
+  titre: "Coupure du réseau du château d'eau du Chancel"
+  resume: "Le réseau alimenté par le château d'eau du Chancel est fermé ce soir à partir de 20 h. Remise en service prévue demain à partir de 8 h 30."
+  texte: |
+    <p>Le réseau alimenté par le château d'eau du Chancel sera fermé ce soir à partir de 20 h. Nous vous demandons d'anticiper vos besoins en eau avant la coupure.</p>
+    <p><strong>La remise en service est prévue demain à partir de 8 h 30.</strong></p>
+    <p>Le château d'eau ne remontant pas suffisamment, nous vous tiendrons informés afin de vous préciser si cette fermeture devra être renouvelée les prochains jours ou si elle restera exceptionnelle.</p>
+    <p>Merci à tous pour votre compréhension et votre vigilance.</p>
+
+- date: "2026-09-16"
+  heure: "14:35"
+  type: alerte
+  theme: eau
+  titre: "Coupure d'eau et travaux sur le réseau"
+  resume: "Les coupures nocturnes sont maintenues. Ce soir, l'eau est coupée dès 21 h ; remise en eau demain après 9 h, une fois les travaux réalisés."
+  texte: |
+    <p>Suite à la fermeture de l'eau durant la nuit dernière, nous avons constaté que le niveau du château d'eau est bien remonté. À l'inverse, lorsque l'alimentation reste ouverte durant la nuit, le niveau ne remonte pas, ce qui laisse apparaître une consommation d'eau particulièrement importante pendant les heures nocturnes.</p>
+    <p>Afin de préserver les réserves et de poursuivre nos recherches, les coupures nocturnes vont donc être maintenues.</p>
+    <p><strong>Exceptionnellement ce soir, l'eau sera coupée à partir de 21 h.</strong> Des travaux étant programmés demain matin de bonne heure, la remise en eau n'interviendra qu'après 9 h, une fois les travaux réalisés.</p>
+    <p>Nous vous tiendrons informés de la suite des opérations. Nous invitons une nouvelle fois chacun à faire preuve de la plus grande vigilance et à limiter au maximum sa consommation d'eau, afin de préserver les réserves disponibles.</p>
+    <p>Merci à tous pour votre compréhension et votre coopération.</p>
+
+- date: "2026-09-15"
+  heure: "16:32"
+  type: alerte
+  theme: eau
+  titre: "Coupures d'eau nocturnes – château d'eau de Laurus"
+  resume: "En raison d'une baisse très rapide du niveau du château d'eau de Laurus, l'eau est coupée chaque nuit de 20 h à 7 h jusqu'au retour à une situation normale."
+  texte: |
+    <p><strong>Communiqué officiel – restriction temporaire de l'alimentation en eau.</strong></p>
+    <p>En raison d'une baisse très importante et particulièrement rapide du niveau du château d'eau de Laurus, la commune est contrainte de mettre en place des coupures nocturnes d'alimentation en eau.</p>
+    <p><strong>À compter de ce soir, l'eau sera coupée à partir de 20 h et remise en service à 7 h le lendemain matin.</strong> Cette mesure sera reconduite chaque nuit, jusqu'au retour à une situation normale, afin d'éviter la vidange complète du château d'eau et de préserver au maximum les réserves disponibles.</p>
+    <p>Nous demandons à l'ensemble des usagers concernés de prendre toutes les dispositions nécessaires avant 20 h et d'anticiper leurs besoins en eau pour la nuit. Dans le contexte actuel, toute consommation non indispensable doit impérativement être évitée.</p>
+    <p>La commune remercie chacun pour sa compréhension, sa vigilance et le strict respect de ces consignes.</p>
+
+- date: "2026-09-15"
+  type: info
+  theme: eau
+  titre: "Rappel aux agriculteurs : consommation d'eau"
+  resume: "Consommation au strict nécessaire, abreuvement compris. Il est interdit de remplir des cuves au réseau communal ; le point d'eau du Frayssinet reste à disposition."
+  texte: |
+    <p>Compte tenu de la situation actuelle sur le réseau d'eau, nous rappelons qu'il est <strong>indispensable</strong> que chacun <strong>limite au strict nécessaire</strong> sa consommation, y compris pour l'abreuvement des animaux.</p>
+    <p><strong>Il est strictement interdit de remplir des cuves avec l'eau provenant du réseau communal.</strong> Pour vos besoins, le point d'eau du Frayssinet reste à votre disposition.</p>
+    <p>Des rondes de surveillance et des contrôles seront effectués. En cas d'abus ou de non-respect de ces consignes, la commune se verra dans l'obligation de prendre les mesures nécessaires et, le cas échéant, de sanctionner les comportements constatés.</p>
+    <p>Merci à chacun de faire preuve de responsabilité afin de préserver au maximum les réserves d'eau.</p>
+
+- date: "2026-09-13"
+  type: info
+  theme: eau
+  titre: "Fuite d'eau : merci de limiter votre consommation"
+  resume: "La fuite sur le réseau du château d'eau de Laurus est localisée et sera réparée demain. Les habitants du bourg sont invités à réduire au maximum leur consommation."
+  texte: |
+    <p>La fuite sur le réseau du château d'eau de Laurus a été localisée. <strong>Elle ne pourra malheureusement être réparée que demain.</strong></p>
+    <p>En attendant, nous demandons à tous les habitants du bourg de réduire au maximum leur consommation d'eau aujourd'hui. Cette vigilance est essentielle pour permettre au château d'eau de retrouver un niveau suffisant, et aux habitants situés sur la conduite entre la mairie et le Lessard de retrouver l'eau le plus rapidement possible dès que la fuite sera réparée.</p>
+    <p>Chaque économie d'eau compte. Merci à tous pour votre compréhension et votre coopération.</p>
+
+- date: "2026-09-12"
+  type: info
+  theme: eau
+  titre: "Fuite sur le château d'eau de Laurus"
+  resume: "Une fuite fait fortement baisser le niveau du château d'eau de Laurus. Intervention cet après-midi ; des coupures d'eau sont possibles."
+  texte: |
+    <p><strong>Alerte eau – information importante pour les habitants.</strong> Une fuite a été constatée sur le château d'eau de Laurus. Le niveau d'eau baisse fortement et le réseau est actuellement perturbé.</p>
+    <p>Tous les habitants du bourg et ceux desservis par Laurus sont invités à faire très attention à leur consommation d'eau et à la limiter au maximum.</p>
+    <p>Des personnes vont intervenir sur le réseau cet après-midi afin de rechercher la fuite et de rétablir le réseau à la normale le plus rapidement possible. <strong>Des coupures d'eau peuvent avoir lieu le temps de l'intervention.</strong></p>
+    <p>Merci à tous pour votre patience, votre vigilance et votre solidarité.</p>
+
+- date: "2026-09-07"
+  type: info
+  theme: eau
+  titre: "Règlement des factures d'eau"
+  resume: "Les chèques ne sont plus acceptés pour régler les factures d'eau. Prélèvement automatique, carte bancaire ou virement."
+  texte: |
+    <p><strong>Les chèques ne sont plus acceptés pour le règlement des factures d'eau.</strong></p>
+    <p>Pour être prélevé, apportez vos papiers à la mairie avant le 30 septembre 2026 :</p>
+    <ul>
+      <li>un relevé d'identité bancaire (RIB) à votre nom ;</li>
+      <li>une pièce d'identité ;</li>
+      <li>un justificatif de domicile (si besoin).</li>
+    </ul>
+    <p>Si vous ne souhaitez pas de prélèvement, vous pouvez régler vos factures d'eau par carte bancaire ou par virement.</p>
+
+- date: "2026-09-04"
+  type: info
+  theme: eau
+  titre: "Château d'eau de Réghéat"
+  resume: "Le château d'eau de Réghéat vient d'être rempli : il est déconseillé de boire l'eau au moins jusqu'à demain."
+  texte: |
+    <p><strong>Le château d'eau de Réghéat vient d'être rempli. Il est déconseillé de boire l'eau, au moins jusqu'à demain</strong> : elle peut encore être trouble suite au remplissage.</p>
+    <p>Si besoin, des bouteilles d'eau sont disponibles en les demandant à Nathalie.</p>
+    <p>Merci de votre compréhension. — La mairie</p>
