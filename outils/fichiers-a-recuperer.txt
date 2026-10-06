@@ -1,0 +1,18 @@
+# Fichiers que GitHub va chercher automatiquement et ajouter au site
+# (programme : outils/recuperer_fichiers.py, lancé par .github/workflows/recuperer-fichiers.yml).
+#
+# Une ligne par fichier :  adresse-source   chemin-dans-le-site   [largeur maximale, pour les photos]
+# - Si le chemin se termine par .pdf et que la source est une image (affiche), elle est convertie en PDF A4.
+# - Un fichier déjà présent dans le site n'est jamais téléchargé une deuxième fois.
+
+# Photo de la mairie-école : Père Igor, CC BY-SA 4.0, Wikimedia Commons
+https://upload.wikimedia.org/wikipedia/commons/5/55/Saint-Bonnet-de-Condat_mairie-%C3%A9cole.jpg  assets/images/mairie-ecole.jpg  1600
+
+# Infos & Alertes : affiches de la mairie
+https://panneau-pocket.s3.gra.perf.cloud.ovh.net/cache/sign_image/21308716376ac49b976a8280.42024875-1791269783.jpg/a636419d77a3234d17b62b1cdcaf2c23  documents/infos-alertes/2026-10-06-degrevement-impots-directs.pdf
+https://panneau-pocket.s3.gra.perf.cloud.ovh.net/cache/sign_image/14765403576ac49b67a0a453.14769809-1791269735.jpg/4573210af7d82bb6cc81e82d8c2828cc  documents/infos-alertes/2026-10-06-cartouches-d-encre.pdf
+https://panneau-pocket.s3.gra.perf.cloud.ovh.net/cache/sign_image/2712047866abf897c538ff9.11187774-1790937468.jpg/af4365aac65ae11563038c2b94945d80  documents/infos-alertes/2026-10-02-circulation-rue-des-rochers.pdf
+https://panneau-pocket.s3.gra.perf.cloud.ovh.net/cache/sign_image/16315188656abf886b4637f2.25241512-1790937195.jpg/9725164499bb8e9c2061e8d8ccc71275  documents/infos-alertes/2026-10-02-elagage-lignes-electriques.pdf
+https://panneau-pocket.s3.gra.perf.cloud.ovh.net/cache/sign_image/9004228666abf5fdc4e8223.99457143-1790926812.jpg/324bc299a66f40f6e53dab865e6f496f  documents/infos-alertes/2026-10-02-france-services-octobre.pdf
+https://panneau-pocket.s3.gra.perf.cloud.ovh.net/cache/sign_image/15732080036aba7af19de532.52892296-1790606065.jpg/939f6badbd135255bd761ab690e00432  documents/infos-alertes/2026-09-28-repas-rochers-en-folie.pdf
+https://panneau-pocket.s3.gra.perf.cloud.ovh.net/cache/sign_image/6335824806ab76fa650de76.11310729-1790406566.jpg/faffc12148227ce28e63fddfa6ac935c  documents/infos-alertes/2026-09-26-horaires-mairie-point-poste.pdf
