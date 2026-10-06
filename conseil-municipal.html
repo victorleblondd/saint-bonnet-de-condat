@@ -1,0 +1,48 @@
+---
+title: "Le conseil municipal"
+permalink: /conseil-municipal/
+chapo: "Onze élus au service de la commune, installés le 22 mars 2026."
+description: "Le conseil municipal de Saint-Bonnet-de-Condat : la maire Sarah Chabrier, les adjoints, les conseillers municipaux et les permanences des élus."
+---
+{%- assign e = site.data.elus -%}
+<section class="bloc" aria-labelledby="titre-permanences">
+  <h2 id="titre-permanences" class="titre-decore">Le maire et les adjoints</h2>
+  <p class="bloc-intro">Pour toute question, contactez l'élu chargé du sujet, ou la mairie au <a href="tel:{{ site.data.mairie.telephone_lien }}">{{ site.data.mairie.telephone }}</a>.</p>
+  <div class="grille-3">
+    <div class="panneau carte-elu">
+      <p class="fonction">{{ e.maire.fonction }}</p>
+      <h3 class="nom">{{ e.maire.nom }}</h3>
+      <p class="permanence">{{ e.maire.permanence }}</p>
+      <p class="telephone"><a href="tel:{{ e.maire.telephone_lien }}">{% include icone.html nom="telephone" %}{{ e.maire.telephone }}</a></p>
+    </div>
+    {%- for a in e.adjoints %}
+    <div class="panneau carte-elu">
+      <p class="fonction">{{ a.fonction | replace: "1er", "1<sup>er</sup>" | replace: "2e", "2<sup>e</sup>" }}</p>
+      <h3 class="nom">{{ a.nom }}</h3>
+      <p class="permanence">{{ a.permanence }} Pour toutes vos demandes concernant {{ a.domaines }}.</p>
+      <p class="telephone"><a href="tel:{{ a.telephone_lien }}">{% include icone.html nom="telephone" %}{{ a.telephone }}</a></p>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+
+<div class="grille-asymetrique bloc">
+  <section class="panneau" aria-labelledby="titre-conseillers">
+    <h2 id="titre-conseillers" class="h3-like">Les conseillers municipaux</h2>
+    <ul class="liste-noms">
+      {%- for c in e.conseillers %}
+      <li>{{ c }}</li>
+      {%- endfor %}
+    </ul>
+  </section>
+  <section class="panneau panneau--info" aria-labelledby="titre-personnel">
+    <h2 id="titre-personnel" class="h3-like">Le personnel communal</h2>
+    <ul class="liste-simple">
+      {%- for p in e.personnel %}
+      <li><strong>{{ p.nom }}</strong><br>{{ p.fonction }}</li>
+      {%- endfor %}
+    </ul>
+  </section>
+</div>
+
+<p><a class="lien-fleche" href="{{ '/actualites/bilan-des-trois-premiers-mois-de-mandat/' | relative_url }}">Le bilan des trois premiers mois de mandat{% include icone.html nom="fleche" %}</a></p>

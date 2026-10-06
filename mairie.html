@@ -1,0 +1,68 @@
+---
+title: "La mairie"
+permalink: /mairie/
+chapo: "Horaires, coordonnées et services proposés aux habitants par la mairie de Saint-Bonnet-de-Condat."
+description: "Mairie de Saint-Bonnet-de-Condat : adresse, téléphone, horaires d'ouverture, Point Poste, salle des fêtes, photocopies, encombrants et médiathèque."
+---
+{%- assign m = site.data.mairie -%}
+<section class="bloc" id="contact" aria-labelledby="titre-contact">
+  <h2 id="titre-contact" class="titre-decore">Nous contacter</h2>
+  <div class="grille-3">
+    <div class="panneau">
+      <h3>Coordonnées</h3>
+      <div class="coordonnees">
+        <p>{% include icone.html nom="lieu" %}<span>{{ m.nom }}<br>{{ m.adresse_ligne1 }}<br>{{ m.adresse_ligne2 }}</span></p>
+        <p>{% include icone.html nom="telephone" %}<a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a></p>
+        <p>{% include icone.html nom="email" %}<a href="mailto:{{ m.email }}">{{ m.email | replace: "@", "@<wbr>" }}</a></p>
+      </div>
+      <p class="note">Sur Facebook : page « {{ m.facebook_nom }} ».</p>
+    </div>
+    <div class="panneau">
+      <h3>Horaires d'ouverture</h3>
+      {% include horaires.html semaine_complete=true %}
+      <p class="note">Depuis le 1<sup>er</sup> octobre 2026. Le Point Poste est ouvert aux mêmes horaires.</p>
+    </div>
+    <div class="panneau panneau--info">
+      <h3>Accueil</h3>
+      <p>Le secrétariat est assuré par <strong>Nadège Rodde</strong>, secrétaire de mairie.</p>
+      <p><strong>Sarah Chabrier</strong>, maire, est présente en mairie <strong>tous les jeudis matin, sans rendez-vous</strong>. Les autres jours, sur rendez-vous.</p>
+      <p><a class="lien-fleche" href="{{ '/conseil-municipal/' | relative_url }}">Contacter un élu{% include icone.html nom="fleche" %}</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="bloc" id="services" aria-labelledby="titre-services">
+  <h2 id="titre-services" class="titre-decore">Les services de la mairie</h2>
+  <div class="grille-2">
+    <div class="panneau" id="point-poste">
+      <h3>Point Poste</h3>
+      <p>Le Point Poste est installé à la mairie. Il est ouvert le lundi, mardi, jeudi et vendredi, de 9 h à 12 h.</p>
+    </div>
+    <div class="panneau" id="salle-des-fetes">
+      <h3>Location de la salle des fêtes</h3>
+      <p>La salle des fêtes est disponible pour vos événements familiaux et associatifs.</p>
+      <div class="tarifs">
+        <p><span class="chiffre-cle">Gratuit</span>pour les habitants de Saint-Bonnet-de-Condat</p>
+        <p><span class="chiffre-cle">50 €</span>pour les personnes extérieures à la commune</p>
+      </div>
+      <p>Réservation auprès de la mairie : <a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a> ou <a href="mailto:{{ m.email }}">{{ m.email | replace: "@", "@<wbr>" }}</a>.</p>
+    </div>
+    <div class="panneau" id="encombrants">
+      <h3>Ramassage des encombrants</h3>
+      <p>La commune collecte les objets encombrants <strong>le dernier vendredi de chaque mois</strong>.</p>
+      <p><strong>Inscription obligatoire en mairie avant la collecte</strong>, au <a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a>.</p>
+    </div>
+    <div class="panneau" id="photocopies">
+      <h3>Photocopies gratuites</h3>
+      <p>La mairie met gratuitement à la disposition des habitants un service de photocopie pour leurs démarches administratives courantes. Renseignements auprès du secrétariat.</p>
+    </div>
+    <div class="panneau" id="cartouches">
+      <h3>Cartouches d'encre usagées</h3>
+      <p>Déposez vos cartouches d'encre en mairie, toute l'année. Elles sont remises à l'école de Lugarde, qui les fait recycler pour financer les sorties, le matériel et les activités des enfants.</p>
+    </div>
+    <div class="panneau" id="mediatheque">
+      <h3>Médiathèque du Cantal</h3>
+      <p>Chaque vendredi après-midi, profitez du service de médiathèque : des milliers d'ouvrages, magazines, livres audio et ressources numériques. Inscription et réservations sur <a href="https://culture.cantal.fr" rel="noopener">culture.cantal.fr</a>.</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,39 @@
+---
+title: "Mentions légales"
+permalink: /mentions-legales/
+description: "Mentions légales, données personnelles et accessibilité du site de la commune de Saint-Bonnet-de-Condat."
+---
+{%- assign m = site.data.mairie -%}
+<div class="texte-legal">
+  <section class="bloc" aria-labelledby="titre-editeur">
+    <h2 id="titre-editeur">Éditeur du site</h2>
+    <p>Commune de Saint-Bonnet-de-Condat<br>{{ m.nom }}, {{ m.adresse_ligne1 }}, {{ m.adresse_ligne2 }}<br>Téléphone : <a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a> · Courriel : <a href="mailto:{{ m.email }}">{{ m.email }}</a></p>
+    <p>Directrice de la publication : Sarah Chabrier, maire.</p>
+  </section>
+
+  <section class="bloc" aria-labelledby="titre-hebergement">
+    <h2 id="titre-hebergement">Hébergement</h2>
+    <p>GitHub, Inc. (service GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis.</p>
+  </section>
+
+  <section class="bloc" aria-labelledby="titre-credits">
+    <h2 id="titre-credits">Contenus et crédits</h2>
+    <p>Les textes, avis et affiches sont publiés par la mairie de Saint-Bonnet-de-Condat. Les articles d'actualité reprennent <em>La Gazette des Saint-Bonnetoux</em>, le bulletin municipal.</p>
+    <p>Photographie de la mairie-école : <a href="https://commons.wikimedia.org/wiki/File:Saint-Bonnet-de-Condat_mairie-%C3%A9cole.jpg">Père Igor, Wikimedia Commons</a>, licence <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr">CC BY-SA 4.0</a>, image redimensionnée.</p>
+  </section>
+
+  <section class="bloc" id="donnees" aria-labelledby="titre-donnees">
+    <h2 id="titre-donnees">Données personnelles</h2>
+    <p>Ce site ne collecte aucune donnée personnelle : il ne comporte ni formulaire, ni cookie, ni outil de mesure d'audience. L'hébergeur peut enregistrer des données techniques de connexion, comme l'adresse IP, pour assurer la sécurité du service.</p>
+    <p>Pour toute question, contactez la mairie.</p>
+  </section>
+
+  <section class="bloc" id="accessibilite" aria-labelledby="titre-accessibilite">
+    <h2 id="titre-accessibilite">Accessibilité</h2>
+    <p>La commune de Saint-Bonnet-de-Condat s'engage à rendre son site accessible, conformément à l'article 47 de la loi n° 2005-102 du 11 février 2005.</p>
+    <p><strong>État de conformité : non conforme.</strong> Aucun audit de conformité au référentiel général d'amélioration de l'accessibilité (RGAA) n'a encore été réalisé.</p>
+    <p>Les avis publiés en PDF sont des affiches : leur texte est repris sur la page <a href="{{ '/infos-alertes/' | relative_url }}">Infos &amp; Alertes</a>.</p>
+    <p>Si vous n'arrivez pas à accéder à un contenu, contactez la mairie au <a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a> ou à <a href="mailto:{{ m.email }}">{{ m.email }}</a> : nous vous le transmettrons sous une autre forme.</p>
+    <p>Si vous n'obtenez pas de réponse satisfaisante, vous pouvez saisir le <a href="https://www.defenseurdesdroits.fr">Défenseur des droits</a>.</p>
+  </section>
+</div>
