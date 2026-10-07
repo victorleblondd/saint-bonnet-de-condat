@@ -6,10 +6,9 @@ description: "Site officiel de la commune de Saint-Bonnet-de-Condat (Cantal, 151
 lang: fr-FR
 locale: fr_FR
 
-# Adresse du site. Si un nom de domaine est relié un jour (ex. saint-bonnet-de-condat.fr),
-# mettre url: "https://saint-bonnet-de-condat.fr" et baseurl: ""
-url: "https://victorleblondd.github.io"
-baseurl: "/saint-bonnet-de-condat"
+# Adresse du site : le nom de domaine de la commune (relié par le fichier CNAME).
+url: "https://saint-bonnet-de-condat.fr"
+baseurl: ""
 
 timezone: Europe/Paris
 encoding: utf-8

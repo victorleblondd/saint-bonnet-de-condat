@@ -1,7 +1,7 @@
 # Saint-Bonnet-de-Condat — site de la commune
 
 Site officiel de la commune de Saint-Bonnet-de-Condat (Cantal, 15190), publié avec GitHub Pages :
-https://victorleblondd.github.io/saint-bonnet-de-condat/
+https://saint-bonnet-de-condat.fr/
 
 GitHub construit le site automatiquement (Jekyll) à chaque modification de la branche `main`.
 Aucune installation n'est nécessaire.
@@ -59,8 +59,10 @@ GitHub crée alors la Release correspondante (`.github/workflows/publier-version
 
 ## Nom de domaine
 
-Pour relier un nom de domaine (par exemple `saint-bonnet-de-condat.fr`), indiquer l'adresse dans
-**Settings → Pages → Custom domain**, puis dans `_config.yml` : `url: "https://saint-bonnet-de-condat.fr"` et `baseurl: ""`.
+Le site répond à l'adresse `saint-bonnet-de-condat.fr`. Le domaine appartient à la commune et se gère chez OVHcloud
+(zone DNS : quatre enregistrements A et quatre AAAA vers GitHub Pages, `www` en CNAME vers `victorleblondd.github.io`).
+Le fichier `CNAME` à la racine du dépôt et `url` dans `_config.yml` doivent garder cette adresse.
+L'ancienne adresse https://victorleblondd.github.io/saint-bonnet-de-condat/ redirige vers le domaine.
 Si l'hébergeur change, mettre à jour la rubrique « Hébergement » des mentions légales.
 
 ## Crédits
