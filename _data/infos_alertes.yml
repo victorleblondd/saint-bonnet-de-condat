@@ -21,6 +21,21 @@
 #  sans ouvrir le PDF). Les avis sans PDF affichent ce texte.
 # =====================================================================
 
+- date: "2026-10-08"
+  type: info
+  theme: vie
+  titre: "Halloween au Camping La Santoire, samedi 31 octobre"
+  resume: "Venez fêter Halloween au Camping La Santoire ! Une ambiance mystérieuse, des frissons, des rires et surtout… beaucoup de magie ! Venez déguisés et partagez avec nous une soirée d’Halloween inoubliable !"
+  pdf: "2026-10-08-halloween-camping-la-santoire.pdf"
+  texte: |
+    <p><strong>Samedi 31 octobre 2026</strong>, au Camping La Santoire :</p>
+    <ul>
+      <li>bar et apéro à partir de 18 h 30, dîner à 19 h 30 pile ;</li>
+      <li>menu d'horreur à 15 € : apéro « Potion de Sorcière », plat « Lasagna Enchantée », dessert « Cerveau Congelé » ;</li>
+      <li>à partir de 21 h : chasse aux monstres pour les jeunes et fête de monstres.</li>
+    </ul>
+    <p>Dîner <strong>sur réservation uniquement</strong>, places limitées : par SMS au <a href="sms:+33767748898">07 67 74 88 98</a> ou au bar du camping. Venez déguisés !</p>
+
 - date: "2026-10-06"
   type: info
   theme: vie
