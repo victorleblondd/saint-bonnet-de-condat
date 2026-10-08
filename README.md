@@ -45,6 +45,7 @@ GitHub crée alors la Release correspondante (`.github/workflows/publier-version
 | Adresse, téléphone, horaires de la mairie, page Facebook | `_data/mairie.yml` |
 | Élus, permanences, personnel communal | `_data/elus.yml` |
 | Menu principal | `_data/navigation.yml` |
+| Bandeau d'annonce temporaire de l'accueil (texte, dernier jour d'affichage) | `_data/annonce.yml` |
 | Articles du bulletin municipal | `_posts/AAAA-MM-JJ-titre.html` (un fichier par article) |
 | Pages | `mairie.html`, `vie-pratique.html`, `vie-locale.html`, `decouvrir.html`… |
 | Apparence | `assets/css/site.css` |

@@ -191,6 +191,12 @@ time, .chiffre { font-variant-numeric: tabular-nums; }
 @media (max-width: 520px) { .marque-nom { font-size: 1.22rem; } .marque-sous-titre { font-size: .72rem; letter-spacing: .08em; } .bouton-menu { padding: 10px; } .logo-entete { height: 46px; } .entete-interieur { gap: 10px; }
   .bouton-menu-libelle { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } }
 
+/* ---------- Bandeau d'annonce temporaire (accueil) ---------- */
+.bandeau-annonce { background: var(--or-pale); color: var(--encre); }
+.bandeau-annonce p { margin-block: 0; padding-block: 12px; font-weight: 700; line-height: 1.35; text-align: center; text-wrap: balance; }
+.bandeau-annonce .icone { width: 1.35em; height: 1.35em; margin-right: 8px; vertical-align: -.3em; color: var(--or); }
+@media (max-width: 520px) { .bandeau-annonce p { padding-block: 10px; font-size: 1rem; } .bandeau-annonce .icone { display: none; } }
+
 /* ---------- Bandeau d'alerte (accueil) ---------- */
 .bandeau-alerte { background: var(--alerte); color: var(--sur-alerte); }
 .bandeau-alerte .conteneur { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; padding-block: 14px; }

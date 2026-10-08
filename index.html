@@ -6,6 +6,7 @@ classe_corps: page-accueil
 description: "Site officiel de la commune de Saint-Bonnet-de-Condat (Cantal) : infos et alertes de la mairie, horaires, services, conseil municipal, vie pratique et vie locale."
 ---
 {%- assign m = site.data.mairie -%}
+{%- include bandeau-annonce.html -%}
 {%- assign alerte = nil -%}
 {%- for it in site.data.infos_alertes -%}{%- if it.type == "alerte" -%}{%- assign alerte = it -%}{%- break -%}{%- endif -%}{%- endfor -%}
 {%- if alerte %}

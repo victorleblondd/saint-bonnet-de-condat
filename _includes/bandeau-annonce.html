@@ -1,0 +1,24 @@
+{%- comment -%} Bandeau d'annonce temporaire de l'accueil (réglages : _data/annonce.yml) {%- endcomment -%}
+{%- assign annonce = site.data.annonce -%}
+{%- assign aujourdhui = site.time | date: "%Y-%m-%d" -%}
+{%- assign fin = annonce.jusquau | date: "%Y-%m-%d" -%}
+{%- if annonce.message and annonce.message != "" -%}
+{%- unless annonce.jusquau and fin < aujourdhui %}
+<div class="bandeau-annonce" role="region" aria-label="Annonce de la mairie"{% if annonce.jusquau %} data-fin="{{ fin }}"{% endif %}>
+  <p class="conteneur">{% include icone.html nom="info" %}<span>{{ annonce.message }}</span></p>
+</div>
+{%- if annonce.jusquau %}
+<script>
+  /* Masque le bandeau après son dernier jour d'affichage (date de Paris) */
+  (function (bandeau) {
+    try {
+      var j = {};
+      new Intl.DateTimeFormat('fr-FR', { timeZone: 'Europe/Paris', year: 'numeric', month: '2-digit', day: '2-digit' })
+        .formatToParts(new Date()).forEach(function (p) { j[p.type] = p.value; });
+      if (j.year + '-' + j.month + '-' + j.day > bandeau.getAttribute('data-fin')) { bandeau.hidden = true; }
+    } catch (e) {}
+  })(document.currentScript.previousElementSibling);
+</script>
+{%- endif %}
+{%- endunless %}
+{%- endif %}
