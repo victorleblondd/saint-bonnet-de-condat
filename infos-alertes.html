@@ -35,6 +35,11 @@ description: "Les avis et alertes de la mairie de Saint-Bonnet-de-Condat : coupu
     </div>
   </div>
   <aside class="pile-laterale">
+    <div class="panneau panneau--info">
+      <h3>Les avis sur votre téléphone</h3>
+      <p>Ajoutez le site à l'écran d'accueil de votre téléphone et activez les notifications : chaque nouvel avis s'affichera, même téléphone verrouillé.</p>
+      <p><a class="lien-fleche" href="{{ '/notifications/' | relative_url }}">Activer les notifications{% include icone.html nom="fleche" %}</a></p>
+    </div>
     <div class="panneau panneau--alerte">
       <h3>Un problème d'eau ?</h3>
       <p>Fuite, coupure ou eau trouble : prévenez la mairie au <a href="tel:{{ site.data.mairie.telephone_lien }}"><strong>{{ site.data.mairie.telephone }}</strong></a>.</p>
