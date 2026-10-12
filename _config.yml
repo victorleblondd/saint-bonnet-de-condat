@@ -20,8 +20,8 @@ permalink: /bulletin-municipal/:title/
 # Les clés secrètes sont dans les secrets GitHub du dépôt (SUPABASE_SECRET_KEY, VAPID_PRIVATE_KEY).
 notifications:
   cle_vapid: "BB_rgFigOgTZJo7yWb5tEg8BBQyVf03nwRMt8E47knM-6ro69PbQh_ZDRZnqNHyMR8BLIf3MwSDuEbcyMTFasY0"
-  supabase_url: ""
-  supabase_cle: ""
+  supabase_url: "https://luybdwrmpzmpvkwddbha.supabase.co"
+  supabase_cle: "sb_publishable_74_5ITQasjnVJHQbt754Hg_X13bLZpu"
 
 defaults:
   - scope:
