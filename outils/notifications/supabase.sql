@@ -1,5 +1,5 @@
 -- Saint-Bonnet-de-Condat — abonnements aux notifications du site.
--- À coller une seule fois dans Supabase : SQL Editor > New query > Run.
+-- À coller dans Supabase : SQL Editor > New query > Run. On peut le relancer : les abonnements sont conservés.
 -- Le site n'a accès qu'aux deux fonctions abonner / desabonner (clé publique).
 -- La liste des abonnés ne se lit qu'avec la clé secrète (envoi depuis GitHub).
 
@@ -41,7 +41,9 @@ as $$
   delete from public.abonnements where endpoint = p_endpoint;
 $$;
 
-revoke all on function public.abonner(text, text, text) from public;
-revoke all on function public.desabonner(text) from public;
+-- Seule la clé publique (rôle anon) appelle ces deux fonctions : ce sont les seules entrées du site.
+-- Le conseiller de sécurité de Supabase les signale (« Public Can Execute SECURITY DEFINER Function ») : c'est voulu.
+revoke all on function public.abonner(text, text, text) from public, authenticated;
+revoke all on function public.desabonner(text) from public, authenticated;
 grant execute on function public.abonner(text, text, text) to anon;
 grant execute on function public.desabonner(text) to anon;
