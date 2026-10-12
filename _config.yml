@@ -16,6 +16,13 @@ encoding: utf-8
 # Les articles du bulletin municipal (dossier _posts) sont publiés sous /bulletin-municipal/nom-de-l-article/
 permalink: /bulletin-municipal/:title/
 
+# Notifications sur téléphone (page /notifications/) : valeurs publiques uniquement.
+# Les clés secrètes sont dans les secrets GitHub du dépôt (SUPABASE_SECRET_KEY, VAPID_PRIVATE_KEY).
+notifications:
+  cle_vapid: "BB_rgFigOgTZJo7yWb5tEg8BBQyVf03nwRMt8E47knM-6ro69PbQh_ZDRZnqNHyMR8BLIf3MwSDuEbcyMTFasY0"
+  supabase_url: ""
+  supabase_cle: ""
+
 defaults:
   - scope:
       path: ""
