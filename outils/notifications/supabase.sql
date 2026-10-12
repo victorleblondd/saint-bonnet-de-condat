@@ -16,7 +16,10 @@ create table if not exists public.abonnements (
 );
 
 alter table public.abonnements enable row level security;
-revoke all on table public.abonnements from anon, authenticated;
+revoke all on table public.abonnements from anon, authenticated, service_role;
+-- L'envoi depuis GitHub (clé secrète) lit la liste et retire les abonnements expirés.
+-- Droit donné explicitement : les nouveaux projets Supabase n'en donnent plus par défaut.
+grant select, delete on table public.abonnements to service_role;
 
 create or replace function public.abonner(p_endpoint text, p_p256dh text, p_auth text)
 returns void
