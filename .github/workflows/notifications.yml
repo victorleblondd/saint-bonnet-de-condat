@@ -1,0 +1,67 @@
+name: Envoyer les notifications
+
+# Envoie une notification aux habitants abonnés (page « Notifications » du site) :
+# - automatiquement, pour chaque nouvel avis ajouté dans _data/infos_alertes.yml
+#   (sauf si le message du commit contient « [sans notification] ») ;
+# - à la main : onglet Actions > « Envoyer les notifications » > « Run workflow ».
+# Deux fois par semaine, une simple lecture garde actif le service des abonnements (Supabase).
+# Programme : outils/notifications/envoyer.mjs. Secrets : SUPABASE_SECRET_KEY et VAPID_PRIVATE_KEY.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "_data/infos_alertes.yml"
+  workflow_dispatch:
+    inputs:
+      titre:
+        description: "Titre de la notification"
+        required: true
+        type: string
+      message:
+        description: "Texte de la notification"
+        required: true
+        type: string
+      lien:
+        description: "Page ouverte quand on touche la notification"
+        required: false
+        default: "/infos-alertes/"
+        type: string
+  schedule:
+    - cron: "23 6 * * 1,4"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: notifications
+  cancel-in-progress: false
+
+jobs:
+  envoyer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Installer les outils
+        run: npm install --no-save --no-audit --no-fund --no-package-lock web-push@3.6.7 js-yaml@4.1.0
+
+      - name: Envoyer
+        env:
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+          EVENEMENT: ${{ github.event_name }}
+          AVANT: ${{ github.event.before }}
+          APRES: ${{ github.sha }}
+          MESSAGE_COMMIT: ${{ github.event.head_commit.message }}
+          TITRE: ${{ inputs.titre }}
+          MESSAGE: ${{ inputs.message }}
+          LIEN: ${{ inputs.lien }}
+        run: node outils/notifications/envoyer.mjs
