@@ -1,0 +1,54 @@
+---
+title: "Notifications"
+permalink: /notifications/
+chapo: "Recevez les avis et alertes de la mairie sur votre téléphone, même quand il est verrouillé, sans application à installer."
+description: "Ajoutez le site de Saint-Bonnet-de-Condat à l'écran d'accueil de votre téléphone et recevez les avis et alertes de la mairie en notification."
+---
+<div class="grille-asymetrique">
+  <div>
+    <section class="bloc" aria-labelledby="titre-appareil">
+      <h2 id="titre-appareil">Sur cet appareil</h2>
+      <div class="panneau notif" data-notifications data-statut="chargement">
+        <p class="notif-etat" data-etat role="status" aria-live="polite">Vérification…</p>
+        <p class="notif-actions">
+          <button type="button" class="bouton" data-activer hidden>{% include icone.html nom="cloche" %}Activer les notifications</button>
+          <button type="button" class="bouton bouton--secondaire" data-desactiver hidden>Désactiver les notifications</button>
+        </p>
+        <noscript><p>Activez JavaScript dans votre navigateur pour recevoir les notifications.</p></noscript>
+      </div>
+    </section>
+
+    <section class="bloc" id="iphone" aria-labelledby="titre-iphone">
+      <h2 id="titre-iphone">Sur iPhone ou iPad</h2>
+      <ol class="etapes">
+        <li>Ouvrez <strong>saint-bonnet-de-condat.fr</strong> dans Safari.</li>
+        <li>Touchez le bouton <strong>Partager</strong> (sur les versions récentes, il se trouve dans le menu <strong>« ⋯ »</strong>), puis <strong>« Sur l'écran d'accueil »</strong>. Si l'option <strong>« Ouvrir en tant qu'app web »</strong> apparaît, laissez-la activée. Touchez <strong>« Ajouter »</strong>.</li>
+        <li>Ouvrez le site avec la nouvelle icône <strong>« Saint-Bonnet »</strong> de l'écran d'accueil.</li>
+        <li>Touchez <strong>« Activer »</strong> dans le bandeau bleu en haut de l'accueil (ou revenez sur cette page), puis <strong>« Activer les notifications »</strong> et <strong>« Autoriser »</strong>.</li>
+      </ol>
+      <p class="note">Il faut iOS 16.4 ou une version plus récente. Sur iPhone et iPad, les notifications ne fonctionnent qu'à partir de l'icône de l'écran d'accueil.</p>
+    </section>
+
+    <section class="bloc" id="android" aria-labelledby="titre-android">
+      <h2 id="titre-android">Sur Android</h2>
+      <ol class="etapes">
+        <li>Ouvrez <strong>saint-bonnet-de-condat.fr</strong> dans Chrome, touchez <strong>« Activer les notifications »</strong> sur cette page, puis <strong>« Autoriser »</strong>.</li>
+        <li>Pour avoir l'icône sur l'écran d'accueil : menu <strong>⋮</strong>, puis <strong>« Ajouter à l'écran d'accueil »</strong> (ou <strong>« Installer l'application »</strong>).</li>
+      </ol>
+    </section>
+  </div>
+
+  <aside class="pile-laterale">
+    <div class="panneau panneau--info">
+      <h3>Ce que vous recevrez</h3>
+      <p>Une notification à chaque nouvel avis de la mairie publié dans <a href="{{ '/infos-alertes/' | relative_url }}">Infos &amp; Alertes</a> : coupures d'eau, travaux, fermetures, événements. Elle s'affiche aussi sur l'écran verrouillé.</p>
+    </div>
+    <div class="panneau">
+      <h3>Vos données</h3>
+      <p>Le site enregistre seulement l'adresse technique d'abonnement fournie par votre appareil : ni nom, ni numéro, ni adresse e-mail. Elle est hébergée dans l'Union européenne et supprimée dès que vous désactivez les notifications.</p>
+      <p><a href="{{ '/mentions-legales/' | relative_url }}#donnees">Données personnelles</a></p>
+    </div>
+  </aside>
+</div>
+<script src="{{ '/assets/js/notifications-commun.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/notifications.js' | relative_url }}" defer></script>
