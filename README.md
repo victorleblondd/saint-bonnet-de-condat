@@ -38,6 +38,22 @@ Pour marquer une version importante, ajouter un fichier `outils/versions/vX.Y.Z.
 (par exemple `v1.1.0.md`) sur le modèle de `v1.0.0.md` : titre, commit marqué, puis les notes.
 GitHub crée alors la Release correspondante (`.github/workflows/publier-version.yml`).
 
+## Écran d'accueil et notifications
+
+Les habitants peuvent ajouter le site à l'écran d'accueil de leur téléphone (icône dans `assets/icones/`,
+réglages dans `manifest.webmanifest`) et recevoir les avis de la mairie en notification (page `/notifications/`).
+
+- **Envoi automatique** : chaque nouvel avis ajouté dans `_data/infos_alertes.yml` part en notification
+  (`.github/workflows/notifications.yml`, programme `outils/notifications/envoyer.mjs`).
+  Pour corriger un avis sans renvoyer de notification, écrire `[sans notification]` dans le message du commit.
+- **Envoi à la main** : onglet Actions > « Envoyer les notifications » > « Run workflow » : titre, message et page à ouvrir.
+- **Abonnements** : base Supabase (région Paris), créée avec `outils/notifications/supabase.sql`.
+  Adresse et clés publiques dans `_config.yml` (rubrique `notifications`) ; clés secrètes dans les secrets
+  GitHub du dépôt : `SUPABASE_SECRET_KEY` et `VAPID_PRIVATE_KEY`.
+- Deux fois par semaine, le workflow lit la liste des abonnés pour garder le projet Supabase actif
+  (un projet gratuit s'arrête après 7 jours sans activité). Si le dépôt reste 60 jours sans modification,
+  GitHub suspend cette tâche : la réactiver dans l'onglet Actions.
+
 ## Modifier les informations
 
 | À modifier | Fichier |
@@ -46,6 +62,7 @@ GitHub crée alors la Release correspondante (`.github/workflows/publier-version
 | Élus, permanences, personnel communal | `_data/elus.yml` |
 | Menu principal | `_data/navigation.yml` |
 | Bandeau d'annonce temporaire de l'accueil (texte, dernier jour d'affichage) | `_data/annonce.yml` |
+| Notifications : adresse Supabase et clés publiques | `_config.yml` (rubrique `notifications`) |
 | Articles du bulletin municipal | `_posts/AAAA-MM-JJ-titre.html` (un fichier par article) |
 | Pages | `mairie.html`, `vie-pratique.html`, `vie-locale.html`, `decouvrir.html`… |
 | Apparence | `assets/css/site.css` |

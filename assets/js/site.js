@@ -143,4 +143,16 @@
   }
   ouvrirCible();
   window.addEventListener('hashchange', ouvrirCible);
+
+  /* ----- Application web (écran d'accueil) : service worker des notifications ----- */
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js').catch(function () {});
+  }
+
+  /* ----- Site ouvert depuis l'icône de l'écran d'accueil : inviter à activer les notifications ----- */
+  var invitation = document.querySelector('[data-invitation-notifications]');
+  var depuisEcranAccueil = (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true;
+  if (invitation && depuisEcranAccueil && 'PushManager' in window && 'Notification' in window && Notification.permission === 'default') {
+    invitation.hidden = false;
+  }
 })();

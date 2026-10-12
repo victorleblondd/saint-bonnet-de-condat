@@ -197,6 +197,12 @@ time, .chiffre { font-variant-numeric: tabular-nums; }
 .bandeau-annonce .icone { width: 1.35em; height: 1.35em; margin-right: 8px; vertical-align: -.3em; color: var(--or); }
 @media (max-width: 520px) { .bandeau-annonce p { padding-block: 10px; font-size: 1rem; } .bandeau-annonce .icone { display: none; } }
 
+/* ---------- Invitation aux notifications (site ouvert depuis l'écran d'accueil) ---------- */
+.bandeau-invitation { background: var(--accent-pale); color: var(--encre); }
+.bandeau-invitation p { margin-block: 0; padding-block: 10px; font-weight: 600; line-height: 1.35; text-align: center; text-wrap: balance; }
+.bandeau-invitation .icone { width: 1.25em; height: 1.25em; margin-right: 6px; vertical-align: -.25em; color: var(--accent); }
+.bandeau-invitation a { margin-left: 6px; font-weight: 700; white-space: nowrap; }
+
 /* ---------- Bandeau d'alerte (accueil) ---------- */
 .bandeau-alerte { background: var(--alerte); color: var(--sur-alerte); }
 .bandeau-alerte .conteneur { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; padding-block: 14px; }
@@ -504,6 +510,16 @@ tbody tr:last-child td { border-bottom: 0; }
 .pied-bas p { margin: 0; }
 .pied-bas ul { display: flex; flex-wrap: wrap; gap: 6px 22px; }
 .pied-bas ul li + li { margin-top: 0; }
+
+/* ---------- Notifications ---------- */
+.notif { display: grid; gap: 14px; }
+.notif-etat { margin: 0; font-weight: 600; }
+.notif[data-statut="actif"] .notif-etat { color: var(--vert); }
+.notif[data-statut="refuse"] .notif-etat, .notif[data-statut="erreur"] .notif-etat { color: var(--alerte); }
+.notif-actions { margin: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.notif-actions:not(:has(.bouton:not([hidden]))) { display: none; }
+.etapes { padding-left: 1.4em; }
+.etapes li + li { margin-top: .6em; }
 
 /* ---------- Impression ---------- */
 @media print {
