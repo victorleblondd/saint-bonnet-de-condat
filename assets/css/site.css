@@ -212,7 +212,7 @@ time, .chiffre { font-variant-numeric: tabular-nums; }
 .bandeau-alerte-titre { font-weight: 800; font-size: 1.08rem; }
 .bandeau-alerte a { color: inherit; font-weight: 700; }
 
-/* ---------- Héros (accueil) : diaporama de trois photos ---------- */
+/* ---------- Héros (accueil) : diaporama de quatre photos ---------- */
 .heros {
   position: relative; isolation: isolate; overflow: hidden; color: #fff;
   background-color: #1E2B5E;
@@ -229,14 +229,9 @@ time, .chiffre { font-variant-numeric: tabular-nums; }
 }
 .heros-diapo { background: var(--photo, none) center 42% / cover no-repeat; opacity: 0; transition: opacity 1.2s ease-in-out; }
 .heros-diapo--active { opacity: 1; }
+.heros-diapo--camping { background-position: center 35%; }
 .heros-diapo--neige { background-position: center 43%; }
-/* Église (photo en hauteur) : entière contre le bord droit, fondue sur un fond flou tiré de la même photo */
-.heros-diapo--eglise { background: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//2wBDAQ4ODhMREyYVFSZPNS01T09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0//wAARCAAgABgDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAcEBQYC/8QAIhAAAQQCAgIDAQAAAAAAAAAAAQACAxEEBQYSITEUQVFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAVEQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEQMRAD8A2pNCyuIpWyglp9FQt3mnCwXSAWT4VZxnYOnc+J/35QaRCEIF3teR/Pj6EgNHtQtbujiZHeE/1VEkFNpopETOlACyoGXrORY+bTXODXV5BQl8xszW3HbT+hCsH//Z") center / cover; }
-.heros-diapo--eglise::after {
-  content: ""; position: absolute; top: 0; right: 0; bottom: 0; aspect-ratio: 960 / 1282;
-  background: var(--photo, none) center / cover no-repeat;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 24%); mask-image: linear-gradient(90deg, transparent, #000 24%);
-}
+.heros-diapo--coucher { background-position: center 45%; }
 .heros-contenu { padding-block: 64px 120px; max-width: 760px; }
 .heros h1 { font-size: clamp(2.1rem, 1.4rem + 3.2vw, 3.6rem); line-height: 1.05; margin-bottom: .35em; color: #fff; text-shadow: 0 2px 18px rgba(0, 0, 0, .25); }
 .heros p { font-size: clamp(1.05rem, .95rem + .5vw, 1.3rem); color: rgba(255, 255, 255, .92); max-width: 46ch; margin-bottom: 0; }
@@ -265,9 +260,9 @@ time, .chiffre { font-variant-numeric: tabular-nums; }
 @media (max-width: 700px) {
   .heros::before { background: linear-gradient(0deg, rgba(12, 19, 46, .92) 0%, rgba(12, 19, 46, .55) 50%, rgba(12, 19, 46, .1) 100%); }
   .heros-diapo { background-position: 60% center; }
+  .heros-diapo--camping { background-position: 65% center; }
   .heros-diapo--neige { background-position: 45% center; }
-  .heros-diapo--eglise { background: var(--photo, none) 40% center / cover no-repeat; }
-  .heros-diapo--eglise::after { content: none; }
+  .heros-diapo--coucher { background-position: 20% center; }
   .heros-contenu { padding-block: 150px 96px; }
   .heros h1 { font-size: clamp(1.7rem, 7.4vw, 2.2rem); }
   .heros-logo { height: 76px; margin-bottom: 14px; padding: 5px; border-radius: 12px; }

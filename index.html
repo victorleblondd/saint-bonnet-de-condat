@@ -34,8 +34,9 @@ description: "Site officiel de la commune de Saint-Bonnet-de-Condat (Cantal) : i
   {%- comment -%} Diaporama : la première photo s'affiche tout de suite, les suivantes se chargent après la page. {%- endcomment %}
   <div class="heros-diapos" aria-hidden="true">
     <div class="heros-diapo heros-diapo--mairie heros-diapo--active" style="--photo: url('{{ '/assets/images/mairie.jpg' | relative_url }}')"></div>
-    <div class="heros-diapo heros-diapo--eglise" data-photo="{{ '/assets/images/eglise.jpg' | relative_url }}"></div>
+    <div class="heros-diapo heros-diapo--camping" data-photo="{{ '/assets/images/camping.jpg' | relative_url }}"></div>
     <div class="heros-diapo heros-diapo--neige" data-photo="{{ '/assets/images/village-neige.jpg' | relative_url }}"></div>
+    <div class="heros-diapo heros-diapo--coucher" data-photo="{{ '/assets/images/coucher-de-soleil.jpg' | relative_url }}"></div>
   </div>
   <div class="conteneur">
     <div class="heros-contenu">
@@ -46,9 +47,10 @@ description: "Site officiel de la commune de Saint-Bonnet-de-Condat (Cantal) : i
   </div>
   <div class="heros-commandes" role="group" aria-label="Photos de l'accueil" hidden>
     <button type="button" class="heros-pause" data-pause aria-label="Mettre en pause le diaporama">{% include icone.html nom="pause" classe="icone-pause" %}{% include icone.html nom="lecture" classe="icone-lecture" %}</button>
-    <button type="button" class="heros-point" data-diapo="0" aria-label="Photo 1 sur 3 : la mairie" aria-current="true"></button>
-    <button type="button" class="heros-point" data-diapo="1" aria-label="Photo 2 sur 3 : l'église"></button>
-    <button type="button" class="heros-point" data-diapo="2" aria-label="Photo 3 sur 3 : le village sous la neige"></button>
+    <button type="button" class="heros-point" data-diapo="0" aria-label="Photo 1 sur 4 : la mairie" aria-current="true"></button>
+    <button type="button" class="heros-point" data-diapo="1" aria-label="Photo 2 sur 4 : le camping La Santoire"></button>
+    <button type="button" class="heros-point" data-diapo="2" aria-label="Photo 3 sur 4 : le village sous la neige"></button>
+    <button type="button" class="heros-point" data-diapo="3" aria-label="Photo 4 sur 4 : coucher de soleil"></button>
   </div>
 </section>
 

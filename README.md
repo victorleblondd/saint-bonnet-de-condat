@@ -62,7 +62,7 @@ réglages dans `manifest.webmanifest`) et recevoir les avis de la mairie en noti
 | Élus, permanences, personnel communal | `_data/elus.yml` |
 | Menu principal | `_data/navigation.yml` |
 | Bandeau d'annonce temporaire de l'accueil (texte, dernier jour d'affichage) | `_data/annonce.yml` |
-| Photos du diaporama de l'accueil (mairie, église, village sous la neige) | `index.html` (rubrique `heros`), photos dans `assets/images/`, cadrage dans `assets/css/site.css` |
+| Photos du diaporama de l'accueil (mairie, camping, village sous la neige, coucher de soleil) | `index.html` (rubrique `heros`), photos dans `assets/images/`, cadrage dans `assets/css/site.css` |
 | Notifications : adresse Supabase et clés publiques | `_config.yml` (rubrique `notifications`) |
 | Articles du bulletin municipal | `_posts/AAAA-MM-JJ-titre.html` (un fichier par article) |
 | Pages | `mairie.html`, `vie-pratique.html`, `vie-locale.html`, `decouvrir.html`… |
@@ -88,6 +88,6 @@ Si l'hébergeur change, mettre à jour la rubrique « Hébergement » des mentio
 
 Blason du Cantal : dessin de Gretaz et contributeurs (Wikimedia Commons), licence CC BY-SA 3.0, image adaptée.
 
-Photo de l'église (diaporama de l'accueil, `assets/images/eglise.jpg`) : Père Igor (Wikimedia Commons,
-[Saint-Bonnet-de-Condat église.jpg](https://commons.wikimedia.org/wiki/File:Saint-Bonnet-de-Condat_%C3%A9glise.jpg)),
-licence CC BY-SA 4.0, image adaptée. Photos de la mairie et du village sous la neige : fournies par Victor Leblond.
+Photo du camping (diaporama de l'accueil, `assets/images/camping.jpg`) : [Camping La Santoire](https://www.campinglasantoire.fr/en/),
+photo de son site, réduite à 1 400 px. Photos de la mairie, du village sous la neige et du coucher de soleil :
+fournies par Victor Leblond.
