@@ -30,13 +30,25 @@ description: "Site officiel de la commune de Saint-Bonnet-de-Condat (Cantal) : i
 </div>
 {%- endif %}
 
-<section class="heros" style="--image-heros: url('{{ '/assets/images/mairie.jpg' | relative_url }}')" aria-labelledby="titre-accueil">
+<section class="heros" aria-labelledby="titre-accueil" data-diaporama>
+  {%- comment -%} Diaporama : la première photo s'affiche tout de suite, les suivantes se chargent après la page. {%- endcomment %}
+  <div class="heros-diapos" aria-hidden="true">
+    <div class="heros-diapo heros-diapo--mairie heros-diapo--active" style="--photo: url('{{ '/assets/images/mairie.jpg' | relative_url }}')"></div>
+    <div class="heros-diapo heros-diapo--eglise" data-photo="{{ '/assets/images/eglise.jpg' | relative_url }}"></div>
+    <div class="heros-diapo heros-diapo--neige" data-photo="{{ '/assets/images/village-neige.jpg' | relative_url }}"></div>
+  </div>
   <div class="conteneur">
     <div class="heros-contenu">
       <img class="heros-logo" src="{{ '/assets/images/logo-massif-du-cezallier.png' | relative_url }}" alt="Massif du Cézallier" width="300" height="283">
       <h1 id="titre-accueil">Bienvenue à <span class="nom-commune">Saint-Bonnet-de-Condat</span></h1>
       <p>Un village de 113 habitants dans la vallée de la Santoire, à la croisée du Cézallier et des monts du Cantal.</p>
     </div>
+  </div>
+  <div class="heros-commandes" role="group" aria-label="Photos de l'accueil" hidden>
+    <button type="button" class="heros-pause" data-pause aria-label="Mettre en pause le diaporama">{% include icone.html nom="pause" classe="icone-pause" %}{% include icone.html nom="lecture" classe="icone-lecture" %}</button>
+    <button type="button" class="heros-point" data-diapo="0" aria-label="Photo 1 sur 3 : la mairie" aria-current="true"></button>
+    <button type="button" class="heros-point" data-diapo="1" aria-label="Photo 2 sur 3 : l'église"></button>
+    <button type="button" class="heros-point" data-diapo="2" aria-label="Photo 3 sur 3 : le village sous la neige"></button>
   </div>
 </section>
 

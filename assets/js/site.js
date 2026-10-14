@@ -144,6 +144,103 @@
   ouvrirCible();
   window.addEventListener('hashchange', ouvrirCible);
 
+  /* ----- Accueil : diaporama des photos du bandeau (une photo toutes les 6 secondes) ----- */
+  var diaporama = document.querySelector('[data-diaporama]');
+  var commandes = diaporama && diaporama.querySelector('.heros-commandes');
+  if (commandes) {
+    var diapos = Array.prototype.slice.call(diaporama.querySelectorAll('.heros-diapo'));
+    var points = Array.prototype.slice.call(commandes.querySelectorAll('[data-diapo]'));
+    var boutonPause = commandes.querySelector('[data-pause]');
+    var DUREE = 6000;
+    var actuelle = 0;
+    var minuteur = null;
+    /* Arrêté d'office si le visiteur a demandé moins d'animations ou d'économiser les données */
+    var arret = (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) ||
+      !!(navigator.connection && navigator.connection.saveData);
+    var survol = false; /* souris sur le bandeau : pause le temps du survol */
+    var focusClavier = false; /* commandes atteintes au clavier : pause aussi */
+
+    /* Charge la photo d'une diapositive avant de l'afficher */
+    var charger = function (diapo) {
+      var url = diapo.getAttribute('data-photo');
+      if (!url) { return Promise.resolve(); }
+      return new Promise(function (fini) {
+        var image = new Image();
+        image.onload = image.onerror = function () {
+          diapo.style.setProperty('--photo', 'url("' + url + '")');
+          diapo.removeAttribute('data-photo');
+          fini();
+        };
+        image.src = url;
+      });
+    };
+    var montrer = function (n) {
+      actuelle = n;
+      diapos.forEach(function (d, i) { d.classList.toggle('heros-diapo--active', i === n); });
+      points.forEach(function (p, i) {
+        if (i === n) { p.setAttribute('aria-current', 'true'); } else { p.removeAttribute('aria-current'); }
+      });
+    };
+    var enMarche = function () { return !arret && !survol && !focusClavier && !document.hidden; };
+    var planifier = function () {
+      clearTimeout(minuteur);
+      if (!enMarche()) { return; }
+      minuteur = setTimeout(function () {
+        var suivante = (actuelle + 1) % diapos.length;
+        charger(diapos[suivante]).then(function () {
+          if (!enMarche()) { return; }
+          montrer(suivante);
+          planifier();
+          charger(diapos[(suivante + 1) % diapos.length]);
+        });
+      }, DUREE);
+    };
+    var majPause = function () {
+      commandes.classList.toggle('est-en-pause', arret);
+      boutonPause.setAttribute('aria-label', arret ? 'Lancer le diaporama' : 'Mettre en pause le diaporama');
+    };
+
+    boutonPause.addEventListener('click', function () {
+      arret = !arret;
+      majPause();
+      planifier();
+    });
+    /* Choisir une photo arrête le défilement (le bouton le relance) */
+    points.forEach(function (p) {
+      p.addEventListener('click', function () {
+        var n = +p.getAttribute('data-diapo');
+        arret = true;
+        majPause();
+        planifier();
+        charger(diapos[n]).then(function () { montrer(n); });
+      });
+    });
+    diaporama.addEventListener('pointerenter', function (e) {
+      if (e.pointerType === 'mouse') { survol = true; planifier(); }
+    });
+    diaporama.addEventListener('pointerleave', function (e) {
+      if (e.pointerType === 'mouse') { survol = false; planifier(); }
+    });
+    commandes.addEventListener('focusin', function (e) {
+      var clavier = true;
+      try { clavier = e.target.matches(':focus-visible'); } catch (err) { /* navigateur ancien */ }
+      if (clavier) { focusClavier = true; planifier(); }
+    });
+    commandes.addEventListener('focusout', function (e) {
+      if (!commandes.contains(e.relatedTarget)) { focusClavier = false; planifier(); }
+    });
+    document.addEventListener('visibilitychange', planifier);
+
+    commandes.hidden = false;
+    majPause();
+    /* Les photos suivantes se chargent une fois la page affichée */
+    var demarrer = function () {
+      if (!arret) { charger(diapos[1]); }
+      planifier();
+    };
+    if (document.readyState === 'complete') { demarrer(); } else { window.addEventListener('load', demarrer); }
+  }
+
   /* ----- Application web (écran d'accueil) : service worker des notifications ----- */
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js').catch(function () {});

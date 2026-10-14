@@ -212,17 +212,30 @@ time, .chiffre { font-variant-numeric: tabular-nums; }
 .bandeau-alerte-titre { font-weight: 800; font-size: 1.08rem; }
 .bandeau-alerte a { color: inherit; font-weight: 700; }
 
-/* ---------- Héros (accueil) ---------- */
+/* ---------- Héros (accueil) : diaporama de trois photos ---------- */
 .heros {
-  position: relative; color: #fff;
+  position: relative; isolation: isolate; overflow: hidden; color: #fff;
   background-color: #1E2B5E;
-  background-image:
-    linear-gradient(90deg, rgba(12, 19, 46, .86) 0%, rgba(12, 19, 46, .62) 42%, rgba(12, 19, 46, .12) 78%),
-    linear-gradient(0deg, rgba(12, 19, 46, .55) 0%, rgba(12, 19, 46, 0) 45%),
-    var(--image-heros, none);
-  background-size: cover; background-position: center 42%;
   min-height: clamp(380px, 46vw, 560px);
   display: flex; align-items: flex-end;
+}
+.heros::before, .heros-diapos, .heros-diapo { position: absolute; inset: 0; }
+.heros-diapos { z-index: -2; }
+.heros::before {
+  content: ""; z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(12, 19, 46, .86) 0%, rgba(12, 19, 46, .62) 42%, rgba(12, 19, 46, .12) 78%),
+    linear-gradient(0deg, rgba(12, 19, 46, .55) 0%, rgba(12, 19, 46, 0) 45%);
+}
+.heros-diapo { background: var(--photo, none) center 42% / cover no-repeat; opacity: 0; transition: opacity 1.2s ease-in-out; }
+.heros-diapo--active { opacity: 1; }
+.heros-diapo--neige { background-position: center 43%; }
+/* Église (photo en hauteur) : entière contre le bord droit, fondue sur un fond flou tiré de la même photo */
+.heros-diapo--eglise { background: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk//2wBDAQ4ODhMREyYVFSZPNS01T09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0//wAARCAAgABgDASIAAhEBAxEB/8QAGQAAAgMBAAAAAAAAAAAAAAAAAAcEBQYC/8QAIhAAAQQCAgIDAQAAAAAAAAAAAQACAxEEBQYSITEUQVFx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAVEQEBAAAAAAAAAAAAAAAAAAAAAf/aAAwDAQACEQMRAD8A2pNCyuIpWyglp9FQt3mnCwXSAWT4VZxnYOnc+J/35QaRCEIF3teR/Pj6EgNHtQtbujiZHeE/1VEkFNpopETOlACyoGXrORY+bTXODXV5BQl8xszW3HbT+hCsH//Z") center / cover; }
+.heros-diapo--eglise::after {
+  content: ""; position: absolute; top: 0; right: 0; bottom: 0; aspect-ratio: 960 / 1282;
+  background: var(--photo, none) center / cover no-repeat;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 24%); mask-image: linear-gradient(90deg, transparent, #000 24%);
 }
 .heros-contenu { padding-block: 64px 120px; max-width: 760px; }
 .heros h1 { font-size: clamp(2.1rem, 1.4rem + 3.2vw, 3.6rem); line-height: 1.05; margin-bottom: .35em; color: #fff; text-shadow: 0 2px 18px rgba(0, 0, 0, .25); }
@@ -230,11 +243,35 @@ time, .chiffre { font-variant-numeric: tabular-nums; }
 .heros-logo { display: block; width: auto; height: 104px; margin-bottom: 18px; padding: 6px; border-radius: 16px; background: #fff; box-shadow: 0 2px 10px rgba(0, 0, 0, .3); }
 .heros h1 .nom-commune { display: block; }
 @media (min-width: 420px) { .heros h1 .nom-commune { white-space: nowrap; } }
+/* Commandes du diaporama : pause et choix de la photo */
+.heros-commandes {
+  position: absolute; right: max(24px, calc((100% - 1180px) / 2 + 24px)); bottom: 76px; /* au-dessus des accès rapides */
+  display: flex; align-items: center; gap: 2px; padding: 4px;
+  border-radius: 999px; background: rgba(12, 19, 46, .6);
+}
+.heros-commandes[hidden] { display: none; }
+.heros-commandes button {
+  display: grid; place-items: center; width: 32px; height: 32px; padding: 0;
+  border: 0; border-radius: 50%; background: transparent; color: #fff; cursor: pointer;
+}
+.heros-commandes button:hover { background: rgba(255, 255, 255, .18); }
+.heros-commandes button:focus-visible { border-radius: 50%; outline-offset: 0; }
+.heros-pause .icone { width: 18px; height: 18px; stroke-width: 2.4; }
+.heros-commandes .icone-lecture, .heros-commandes.est-en-pause .icone-pause { display: none; }
+.heros-commandes.est-en-pause .icone-lecture { display: block; }
+.heros-point::before { content: ""; width: 11px; height: 11px; border: 2px solid #fff; border-radius: 50%; box-sizing: border-box; }
+.heros-point[aria-current="true"]::before { background: #fff; }
+@media (prefers-reduced-motion: reduce) { .heros-diapo { transition-duration: .2s; } }
 @media (max-width: 700px) {
-  .heros { background-image: linear-gradient(0deg, rgba(12, 19, 46, .92) 0%, rgba(12, 19, 46, .55) 50%, rgba(12, 19, 46, .1) 100%), var(--image-heros, none); background-position: 60% center; }
+  .heros::before { background: linear-gradient(0deg, rgba(12, 19, 46, .92) 0%, rgba(12, 19, 46, .55) 50%, rgba(12, 19, 46, .1) 100%); }
+  .heros-diapo { background-position: 60% center; }
+  .heros-diapo--neige { background-position: 45% center; }
+  .heros-diapo--eglise { background: var(--photo, none) 40% center / cover no-repeat; }
+  .heros-diapo--eglise::after { content: none; }
   .heros-contenu { padding-block: 150px 96px; }
   .heros h1 { font-size: clamp(1.7rem, 7.4vw, 2.2rem); }
   .heros-logo { height: 76px; margin-bottom: 14px; padding: 5px; border-radius: 12px; }
+  .heros-commandes { top: 14px; right: 14px; bottom: auto; }
 }
 .pile-laterale { position: sticky; top: 20px; }
 @media (max-width: 900px) { .pile-laterale { position: static; } }
@@ -527,6 +564,7 @@ tbody tr:last-child td { border-bottom: 0; }
   body { background: #fff; color: #000; font-size: 11pt; }
   .entete-page, .heros { background: none !important; color: #000; min-height: 0; padding: 0; }
   .entete-page h1, .heros h1 { color: #000; }
+  .heros::before, .heros-diapos, .heros-commandes { display: none !important; }
   .avis-texte-corps { background: none; }
   details > * { display: block !important; }
   a { color: #000; }
