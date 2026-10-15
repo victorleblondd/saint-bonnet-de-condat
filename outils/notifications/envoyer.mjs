@@ -16,12 +16,39 @@ const SUJET_VAPID = 'https://saint-bonnet-de-condat.fr'; // contact déclaré au
 const SITE = env.SITE_URL || SUJET_VAPID;
 const reglages = (yaml.load(readFileSync('_config.yml', 'utf8')) || {}).notifications || {};
 const SUPABASE = String(reglages.supabase_url || '').replace(/\/+$/, '');
-const CLE_SECRETE = env.SUPABASE_SECRET_KEY || '';
-const VAPID_PRIVEE = env.VAPID_PRIVATE_KEY || '';
+const CLE_SECRETE = cleSupabase(env.SUPABASE_SECRET_KEY || '');
+const VAPID_PRIVEE = (env.VAPID_PRIVATE_KEY || '').trim();
 
 function fin(message) {
   console.log(message);
   process.exit(0);
+}
+
+// Le secret SUPABASE_SECRET_KEY doit contenir la clé seule, sur une ligne. S'il contient autre chose
+// (nom de la clé, adresse…), on garde la seule clé qu'il contient et on le signale.
+// Le journal des actions est public : on n'y décrit que la forme des lignes, jamais leur contenu.
+function genreLigne(ligne) {
+  if (/sb_secret_/.test(ligne)) return 'clé secrète (sb_secret_…)';
+  if (/sb_publishable_/.test(ligne)) return 'clé publique (sb_publishable_…), pas la bonne';
+  if (/^eyJ/.test(ligne)) return 'clé JWT (eyJ…)';
+  if (/^https?:\/\//.test(ligne)) return 'adresse web';
+  return 'autre texte';
+}
+
+function cleSupabase(valeur) {
+  const texte = valeur.trim();
+  if (!texte || /^(sb_secret_|eyJ)\S*$/.test(texte)) return texte;
+  const cles = [...new Set(texte.match(/sb_secret_[A-Za-z0-9_-]+|eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+/g) || [])];
+  const forme = texte
+    .split(/\s*[\r\n]+\s*/)
+    .map((ligne, i) => `ligne ${i + 1} : ${genreLigne(ligne)}, ${ligne.length} caractères`)
+    .join(' ; ');
+  if (cles.length === 1) {
+    console.log(`::warning::Le secret SUPABASE_SECRET_KEY contient autre chose que la clé (${forme}) : seule la clé est utilisée. Le recoller seul, sur une ligne.`);
+    return cles[0];
+  }
+  console.log(`::error::Le secret SUPABASE_SECRET_KEY doit contenir seulement la clé secrète (sb_secret_…), sur une ligne (${forme}).`);
+  process.exit(1);
 }
 
 if (!SUPABASE || !reglages.cle_vapid || !CLE_SECRETE || !VAPID_PRIVEE) {
