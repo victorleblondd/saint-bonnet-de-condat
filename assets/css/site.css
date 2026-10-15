@@ -176,6 +176,7 @@ time, .chiffre { font-variant-numeric: tabular-nums; }
 .navigation li:first-child a { padding-left: 0; }
 .navigation a:hover { color: var(--accent); box-shadow: inset 0 -3px 0 var(--vert); }
 .navigation a[aria-current] { color: var(--accent); box-shadow: inset 0 -3px 0 var(--accent); }
+@media (min-width: 1011px) and (max-width: 1179px) { .navigation a { padding-inline: 10px; font-size: .95rem; } .navigation li:first-child a { padding-left: 0; } }
 
 @media (max-width: 1010px) {
   .bouton-menu { display: inline-flex; }
@@ -290,7 +291,7 @@ time, .chiffre { font-variant-numeric: tabular-nums; }
 .acces-rapides .pastille .icone { width: 26px; height: 26px; }
 .acces-rapides .pastille--alerte { background: var(--alerte-pale); color: var(--alerte); }
 .acces-rapides a:hover .pastille--alerte { background: var(--alerte); color: var(--surface); }
-@media (max-width: 760px) { .acces-rapides li { flex: 0 0 calc((100% - 12px) / 3); } }
+@media (max-width: 900px) { .acces-rapides li { flex: 0 0 calc((100% - 12px) / 3); } }
 @media (max-width: 480px) { .acces-rapides li { flex: 0 0 calc((100% - 6px) / 2); } .acces-rapides { margin-top: -48px; } }
 
 /* ---------- Sections ---------- */
@@ -430,6 +431,7 @@ time, .chiffre { font-variant-numeric: tabular-nums; }
 .liste-simple li { margin: 0; padding: 9px 0; border-bottom: 1px solid var(--ligne); }
 .liste-simple li:last-child { border-bottom: 0; }
 .note { font-size: .93rem; color: var(--encre-2); }
+.grille-2 + .note, .grille-3 + .note { margin-top: 18px; }
 .signature { font-family: var(--police-titre); font-style: italic; font-size: 1.15rem; color: var(--accent); }
 .sommaire { margin: 0 0 40px; }
 .sommaire ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
@@ -552,6 +554,12 @@ tbody tr:last-child td { border-bottom: 0; }
 .notif-actions:not(:has(.bouton:not([hidden]))) { display: none; }
 .etapes { padding-left: 1.4em; }
 .etapes li + li { margin-top: .6em; }
+
+/* ---------- Tourisme : fiches avec logo ---------- */
+/* Le cadre du logo reste blanc, même en mode sombre : les logos officiels sont prévus pour un fond clair. */
+.fiche-logo { display: grid; place-items: center; height: 168px; margin-bottom: 20px; padding: 18px; background: #FFFFFF; border: 1px solid var(--ligne); border-radius: 10px; }
+.fiche-logo img { display: block; width: auto; height: auto; max-width: 100%; max-height: 130px; }
+@media (max-width: 640px) { .fiche-logo { height: 148px; } .fiche-logo img { max-height: 110px; } }
 
 /* ---------- Impression ---------- */
 @media print {

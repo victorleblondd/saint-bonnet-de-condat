@@ -65,7 +65,9 @@ réglages dans `manifest.webmanifest`) et recevoir les avis de la mairie en noti
 | Photos du diaporama de l'accueil (mairie, camping, village sous la neige, coucher de soleil) | `index.html` (rubrique `heros`), photos dans `assets/images/`, cadrage dans `assets/css/site.css` |
 | Notifications : adresse Supabase et clés publiques | `_config.yml` (rubrique `notifications`) |
 | Articles du bulletin municipal | `_posts/AAAA-MM-JJ-titre.html` (un fichier par article) |
-| Pages | `mairie.html`, `vie-pratique.html`, `vie-locale.html`, `decouvrir.html`… |
+| Professionnels de santé et de bien-être | `vie-locale.html` (rubrique `sante-bien-etre`) |
+| Établissements de la page Tourisme | `tourisme.html`, logos dans `assets/images/tourisme/` |
+| Pages | `mairie.html`, `vie-pratique.html`, `vie-locale.html`, `tourisme.html`, `decouvrir.html`… |
 | Apparence | `assets/css/site.css` |
 
 ## Organisation
@@ -91,3 +93,7 @@ Blason du Cantal : dessin de Gretaz et contributeurs (Wikimedia Commons), licenc
 Photo du camping (diaporama de l'accueil, `assets/images/camping.jpg`) : [Camping La Santoire](https://www.campinglasantoire.fr/en/),
 photo de son site, réduite à 1 400 px. Photos de la mairie, du village sous la neige et du coucher de soleil :
 fournies par Victor Leblond.
+
+Logos de la page Tourisme (`assets/images/tourisme/`) : logos officiels du Camping La Santoire, de NaturÉpure
+et de La Maison des Volcans, repris de leurs sites (campinglasantoire.fr, naturepuredetox.fr,
+lamaisondesvolcanscantal.fr), réduits et sans marges transparentes.
