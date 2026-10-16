@@ -586,6 +586,13 @@ tbody tr:last-child td { border-bottom: 0; }
 .fiche-logo img { display: block; width: auto; height: auto; max-width: 100%; max-height: 130px; }
 @media (max-width: 640px) { .fiche-logo { height: 148px; } .fiche-logo img { max-height: 110px; } }
 
+/* ---------- Vie locale : fiche avec logo rond, à côté du nom ---------- */
+.fiche-entete { display: flex; align-items: center; gap: 16px; margin: 0 0 .85rem; }
+.fiche-entete > div { min-width: 0; }
+.panneau .fiche-entete h3 { margin: 0; }
+.fiche-entete-logo { display: block; flex: none; width: 96px; height: 96px; border-radius: 50%; border: 1px solid var(--ligne); background: #FFFFFF; }
+@media (max-width: 640px) { .fiche-entete-logo { width: 80px; height: 80px; } }
+
 /* ---------- Impression ---------- */
 @media print {
   .bandeau-haut, .navigation, .bouton-menu, .entete-actions, .acces-rapides, .pied-grille, .filtres, .autres-articles { display: none !important; }

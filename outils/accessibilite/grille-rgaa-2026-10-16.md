@@ -25,7 +25,7 @@ C = conforme · NC = non conforme · NA = non applicable
 
 | Critère | Statut | Remarque |
 |---|---|---|
-| 1.1 Alternative des images porteuses d'information | C | Blason, logo du Cézallier, logos de la page Tourisme |
+| 1.1 Alternative des images porteuses d'information | C | Blason, logo du Cézallier, logos de la page Tourisme, logo de L'Instant Libellule (Vie locale, ajouté et vérifié le même jour) |
 | 1.2 Images de décoration ignorées | C | Icônes SVG en `aria-hidden="true"`, photos du diaporama en fond CSS dans un bloc masqué |
 | 1.3 Pertinence des alternatives | C | |
 | 1.4 CAPTCHA et images-test | NA | |
