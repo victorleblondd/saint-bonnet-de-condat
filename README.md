@@ -6,14 +6,16 @@ https://saint-bonnet-de-condat.fr/
 GitHub construit le site automatiquement (Jekyll) à chaque modification de la branche `main`.
 Aucune installation n'est nécessaire.
 
-## Ajouter un avis « Infos & Alertes »
+## Ajouter une actualité « Infos & Alertes »
 
 1. Déposer le PDF dans le dossier `documents/infos-alertes/`, nommé `AAAA-MM-JJ-sujet-court.pdf`
    (sans accents ni espaces).
 2. Ouvrir `_data/infos_alertes.yml` et copier le modèle (en tête du fichier) **tout en haut de la liste** :
-   date, type (`alerte` ou `info`), thème, titre, résumé, nom du PDF.
+   date, type (`alerte` ou `info`), thème, titre, résumé, nom du PDF, et le texte complet de l'affiche
+   dans `texte` (accessibilité : une affiche en image n'est pas lisible par les lecteurs d'écran).
 
-L'avis apparaît alors sur la page Infos & Alertes et sur l'accueil ; son titre et son bouton ouvrent le PDF.
+L'actualité apparaît alors sur la page Infos & Alertes (son titre et son bouton ouvrent le PDF, son texte s'affiche
+sous le bouton) et sur l'accueil (son titre mène à ce texte, son bouton ouvre le PDF).
 Une alerte récente s'affiche aussi en bandeau rouge sur l'accueil pendant 3 jours
 (ou jusqu'à la date indiquée dans `bandeau_jusquau`).
 
@@ -27,7 +29,8 @@ GitHub télécharge le fichier, convertit une image en PDF A4 et l'ajoute au sit
 1. Déposer le PDF dans le dossier `documents/affichage-legal/`, nommé `AAAA-MM-JJ-sujet-court.pdf`.
 2. Ouvrir `_data/affichage_legal.yml` et copier le modèle **en tête de la liste `documents`** :
    date, type (`arrete-municipal`, `arrete-prefectoral`, `deliberation`, `proces-verbal` ou `divers`),
-   numéro (facultatif), titre, nom du PDF.
+   numéro (facultatif), titre, nom du PDF. Si le PDF est scanné ou en image, recopier le texte du document
+   dans `texte` (accessibilité).
 
 Les années proposées dans le filtre se règlent dans le même fichier (`annees`).
 Un document disponible en ligne peut aussi être récupéré par `outils/fichiers-a-recuperer.txt`.
@@ -41,11 +44,11 @@ GitHub crée alors la Release correspondante (`.github/workflows/publier-version
 ## Écran d'accueil et notifications
 
 Les habitants peuvent ajouter le site à l'écran d'accueil de leur téléphone (icône dans `assets/icones/`,
-réglages dans `manifest.webmanifest`) et recevoir les avis de la mairie en notification (page `/notifications/`).
+réglages dans `manifest.webmanifest`) et recevoir les actualités de la mairie en notification (page `/notifications/`).
 
-- **Envoi automatique** : chaque nouvel avis ajouté dans `_data/infos_alertes.yml` part en notification
+- **Envoi automatique** : chaque nouvelle actualité ajoutée dans `_data/infos_alertes.yml` part en notification
   (`.github/workflows/notifications.yml`, programme `outils/notifications/envoyer.mjs`).
-  Pour corriger un avis sans renvoyer de notification, écrire `[sans notification]` dans le message du commit.
+  Pour corriger une actualité sans renvoyer de notification, écrire `[sans notification]` dans le message du commit.
 - **Envoi à la main** : onglet Actions > « Envoyer les notifications » > « Run workflow » : titre, message et page à ouvrir.
 - **Abonnements** : base Supabase (région Paris), créée avec `outils/notifications/supabase.sql`.
   Adresse et clés publiques dans `_config.yml` (rubrique `notifications`) ; clés secrètes dans les secrets
@@ -69,13 +72,27 @@ réglages dans `manifest.webmanifest`) et recevoir les avis de la mairie en noti
 | Établissements de la page Tourisme | `tourisme.html`, logos dans `assets/images/tourisme/` |
 | Pages | `mairie.html`, `vie-pratique.html`, `vie-locale.html`, `tourisme.html`, `decouvrir.html`… |
 | Apparence | `assets/css/site.css` |
+| État d'accessibilité (bas de chaque page, page Accessibilité) | `_data/accessibilite.yml` |
+
+## Accessibilité
+
+Le site suit le référentiel RGAA 4.1.2. Dernière évaluation : 16 octobre 2026, **totalement conforme**
+(grille détaillée dans `outils/accessibilite/`). La déclaration d'accessibilité est la page `/accessibilite/`
+(`accessibilite.html`) ; son état et ses chiffres, comme la mention « Accessibilité : … » en bas de chaque page,
+viennent de `_data/accessibilite.yml`. Le plan du site (`plan-du-site.html`) se met à jour tout seul.
+
+Pour garder la conformité :
+
+- chaque affiche en PDF doit avoir son texte complet (champ `texte`) ;
+- chaque image ajoutée doit avoir une alternative (`alt`), vide (`alt=""`) pour une image décorative ;
+- après un changement important, refaire l'évaluation et mettre à jour `_data/accessibilite.yml`.
 
 ## Organisation
 
 - `_layouts/` : gabarits communs (en-tête, pied de page, pages, articles)
 - `_includes/` : éléments réutilisés (avis, cartes, horaires, icônes, dates en français)
 - `assets/images/` : photos du site
-- `documents/infos-alertes/` : avis en PDF
+- `documents/infos-alertes/` : actualités en PDF
 - `documents/affichage-legal/` : documents de l'affichage légal en PDF
 
 ## Nom de domaine

@@ -1,0 +1,30 @@
+# =====================================================================
+#  ACCESSIBILITÉ : résultat de la dernière évaluation (RGAA 4.1.2)
+#  Utilisé par la page /accessibilite/ (déclaration d'accessibilité) et par la
+#  mention « Accessibilité : … » en bas de chaque page.
+#
+#  etat : « totalement conforme » (100 % des critères respectés),
+#         « partiellement conforme » (au moins 50 %) ou « non conforme ».
+#  La grille détaillée de l'évaluation est dans outils/accessibilite/.
+#  Après une nouvelle évaluation, mettre à jour ce fichier et la grille.
+# =====================================================================
+
+etat: "totalement conforme"
+date: "2026-10-16"
+conformes: 59
+non_conformes: 0
+non_applicables: 47
+taux: 100
+
+# Non-conformités relevées (une phrase par contenu non accessible) ; vide si aucune
+non_conformites: []
+
+non_applicables_detail: "Les critères non applicables portent sur des contenus que le site ne comporte pas : cadres, contenus audio ou vidéo, CAPTCHA, images complexes, images texte ou images légendées, tableaux complexes ou de mise en forme, passages en langue étrangère, champs de formulaire, moteur de recherche, raccourcis clavier, contenus apparaissant au survol, limites de temps, effets de flash, gestes complexes et commandes par mouvement de l'appareil."
+
+environnement: "Les vérifications ont été réalisées avec le navigateur Chromium 141, sur ordinateur (1 280 pixels de large) et en affichage de téléphone simulé (375 et 320 pixels de large), en thème clair et en thème sombre, avec un zoom à 200 % et un espacement du texte agrandi. La restitution des contenus a été contrôlée dans l'arbre d'accessibilité du navigateur. Aucun test n'a été réalisé avec un lecteur d'écran."
+
+outils:
+  - "axe-core 4.14 (Deque Systems) : tests automatiques, en thème clair et en thème sombre ;"
+  - "Nu Html Checker (validateur du W3C) : validité du code HTML ;"
+  - "Playwright et Chromium : parcours au clavier, visibilité et contraste du focus, affichage à 320 pixels, zoom, espacement du texte et contraste des textes sur les photos ;"
+  - "vérification manuelle de chacun des 106 critères du RGAA."

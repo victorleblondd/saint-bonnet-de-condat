@@ -1,5 +1,6 @@
 {%- assign m = site.data.mairie -%}
 <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+<header class="en-tete-site">
 <div class="bandeau-haut">
   <div class="conteneur bandeau-haut-interieur">
     <p class="bandeau-haut-horaires">{% include icone.html nom="horloge" %}<span>Mairie ouverte {{ m.horaires_court }}</span></p>
@@ -9,7 +10,7 @@
     </p>
   </div>
 </div>
-<header class="entete">
+<div class="entete">
   <div class="conteneur entete-interieur">
     <a class="marque" href="{{ '/' | relative_url }}">
       <span class="marque-nom">Saint-Bonnet-de-Condat</span>
@@ -34,4 +35,5 @@
       </ul>
     </div>
   </nav>
+</div>
 </header>

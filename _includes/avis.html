@@ -15,21 +15,21 @@
     <time datetime="{{ it.date }}{% if it.heure %}T{{ it.heure }}{% endif %}">{% include date-fr.html date=it.date jour=true %}{% if it.heure %} à {{ it.heure | replace: ":", " h " }}{% endif %}</time>
   </div>
   <h3 class="avis-titre">
-    {%- if it.pdf -%}
-    <a href="{{ lien_pdf }}" target="_blank" rel="noopener">{{ it.titre }}<span class="visuellement-cache"> (avis en PDF, nouvel onglet)</span></a>
-    {%- elsif include.compact -%}
+    {%- if include.compact -%}
     <a href="{{ '/infos-alertes/' | relative_url }}#{{ ancre }}">{{ it.titre }}</a>
+    {%- elsif it.pdf -%}
+    <a href="{{ lien_pdf }}" target="_blank" rel="noopener">{{ it.titre }}<span class="visuellement-cache"> (actualité en PDF, nouvel onglet)</span></a>
     {%- else -%}
     {{ it.titre }}
     {%- endif -%}
   </h3>
   {% if it.resume %}<p class="avis-resume">{{ it.resume }}</p>{% endif %}
   {%- if it.pdf %}
-  <p class="avis-actions"><a class="bouton bouton--pdf" href="{{ lien_pdf }}" target="_blank" rel="noopener">{% include icone.html nom="document" %}Ouvrir l'avis (PDF)<span class="visuellement-cache"> : {{ it.titre }}, nouvel onglet</span></a></p>
+  <p class="avis-actions"><a class="bouton bouton--pdf" href="{{ lien_pdf }}" target="_blank" rel="noopener">{% include icone.html nom="document" %}Ouvrir l'actualité (PDF)<span class="visuellement-cache"> : {{ it.titre }}, nouvel onglet</span></a></p>
   {%- endif %}
   {%- if it.texte %}{% unless include.compact %}
   <details class="avis-texte">
-    <summary>{% if it.pdf %}Lire le texte de l'avis{% else %}Lire l'avis complet{% endif %}</summary>
+    <summary>{% if it.pdf %}Afficher le texte de l'actualité{% else %}Afficher l'actualité complète{% endif %}</summary>
     <div class="avis-texte-corps">
 {{ it.texte }}
     </div>

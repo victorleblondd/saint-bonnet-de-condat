@@ -54,10 +54,29 @@
     if (ici.iso >= debut && ici.iso <= fin) { el.hidden = false; }
   });
 
-  /* ----- Horaires : met en évidence le jour en cours ----- */
+  /* ----- Horaires : met en évidence le jour en cours (couleur et mention « aujourd'hui ») ----- */
   Array.prototype.forEach.call(document.querySelectorAll('dl.horaires [data-jour]'), function (ligne) {
-    if (+ligne.getAttribute('data-jour') === ici.jour) { ligne.classList.add('aujourdhui'); }
+    if (+ligne.getAttribute('data-jour') !== ici.jour) { return; }
+    ligne.classList.add('aujourdhui');
+    var jour = ligne.querySelector('dt');
+    if (jour) {
+      var virgule = document.createElement('span');
+      virgule.className = 'visuellement-cache';
+      virgule.textContent = ', ';
+      var mention = document.createElement('span');
+      mention.className = 'mention-jour';
+      mention.textContent = "aujourd'hui";
+      jour.appendChild(virgule);
+      jour.appendChild(mention);
+    }
   });
+
+  /* ----- Message de statut lu par les lecteurs d'écran (vidé puis rempli, pour être relu à chaque fois) ----- */
+  function annoncer(zone, texte) {
+    if (!zone) { return; }
+    zone.textContent = '';
+    setTimeout(function () { zone.textContent = texte; }, 100);
+  }
 
   /* ----- Infos & Alertes : filtres ----- */
   var filtres = document.querySelector('[data-filtres]');
@@ -66,6 +85,7 @@
     var avis = Array.prototype.slice.call(document.querySelectorAll('.liste-avis .avis'));
     var mois = Array.prototype.slice.call(document.querySelectorAll('.liste-avis .mois'));
     var vide = document.querySelector('[data-aucun-resultat]');
+    var statutAvis = document.querySelector('.liste-avis [data-statut-filtres]');
     filtres.hidden = false;
     var appliquer = function (valeur) {
       boutons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-filtre') === valeur)); });
@@ -84,6 +104,8 @@
         titre.hidden = !garde;
       });
       if (vide) { vide.hidden = visibles !== 0; }
+      annoncer(statutAvis, visibles === 0 ? 'Aucune actualité dans cette catégorie.' :
+        visibles + (visibles > 1 ? ' actualités affichées.' : ' actualité affichée.'));
     };
     boutons.forEach(function (b) {
       b.addEventListener('click', function () { appliquer(b.getAttribute('data-filtre')); });
@@ -96,6 +118,7 @@
     var actes = Array.prototype.slice.call(document.querySelectorAll('.liste-actes .acte'));
     var titresAnnees = Array.prototype.slice.call(document.querySelectorAll('.liste-actes .annee'));
     var videActes = document.querySelector('[data-actes-vide]');
+    var statutActes = document.querySelector('.liste-actes [data-statut-filtres]');
     var choix = { type: 'tout', annee: 'tout' };
     var boutonsActes = Array.prototype.slice.call(filtresActes.querySelectorAll('button[data-critere]'));
     filtresActes.hidden = false;
@@ -116,6 +139,8 @@
         titre.hidden = !garde;
       });
       if (videActes) { videActes.hidden = visibles !== 0; }
+      annoncer(statutActes, visibles === 0 ? 'Aucun document ne correspond à cette sélection.' :
+        visibles + (visibles > 1 ? ' documents affichés.' : ' document affiché.'));
     };
     boutonsActes.forEach(function (b) {
       b.addEventListener('click', function () {
@@ -128,6 +153,26 @@
       });
     });
   }
+
+  /* ----- Tableaux larges : quand le tableau déborde (petit écran, texte agrandi), sa zone défilante
+           devient atteignable au clavier pour pouvoir le faire défiler ----- */
+  Array.prototype.forEach.call(document.querySelectorAll('.tableau-defilant'), function (zone) {
+    var legende = zone.querySelector('caption');
+    var verifier = function () {
+      if (zone.scrollWidth > zone.clientWidth + 1) {
+        zone.setAttribute('tabindex', '0');
+        zone.setAttribute('role', 'region');
+        if (legende) { zone.setAttribute('aria-label', legende.textContent.trim()); }
+      } else {
+        zone.removeAttribute('tabindex');
+        zone.removeAttribute('role');
+        zone.removeAttribute('aria-label');
+      }
+    };
+    verifier();
+    if (window.ResizeObserver) { new ResizeObserver(verifier).observe(zone.firstElementChild || zone); }
+    else { window.addEventListener('resize', verifier); }
+  });
 
   /* ----- Ouvrir l'avis ciblé par un lien (#ancre) ----- */
   function ouvrirCible() {

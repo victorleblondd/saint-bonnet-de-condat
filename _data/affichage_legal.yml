@@ -13,6 +13,12 @@
 #    numero: "AR 016 2026"             facultatif
 #    titre: "Objet du document"
 #    pdf: "AAAA-MM-JJ-sujet-court.pdf"  nom exact du fichier déposé
+#    texte: |                          texte du document (voir ci-dessous)
+#      <p>…</p>
+#
+#  Accessibilité : un PDF scanné ou en image n'est pas lisible par les
+#  lecteurs d'écran. Dans ce cas, recopier le texte du document dans
+#  « texte » : il s'affiche sous le bouton « Afficher le texte du document ».
 # =====================================================================
 
 # Types de documents proposés dans le filtre

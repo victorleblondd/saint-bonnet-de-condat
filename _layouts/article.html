@@ -19,7 +19,7 @@ layout: default
 </div>
 <article class="conteneur conteneur--etroit article">
   {%- if page.image %}
-  <figure class="article-image">
+  <figure class="article-image"{% if page.image_legende %} role="figure" aria-label="{{ page.image_legende | strip_html | escape }}"{% endif %}>
     <img src="{{ page.image | relative_url }}" alt="{{ page.image_alt | escape }}" width="{{ page.image_largeur | default: 1200 }}" height="{{ page.image_hauteur | default: 640 }}">
     {%- if page.image_legende %}<figcaption>{{ page.image_legende }}</figcaption>{% endif %}
   </figure>

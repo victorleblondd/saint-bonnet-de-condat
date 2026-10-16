@@ -21,11 +21,7 @@ description: "Site officiel de la commune de Saint-Bonnet-de-Condat (Cantal) : i
       <p class="bandeau-alerte-titre">Alerte : {{ alerte.titre }}</p>
       <p>{{ alerte.resume }}</p>
     </div>
-    {%- if alerte.pdf %}
-    <a class="bouton bouton--clair" href="{{ '/documents/infos-alertes/' | append: alerte.pdf | relative_url }}" target="_blank" rel="noopener">Lire l'alerte (PDF)</a>
-    {%- else %}
     <a class="bouton bouton--clair" href="{{ '/infos-alertes/' | relative_url }}#{{ ancre_alerte }}">Lire l'alerte</a>
-    {%- endif %}
   </div>
 </div>
 {%- endif %}
@@ -54,7 +50,7 @@ description: "Site officiel de la commune de Saint-Bonnet-de-Condat (Cantal) : i
   </div>
 </section>
 
-<nav class="conteneur acces-rapides" aria-label="Accès rapides">
+<nav class="conteneur acces-rapides" aria-label="Accès rapides de l'accueil">
   <ul>
     <li><a href="{{ '/infos-alertes/' | relative_url }}"><span class="pastille pastille--alerte">{% include icone.html nom="alerte" %}</span>Infos &amp; Alertes</a></li>
     <li><a href="{{ '/mairie/' | relative_url }}#contact"><span class="pastille">{% include icone.html nom="horloge" %}</span>Horaires et contact</a></li>
@@ -71,9 +67,9 @@ description: "Site officiel de la commune de Saint-Bonnet-de-Condat (Cantal) : i
       <div class="section-entete">
         <div>
           <h2 id="titre-infos">Infos &amp; Alertes</h2>
-          <p>Les derniers avis de la mairie. <a href="{{ '/notifications/' | relative_url }}">Les recevoir sur votre téléphone</a></p>
+          <p>Les dernières actualités de la mairie. <a href="{{ '/notifications/' | relative_url }}">Recevoir les actualités de la mairie sur votre téléphone</a></p>
         </div>
-        <a class="lien-fleche" href="{{ '/infos-alertes/' | relative_url }}">Tous les avis{% include icone.html nom="fleche" %}</a>
+        <a class="lien-fleche" href="{{ '/infos-alertes/' | relative_url }}">Toutes les actualités{% include icone.html nom="fleche" %}</a>
       </div>
       <div class="liste-avis">
         {%- for it in site.data.infos_alertes limit: 3 %}
@@ -82,7 +78,7 @@ description: "Site officiel de la commune de Saint-Bonnet-de-Condat (Cantal) : i
       </div>
     </div>
     <aside class="carte carte-mairie" aria-labelledby="titre-mairie">
-      <h3 id="titre-mairie">La mairie</h3>
+      <h2 id="titre-mairie">La mairie</h2>
       <div class="coordonnees">
         <p>{% include icone.html nom="lieu" %}<span>{{ m.adresse_ligne1 }}<br>{{ m.adresse_ligne2 }}</span></p>
         <p>{% include icone.html nom="telephone" %}<a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a></p>

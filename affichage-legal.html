@@ -7,6 +7,10 @@ description: "Affichage légal de la commune de Saint-Bonnet-de-Condat : arrêt�
 {%- assign al = site.data.affichage_legal -%}
 {%- assign docs = al.documents -%}
 {%- assign m = site.data.mairie -%}
+<div class="panneau panneau--info encart">
+  <p>Les délibérations du conseil municipal sont disponibles sur demande en contactant la mairie, au <a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a> ou à <a href="mailto:{{ m.email }}">{{ m.email | replace: "@", "@<wbr>" }}</a>.</p>
+</div>
+
 <div class="filtres-actes" data-filtres-actes hidden>
   <div class="filtres-ligne">
     <p class="filtres-titre" id="filtre-type">Type</p>
@@ -49,10 +53,19 @@ description: "Affichage légal de la commune de Saint-Bonnet-de-Condat : arrêt�
     </div>
     <h3 class="avis-titre"><a href="{{ lien }}" target="_blank" rel="noopener">{{ d.titre }}<span class="visuellement-cache"> (PDF, nouvel onglet)</span></a></h3>
     <p class="avis-actions"><a class="bouton bouton--pdf" href="{{ lien }}" target="_blank" rel="noopener">{% include icone.html nom="document" %}Ouvrir le document (PDF)<span class="visuellement-cache"> : {{ d.titre }}, nouvel onglet</span></a></p>
+    {%- if d.texte %}
+    <details class="avis-texte">
+      <summary>Afficher le texte du document</summary>
+      <div class="avis-texte-corps">
+{{ d.texte }}
+      </div>
+    </details>
+    {%- endif %}
   </article>
   {%- endfor %}
   {%- if docs.size > 0 %}
   <p class="aucun-resultat" data-actes-vide hidden>Aucun document ne correspond à cette sélection.</p>
+  <p class="visuellement-cache" role="status" data-statut-filtres></p>
   {%- else %}
   <p class="aucun-resultat">Aucun document n'est publié pour le moment.</p>
   {%- endif %}

@@ -1,0 +1,115 @@
+---
+title: "Accessibilité"
+permalink: /accessibilite/
+chapo: "Déclaration d'accessibilité du site de la commune de Saint-Bonnet-de-Condat."
+description: "Déclaration d'accessibilité du site saint-bonnet-de-condat.fr : état de conformité au RGAA, résultats des tests, contenus non accessibles, contact et voies de recours."
+---
+{%- assign a = site.data.accessibilite -%}
+{%- assign m = site.data.mairie -%}
+<div class="texte-legal">
+  <p>La commune de Saint-Bonnet-de-Condat s'engage à rendre son site internet accessible, conformément à l'article 47 de la loi n° 2005-102 du 11 février 2005.</p>
+  <p>Cette déclaration d'accessibilité s'applique au site <strong>saint-bonnet-de-condat.fr</strong>.</p>
+
+  <section class="bloc" aria-labelledby="titre-etat">
+    <h2 id="titre-etat">État de conformité</h2>
+    {%- if a.etat == "totalement conforme" %}
+    <p>Le site saint-bonnet-de-condat.fr est <strong>totalement conforme</strong> avec le référentiel général d'amélioration de l'accessibilité (RGAA), version 4.1.2.</p>
+    {%- elsif a.etat == "partiellement conforme" %}
+    <p>Le site saint-bonnet-de-condat.fr est <strong>partiellement conforme</strong> avec le référentiel général d'amélioration de l'accessibilité (RGAA), version 4.1.2, en raison des non-conformités énumérées ci-dessous.</p>
+    {%- else %}
+    <p>Le site saint-bonnet-de-condat.fr est <strong>non conforme</strong> avec le référentiel général d'amélioration de l'accessibilité (RGAA), version 4.1.2.</p>
+    {%- endif %}
+  </section>
+
+  <section class="bloc" aria-labelledby="titre-resultats">
+    <h2 id="titre-resultats">Résultats des tests</h2>
+    <p>L'auto-évaluation de conformité réalisée en interne par la commune le {% include date-fr.html date=a.date %} révèle que <strong>{{ a.taux }} % des critères du RGAA version 4.1.2 sont respectés</strong> :</p>
+    <ul>
+      <li>critères respectés : {{ a.conformes }} ;</li>
+      <li>critères non respectés : {{ a.non_conformes }} ;</li>
+      <li>critères non applicables : {{ a.non_applicables }}.</li>
+    </ul>
+    <p>{{ a.non_applicables_detail }}</p>
+  </section>
+
+  <section class="bloc" aria-labelledby="titre-contenus">
+    <h2 id="titre-contenus">Contenus non accessibles</h2>
+    <h3>Non-conformités</h3>
+    {%- if a.non_conformites and a.non_conformites.size > 0 %}
+    <ul>
+      {%- for nc in a.non_conformites %}
+      <li>{{ nc }}</li>
+      {%- endfor %}
+    </ul>
+    {%- else %}
+    <p>Aucune non-conformité n'a été relevée lors de l'auto-évaluation.</p>
+    {%- endif %}
+    <h3>Dérogations pour charge disproportionnée</h3>
+    <p>Aucune.</p>
+    <h3>Contenus non soumis à l'obligation d'accessibilité</h3>
+    <ul>
+      <li>La fiche de randonnée en PDF du Parc naturel régional des Volcans d'Auvergne, proposée en lien sur la page <a href="{{ '/decouvrir/' | relative_url }}">Découvrir</a> : contenu de tiers, qui n'est ni financé ni développé par la commune et qui n'est pas sous son contrôle.</li>
+    </ul>
+    <h3>Documents en PDF</h3>
+    <p>Les affiches publiées en PDF dans la rubrique <a href="{{ '/infos-alertes/' | relative_url }}">Infos &amp; Alertes</a> sont des images. Leur texte complet est proposé sur la page, sous chaque actualité, avec le bouton « Afficher le texte de l'actualité ».</p>
+  </section>
+
+  <section class="bloc" aria-labelledby="titre-etablissement">
+    <h2 id="titre-etablissement">Établissement de cette déclaration d'accessibilité</h2>
+    <p>Cette déclaration a été établie le {% include date-fr.html date=a.date %}.</p>
+    <h3>Technologies utilisées pour la réalisation du site</h3>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>SVG</li>
+    </ul>
+    <h3>Environnement de test</h3>
+    <p>{{ a.environnement }}</p>
+    <h3>Outils pour évaluer l'accessibilité</h3>
+    <ul>
+      {%- for outil in a.outils %}
+      <li>{{ outil }}</li>
+      {%- endfor %}
+    </ul>
+    <h3>Pages du site ayant fait l'objet de la vérification de conformité</h3>
+    <p>Toutes les pages du site ont été vérifiées :</p>
+    <ul>
+      <li><a href="{{ '/' | relative_url }}">Accueil</a></li>
+      <li><a href="{{ '/infos-alertes/' | relative_url }}">Infos &amp; Alertes</a></li>
+      <li><a href="{{ '/notifications/' | relative_url }}">Notifications</a></li>
+      <li><a href="{{ '/mairie/' | relative_url }}">La mairie</a></li>
+      <li><a href="{{ '/conseil-municipal/' | relative_url }}">Le conseil municipal</a></li>
+      <li><a href="{{ '/affichage-legal/' | relative_url }}">Affichage légal</a></li>
+      <li><a href="{{ '/vie-pratique/' | relative_url }}">Vie pratique</a></li>
+      <li><a href="{{ '/vie-locale/' | relative_url }}">Vie locale</a></li>
+      <li><a href="{{ '/tourisme/' | relative_url }}">Tourisme</a></li>
+      <li><a href="{{ '/decouvrir/' | relative_url }}">Découvrir Saint-Bonnet-de-Condat</a></li>
+      <li><a href="{{ '/bulletin-municipal/' | relative_url }}">Le bulletin municipal</a> et ses {{ site.posts.size }} articles</li>
+      <li><a href="{{ '/mentions-legales/' | relative_url }}">Mentions légales</a></li>
+      <li><a href="{{ '/accessibilite/' | relative_url }}">Accessibilité</a></li>
+      <li><a href="{{ '/plan-du-site/' | relative_url }}">Plan du site</a></li>
+      <li>Page d'erreur « Page introuvable »</li>
+    </ul>
+  </section>
+
+  <section class="bloc" aria-labelledby="titre-contact">
+    <h2 id="titre-contact">Retour d'information et contact</h2>
+    <p>Si vous n'arrivez pas à accéder à un contenu ou à un service, vous pouvez contacter la mairie pour être orienté vers une alternative accessible ou obtenir le contenu sous une autre forme :</p>
+    <ul>
+      <li>par téléphone : <a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a> ;</li>
+      <li>par courriel : <a href="mailto:{{ m.email }}">{{ m.email | replace: "@", "@<wbr>" }}</a> ;</li>
+      <li>par courrier : {{ m.nom }}, {{ m.adresse_ligne1 }}, {{ m.adresse_ligne2 }}.</li>
+    </ul>
+  </section>
+
+  <section class="bloc" aria-labelledby="titre-recours">
+    <h2 id="titre-recours">Voies de recours</h2>
+    <p>Cette procédure est à utiliser dans le cas suivant : vous avez signalé à la mairie un défaut d'accessibilité qui vous empêche d'accéder à un contenu ou à un service du site, et vous n'avez pas obtenu de réponse satisfaisante.</p>
+    <ul>
+      <li><a href="https://formulaire.defenseurdesdroits.fr/">Écrire un message au Défenseur des droits</a> ;</li>
+      <li><a href="https://www.defenseurdesdroits.fr/saisir/delegues">Contacter le délégué du Défenseur des droits dans votre région</a> ;</li>
+      <li>envoyer un courrier par la poste (gratuit, ne pas mettre de timbre) : Défenseur des droits, Libre réponse 71120, 75342 Paris CEDEX 07.</li>
+    </ul>
+  </section>
+</div>

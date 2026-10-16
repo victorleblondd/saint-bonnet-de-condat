@@ -1,0 +1,21 @@
+---
+title: "Plan du site"
+permalink: /plan-du-site/
+description: "Plan du site de la commune de Saint-Bonnet-de-Condat : liste de toutes les pages du site."
+---
+<ul class="plan-du-site">
+  <li><a href="{{ '/' | relative_url }}">Accueil</a></li>
+  {%- for lien in site.data.navigation %}
+  <li><a href="{{ lien.url | relative_url }}">{{ lien.titre }}</a></li>
+  {%- endfor %}
+  <li><a href="{{ '/bulletin-municipal/' | relative_url }}">Le bulletin municipal</a>
+    <ul>
+      {%- for article in site.posts %}
+      <li><a href="{{ article.url | relative_url }}">{{ article.title }}</a></li>
+      {%- endfor %}
+    </ul>
+  </li>
+  <li><a href="{{ '/notifications/' | relative_url }}">Notifications sur téléphone</a></li>
+  <li><a href="{{ '/mentions-legales/' | relative_url }}">Mentions légales</a></li>
+  <li><a href="{{ '/accessibilite/' | relative_url }}">Accessibilité</a></li>
+</ul>

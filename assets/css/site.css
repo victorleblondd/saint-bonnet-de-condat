@@ -25,7 +25,7 @@
   --sur-alerte: #FFFFFF;
   --or: #9A6B00;
   --or-pale: #FBF1D9;
-  --focus: #E8A317;
+  --focus: #0B5ED7;
   --ombre: 0 1px 2px rgba(20, 28, 52, .06), 0 6px 20px rgba(20, 28, 52, .07);
   --ombre-forte: 0 2px 4px rgba(20, 28, 52, .08), 0 14px 36px rgba(20, 28, 52, .14);
   --rayon: 14px;
@@ -55,6 +55,7 @@
     --sur-alerte: #2A0D0A;
     --or: #E9B64B;
     --or-pale: #33291A;
+    --focus: #E8A317;
     --ombre: 0 1px 2px rgba(0, 0, 0, .4);
     --ombre-forte: 0 2px 6px rgba(0, 0, 0, .5), 0 14px 36px rgba(0, 0, 0, .35);
     color-scheme: dark;
@@ -72,6 +73,7 @@ body {
   font-family: var(--police-texte);
   font-size: 1.0625rem;
   line-height: 1.6;
+  overflow-wrap: break-word;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -81,6 +83,9 @@ img { height: auto; display: block; }
 a { color: var(--lien); text-decoration-thickness: 1px; text-underline-offset: 3px; }
 a:hover { text-decoration-thickness: 2px; }
 :focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 3px; }
+/* Bandeaux sombres : focus ambre ; bandeau d'alerte : focus de la couleur du texte */
+.bandeau-haut, .entete-page, .heros, .pied { --focus: #E8A317; }
+.bandeau-alerte { --focus: var(--sur-alerte); }
 main:focus { outline: none; }
 h1, h2, h3, h4 { line-height: 1.2; margin: 0 0 .6em; text-wrap: balance; }
 h1, h2 { font-family: var(--police-titre); font-weight: 700; letter-spacing: -.005em; }
@@ -104,7 +109,8 @@ time, .chiffre { font-variant-numeric: tabular-nums; }
 }
 .lien-evitement {
   position: absolute; left: 12px; top: -60px; z-index: 100;
-  background: var(--focus); color: #1A1300; font-weight: 700; padding: 10px 16px; border-radius: 0 0 8px 8px;
+  background: #E8A317; color: #1A1300; font-weight: 700; padding: 10px 16px; border-radius: 0 0 8px 8px;
+  --focus: #FFFFFF;
 }
 .lien-evitement:focus { top: 0; }
 
@@ -116,7 +122,7 @@ time, .chiffre { font-variant-numeric: tabular-nums; }
   padding: .62em 1.1em; border-radius: 10px; border: 2px solid var(--accent);
   background: var(--accent); color: var(--surface);
   font: inherit; font-size: .97rem; font-weight: 700; line-height: 1.2;
-  text-decoration: none; cursor: pointer; white-space: nowrap;
+  text-decoration: none; cursor: pointer; max-width: 100%;
   transition: background-color .15s, color .15s, border-color .15s, transform .15s;
 }
 .bouton:hover { background: var(--marque-fond-2); border-color: var(--marque-fond-2); color: #fff; }
@@ -228,6 +234,14 @@ time, .chiffre { font-variant-numeric: tabular-nums; }
     linear-gradient(90deg, rgba(12, 19, 46, .86) 0%, rgba(12, 19, 46, .62) 42%, rgba(12, 19, 46, .12) 78%),
     linear-gradient(0deg, rgba(12, 19, 46, .55) 0%, rgba(12, 19, 46, 0) 45%);
 }
+/* Tablettes : le titre occupe presque toute la largeur, le voile est renforcé pour garder le contraste */
+@media (min-width: 701px) and (max-width: 1179px) {
+  .heros::before {
+    background:
+      linear-gradient(90deg, rgba(12, 19, 46, .88) 0%, rgba(12, 19, 46, .74) 55%, rgba(12, 19, 46, .38) 100%),
+      linear-gradient(0deg, rgba(12, 19, 46, .55) 0%, rgba(12, 19, 46, 0) 45%);
+  }
+}
 .heros-diapo { background: var(--photo, none) center 42% / cover no-repeat; opacity: 0; transition: opacity 1.2s ease-in-out; }
 .heros-diapo--active { opacity: 1; }
 .heros-diapo--camping { background-position: center 35%; }
@@ -243,7 +257,7 @@ time, .chiffre { font-variant-numeric: tabular-nums; }
 .heros-commandes {
   position: absolute; right: max(24px, calc((100% - 1180px) / 2 + 24px)); bottom: 76px; /* au-dessus des accès rapides */
   display: flex; align-items: center; gap: 2px; padding: 4px;
-  border-radius: 999px; background: rgba(12, 19, 46, .6);
+  border-radius: 999px; background: rgba(12, 19, 46, .8);
 }
 .heros-commandes[hidden] { display: none; }
 .heros-commandes button {
@@ -320,10 +334,16 @@ time, .chiffre { font-variant-numeric: tabular-nums; }
 .carte-date { margin: auto 0 0 !important; padding-top: 6px; font-size: .86rem !important; color: var(--encre-3) !important; font-weight: 600; }
 .lien-etendu::after { content: ""; position: absolute; inset: 0; border-radius: var(--rayon); }
 .lien-etendu:focus-visible { outline: none; }
-.lien-etendu:focus-visible::after { outline: 3px solid var(--focus); outline-offset: 2px; }
+/* La carte coupe ce qui dépasse (overflow) : le contour de focus est tracé sur la carte elle-même,
+   ou à l'intérieur de la carte pour les navigateurs anciens */
+.lien-etendu:focus-visible::after { outline: 3px solid var(--focus); outline-offset: -3px; }
+@supports selector(:has(a)) {
+  .carte:has(.lien-etendu:focus-visible) { outline: 3px solid var(--focus); outline-offset: 2px; }
+  .lien-etendu:focus-visible::after { outline: none; }
+}
 
 /* ---------- Infos & Alertes ---------- */
-.liste-avis { display: grid; gap: 14px; }
+.liste-avis { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
 .avis {
   position: relative; background: var(--surface); border: 1px solid var(--ligne); border-left: 5px solid var(--lien);
   border-radius: 12px; padding: 18px 22px 18px 20px; box-shadow: var(--ombre);
@@ -367,7 +387,7 @@ time, .chiffre { font-variant-numeric: tabular-nums; }
 }
 .filtres button:hover { border-color: var(--accent); color: var(--accent); }
 .filtres button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--surface); }
-.filtres .nombre { margin-left: 6px; font-weight: 600; opacity: .75; font-variant-numeric: tabular-nums; }
+.filtres .nombre { margin-left: 2px; font-weight: 400; font-variant-numeric: tabular-nums; }
 .mois, .annee { font-family: var(--police-texte); font-size: .85rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--encre-3); margin: 34px 0 12px; }
 .mois:first-of-type, .annee:first-of-type { margin-top: 0; }
 .mois::first-letter { text-transform: uppercase; }
@@ -379,7 +399,7 @@ time, .chiffre { font-variant-numeric: tabular-nums; }
 .filtres-titre { margin: 0; min-width: 4.4rem; font-size: .8rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--encre-3); }
 .filtres-actes .filtres { margin: 0; }
 @media (max-width: 600px) { .filtres-ligne { flex-direction: column; align-items: flex-start; } }
-.liste-actes { display: grid; gap: 14px; margin-bottom: 28px; }
+.liste-actes { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; margin-bottom: 28px; }
 .acte {
   position: relative; background: var(--surface); border: 1px solid var(--ligne); border-left: 5px solid var(--vert);
   border-radius: 12px; padding: 18px 22px 18px 20px; box-shadow: var(--ombre);
@@ -397,7 +417,7 @@ time, .chiffre { font-variant-numeric: tabular-nums; }
 .entete-page .surtitre + h1 { margin-top: 4px; }
 .fil-ariane ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 0; font-size: .9rem; }
 .fil-ariane li { margin: 0; display: inline-flex; align-items: center; color: var(--sur-marque-2); }
-.fil-ariane li + li::before { content: "›"; margin: 0 10px; opacity: .7; }
+.fil-ariane li + li::before { content: "›"; content: "›" / ""; margin: 0 10px; opacity: .7; }
 .fil-ariane a { color: #fff; }
 .fil-ariane [aria-current] { color: var(--sur-marque-2); }
 .article-date { display: flex; align-items: center; gap: 8px; margin: 10px 0 0; color: var(--sur-marque-2); font-weight: 600; }
@@ -417,12 +437,13 @@ time, .chiffre { font-variant-numeric: tabular-nums; }
 
 .panneau { background: var(--surface); border: 1px solid var(--ligne); border-radius: var(--rayon); padding: 24px 26px; box-shadow: var(--ombre); }
 .panneau > :last-child { margin-bottom: 0; }
-.panneau h3, .h3-like { font-family: var(--police-texte); font-size: 1.22rem; font-weight: 700; color: var(--encre); margin: 0 0 .7em; line-height: 1.25; }
+.panneau h3, .h3-like { font-family: var(--police-texte); font-size: 1.22rem; font-weight: 700; color: var(--encre); margin: 0 0 .7em; line-height: 1.25; letter-spacing: normal; }
 .panneau--vert { background: var(--vert-pale); border-color: transparent; box-shadow: none; }
 .panneau--alerte { background: var(--alerte-pale); border-color: transparent; box-shadow: none; }
-.panneau--alerte h3 { color: var(--alerte); }
+.panneau--alerte h3, .panneau--alerte .h3-like { color: var(--alerte); }
 .panneau--info { background: var(--accent-pale); border-color: transparent; box-shadow: none; }
 .panneau--or { background: var(--or-pale); border-color: transparent; box-shadow: none; }
+.encart { margin-bottom: 32px; }
 .pile, .pile-laterale { display: grid; gap: 20px; align-content: start; }
 .tarifs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-bottom: 1rem; }
 .tarifs p { margin: 0; padding: 12px 14px; border-radius: 10px; background: var(--surface-2); color: var(--encre-2); font-size: .95rem; }
@@ -446,6 +467,9 @@ time, .chiffre { font-variant-numeric: tabular-nums; }
 .texte-legal { max-width: 78ch; }
 .texte-legal .bloc { margin-bottom: 36px; }
 .texte-legal h2 { font-size: 1.45rem; }
+.plan-du-site { font-size: 1.05rem; max-width: 78ch; }
+.plan-du-site > li + li { margin-top: .6em; }
+.plan-du-site ul { margin: .5em 0 0; }
 
 .chiffre-cle { font-family: var(--police-titre); font-size: 1.9rem; font-weight: 700; color: var(--accent); line-height: 1.1; display: block; }
 .mise-en-avant { font-size: 1.12rem; font-weight: 700; color: var(--accent); }
@@ -472,6 +496,7 @@ dl.horaires dt { font-weight: 700; }
 dl.horaires dd { margin: 0; font-variant-numeric: tabular-nums; text-align: right; }
 dl.horaires .ferme dt, dl.horaires .ferme dd { color: var(--encre-3); font-weight: 400; }
 dl.horaires .aujourdhui { background: var(--accent-pale); margin-inline: -10px; padding-inline: 10px; border-radius: 8px; border-bottom-color: transparent; }
+dl.horaires .mention-jour { display: block; font-size: .85em; font-weight: 400; color: var(--encre-2); }
 
 .tableau-defilant { overflow-x: auto; margin-bottom: 1rem; }
 table { border-collapse: collapse; width: 100%; font-size: .97rem; }
@@ -518,7 +543,7 @@ tbody tr:last-child td { border-bottom: 0; }
 .accueil-infos { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 32px; align-items: start; }
 @media (max-width: 900px) { .accueil-infos { grid-template-columns: minmax(0, 1fr); } }
 .carte-mairie { padding: 26px; }
-.carte-mairie h3 { font-family: var(--police-titre); font-size: 1.4rem; color: var(--accent); }
+.carte-mairie h2 { font-family: var(--police-titre); font-size: 1.4rem; color: var(--accent); }
 .carte-mairie .horaires { margin: 18px 0; }
 
 /* ---------- Pied de page ---------- */

@@ -2,23 +2,28 @@
 #  INFOS & ALERTES DE LA MAIRIE
 #  La publication la plus récente se place TOUT EN HAUT de la liste.
 #
-#  Ajouter un avis en PDF :
+#  Ajouter une actualité en PDF :
 #    1. Déposer le fichier PDF dans le dossier  documents/infos-alertes/
 #       Nom conseillé : AAAA-MM-JJ-sujet-court.pdf  (sans accents ni espaces)
 #    2. Copier le modèle ci-dessous tout en haut de la liste, puis le remplir.
 #
-#  - date: "AAAA-MM-JJ"               date de l'avis
+#  - date: "AAAA-MM-JJ"               date de l'actualité
 #    heure: "HH:MM"                   facultatif
 #    type: alerte                     alerte (rouge) ou info (bleu)
 #    theme: eau                       eau, travaux, vie (services et vie locale)
-#    titre: "Titre de l'avis"
+#    titre: "Titre de l'actualité"
 #    resume: "Une ou deux phrases qui disent l'essentiel."
 #    pdf: "AAAA-MM-JJ-sujet-court.pdf"    nom exact du fichier déposé
 #    bandeau_jusquau: "AAAA-MM-JJ"    facultatif : bandeau rouge sur l'accueil
 #                                     jusqu'à cette date incluse (alertes)
+#    texte: |                         texte complet de l'actualité
+#      <p>…</p>
 #
-#  Champ facultatif « texte » : le texte complet de l'avis (version lisible
-#  sans ouvrir le PDF). Les avis sans PDF affichent ce texte.
+#  Champ « texte » : le texte complet de l'actualité, affiché sous le bouton
+#  « Afficher le texte de l'actualité ». À remplir pour chaque PDF : les
+#  affiches en image ne sont pas lisibles par les lecteurs d'écran
+#  (accessibilité). Il doit reprendre toutes les informations de l'affiche.
+#  Les actualités sans PDF affichent ce texte.
 # =====================================================================
 
 - date: "2026-10-08"
@@ -109,7 +114,24 @@
       <li>vendredi 16 octobre : agence postale de Trizac, de 9 h 30 à 11 h 30 ;</li>
       <li>nouveau : mairie de Collandres, le 2 novembre puis le premier lundi tous les deux mois, de 9 h 30 à 11 h 30.</li>
     </ul>
-    <p>Les organismes partenaires (CAF, CPAM, MSA, CARSAT, France Travail, Mission locale…) reçoivent sur rendez-vous : le détail figure dans le planning en PDF.</p>
+    <p><strong>Organismes partenaires :</strong></p>
+    <ul>
+      <li>Caisse d'Allocations Familiales (CAF) : tous les jours en visio-accueil, sur rendez-vous au <a href="tel:+33471782950">04 71 78 29 50</a> ;</li>
+      <li>Caisse Primaire d'Assurance Maladie (CPAM) : tous les jours en visio-accueil, sur rendez-vous au <a href="tel:+33471782950">04 71 78 29 50</a> ;</li>
+      <li>Point justice (CDAD 15) : sur rendez-vous au <a href="tel:+33471430010">04 71 43 00 10</a> ;</li>
+      <li>Cantal Rénov' Énergie : sur rendez-vous au <a href="tel:+33471464900">04 71 46 49 00</a> ;</li>
+      <li>Cap Emploi : en permanence physique, sur rendez-vous au <a href="tel:+33471488900">04 71 48 89 00</a> ;</li>
+      <li>UDAF 15 : sur rendez-vous au <a href="tel:+33471434343">04 71 43 43 43</a> ;</li>
+      <li>Centre Interinstitutionnel de Bilan de Compétences (CIBC) : sur rendez-vous au <a href="tel:+33471480983">04 71 48 09 83</a> ;</li>
+      <li>CICAS, retraite complémentaire Agirc-Arrco : sur rendez-vous au <a href="tel:+33970660660">09 70 66 06 60</a> ;</li>
+      <li>Chambre de Commerce et d'Industrie (CCI) : sur rendez-vous au <a href="tel:+33471454040">04 71 45 40 40</a> ;</li>
+      <li>France Travail : sur convocation ;</li>
+      <li>CARSAT, service social : en permanence physique, sur rendez-vous au <a href="tel:3646">36 46</a> (dire « Service social ») ;</li>
+      <li>Chambre des Métiers et de l'Artisanat du Cantal : sur rendez-vous au <a href="tel:+33471456505">04 71 45 65 05</a> ;</li>
+      <li>Mutualité Sociale Agricole (MSA) : sur rendez-vous au <a href="tel:+33471646646">04 71 64 66 46</a> ;</li>
+      <li>OC'TEHA (amélioration de l'habitat) : sur rendez-vous au <a href="tel:+33471456212">04 71 45 62 12</a>, deux fois par mois, le mercredi matin ou après-midi ;</li>
+      <li>Mission Locale Hautes Terres : le 2<sup>e</sup> jeudi (matin) et le 4<sup>e</sup> mardi (après-midi), en permanence physique, avec ou sans rendez-vous, au <a href="tel:+33471673111">04 71 67 31 11</a>.</li>
+    </ul>
 
 - date: "2026-09-28"
   type: info

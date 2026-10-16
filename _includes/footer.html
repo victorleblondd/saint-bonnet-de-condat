@@ -44,8 +44,9 @@
     <div class="conteneur pied-bas-interieur">
       <p>© {{ site.time | date: "%Y" }} Commune de Saint-Bonnet-de-Condat</p>
       <ul>
+        <li><a href="{{ '/plan-du-site/' | relative_url }}">Plan du site</a></li>
         <li><a href="{{ '/mentions-legales/' | relative_url }}">Mentions légales</a></li>
-        <li><a href="{{ '/mentions-legales/' | relative_url }}#accessibilite">Accessibilité : non conforme</a></li>
+        <li><a href="{{ '/accessibilite/' | relative_url }}">Accessibilité : {{ site.data.accessibilite.etat }}</a></li>
       </ul>
     </div>
   </div>

@@ -35,9 +35,6 @@ description: "Mentions légales, données personnelles et accessibilité du site
   <section class="bloc" id="accessibilite" aria-labelledby="titre-accessibilite">
     <h2 id="titre-accessibilite">Accessibilité</h2>
     <p>La commune de Saint-Bonnet-de-Condat s'engage à rendre son site accessible, conformément à l'article 47 de la loi n° 2005-102 du 11 février 2005.</p>
-    <p><strong>État de conformité : non conforme.</strong> Aucun audit de conformité au référentiel général d'amélioration de l'accessibilité (RGAA) n'a encore été réalisé.</p>
-    <p>Les avis publiés en PDF sont des affiches : leur texte est repris sur la page <a href="{{ '/infos-alertes/' | relative_url }}">Infos &amp; Alertes</a>.</p>
-    <p>Si vous n'arrivez pas à accéder à un contenu, contactez la mairie au <a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a> ou à <a href="mailto:{{ m.email }}">{{ m.email }}</a> : nous vous le transmettrons sous une autre forme.</p>
-    <p>Si vous n'obtenez pas de réponse satisfaisante, vous pouvez saisir le <a href="https://www.defenseurdesdroits.fr">Défenseur des droits</a>.</p>
+    <p><strong>État de conformité : {{ site.data.accessibilite.etat }}.</strong> Le détail figure dans la <a href="{{ '/accessibilite/' | relative_url }}">déclaration d'accessibilité</a>.</p>
   </section>
 </div>
