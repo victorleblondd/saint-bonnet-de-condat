@@ -15,6 +15,3 @@ https://panneau-pocket.s3.gra.perf.cloud.ovh.net/cache/sign_image/16315188656abf
 https://panneau-pocket.s3.gra.perf.cloud.ovh.net/cache/sign_image/9004228666abf5fdc4e8223.99457143-1790926812.jpg/324bc299a66f40f6e53dab865e6f496f  documents/infos-alertes/2026-10-02-france-services-octobre.pdf
 https://panneau-pocket.s3.gra.perf.cloud.ovh.net/cache/sign_image/15732080036aba7af19de532.52892296-1790606065.jpg/939f6badbd135255bd761ab690e00432  documents/infos-alertes/2026-09-28-repas-rochers-en-folie.pdf
 https://panneau-pocket.s3.gra.perf.cloud.ovh.net/cache/sign_image/6335824806ab76fa650de76.11310729-1790406566.jpg/faffc12148227ce28e63fddfa6ac935c  documents/infos-alertes/2026-09-26-horaires-mairie-point-poste.pdf
-
-# Vie locale : logo de L'Instant Libellule (photo de profil de sa page Facebook, version carrée de 480 px)
-https://scontent-cdg4-2.xx.fbcdn.net/v/t39.30808-1/730749795_122099171235369324_7951314249981452261_n.jpg?stp=c314.0.752.752a_dst-jpg_tt6&cstp=mx752x752&ctp=s480x480&_nc_cat=100&ccb=1-7&_nc_sid=2d3e12&_nc_ohc=yE0miQwzkg4Q7kNvwHqC3kr&_nc_oc=AdprDYWXIaV_y3JWsfEyxPDoL4C44iJze1e3X8McxY-LLwoexiVdiZ3ZstDPNmGKHof60m6MTU1OyE9NxtyLHI3K&_nc_zt=24&_nc_ht=scontent-cdg4-2.xx&_nc_ss=792a8&oh=00_AQPjjYFUx1RlsM1lnvjA9M8l-OHY4AwPwoEVmKky2FzBog&oe=6AD832B9  assets/images/vie-locale/linstant-libellule.jpg  360
