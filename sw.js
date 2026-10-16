@@ -13,7 +13,7 @@ self.addEventListener('push', function (event) {
     try { donnees = event.data.json(); } catch (erreur) { donnees = { body: event.data.text() }; }
   }
   event.waitUntil(self.registration.showNotification(donnees.title || 'Saint-Bonnet-de-Condat', {
-    body: donnees.body || 'Nouvel avis de la mairie.',
+    body: donnees.body || 'Nouvelle actualité de la mairie.',
     icon: '/assets/icones/icone-192.png',
     tag: donnees.tag || undefined,
     lang: 'fr',

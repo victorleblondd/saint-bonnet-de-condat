@@ -44,7 +44,7 @@
       .then(function () {
         afficher('actif');
         return enregistrement.showNotification('Notifications activées', {
-          body: 'Vous recevrez les avis de la mairie de Saint-Bonnet-de-Condat.',
+          body: 'Vous recevrez les actualités de la mairie de Saint-Bonnet-de-Condat.',
           icon: '/assets/icones/icone-192.png',
           tag: 'bienvenue',
           lang: 'fr'
