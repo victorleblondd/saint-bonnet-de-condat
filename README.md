@@ -118,3 +118,7 @@ lamaisondesvolcanscantal.fr), réduits et sans marges transparentes.
 Logo de L'Instant Libellule (page Vie locale, `assets/images/vie-locale/linstant-libellule.jpg`) : photo de profil
 de sa page Facebook, réduite à 360 px. Facebook signale cette image comme « Contenu IA » ; son utilisation a été
 validée par Victor Leblond.
+
+Logo de Prestige Nails by Sonia (page Vie locale, `assets/images/vie-locale/prestige-nails-by-sonia.jpg`) : image
+de sa page Facebook (959 × 960 px), réduite à 360 px. Elle porte dans son coin inférieur droit l'étoile de Gemini
+(image produite avec un outil d'intelligence artificielle) ; son utilisation a été validée par Victor Leblond.
