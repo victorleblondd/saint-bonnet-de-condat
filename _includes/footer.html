@@ -2,9 +2,9 @@
 <footer class="pied">
   <div class="conteneur pied-grille">
     <section class="pied-bloc" aria-labelledby="pied-mairie">
-      <h2 id="pied-mairie" class="pied-titre">{{ m.nom }}</h2>
+      <h2 class="pied-titre"><a href="{{ m.facebook_url }}" rel="noopener"><span id="pied-mairie">{{ m.nom }}</span><span class="visuellement-cache"> (page Facebook)</span></a></h2>
       <address>
-        <p>{% include icone.html nom="lieu" %}<span>{{ m.adresse_ligne1 }}<br>{{ m.adresse_ligne2 }}</span></p>
+        <p>{% include icone.html nom="lieu" %}<a href="{{ m.carte_url | escape }}" rel="noopener">{{ m.adresse_ligne1 }}<br>{{ m.adresse_ligne2 }}<span class="visuellement-cache"> (ouvrir dans Google Maps)</span></a></p>
         <p>{% include icone.html nom="telephone" %}<a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a></p>
         <p>{% include icone.html nom="email" %}<a href="mailto:{{ m.email }}">{{ m.email | replace: "@", "@<wbr>" }}</a></p>
       </address>
