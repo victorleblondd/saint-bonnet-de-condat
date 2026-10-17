@@ -1,11 +1,14 @@
 # Fichiers que GitHub va chercher automatiquement et ajouter au site
 # (programme : outils/recuperer_fichiers.py, lancé par .github/workflows/recuperer-fichiers.yml).
 #
-# Une ligne par fichier :  adresse-source   chemin-dans-le-site   [largeur maximale, pour les photos]
+# Une ligne par fichier :  adresse-source   chemin-dans-le-site   [option]
 # - Si le chemin se termine par .pdf et que la source est une image (affiche), elle est convertie en PDF A4.
+# - Option pour une photo : largeur maximale (par exemple 1400).
+# - Option pour un PDF : pages=3-4 garde seulement ces pages (arrêté d'un recueil des actes administratifs).
 # - Un fichier déjà présent dans le site n'est jamais téléchargé une deuxième fois.
 
-# Infos & Alertes : affiches de la mairie
+# Infos & Alertes : affiches et documents de la mairie
+https://panneau-pocket.s3.gra.perf.cloud.ovh.net/source/sign_pdf/17172196966ad2724677b176.99947342-1792176710.pdf  documents/infos-alertes/2026-10-16-elections-municipales-conseil-d-etat.pdf
 https://panneau-pocket.s3.gra.perf.cloud.ovh.net/cache/sign_image/19628149996ac7ee4d312f95.90583198-1791487565.jpg/75c9e41ae0a9a4d636ddcc9dfc808287  documents/infos-alertes/2026-10-08-halloween-camping-la-santoire.pdf
 https://panneau-pocket.s3.gra.perf.cloud.ovh.net/cache/sign_image/10713130766ac4ecf25303a9.89388826-1791290610.jpg/62a151549d8b2c8972d2fe9fd93cd891  documents/infos-alertes/2026-10-06-fermeture-mairie-point-poste.pdf
 https://panneau-pocket.s3.gra.perf.cloud.ovh.net/cache/sign_image/21308716376ac49b976a8280.42024875-1791269783.jpg/a636419d77a3234d17b62b1cdcaf2c23  documents/infos-alertes/2026-10-06-degrevement-impots-directs.pdf
@@ -15,3 +18,14 @@ https://panneau-pocket.s3.gra.perf.cloud.ovh.net/cache/sign_image/16315188656abf
 https://panneau-pocket.s3.gra.perf.cloud.ovh.net/cache/sign_image/9004228666abf5fdc4e8223.99457143-1790926812.jpg/324bc299a66f40f6e53dab865e6f496f  documents/infos-alertes/2026-10-02-france-services-octobre.pdf
 https://panneau-pocket.s3.gra.perf.cloud.ovh.net/cache/sign_image/15732080036aba7af19de532.52892296-1790606065.jpg/939f6badbd135255bd761ab690e00432  documents/infos-alertes/2026-09-28-repas-rochers-en-folie.pdf
 https://panneau-pocket.s3.gra.perf.cloud.ovh.net/cache/sign_image/6335824806ab76fa650de76.11310729-1790406566.jpg/faffc12148227ce28e63fddfa6ac935c  documents/infos-alertes/2026-09-26-horaires-mairie-point-poste.pdf
+
+# Affichage légal : arrêtés préfectoraux qui concernent la commune (depuis septembre 2026)
+# Sécheresse : fichiers diffusés par la préfecture du Cantal sur VigiEau. Vélorail du Cézallier et électrification
+# rurale : pages de l'arrêté dans le recueil des actes administratifs de la préfecture (cantal.gouv.fr).
+https://regleau.s3.gra.perf.cloud.ovh.net/arrete-restriction/38081/dd190fc2-6a81-48dd-8f6f-643855faaac6/AP_Limitation_2026-09-09_diff.pdf  documents/affichage-legal/2026-09-09-limitation-usages-eau.pdf
+https://regleau.s3.gra.perf.cloud.ovh.net/arrete-restriction/38116/52d3fc75-f2a4-49f6-b51e-659334755ae7/AP_Limitation_2026-09-17_signe.pdf  documents/affichage-legal/2026-09-17-limitation-usages-eau.pdf
+https://www.cantal.gouv.fr/contenu/telechargement/26151/203501/file/recueil-15-2026-196-recueil-des-actes-administratifs.pdf  documents/affichage-legal/2026-09-17-velorail-suspension.pdf  pages=3-4
+https://www.cantal.gouv.fr/contenu/telechargement/26223/203961/file/recueil-15-2026-201-recueil-des-actes-administratifs.pdf  documents/affichage-legal/2026-09-29-electrification-rurale.pdf  pages=35-41
+https://regleau.s3.gra.perf.cloud.ovh.net/arrete-restriction/38204/b4084cda-fd83-4ebd-9428-ce8ec25fef14/AP_Limitation_2026-10-01_VDiff.pdf  documents/affichage-legal/2026-10-02-limitation-usages-eau.pdf
+https://www.cantal.gouv.fr/contenu/telechargement/26337/204637/file/recueil-15-2026-214-recueil-des-actes-administratifs-special.pdf  documents/affichage-legal/2026-10-09-velorail-reglement-securite.pdf  pages=4-5
+https://regleau.s3.gra.perf.cloud.ovh.net/arrete-restriction/38247/c07ab652-661c-4431-8b25-3ffe546d9e1b/AP_Limitation_2026-10-15_VDiff.pdf  documents/affichage-legal/2026-10-15-limitation-usages-eau.pdf

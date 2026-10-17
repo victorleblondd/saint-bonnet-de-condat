@@ -1,7 +1,9 @@
 """Télécharge les fichiers listés dans outils/fichiers-a-recuperer.txt et les ajoute au site.
 
 - Une affiche (image) dont le chemin de destination se termine par .pdf est convertie en PDF au format A4.
-- Une photo peut être réduite à une largeur maximale (troisième colonne).
+- Une photo peut être réduite à une largeur maximale (troisième colonne, par exemple 1400).
+- D'un PDF, on peut ne garder que certaines pages (troisième colonne, par exemple pages=3-4) :
+  utile pour un arrêté publié dans un recueil des actes administratifs de la préfecture.
 - Un fichier déjà présent n'est jamais retéléchargé.
 
 Lancé automatiquement par GitHub (.github/workflows/recuperer-fichiers.yml).
@@ -44,10 +46,28 @@ def en_pdf(donnees):
     return img2pdf.convert(donnees, layout_fun=mise_en_page)
 
 
-def recuperer(url, destination, largeur):
+def extraire_pages(donnees, pages):
+    """Garde les pages « debut-fin » (numérotées à partir de 1) d'un PDF."""
+    import pikepdf  # installé avec img2pdf
+
+    debut, _, fin = pages.partition("-")
+    debut, fin = int(debut), int(fin or debut)
+    with pikepdf.open(io.BytesIO(donnees)) as source:
+        if not 1 <= debut <= fin <= len(source.pages):
+            raise ValueError(f"pages {pages} hors du document ({len(source.pages)} pages)")
+        extrait = pikepdf.new()
+        extrait.pages.extend(source.pages[debut - 1:fin])
+        sortie = io.BytesIO()
+        extrait.save(sortie)
+    return sortie.getvalue()
+
+
+def recuperer(url, destination, largeur, pages):
     donnees = telecharger(url)
     if destination.lower().endswith(".pdf"):
         donnees = en_pdf(donnees)
+        if pages:
+            donnees = extraire_pages(donnees, pages)
     elif destination.lower().endswith((".jpg", ".jpeg")):
         donnees = en_jpeg(donnees, largeur)
     os.makedirs(os.path.dirname(destination) or ".", exist_ok=True)
@@ -65,12 +85,17 @@ def main():
                 continue
             morceaux = ligne.split()
             url, destination = morceaux[0], morceaux[1]
-            largeur = int(morceaux[2]) if len(morceaux) > 2 else None
+            largeur, pages = None, None
+            for option in morceaux[2:]:
+                if option.startswith("pages="):
+                    pages = option[len("pages="):]
+                elif option.isdigit():
+                    largeur = int(option)
             if os.path.exists(destination):
                 print(f"Déjà présent : {destination}")
                 continue
             try:
-                recuperer(url, destination, largeur)
+                recuperer(url, destination, largeur, pages)
                 ajoutes += 1
             except Exception as erreur:  # un fichier en échec ne bloque pas les autres
                 print(f"::warning::Échec pour {destination} : {erreur}")
