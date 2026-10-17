@@ -51,11 +51,8 @@ description: "Affichage légal de la commune de Saint-Bonnet-de-Condat : arrêt�
       <span>n° {{ d.numero }}</span>
       {%- endif %}
     </div>
-    <h3 class="avis-titre"><a href="{{ lien }}" target="_blank" rel="noopener">{{ d.titre }}<span class="visuellement-cache"> ({% if d.numero %}n° {{ d.numero }}, {% endif %}PDF, nouvel onglet)</span></a></h3>
-    {%- if d.resume %}
-    <p class="avis-resume">{{ d.resume }}</p>
-    {%- endif %}
-    <p class="avis-actions"><a class="bouton bouton--pdf" href="{{ lien }}" target="_blank" rel="noopener">{% include icone.html nom="document" %}Ouvrir le document (PDF)<span class="visuellement-cache"> : {{ d.titre }}{% if d.numero %}, n° {{ d.numero }}{% endif %}, nouvel onglet</span></a></p>
+    <h3 class="avis-titre"><a href="{{ lien }}" target="_blank" rel="noopener">{{ d.titre }}<span class="visuellement-cache"> (PDF, nouvel onglet)</span></a></h3>
+    <p class="avis-actions"><a class="bouton bouton--pdf" href="{{ lien }}" target="_blank" rel="noopener">{% include icone.html nom="document" %}Ouvrir le document (PDF)<span class="visuellement-cache"> : {{ d.titre }}, nouvel onglet</span></a></p>
     {%- if d.texte %}
     <details class="avis-texte">
       <summary>Afficher le texte du document</summary>
