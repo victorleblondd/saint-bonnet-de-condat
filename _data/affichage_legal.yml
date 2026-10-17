@@ -12,6 +12,8 @@
 #                                      deliberation, proces-verbal ou divers
 #    numero: "AR 016 2026"             facultatif
 #    titre: "Objet du document"
+#    resume: "Une ou deux phrases."    facultatif : ce que le document change
+#                                      pour la commune
 #    pdf: "AAAA-MM-JJ-sujet-court.pdf"  nom exact du fichier déposé
 #    texte: |                          texte du document (voir ci-dessous)
 #      <p>…</p>
@@ -19,6 +21,8 @@
 #  Accessibilité : un PDF scanné ou en image n'est pas lisible par les
 #  lecteurs d'écran. Dans ce cas, recopier le texte du document dans
 #  « texte » : il s'affiche sous le bouton « Afficher le texte du document ».
+#  Les arrêtés préfectoraux sont des documents de la préfecture du Cantal,
+#  publiés tels quels (contenus de tiers, voir la page Accessibilité).
 # =====================================================================
 
 # Types de documents proposés dans le filtre
@@ -42,5 +46,116 @@ types:
 # Années proposées dans le filtre
 annees: [2026, 2027]
 
-# Documents publiés (aucun pour le moment)
-documents: []
+# Documents publiés
+documents:
+  - date: "2026-10-15"
+    type: arrete-prefectoral
+    numero: "2026-224-DDT"
+    titre: "Limitation provisoire des usages de l'eau dans le département du Cantal"
+    resume: "L'arrêté place la zone de gestion de la Rhue, dont fait partie Saint-Bonnet-de-Condat, au niveau «&nbsp;crise&nbsp;». Ses dispositions sont applicables jusqu'au 31 octobre 2026 inclus. Les mesures qui concernent les particuliers sont reprises dans la rubrique <a href='/vie-pratique/#secheresse'>Vie pratique</a>."
+    pdf: "2026-10-15-limitation-usages-eau.pdf"
+    texte: |
+      <p><strong>Préfet du Cantal – Direction départementale des territoires</strong></p>
+      <p><strong>Arrêté n° 2026-224-DDT du 15/10/2026 portant limitation provisoire des usages de l’eau dans le département du Cantal</strong></p>
+      <p>Le préfet du Cantal,<br>Officier de l’Ordre national du mérite</p>
+      <p>Vu le code de l’environnement, livre II, titre I<sup>er</sup> relatif à l’eau et aux milieux aquatiques ;</p>
+      <p>Vu le décret du président de la République du 23 octobre 2024 portant nomination de monsieur Philippe Loos préfet du Cantal ;</p>
+      <p>Vu l’arrêté cadre interdépartemental N° E-2026-127 du 29/05/2026 délimitant les zones d’alerte et définissant les mesures de limitation ou de suspension provisoire des usages de l’eau du sous-bassin du Lot ;</p>
+      <p>Vu l’arrêté cadre interdépartemental n° DDT/SEER/2026-002 du 23/6/2026 délimitant les zones d’alerte et définissant les mesures de limitation ou de suspension provisoire des usages de l’eau du sous-bassin de la Dordogne ;</p>
+      <p>Vu l’arrêté préfectoral n° 2023-970 du 28/6/2023 fixant le cadre de la gestion des situations de crise liées à la sécheresse sur le bassin versant de l’Alagnon et du Haut-Allier dans le département du Cantal ;</p>
+      <p>Vu l’arrêté n° 2026-215-DDT du 02/10/2026 portant limitation provisoire des usages de l’eau dans le département du Cantal ;</p>
+      <p>Vu les avis émis lors de la consultation dématérialisée du Comité de Suivi Opérationnel des Étiages des 13 et 14 octobre 2026 ;</p>
+      <p>Considérant que, pour concilier la protection des milieux aquatiques, la salubrité des cours d’eau et l’alimentation en eau potable des populations, il convient de réglementer les prélèvements dans les eaux superficielles et souterraines ;</p>
+      <p>Considérant la nécessité de sensibiliser l’ensemble des usagers de l’eau du département à la fragilité des ressources en eau dans un contexte de fort déficit pluviométrique ;</p>
+      <p>Considérant l’évolution de la situation hydrologique avec une baisse générale des débits et franchissement des seuils d’alerte, alerte renforcée et crise sur certaines zones de gestion,</p>
+      <p>Sur proposition du directeur départemental des territoires ;</p>
+      <p><strong>Arrête</strong></p>
+      <p><strong>Article 1<sup>er</sup> :</strong> Des mesures de limitations des usages de l’eau s’appliquent selon les zonages figurant sur le tableau en annexe 1 et sur les cartes en annexe 2. Les cartes de l’annexe 2 différencient les zonages selon que l’eau provienne du réseau d’eau potable ou du milieu naturel.</p>
+      <p>Les mesures de limitation applicables sur chaque zone de gestion sont celles référencées dans les tableaux de l’annexe 3.</p>
+      <p>Dans les zones de gestion classées au niveau de vigilance, tout usager est invité à limiter sa consommation d’eau dans le cadre d’une gestion raisonnée de la ressource.</p>
+      <p><strong>Article 2 :</strong> Les dispositions de l’article L.214-18 du Code de l’environnement concernant le débit réservé restent applicables dans tous les cas. L’eau stockée hors période d’étiage n’est pas concernée par le présent arrêté.</p>
+      <p><strong>Article 3 :</strong> Les dispositions du présent arrêté sont applicables jusqu’au 31 octobre 2026 inclus.</p>
+      <p><strong>Article 4 :</strong> L’arrêté n° 2026-215-DDT du 02/10/2026 est abrogé.</p>
+      <p><strong>Article 5 :</strong> Le présent arrêté est affiché à la préfecture, dans les sous-préfectures et dans les mairies. Il est publié au recueil des actes administratifs de la préfecture.</p>
+      <p>Le présent arrêté et les cartes de zonages détaillées mentionnées à l’article 1<sup>er</sup> sont consultables :</p>
+      <ul>
+        <li>sur le site des services de l’État sous le lien suivant : https://www.cantal.gouv.fr/<wbr>Action-de-l-Etat/<wbr>Environnement/<wbr>Eau-et-milieux-aquatiques/<wbr>Secheresse-restictions-des-usages-de-l-eau/<wbr>Arrete-de-limitations-des-usages-2026/</li>
+        <li>sur le site Vigieau sous le lien suivant : <a href="https://vigieau.gouv.fr/" rel="noopener">https://vigieau.gouv.fr/</a></li>
+      </ul>
+      <p><strong>Article 6 :</strong> Le présent arrêté peut faire l’objet :</p>
+      <ul>
+        <li>d’un recours gracieux auprès du Préfet du Cantal. Le recours doit être écrit et exposer les arguments et faits nouveaux. Une copie de la décision contestée doit être jointe au recours.</li>
+        <li>d’un recours hiérarchique auprès du Ministre de la Transition Ecologique et Solidaire - Hôtel de Roquelaure 246 boulevard Saint-Germain - 75007 Paris. Le recours doit être écrit et exposer les arguments et faits nouveaux. Une copie de la décision contestée doit être jointe au recours.</li>
+        <li>d’un recours contentieux devant le tribunal administratif de Clermont-Ferrand dans un délai de deux mois courant à compter de sa publication. Le recours peut aussi être adressé via l’application Télérecours (www.telerecours.fr).</li>
+      </ul>
+      <p><strong>Article 7 :</strong> Le secrétaire général de la préfecture, la sous-préfète de Mauriac, le sous-préfet de Saint-Flour, les maires, les présidents des groupements de communes concernés par l’usage de l’eau, le président du conseil départemental, le directeur départemental des territoires, la directrice départementale du Cantal de l’Agence régionale de santé d’Auvergne-Rhône-Alpes, le chef de l’unité départementale délégué du Cantal de la direction régionale de l’environnement de l’aménagement et du logement d’Auvergne-Rhône-Alpes, le commandant du groupement de gendarmerie, le directeur départemental de la police nationale, les inspecteurs de l’environnement de l’Office français de la biodiversité et les gardes champêtres sont chargés, chacun en ce qui les concerne, de l’exécution du présent arrêté.</p>
+      <p>Une copie du présent arrêté sera adressée au président de la fédération départementale des associations agréées pour la pêche et la protection du milieu aquatique, au directeur régional de l’environnement, de l’aménagement, du logement et aux maires des communes concernées.</p>
+      <p>À Aurillac, le 15 octobre 2026<br>Le préfet du Cantal,<br>Philippe LOOS</p>
+      <p class="note">Les annexes 1 à 3 de l’arrêté (zonage, cartes et tableaux des mesures de limitation) figurent dans le document PDF. Les mesures qui concernent les particuliers de la commune sont reprises dans la rubrique <a href="/vie-pratique/#secheresse">Vie pratique</a>.</p>
+
+  - date: "2026-10-09"
+    type: arrete-prefectoral
+    numero: "2026-1566"
+    titre: "Approbation du règlement de sécurité relatif à l'exploitation du réseau cyclo-draisines du «&nbsp;Vélorail du Cézallier&nbsp;» et abrogation de l'arrêté n° 2026-1499 du 17 septembre 2026"
+    resume: "Le règlement de sécurité de l'exploitation du «&nbsp;Vélorail du Cézallier&nbsp;», dans sa version n° 3 du 30 septembre 2026, est approuvé. L'arrêté du 17 septembre 2026 qui suspendait l'autorisation d'exploiter est abrogé."
+    pdf: "2026-10-09-velorail-reglement-securite.pdf"
+    texte: |
+      <p><strong>Préfet du Cantal – Direction départementale des territoires</strong></p>
+      <p><strong>Arrêté n° 2026-1566 du 09 octobre 2026 portant approbation du règlement de sécurité relatif à l’exploitation du réseau cyclo-draisines du «&nbsp;Vélorail du Cézallier&nbsp;» et abrogeant l’arrêté n°2026-1499 du 17 septembre 2026 portant suspension de l’autorisation d’exploiter</strong></p>
+      <p>Le préfet du Cantal,<br>officier de l’ordre national du Mérite,</p>
+      <p>Vu le Code des Transports ;</p>
+      <p>Vu le décret n°2017-440 du 30 mars 2017 modifié relatif à la sécurité des transports publics guidés (STPG) ;</p>
+      <p>Vu l’arrêté du 13 juin 2025 relatif aux dossiers de sécurité des systèmes de transport public guidés ;</p>
+      <p>Vu le décret n°2010-1580 du 17 décembre 2010 relatif au service technique des remontées mécaniques et des transports guidés (STRMTG) ;</p>
+      <p>Vu la circulaire du 6 juillet 2011 relative à l’organisation du contrôle des systèmes de transports et de l’instruction des dossiers entre le STRMTG, les préfets et leurs services ;</p>
+      <p>Vu le référentiel technique du STRMTG version 6 du 27 juin 2025 relatif à la construction et la sécurité de l’exploitation des cyclo-draisines ;</p>
+      <p>Vu l’arrêté n°2026-1499 du 17 septembre 2026 portant suspension de l’autorisation délivrée à la SAS Compagnie des Chemins de Fer du Cantal d’exploiter le réseau de cyclo-draisine «&nbsp;Vélorail du Cézallier&nbsp;» ;</p>
+      <p>Vu la proposition de règlement de sécurité de l’exploitation (RSE) dans sa version n°3 du 30 septembre 2026 transmise par la SAS Compagnie des Chemins de Fer du Cantal le 30 septembre 2026 ;</p>
+      <p>Vu les compléments relatifs à la partie 7 du RSE transmis le 08 octobre 2026 ;</p>
+      <p>Vu l’avis favorable émis le 09 octobre 2026 par le STRMTG – bureau Sud-Est – à l’approbation du RSE, dans sa version n°3 du 30 septembre 2026 ;</p>
+      <p>Considérant que les conditions prévues à l’article 106 du décret STPG sont remplies ;</p>
+      <p>Considérant que le système de transport par cyclo-draisine «&nbsp;Vélorail du Cézallier&nbsp;» est réputé conforme aux exigences mentionnées à l’article 63 du même décret ;</p>
+      <p>Sur proposition du secrétaire général de la préfecture ;</p>
+      <p><strong>Arrête</strong></p>
+      <p><strong>Article 1<sup>er</sup> :</strong> L’arrêté n° 2026 - 1499 du 17/09/2026 portant suspension de l’autorisation délivrée à la SAS Compagnie des Chemins de Fer du Cantal d’exploiter le réseau de cyclo-draisine «&nbsp;Vélorail du Cézallier&nbsp;» est abrogé.</p>
+      <p><strong>Article 2 :</strong> Le règlement de sécurité de l’exploitation du réseau cyclo-draisine «&nbsp;Vélorail du Cézallier&nbsp;», dans sa version n°3 du 30 septembre 2026, est approuvé.</p>
+      <p><strong>Article 3 :</strong> Dans un délai de 3 mois après l’approbation du présent RSE, une version consolidée, comportant directement la partie 7, modifiée par le document transmis le 08/10/2026, sera à transmettre aux services de l’État.</p>
+      <p><strong>Article 4 :</strong> L’exploitation du réseau cyclo-draisine «&nbsp;Vélorail du Cézallier&nbsp;» sera assurée en toute circonstance dans le strict respect des dispositions du règlement de sécurité de l’exploitation approuvé.</p>
+      <p><strong>Article 5 :</strong> Le présent arrêté peut être déféré au tribunal administratif de Clermont-Ferrand. Le délai de recours est de deux mois à compter de la date de notification du présent arrêté. Le tribunal administratif peut être saisi, via l’application informatique «&nbsp;Télérecours citoyens&nbsp;», accessible sur le site internet «&nbsp;www.telerecours.fr&nbsp;».</p>
+      <p><strong>Article 6 :</strong> Le secrétaire général de la préfecture du Cantal, le directeur départemental des territoires du Cantal, le sous-préfet de Saint-Flour, la sous-préfète de Mauriac, les maires de Allanche, Landeyrat, Saint-Saturnin, Saint-Bonnet-de-Condat et Lugarde et le directeur du STRMTG sont chargés, chacun en ce qui les concerne, de l’exécution du présent arrêté qui sera notifié au demandeur et publié au recueil des actes administratifs de l’État dans le département.</p>
+      <p>Le préfet<br>Pour le préfet et par délégation<br>Le secrétaire général<br>Gilles PELLEGRIN</p>
+
+  - date: "2026-10-02"
+    type: arrete-prefectoral
+    numero: "2026-215-DDT"
+    titre: "Limitation provisoire des usages de l'eau dans le département du Cantal"
+    resume: "L'arrêté place la zone de gestion de la Rhue, dont fait partie Saint-Bonnet-de-Condat, au niveau «&nbsp;crise&nbsp;». Arrêté abrogé par l'arrêté n° 2026-224-DDT du 15 octobre 2026."
+    pdf: "2026-10-02-limitation-usages-eau.pdf"
+
+  - date: "2026-09-29"
+    type: arrete-prefectoral
+    numero: "2026-1529"
+    titre: "Liste des communes éligibles aux aides pour l'électrification rurale à compter du 1er janvier 2027"
+    resume: "Saint-Bonnet-de-Condat figure sur la liste des communes bénéficiant des aides pour l'électrification rurale (annexe 1). L'arrêté prend effet le 1er janvier 2027."
+    pdf: "2026-09-29-electrification-rurale.pdf"
+
+  - date: "2026-09-17"
+    type: arrete-prefectoral
+    numero: "2026-1499"
+    titre: "Suspension de l'autorisation délivrée à la SAS Compagnie des Chemins de Fer du Cantal d'exploiter le réseau de cyclo-draisine «&nbsp;Vélorail du Cézallier&nbsp;»"
+    resume: "L'autorisation d'exploiter le «&nbsp;Vélorail du Cézallier&nbsp;» est suspendue jusqu'à nouvel ordre. Arrêté abrogé par l'arrêté n° 2026-1566 du 9 octobre 2026."
+    pdf: "2026-09-17-velorail-suspension.pdf"
+
+  - date: "2026-09-17"
+    type: arrete-prefectoral
+    numero: "2026-199-DDT"
+    titre: "Limitation provisoire des usages de l'eau dans le département du Cantal"
+    resume: "L'arrêté place la zone de gestion de la Rhue, dont fait partie Saint-Bonnet-de-Condat, au niveau «&nbsp;crise&nbsp;». Arrêté abrogé par l'arrêté n° 2026-215-DDT du 2 octobre 2026."
+    pdf: "2026-09-17-limitation-usages-eau.pdf"
+
+  - date: "2026-09-09"
+    type: arrete-prefectoral
+    numero: "2026-192-DDT"
+    titre: "Limitation provisoire des usages de l'eau dans le département du Cantal"
+    resume: "L'arrêté place la zone de gestion de la Rhue, dont fait partie Saint-Bonnet-de-Condat, au niveau «&nbsp;crise&nbsp;». Arrêté abrogé par l'arrêté n° 2026-199-DDT du 17 septembre 2026."
+    pdf: "2026-09-09-limitation-usages-eau.pdf"

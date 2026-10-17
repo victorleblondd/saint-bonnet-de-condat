@@ -26,6 +26,24 @@
 #  Les actualités sans PDF affichent ce texte.
 # =====================================================================
 
+- date: "2026-10-16"
+  type: info
+  theme: vie
+  titre: "Élections municipales du 15 mars 2026 : le Conseil d'État confirme les résultats"
+  resume: "Le 16 octobre 2026, le Conseil d'État a confirmé le jugement du tribunal administratif et rejeté la requête. Cette décision est définitive : les résultats du scrutin du 15 mars sont confirmés."
+  pdf: "2026-10-16-elections-municipales-conseil-d-etat.pdf"
+  texte: |
+    <p><strong>Mairie de Saint-Bonnet-de-Condat – Information aux habitants</strong><br>Saint-Bonnet-de-Condat, le 16 octobre 2026</p>
+    <p><strong>Objet : Élections municipales du 15 mars 2026 – le Conseil d’État confirme les résultats</strong></p>
+    <p>Chères habitantes, chers habitants,</p>
+    <p>Les résultats des élections municipales du 15 mars 2026 avaient fait l’objet d’un recours devant la justice administrative. Nous souhaitons vous informer de l’issue de cette procédure.</p>
+    <p>Par un jugement du 29 mai 2026, le tribunal administratif de Clermont-Ferrand avait rejeté la protestation électorale. Ce jugement avait ensuite été contesté devant le Conseil d’État.</p>
+    <p>Par une décision du 16 octobre 2026 (n° 516978), le Conseil d’État a confirmé ce jugement et rejeté la requête. Il a estimé que les griefs soulevés n’étaient pas fondés et n’a relevé aucun élément diffamatoire. Cette décision est définitive : les résultats du scrutin du 15 mars sont confirmés et la procédure est close.</p>
+    <p>Former un recours est un droit que nous respectons pleinement : il fait partie des garanties de notre vie démocratique. La justice s’étant prononcée de manière définitive, le moment est venu de tourner la page.</p>
+    <p>Notre engagement reste le même : agir pour Saint-Bonnet-de-Condat et pour tous ses habitants, quel qu’ait été le choix de chacun le 15 mars. Nous voulons poursuivre ce mandat dans un esprit d’écoute, de respect et de rassemblement.</p>
+    <p>La mairie vous accueille aux horaires habituels et chaque élu reste à votre disposition pour échanger.</p>
+    <p>Bien cordialement,<br>Sarah Chabrier</p>
+
 - date: "2026-10-08"
   type: info
   theme: vie
