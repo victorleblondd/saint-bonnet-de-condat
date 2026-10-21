@@ -26,6 +26,24 @@
 #  Les actualités sans PDF affichent ce texte.
 # =====================================================================
 
+- date: "2026-10-21"
+  type: info
+  theme: vie
+  titre: "Éclairage public : votre avis nous intéresse !"
+  resume: "Permanence de Nathalie MÉTAYER, 2ᵉ adjointe au maire, jeudi 29 octobre 2026 de 9 h à 12 h à la mairie. Venez échanger et donner votre avis sur l'éclairage public dans notre commune."
+  pdf: "2026-10-21-permanence-eclairage-public.pdf"
+  texte: |
+    <p><strong>Éclairage public : votre avis nous intéresse !</strong></p>
+    <p>Permanence de Nathalie MÉTAYER, 2<sup>e</sup> adjointe au maire<br><strong>Jeudi 29 octobre 2026</strong><br>De 9 h à 12 h<br>Mairie de Saint-Bonnet-de-Condat</p>
+    <p>Dans le cadre d'une réflexion sur l'éclairage public de notre commune, Nathalie vous propose de venir échanger et donner votre avis.</p>
+    <ul>
+      <li>Trouvez-vous qu'il y a trop de lampadaires dans certains secteurs ?</li>
+      <li>Au contraire, estimez-vous qu'il manque des points d'éclairage à certains endroits ?</li>
+      <li>Avez-vous des remarques ou des suggestions pour améliorer l'éclairage public ?</li>
+    </ul>
+    <p>Cette permanence est l'occasion de faire entendre votre avis et de partager vos idées.</p>
+    <p>Nous comptons sur votre participation pour réfléchir ensemble à un éclairage public adapté aux besoins de notre commune !</p>
+
 - date: "2026-10-16"
   type: info
   theme: vie

@@ -4,8 +4,8 @@
 nom: "Mairie de Saint-Bonnet-de-Condat"
 adresse_ligne1: "2 rue de la Santoire"
 adresse_ligne2: "15190 Saint-Bonnet-de-Condat"
-# Lien de l'adresse dans le pied de page : ouvre la mairie dans Google Maps
-carte_url: "https://www.google.com/maps/search/?api=1&query=2+rue+de+la+Santoire%2C+15190+Saint-Bonnet-de-Condat"
+# Lien de l'adresse dans le pied de page : ouvre la mairie dans Google Maps (lien donné par Victor le 21/10/2026)
+carte_url: "https://maps.app.goo.gl/pSZQ51F1qWHEwEpn7?g_st=ic"
 telephone: "04 71 78 41 64"
 telephone_lien: "+33471784164"
 email: "mairie.stbonnetdecondat@orange.fr"

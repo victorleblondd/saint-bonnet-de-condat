@@ -8,6 +8,7 @@
 # - Un fichier déjà présent dans le site n'est jamais téléchargé une deuxième fois.
 
 # Infos & Alertes : affiches et documents de la mairie
+https://panneau-pocket.s3.gra.perf.cloud.ovh.net/cache/sign_image/10458061766ad8ad96c63244.39924942-1792585110.jpg/28458b8711d91fc0abfffa5075cf889e  documents/infos-alertes/2026-10-21-permanence-eclairage-public.pdf
 https://panneau-pocket.s3.gra.perf.cloud.ovh.net/source/sign_pdf/17172196966ad2724677b176.99947342-1792176710.pdf  documents/infos-alertes/2026-10-16-elections-municipales-conseil-d-etat.pdf
 https://panneau-pocket.s3.gra.perf.cloud.ovh.net/cache/sign_image/19628149996ac7ee4d312f95.90583198-1791487565.jpg/75c9e41ae0a9a4d636ddcc9dfc808287  documents/infos-alertes/2026-10-08-halloween-camping-la-santoire.pdf
 https://panneau-pocket.s3.gra.perf.cloud.ovh.net/cache/sign_image/10713130766ac4ecf25303a9.89388826-1791290610.jpg/62a151549d8b2c8972d2fe9fd93cd891  documents/infos-alertes/2026-10-06-fermeture-mairie-point-poste.pdf
