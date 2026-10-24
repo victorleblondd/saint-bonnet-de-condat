@@ -26,6 +26,20 @@
 #  Les actualités sans PDF affichent ce texte.
 # =====================================================================
 
+- date: "2026-10-24"
+  type: info
+  theme: vie
+  titre: "PLUi : recensement des bâtiments du territoire"
+  resume: "La commune recense les bâtiments agricoles susceptibles de changer de destination (granges, étables…). Les propriétaires concernés recevront prochainement un courrier de la mairie."
+  pdf: "2026-10-24-plui-recensement-batiments-agricoles.pdf"
+  texte: |
+    <p><strong>PLUi – Plan local d'urbanisme intercommunal</strong><br><strong>Recensement des bâtiments du territoire</strong></p>
+    <p>Dans le cadre de l'élaboration du PLUi, la commune de Saint-Bonnet-de-Condat réalise actuellement un recensement des bâtiments agricoles susceptibles de changer de destination (granges, étables, anciens bâtiments agricoles…).</p>
+    <p><strong>Les personnes concernées vont recevoir prochainement un courrier de la mairie</strong>, accompagné d'un coupon-réponse, afin de vérifier les informations dont nous disposons.</p>
+    <p>Si vous pensez posséder un bâtiment qui pourrait être concerné, mais que vous n'avez pas reçu de courrier, <strong>n'hésitez surtout pas à vous faire connaître auprès de la mairie !</strong></p>
+    <p>Vous pouvez contacter la mairie aux horaires d'ouverture (<a href="tel:+33471784164">04&nbsp;71&nbsp;78&nbsp;41&nbsp;64</a>) ou par mail (<a href="mailto:mairie.stbonnetdecondat@orange.fr">mairie.stbonnetdecondat@<wbr>orange.fr</a>).</p>
+    <p>Merci à tous pour votre participation et votre collaboration.<br>La municipalité de Saint-Bonnet-de-Condat</p>
+
 - date: "2026-10-21"
   type: info
   theme: vie
@@ -43,6 +57,50 @@
     </ul>
     <p>Cette permanence est l'occasion de faire entendre votre avis et de partager vos idées.</p>
     <p>Nous comptons sur votre participation pour réfléchir ensemble à un éclairage public adapté aux besoins de notre commune !</p>
+
+- date: "2026-10-18"
+  type: info
+  theme: vie
+  titre: "Nouveauté à Saint-Bonnet-de-Condat : les ateliers à thème de NaturÉpure"
+  resume: "NaturÉpure proposera des ateliers à thème à la salle polyvalente de la mairie, sur 7 semaines, à partir du 2 janvier 2027. Réunion d'information le mardi 3 novembre, à 10 h ou à 20 h."
+  pdf: "2026-10-18-ateliers-naturepure.pdf"
+  texte: |
+    <p><strong>Nouveauté à Saint-Bonnet-de-Condat !</strong></p>
+    <p>Nous avons le plaisir de vous informer que NaturÉpure proposera prochainement des ateliers à thème au sein de notre commune :</p>
+    <ul>
+      <li>yogathérapie ;</li>
+      <li>biodécodage ;</li>
+      <li>sophrologie ;</li>
+      <li>écriture-thérapie reconstructive.</li>
+    </ul>
+    <p>Ces ateliers se dérouleront à la salle polyvalente de la mairie, sur une période de 7 semaines, à partir du 2 janvier.</p>
+    <p>Que vous soyez de Saint-Bonnet-de-Condat ou d'ailleurs, ces ateliers sont ouverts à toutes et à tous ! Alors, n'hésitez pas à venir les découvrir et à partager un moment de bien-être et de convivialité !</p>
+    <p><strong>Une réduction de 20 % sera accordée aux habitants de Saint-Bonnet-de-Condat</strong> souhaitant participer à l'un de ces ateliers !</p>
+    <p>Vous vous demandez en quoi consistent ces ateliers, comment ils se déroulent ou ce qu'ils peuvent vous apporter ? Venez le découvrir lors de la <strong>réunion d'information du mardi 3 novembre, à 10 h ou à 20 h</strong>, à la salle polyvalente de la mairie !</p>
+    <p>Ce sera l'occasion de découvrir les différentes activités proposées, de poser toutes vos questions et d'obtenir toutes les explications nécessaires, sans aucun engagement.</p>
+    <p>L'inscription à cette réunion est fortement conseillée, afin de confirmer le maintien des deux horaires en fonction du nombre de participants.</p>
+    <p>Renseignements : <a href="tel:+33471692361">04&nbsp;71&nbsp;69&nbsp;23&nbsp;61</a> / <a href="tel:+33745110335">07&nbsp;45&nbsp;11&nbsp;03&nbsp;35</a> – courriel : <a href="mailto:contact@naturepuredetox.fr">contact@<wbr>naturepuredetox.fr</a></p>
+    <p>Pour découvrir davantage les activités de NaturÉpure : <a href="https://www.naturepuredetox.fr" rel="noopener">www.naturepuredetox.fr</a></p>
+    <p>Vous trouverez ci-joint le flyer de présentation ainsi que les tarifs et horaires des différents ateliers. N'hésitez pas à partager l'information autour de vous !</p>
+    <p><strong>Ateliers à thème sur 7 semaines</strong><br>Du 2 janvier au 21 février, 2 jours par semaine, à la salle polyvalente de la mairie de Saint-Bonnet-de-Condat :</p>
+    <ul>
+      <li><strong>yogathérapie</strong> : 70 €, 3 h par semaine (minimum 7 participants), le mercredi et le samedi de 8 h 30 à 10 h ;</li>
+      <li><strong>biodécodage/sophrologie</strong> : 60 €, 3 h par semaine (minimum 7 participants), le mercredi et le samedi de 10 h à 11 h 30 ;</li>
+      <li><strong>écriture-thérapie reconstructive</strong> : 50 €, 2 h par semaine (minimum 7 participants), le mercredi et le samedi de 11 h 30 à 12 h 30.</li>
+    </ul>
+    <p><strong>NaturÉpure</strong> – Ateliers Bien-Être, Détox, Randonnée et Jeûne Spontané® – Cézallier-Haut-Cantal</p>
+    <p>Ateliers bien-être et stages à thème de 7 jours dans le Cézallier, au cœur du Parc naturel régional des Volcans d'Auvergne, au Manoir de La Maillonchère, par des encadrants qualifiés et expérimentés. Renforcez votre système immunitaire par le détox physique et mental.</p>
+    <p>Nos stages à thème :</p>
+    <ul>
+      <li>la santé par l'équilibre acido-basique et catabolique ;</li>
+      <li>les bases naturopathiques de l'alimentation et du détox ;</li>
+      <li>yogathérapie et réflexoméditation ;</li>
+      <li>à la rencontre de soi par le détox du mental et le biodécodage ;</li>
+      <li>écriture-thérapie reconstructive ;</li>
+      <li>khórosthérapie et musicothérapie.</li>
+    </ul>
+    <p>NaturÉpure® est membre de la NHA (National Health Association, USA) ainsi qu'adhérent de l'AMJ (Académie Médicale du Jeûne).</p>
+    <p>Au bas du flyer : logos d'ifsh formations, de FitForLife Sciences Institute, d'un centre de formation au massage thaï (Thai Massage Training Center) et des chambres d'hôtes du Manoir de La Maillonchère (1898).</p>
 
 - date: "2026-10-16"
   type: info
