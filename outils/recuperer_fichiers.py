@@ -1,6 +1,8 @@
 """Télécharge les fichiers listés dans outils/fichiers-a-recuperer.txt et les ajoute au site.
 
 - Une affiche (image) dont le chemin de destination se termine par .pdf est convertie en PDF au format A4.
+- Une affiche en plusieurs images donne un seul PDF, une page par image : adresses séparées par « | »,
+  sans espace, dans la première colonne.
 - Une photo peut être réduite à une largeur maximale (troisième colonne, par exemple 1400).
 - D'un PDF, on peut ne garder que certaines pages (troisième colonne, par exemple pages=3-4) :
   utile pour un arrêté publié dans un recueil des actes administratifs de la préfecture.
@@ -46,6 +48,13 @@ def en_pdf(donnees):
     return img2pdf.convert(donnees, layout_fun=mise_en_page)
 
 
+def images_en_pdf(liste):
+    """Plusieurs images (affiche en plusieurs pages) : un seul PDF A4, une page par image."""
+    images = [d if d[:3] == b"\xff\xd8\xff" else en_jpeg(d) for d in liste]
+    mise_en_page = img2pdf.get_layout_fun(A4, fit=img2pdf.FitMode.into)
+    return img2pdf.convert(images, layout_fun=mise_en_page)
+
+
 def extraire_pages(donnees, pages):
     """Garde les pages « debut-fin » (numérotées à partir de 1) d'un PDF."""
     import pikepdf  # installé avec img2pdf
@@ -63,13 +72,19 @@ def extraire_pages(donnees, pages):
 
 
 def recuperer(url, destination, largeur, pages):
-    donnees = telecharger(url)
-    if destination.lower().endswith(".pdf"):
-        donnees = en_pdf(donnees)
-        if pages:
-            donnees = extraire_pages(donnees, pages)
-    elif destination.lower().endswith((".jpg", ".jpeg")):
-        donnees = en_jpeg(donnees, largeur)
+    adresses = url.split("|")
+    if len(adresses) > 1:
+        if not destination.lower().endswith(".pdf"):
+            raise ValueError("plusieurs adresses : seulement pour un PDF")
+        donnees = images_en_pdf([telecharger(a) for a in adresses])
+    else:
+        donnees = telecharger(url)
+        if destination.lower().endswith(".pdf"):
+            donnees = en_pdf(donnees)
+            if pages:
+                donnees = extraire_pages(donnees, pages)
+        elif destination.lower().endswith((".jpg", ".jpeg")):
+            donnees = en_jpeg(donnees, largeur)
     os.makedirs(os.path.dirname(destination) or ".", exist_ok=True)
     with open(destination, "wb") as fichier:
         fichier.write(donnees)
