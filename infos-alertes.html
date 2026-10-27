@@ -1,50 +1,8 @@
 ---
 title: "Infos & Alertes"
 permalink: /infos-alertes/
+ref: infos-alertes
 chapo: "Les actualités de la mairie : coupures d'eau, travaux, horaires et informations importantes. Chaque actualité s'ouvre en PDF, telle qu'elle a été affichée."
 description: "Les actualités et alertes de la mairie de Saint-Bonnet-de-Condat : coupures d'eau, travaux, horaires et informations importantes."
 ---
-{%- assign tous = site.data.infos_alertes -%}
-{%- assign n_alertes = 0 -%}{%- assign n_eau = 0 -%}{%- assign n_travaux = 0 -%}{%- assign n_vie = 0 -%}
-{%- for it in tous -%}
-  {%- if it.type == "alerte" -%}{%- assign n_alertes = n_alertes | plus: 1 -%}{%- endif -%}
-  {%- if it.theme == "eau" -%}{%- assign n_eau = n_eau | plus: 1 -%}{%- endif -%}
-  {%- if it.theme == "travaux" -%}{%- assign n_travaux = n_travaux | plus: 1 -%}{%- endif -%}
-  {%- if it.theme == "vie" -%}{%- assign n_vie = n_vie | plus: 1 -%}{%- endif -%}
-{%- endfor -%}
-<div class="grille-asymetrique">
-  <div>
-    <ul class="filtres" data-filtres hidden aria-label="Filtrer les actualités">
-      <li><button type="button" data-filtre="tout" aria-pressed="true">Tous <span class="nombre">{{ tous.size }}</span></button></li>
-      <li><button type="button" data-filtre="alerte" aria-pressed="false">Alertes <span class="nombre">{{ n_alertes }}</span></button></li>
-      <li><button type="button" data-filtre="eau" aria-pressed="false">Eau <span class="nombre">{{ n_eau }}</span></button></li>
-      <li><button type="button" data-filtre="travaux" aria-pressed="false">Travaux <span class="nombre">{{ n_travaux }}</span></button></li>
-      <li><button type="button" data-filtre="vie" aria-pressed="false">Services et vie locale <span class="nombre">{{ n_vie }}</span></button></li>
-    </ul>
-    <div class="liste-avis">
-      {%- assign mois_courant = "" -%}
-      {%- for it in tous -%}
-      {%- assign mois_item = it.date | slice: 0, 7 -%}
-      {%- if mois_item != mois_courant %}
-      <h2 class="mois">{% include date-fr.html date=it.date mois_seul=true %}</h2>
-      {%- assign mois_courant = mois_item -%}
-      {%- endif %}
-      {% include avis.html item=it %}
-      {%- endfor %}
-      <p class="aucun-resultat" data-aucun-resultat hidden>Aucune actualité dans cette catégorie.</p>
-      <p class="visuellement-cache" role="status" data-statut-filtres></p>
-    </div>
-  </div>
-  <aside class="pile-laterale">
-    <div class="panneau panneau--info">
-      <h2 class="h3-like">Recevoir les actualités de la mairie sur votre téléphone</h2>
-      <p>Ajoutez le site à l'écran d'accueil de votre téléphone et activez les notifications : chaque nouvelle actualité s'affichera, même téléphone verrouillé.</p>
-      <p><a class="lien-fleche" href="{{ '/notifications/' | relative_url }}">Activer les notifications{% include icone.html nom="fleche" %}</a></p>
-    </div>
-    <div class="panneau panneau--alerte">
-      <h2 class="h3-like">Un problème d'eau ?</h2>
-      <p>Fuite, coupure ou eau trouble : prévenez la mairie au <a href="tel:{{ site.data.mairie.telephone_lien }}"><strong>{{ site.data.mairie.telephone }}</strong></a>.</p>
-      <p>Laurent Golliard, 1<sup>er</sup> adjoint chargé de l'eau et de l'assainissement : <a href="tel:+33678336617"><strong>06 78 33 66 17</strong></a>.</p>
-    </div>
-  </aside>
-</div>
+{% include page-infos-alertes.html -%}

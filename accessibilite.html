@@ -1,6 +1,7 @@
 ---
 title: "Accessibilité"
 permalink: /accessibilite/
+ref: accessibilite
 chapo: "Déclaration d'accessibilité du site de la commune de Saint-Bonnet-de-Condat."
 description: "Déclaration d'accessibilité du site saint-bonnet-de-condat.fr : état de conformité au RGAA, résultats des tests, contenus non accessibles, contact et voies de recours."
 ---
@@ -8,7 +9,7 @@ description: "Déclaration d'accessibilité du site saint-bonnet-de-condat.fr : 
 {%- assign m = site.data.mairie -%}
 <div class="texte-legal">
   <p>La commune de Saint-Bonnet-de-Condat s'engage à rendre son site internet accessible, conformément à l'article 47 de la loi n° 2005-102 du 11 février 2005.</p>
-  <p>Cette déclaration d'accessibilité s'applique au site <strong>saint-bonnet-de-condat.fr</strong>.</p>
+  <p>Cette déclaration d'accessibilité s'applique au site <strong>saint-bonnet-de-condat.fr</strong>, en français, en anglais et en néerlandais.</p>
 
   <section class="bloc" aria-labelledby="titre-etat">
     <h2 id="titre-etat">État de conformité</h2>
@@ -23,7 +24,7 @@ description: "Déclaration d'accessibilité du site saint-bonnet-de-condat.fr : 
 
   <section class="bloc" aria-labelledby="titre-resultats">
     <h2 id="titre-resultats">Résultats des tests</h2>
-    <p>L'auto-évaluation de conformité réalisée en interne par la commune le {% include date-fr.html date=a.date %} révèle que <strong>{{ a.taux }} % des critères du RGAA version 4.1.2 sont respectés</strong> :</p>
+    <p>L'auto-évaluation de conformité réalisée en interne par la commune le {% include date.html date=a.date %} révèle que <strong>{{ a.taux }} % des critères du RGAA version 4.1.2 sont respectés</strong> :</p>
     <ul>
       <li>critères respectés : {{ a.conformes }} ;</li>
       <li>critères non respectés : {{ a.non_conformes }} ;</li>
@@ -51,12 +52,12 @@ description: "Déclaration d'accessibilité du site saint-bonnet-de-condat.fr : 
       <li>La fiche de randonnée en PDF du Parc naturel régional des Volcans d'Auvergne, proposée en lien sur la page <a href="{{ '/decouvrir/' | relative_url }}">Découvrir</a> : contenu de tiers, qui n'est ni financé ni développé par la commune et qui n'est pas sous son contrôle.</li>
     </ul>
     <h3>Documents en PDF</h3>
-    <p>Les affiches publiées en PDF dans la rubrique <a href="{{ '/infos-alertes/' | relative_url }}">Infos &amp; Alertes</a> sont des images. Leur texte complet est proposé sur la page, sous chaque actualité, avec le bouton « Afficher le texte de l'actualité ».</p>
+    <p>Les affiches publiées en PDF dans la rubrique <a href="{{ '/infos-alertes/' | relative_url }}">Infos &amp; Alertes</a> sont des images. Leur texte complet est proposé sur la page, sous chaque actualité, avec le bouton « Afficher le texte de l'actualité » ; il est traduit sur les pages anglaises et néerlandaises.</p>
   </section>
 
   <section class="bloc" aria-labelledby="titre-etablissement">
     <h2 id="titre-etablissement">Établissement de cette déclaration d'accessibilité</h2>
-    <p>Cette déclaration a été établie le {% include date-fr.html date=a.date %}.</p>
+    <p>Cette déclaration a été établie le {% include date.html date=a.date %}.</p>
     <h3>Technologies utilisées pour la réalisation du site</h3>
     <ul>
       <li>HTML</li>
@@ -73,7 +74,7 @@ description: "Déclaration d'accessibilité du site saint-bonnet-de-condat.fr : 
       {%- endfor %}
     </ul>
     <h3>Pages du site ayant fait l'objet de la vérification de conformité</h3>
-    <p>Toutes les pages du site ont été vérifiées :</p>
+    <p>Toutes les pages du site ont été vérifiées, en français, en anglais et en néerlandais :</p>
     <ul>
       <li><a href="{{ '/' | relative_url }}">Accueil</a></li>
       <li><a href="{{ '/infos-alertes/' | relative_url }}">Infos &amp; Alertes</a></li>
@@ -85,11 +86,12 @@ description: "Déclaration d'accessibilité du site saint-bonnet-de-condat.fr : 
       <li><a href="{{ '/vie-locale/' | relative_url }}">Vie locale</a></li>
       <li><a href="{{ '/tourisme/' | relative_url }}">Tourisme</a></li>
       <li><a href="{{ '/decouvrir/' | relative_url }}">Découvrir Saint-Bonnet-de-Condat</a></li>
-      <li><a href="{{ '/bulletin-municipal/' | relative_url }}">Le bulletin municipal</a> et ses {{ site.posts.size }} articles</li>
+      <li><a href="{{ '/bulletin-municipal/' | relative_url }}">Le bulletin municipal</a> {%- assign articles_fr = site.posts | where: "lang", "fr" %} et ses {{ articles_fr.size }} articles</li>
       <li><a href="{{ '/mentions-legales/' | relative_url }}">Mentions légales</a></li>
       <li><a href="{{ '/accessibilite/' | relative_url }}">Accessibilité</a></li>
       <li><a href="{{ '/plan-du-site/' | relative_url }}">Plan du site</a></li>
       <li>Page d'erreur « Page introuvable »</li>
+      <li>Les versions anglaise (<a href="{{ '/en/' | relative_url }}" hreflang="en" lang="en">English</a>) et néerlandaise (<a href="{{ '/nl/' | relative_url }}" hreflang="nl" lang="nl">Nederlands</a>) de ces pages</li>
     </ul>
   </section>
 
