@@ -18,6 +18,18 @@
 #                                     jusqu'à cette date incluse (alertes)
 #    texte: |                         texte complet de l'actualité
 #      <p>…</p>
+#    en:                              traduction anglaise (pages /en/)
+#      titre: "…"
+#      resume: "…"
+#      texte: |
+#        <p>…</p>
+#    nl:                              traduction néerlandaise (pages /nl/), même modèle
+#
+#  Sans rubrique en: ou nl:, l'actualité s'affiche en français sur les pages
+#  anglaises et néerlandaises, avec la mention « In French » / « In het Frans ».
+#  Ajouter ou corriger une traduction plus tard ne renvoie pas de notification
+#  (la notification dépend de la date et du PDF ou du titre français), mais
+#  écrire quand même [sans notification] dans le message du commit.
 #
 #  Champ « texte » : le texte complet de l'actualité, affiché sous le bouton
 #  « Afficher le texte de l'actualité ». À remplir pour chaque PDF : les
@@ -39,6 +51,26 @@
     <p>Si vous pensez posséder un bâtiment qui pourrait être concerné, mais que vous n'avez pas reçu de courrier, <strong>n'hésitez surtout pas à vous faire connaître auprès de la mairie !</strong></p>
     <p>Vous pouvez contacter la mairie aux horaires d'ouverture (<a href="tel:+33471784164">04&nbsp;71&nbsp;78&nbsp;41&nbsp;64</a>) ou par mail (<a href="mailto:mairie.stbonnetdecondat@orange.fr">mairie.stbonnetdecondat@<wbr>orange.fr</a>).</p>
     <p>Merci à tous pour votre participation et votre collaboration.<br>La municipalité de Saint-Bonnet-de-Condat</p>
+  en:
+    titre: "PLUi local plan: survey of buildings in the area"
+    resume: "The municipality is surveying farm buildings that could change use (barns, cowsheds…). The owners concerned will soon receive a letter from the town hall."
+    texte: |
+      <p><strong>PLUi – Inter-municipal local urban plan (<span lang="fr">Plan local d'urbanisme intercommunal</span>)</strong><br><strong>Survey of buildings in the area</strong></p>
+      <p>As part of drawing up the PLUi, the municipality of Saint-Bonnet-de-Condat is currently surveying farm buildings that could change use (barns, cowsheds, old farm buildings…).</p>
+      <p><strong>The people concerned will soon receive a letter from the town hall</strong>, with a reply slip, so that we can check the information we hold.</p>
+      <p>If you think you own a building that could be concerned but you have not received a letter, <strong>please do let the town hall know!</strong></p>
+      <p>You can contact the town hall during opening hours (<a href="tel:+33471784164">04&nbsp;71&nbsp;78&nbsp;41&nbsp;64</a>) or by email (<a href="mailto:mairie.stbonnetdecondat@orange.fr">mairie.stbonnetdecondat@<wbr>orange.fr</a>).</p>
+      <p>Thank you all for your participation and cooperation.<br>The municipality of Saint-Bonnet-de-Condat</p>
+  nl:
+    titre: "PLUi: inventarisatie van de gebouwen in de gemeente"
+    resume: "De gemeente inventariseert landbouwgebouwen die een andere bestemming zouden kunnen krijgen (schuren, stallen…). De betrokken eigenaren krijgen binnenkort een brief van het gemeentehuis."
+    texte: |
+      <p><strong>PLUi – Intergemeentelijk bestemmingsplan (<span lang="fr">Plan local d'urbanisme intercommunal</span>)</strong><br><strong>Inventarisatie van de gebouwen in de gemeente</strong></p>
+      <p>In het kader van de opstelling van het PLUi inventariseert de gemeente Saint-Bonnet-de-Condat momenteel de landbouwgebouwen die een andere bestemming zouden kunnen krijgen (schuren, stallen, oude landbouwgebouwen…).</p>
+      <p><strong>De betrokkenen krijgen binnenkort een brief van het gemeentehuis</strong>, met een antwoordstrook, om de gegevens waarover wij beschikken te controleren.</p>
+      <p>Denkt u dat u een gebouw bezit dat in aanmerking kan komen, maar hebt u geen brief ontvangen? <strong>Meld u dan zeker bij het gemeentehuis!</strong></p>
+      <p>U kunt het gemeentehuis tijdens de openingstijden bellen (<a href="tel:+33471784164">04&nbsp;71&nbsp;78&nbsp;41&nbsp;64</a>) of mailen (<a href="mailto:mairie.stbonnetdecondat@orange.fr">mairie.stbonnetdecondat@<wbr>orange.fr</a>).</p>
+      <p>Iedereen bedankt voor de deelname en de medewerking.<br>Het gemeentebestuur van Saint-Bonnet-de-Condat</p>
 
 - date: "2026-10-21"
   type: info
@@ -57,6 +89,34 @@
     </ul>
     <p>Cette permanence est l'occasion de faire entendre votre avis et de partager vos idées.</p>
     <p>Nous comptons sur votre participation pour réfléchir ensemble à un éclairage public adapté aux besoins de notre commune !</p>
+  en:
+    titre: "Street lighting: we want your views!"
+    resume: "Drop-in session with Nathalie MÉTAYER, 2nd deputy mayor, on Thursday 29 October 2026 from 9:00 to 12:00 at the town hall. Come and share your views on street lighting in our municipality."
+    texte: |
+      <p><strong>Street lighting: we want your views!</strong></p>
+      <p>Drop-in session with Nathalie MÉTAYER, 2nd deputy mayor<br><strong>Thursday 29 October 2026</strong><br>From 9:00 to 12:00<br>Saint-Bonnet-de-Condat town hall</p>
+      <p>As part of a review of street lighting in our municipality, Nathalie invites you to come and talk with her and share your views.</p>
+      <ul>
+        <li>Do you think there are too many street lights in some areas?</li>
+        <li>On the contrary, do you feel that lighting is missing in some places?</li>
+        <li>Do you have comments or suggestions to improve street lighting?</li>
+      </ul>
+      <p>This drop-in session is a chance to make your voice heard and share your ideas.</p>
+      <p>We are counting on your participation to think together about street lighting suited to the needs of our municipality!</p>
+  nl:
+    titre: "Straatverlichting: uw mening telt!"
+    resume: "Spreekuur van Nathalie MÉTAYER, 2e wethouder, op donderdag 29 oktober 2026 van 9.00 tot 12.00 uur in het gemeentehuis. Kom uw mening geven over de straatverlichting in onze gemeente."
+    texte: |
+      <p><strong>Straatverlichting: uw mening telt!</strong></p>
+      <p>Spreekuur van Nathalie MÉTAYER, 2e wethouder<br><strong>Donderdag 29 oktober 2026</strong><br>Van 9.00 tot 12.00 uur<br>Gemeentehuis van Saint-Bonnet-de-Condat</p>
+      <p>Omdat we de straatverlichting in onze gemeente onder de loep nemen, nodigt Nathalie u uit om langs te komen en uw mening te geven.</p>
+      <ul>
+        <li>Vindt u dat er in sommige wijken te veel lantaarnpalen staan?</li>
+        <li>Of vindt u juist dat er op sommige plekken verlichting ontbreekt?</li>
+        <li>Hebt u opmerkingen of suggesties om de straatverlichting te verbeteren?</li>
+      </ul>
+      <p>Dit spreekuur is de gelegenheid om uw mening te laten horen en uw ideeën te delen.</p>
+      <p>We rekenen op uw deelname om samen na te denken over straatverlichting die past bij de behoeften van onze gemeente!</p>
 
 - date: "2026-10-18"
   type: info
@@ -101,6 +161,86 @@
     </ul>
     <p>NaturÉpure® est membre de la NHA (National Health Association, USA) ainsi qu'adhérent de l'AMJ (Académie Médicale du Jeûne).</p>
     <p>Au bas du flyer : logos d'ifsh formations, de FitForLife Sciences Institute, d'un centre de formation au massage thaï (Thai Massage Training Center) et des chambres d'hôtes du Manoir de La Maillonchère (1898).</p>
+  en:
+    titre: "New in Saint-Bonnet-de-Condat: NaturÉpure's themed workshops"
+    resume: "NaturÉpure will run themed workshops in the town hall's multi-purpose room, over 7 weeks from 2 January 2027. Information meeting on Tuesday 3 November, at 10:00 or 20:00."
+    texte: |
+      <p><strong>New in Saint-Bonnet-de-Condat!</strong></p>
+      <p>We are pleased to announce that NaturÉpure will soon be running themed workshops in our municipality:</p>
+      <ul>
+        <li>yoga therapy;</li>
+        <li>biodecoding;</li>
+        <li>sophrology;</li>
+        <li>reconstructive writing therapy.</li>
+      </ul>
+      <p>These workshops will take place in the town hall's multi-purpose room, over a period of 7 weeks, starting on 2 January.</p>
+      <p>Whether you live in Saint-Bonnet-de-Condat or elsewhere, these workshops are open to everyone! So do come and discover them and share a moment of wellbeing and conviviality!</p>
+      <p><strong>Residents of Saint-Bonnet-de-Condat will get a 20% discount</strong> if they wish to take part in one of these workshops!</p>
+      <p>Wondering what these workshops involve, how they work or what they can do for you? Come and find out at the <strong>information meeting on Tuesday 3 November, at 10:00 or 20:00</strong>, in the town hall's multi-purpose room!</p>
+      <p>It will be an opportunity to discover the different activities on offer, ask all your questions and get all the explanations you need, with no commitment.</p>
+      <p>Registering for this meeting is strongly recommended, to confirm that both sessions will go ahead depending on the number of participants.</p>
+      <p>Information: <a href="tel:+33471692361">04&nbsp;71&nbsp;69&nbsp;23&nbsp;61</a> / <a href="tel:+33745110335">07&nbsp;45&nbsp;11&nbsp;03&nbsp;35</a> – email: <a href="mailto:contact@naturepuredetox.fr">contact@<wbr>naturepuredetox.fr</a></p>
+      <p>To find out more about NaturÉpure's activities: <a href="https://www.naturepuredetox.fr/home" rel="noopener" hreflang="en">www.naturepuredetox.fr</a></p>
+      <p>The presentation flyer and the prices and times of the different workshops are attached. Please share this information!</p>
+      <p><strong>Themed workshops over 7 weeks</strong><br>From 2 January to 21 February, 2 days a week, in the multi-purpose room of Saint-Bonnet-de-Condat town hall:</p>
+      <ul>
+        <li><strong>yoga therapy</strong>: €70, 3 hours a week (minimum 7 participants), Wednesday and Saturday from 8:30 to 10:00;</li>
+        <li><strong>biodecoding/sophrology</strong>: €60, 3 hours a week (minimum 7 participants), Wednesday and Saturday from 10:00 to 11:30;</li>
+        <li><strong>reconstructive writing therapy</strong>: €50, 2 hours a week (minimum 7 participants), Wednesday and Saturday from 11:30 to 12:30.</li>
+      </ul>
+      <p><strong>NaturÉpure</strong> – Wellbeing, Detox, Hiking and Spontaneous Fasting Workshops (<span lang="fr">Ateliers Bien-Être, Détox, Randonnée et Jeûne Spontané®</span>) – Cézallier-Haut-Cantal</p>
+      <p>Wellbeing workshops and 7-day themed courses in the Cézallier, in the heart of the Volcans d'Auvergne Regional Nature Park, at the Manoir de La Maillonchère, led by qualified and experienced instructors. Strengthen your immune system with a physical and mental detox.</p>
+      <p>Our themed courses:</p>
+      <ul>
+        <li>health through acid–base and catabolic balance;</li>
+        <li>the naturopathic basics of diet and detox;</li>
+        <li>yoga therapy and reflexo-meditation;</li>
+        <li>discovering yourself through mental detox and biodecoding;</li>
+        <li>reconstructive writing therapy;</li>
+        <li>khórostherapy and music therapy.</li>
+      </ul>
+      <p>NaturÉpure® is a member of the NHA (National Health Association, USA) and of the AMJ (<span lang="fr">Académie Médicale du Jeûne</span>).</p>
+      <p>At the bottom of the flyer: logos of ifsh formations, FitForLife Sciences Institute, a Thai massage training centre (Thai Massage Training Center) and the Manoir de La Maillonchère guest house (1898).</p>
+  nl:
+    titre: "Nieuw in Saint-Bonnet-de-Condat: de themaworkshops van NaturÉpure"
+    resume: "NaturÉpure organiseert themaworkshops in de multifunctionele zaal van het gemeentehuis, 7 weken lang vanaf 2 januari 2027. Infobijeenkomst op dinsdag 3 november, om 10.00 of 20.00 uur."
+    texte: |
+      <p><strong>Nieuw in Saint-Bonnet-de-Condat!</strong></p>
+      <p>Met plezier laten we u weten dat NaturÉpure binnenkort themaworkshops organiseert in onze gemeente:</p>
+      <ul>
+        <li>yogatherapie;</li>
+        <li>biodecodering;</li>
+        <li>sofrologie;</li>
+        <li>reconstructieve schrijftherapie.</li>
+      </ul>
+      <p>De workshops vinden plaats in de multifunctionele zaal van het gemeentehuis, gedurende 7 weken, vanaf 2 januari.</p>
+      <p>Of u nu in Saint-Bonnet-de-Condat woont of elders: deze workshops staan open voor iedereen! Kom ze dus ontdekken en geniet van een moment van welzijn en gezelligheid!</p>
+      <p><strong>Inwoners van Saint-Bonnet-de-Condat krijgen 20% korting</strong> als ze aan een van deze workshops willen deelnemen!</p>
+      <p>Benieuwd wat deze workshops inhouden, hoe ze verlopen of wat ze u kunnen bieden? Kom het ontdekken op de <strong>informatiebijeenkomst van dinsdag 3 november, om 10.00 of 20.00 uur</strong>, in de multifunctionele zaal van het gemeentehuis!</p>
+      <p>Dat is de gelegenheid om de verschillende activiteiten te leren kennen, al uw vragen te stellen en alle uitleg te krijgen die u nodig hebt, zonder enige verplichting.</p>
+      <p>Aanmelden voor deze bijeenkomst wordt sterk aangeraden, zodat kan worden bevestigd dat beide tijden doorgaan, afhankelijk van het aantal deelnemers.</p>
+      <p>Inlichtingen: <a href="tel:+33471692361">04&nbsp;71&nbsp;69&nbsp;23&nbsp;61</a> / <a href="tel:+33745110335">07&nbsp;45&nbsp;11&nbsp;03&nbsp;35</a> – e-mail: <a href="mailto:contact@naturepuredetox.fr">contact@<wbr>naturepuredetox.fr</a></p>
+      <p>Meer over de activiteiten van NaturÉpure: <a href="https://www.naturepuredetox.fr/home" rel="noopener" hreflang="en">www.naturepuredetox.fr</a> (in het Engels)</p>
+      <p>In de bijlage vindt u de folder met de presentatie en de prijzen en tijden van de verschillende workshops. Deel de informatie gerust!</p>
+      <p><strong>Themaworkshops gedurende 7 weken</strong><br>Van 2 januari tot 21 februari, 2 dagen per week, in de multifunctionele zaal van het gemeentehuis van Saint-Bonnet-de-Condat:</p>
+      <ul>
+        <li><strong>yogatherapie</strong>: € 70, 3 uur per week (minimaal 7 deelnemers), op woensdag en zaterdag van 8.30 tot 10.00 uur;</li>
+        <li><strong>biodecodering/sofrologie</strong>: € 60, 3 uur per week (minimaal 7 deelnemers), op woensdag en zaterdag van 10.00 tot 11.30 uur;</li>
+        <li><strong>reconstructieve schrijftherapie</strong>: € 50, 2 uur per week (minimaal 7 deelnemers), op woensdag en zaterdag van 11.30 tot 12.30 uur.</li>
+      </ul>
+      <p><strong>NaturÉpure</strong> – Workshops welzijn, detox, wandelen en spontaan vasten (<span lang="fr">Ateliers Bien-Être, Détox, Randonnée et Jeûne Spontané®</span>) – Cézallier-Haut-Cantal</p>
+      <p>Welzijnsworkshops en themastages van 7 dagen in de Cézallier, in het hart van het regionaal natuurpark Volcans d'Auvergne, in het Manoir de La Maillonchère, onder leiding van gekwalificeerde en ervaren begeleiders. Versterk uw immuunsysteem met een fysieke en mentale detox.</p>
+      <p>Onze themastages:</p>
+      <ul>
+        <li>gezondheid door het zuur-baseevenwicht en het katabole evenwicht;</li>
+        <li>de naturopathische basis van voeding en detox;</li>
+        <li>yogatherapie en reflexomeditatie;</li>
+        <li>uzelf ontmoeten via mentale detox en biodecodering;</li>
+        <li>reconstructieve schrijftherapie;</li>
+        <li>khórostherapie en muziektherapie.</li>
+      </ul>
+      <p>NaturÉpure® is lid van de NHA (National Health Association, VS) en van de AMJ (<span lang="fr">Académie Médicale du Jeûne</span>).</p>
+      <p>Onderaan de folder: logo's van ifsh formations, FitForLife Sciences Institute, een opleidingscentrum voor Thaise massage (Thai Massage Training Center) en de bed-and-breakfast van het Manoir de La Maillonchère (1898).</p>
 
 - date: "2026-10-16"
   type: info
@@ -119,6 +259,34 @@
     <p>Notre engagement reste le même : agir pour Saint-Bonnet-de-Condat et pour tous ses habitants, quel qu’ait été le choix de chacun le 15 mars. Nous voulons poursuivre ce mandat dans un esprit d’écoute, de respect et de rassemblement.</p>
     <p>La mairie vous accueille aux horaires habituels et chaque élu reste à votre disposition pour échanger.</p>
     <p>Bien cordialement,<br>Sarah Chabrier</p>
+  en:
+    titre: "Municipal elections of 15 March 2026: the Council of State confirms the results"
+    resume: "On 16 October 2026, the Council of State upheld the administrative court's ruling and dismissed the appeal. This decision is final: the results of the 15 March election are confirmed."
+    texte: |
+      <p><strong>Saint-Bonnet-de-Condat town hall – Information for residents</strong><br>Saint-Bonnet-de-Condat, 16 October 2026</p>
+      <p><strong>Subject: Municipal elections of 15 March 2026 – the Council of State confirms the results</strong></p>
+      <p>Dear residents,</p>
+      <p>The results of the municipal elections of 15 March 2026 had been challenged before the administrative courts. We would like to inform you of the outcome of these proceedings.</p>
+      <p>In a judgment of 29 May 2026, the Clermont-Ferrand Administrative Court had dismissed the electoral challenge. This judgment was then appealed before the Council of State (<span lang="fr">Conseil d'État</span>).</p>
+      <p>In a decision of 16 October 2026 (no. 516978), the Council of State upheld this judgment and dismissed the appeal. It found that the complaints raised were unfounded and identified no defamatory element. This decision is final: the results of the 15 March election are confirmed and the proceedings are closed.</p>
+      <p>Lodging an appeal is a right that we fully respect: it is one of the safeguards of our democratic life. Now that the courts have given their final ruling, the time has come to turn the page.</p>
+      <p>Our commitment remains the same: to act for Saint-Bonnet-de-Condat and for all its residents, whatever choice each person made on 15 March. We want to continue this term of office in a spirit of listening, respect and unity.</p>
+      <p>The town hall welcomes you during its usual opening hours and every councillor remains available to talk with you.</p>
+      <p>Kind regards,<br>Sarah Chabrier</p>
+  nl:
+    titre: "Gemeenteraadsverkiezingen van 15 maart 2026: de Raad van State bevestigt de uitslag"
+    resume: "Op 16 oktober 2026 heeft de Raad van State het vonnis van de administratieve rechtbank bevestigd en het beroep verworpen. Deze beslissing is definitief: de uitslag van 15 maart is bevestigd."
+    texte: |
+      <p><strong>Gemeentehuis van Saint-Bonnet-de-Condat – Informatie voor de inwoners</strong><br>Saint-Bonnet-de-Condat, 16 oktober 2026</p>
+      <p><strong>Betreft: Gemeenteraadsverkiezingen van 15 maart 2026 – de Raad van State bevestigt de uitslag</strong></p>
+      <p>Beste inwoners,</p>
+      <p>Tegen de uitslag van de gemeenteraadsverkiezingen van 15 maart 2026 was beroep ingesteld bij de administratieve rechter. Wij willen u informeren over de afloop van deze procedure.</p>
+      <p>Bij vonnis van 29 mei 2026 had de administratieve rechtbank van Clermont-Ferrand het verkiezingsbezwaar afgewezen. Tegen dit vonnis was vervolgens beroep ingesteld bij de Raad van State (<span lang="fr">Conseil d'État</span>).</p>
+      <p>Bij beslissing van 16 oktober 2026 (nr. 516978) heeft de Raad van State dit vonnis bevestigd en het beroep verworpen. Hij oordeelde dat de aangevoerde bezwaren ongegrond waren en stelde geen enkel lasterlijk element vast. Deze beslissing is definitief: de uitslag van de verkiezingen van 15 maart is bevestigd en de procedure is afgesloten.</p>
+      <p>Beroep instellen is een recht dat wij volledig respecteren: het hoort bij de waarborgen van ons democratisch bestel. Nu de rechter definitief heeft beslist, is het tijd om de bladzijde om te slaan.</p>
+      <p>Onze inzet blijft dezelfde: ons inzetten voor Saint-Bonnet-de-Condat en voor al zijn inwoners, wat ieders keuze op 15 maart ook was. We willen dit mandaat voortzetten in een geest van luisterbereidheid, respect en verbondenheid.</p>
+      <p>Het gemeentehuis ontvangt u op de gewone openingstijden en elk raadslid blijft beschikbaar voor een gesprek.</p>
+      <p>Met vriendelijke groet,<br>Sarah Chabrier</p>
 
 - date: "2026-10-08"
   type: info
@@ -134,6 +302,28 @@
       <li>à partir de 21 h : chasse aux monstres pour les jeunes et fête de monstres.</li>
     </ul>
     <p>Dîner <strong>sur réservation uniquement</strong>, places limitées : par SMS au <a href="sms:+33767748898">07 67 74 88 98</a> ou au bar du camping. Venez déguisés !</p>
+  en:
+    titre: "Halloween at Camping La Santoire, Saturday 31 October"
+    resume: "Come and celebrate Halloween at Camping La Santoire! A mysterious atmosphere, thrills, laughter and above all… lots of magic! Come in costume and share an unforgettable Halloween evening with us!"
+    texte: |
+      <p><strong>Saturday 31 October 2026</strong>, at Camping La Santoire:</p>
+      <ul>
+        <li>bar and drinks from 18:30, dinner at 19:30 sharp;</li>
+        <li>horror menu at €15: drink “<span lang="fr">Potion de Sorcière</span>” (witch's potion), main course “<span lang="fr">Lasagna Enchantée</span>” (enchanted lasagne), dessert “<span lang="fr">Cerveau Congelé</span>” (frozen brain);</li>
+        <li>from 21:00: monster hunt for young people and monster party.</li>
+      </ul>
+      <p>Dinner <strong>by reservation only</strong>, limited places: by text message on <a href="sms:+33767748898">07 67 74 88 98</a> or at the campsite bar. Come in costume!</p>
+  nl:
+    titre: "Halloween op Camping La Santoire, zaterdag 31 oktober"
+    resume: "Kom Halloween vieren op Camping La Santoire! Een mysterieuze sfeer, griezelen, lachen en vooral… veel magie! Kom verkleed en beleef met ons een onvergetelijke Halloweenavond!"
+    texte: |
+      <p><strong>Zaterdag 31 oktober 2026</strong>, op Camping La Santoire:</p>
+      <ul>
+        <li>bar en aperitief vanaf 18.30 uur, diner om 19.30 uur stipt;</li>
+        <li>griezelmenu voor € 15: aperitief ‘<span lang="fr">Potion de Sorcière</span>’ (heksendrankje), hoofdgerecht ‘<span lang="fr">Lasagna Enchantée</span>’ (betoverde lasagne), dessert ‘<span lang="fr">Cerveau Congelé</span>’ (bevroren brein);</li>
+        <li>vanaf 21.00 uur: monsterjacht voor de jeugd en monsterfeest.</li>
+      </ul>
+      <p>Diner <strong>alleen op reservering</strong>, beperkt aantal plaatsen: per sms op <a href="sms:+33767748898">07 67 74 88 98</a> of aan de bar van de camping. Kom verkleed!</p>
 
 - date: "2026-10-06"
   type: info
@@ -144,6 +334,18 @@
   texte: |
     <p>Le secrétariat de mairie sera fermé <strong>du 12 au 18 octobre 2026 inclus</strong>. Le Point Poste, installé à la mairie, sera également fermé.</p>
     <p>Merci de votre compréhension.</p>
+  en:
+    titre: "Town hall and post office counter closed from 12 to 18 October"
+    resume: "The town hall office and the post office counter will be closed from 12 to 18 October 2026 inclusive."
+    texte: |
+      <p>The town hall office will be closed <strong>from 12 to 18 October 2026 inclusive</strong>. The post office counter (Point Poste), located in the town hall, will also be closed.</p>
+      <p>Thank you for your understanding.</p>
+  nl:
+    titre: "Gemeentehuis en postpunt gesloten van 12 tot 18 oktober"
+    resume: "Het secretariaat van het gemeentehuis en het postpunt zijn gesloten van 12 tot en met 18 oktober 2026."
+    texte: |
+      <p>Het secretariaat van het gemeentehuis is gesloten <strong>van 12 tot en met 18 oktober 2026</strong>. Ook het postpunt (Point Poste), dat zich in het gemeentehuis bevindt, is gesloten.</p>
+      <p>Dank voor uw begrip.</p>
 
 - date: "2026-10-06"
   type: info
@@ -154,6 +356,18 @@
   texte: |
     <p><strong>Avis aux contribuables – dégrèvement d'impôts directs pour pertes de récoltes consécutives à la sécheresse.</strong></p>
     <p>Les listes des parcelles concernées par un dégrèvement de taxe foncière sur les propriétés non bâties (TFPNB), ainsi que le montant des dégrèvements accordés, peuvent être consultés en mairie.</p>
+  en:
+    titre: "Direct tax relief"
+    resume: "Crop losses due to drought: the lists of plots eligible for relief from property tax on undeveloped land, and the amounts of relief granted, can be consulted at the town hall."
+    texte: |
+      <p><strong>Notice to taxpayers – relief from direct taxes for crop losses following the drought.</strong></p>
+      <p>The lists of plots eligible for relief from property tax on undeveloped land (TFPNB), and the amounts of relief granted, can be consulted at the town hall.</p>
+  nl:
+    titre: "Vermindering van directe belastingen"
+    resume: "Oogstverlies door droogte: de lijsten van percelen met een vermindering van de grondbelasting op onbebouwde eigendommen, en de toegekende bedragen, liggen ter inzage in het gemeentehuis."
+    texte: |
+      <p><strong>Bericht aan de belastingplichtigen – vermindering van directe belastingen wegens oogstverlies door de droogte.</strong></p>
+      <p>De lijsten van de percelen met een vermindering van de grondbelasting op onbebouwde eigendommen (TFPNB), en de toegekende bedragen, liggen ter inzage in het gemeentehuis.</p>
 
 - date: "2026-10-06"
   type: info
@@ -165,6 +379,20 @@
     <p><strong>Ne jetez plus vos cartouches d'encre !</strong> La mairie de Saint-Bonnet-de-Condat les récupère toute l'année afin de leur donner une seconde vie.</p>
     <p>Déposez vos cartouches en mairie. Elles seront ensuite remises à l'école de Lugarde, qui les fait recycler : elles aident à financer les sorties, les transports scolaires, le matériel et les activités des enfants.</p>
     <p>Un petit geste pour vous, un vrai coup de pouce pour l'école. Merci à tous pour votre participation et votre soutien.</p>
+  en:
+    titre: "Ink cartridges: drop them off at the town hall"
+    resume: "The town hall collects your used ink cartridges all year round. They are given to the school in Lugarde to be recycled and help fund the children's activities."
+    texte: |
+      <p><strong>Don't throw away your ink cartridges!</strong> Saint-Bonnet-de-Condat town hall collects them all year round to give them a second life.</p>
+      <p>Drop off your cartridges at the town hall. They will then be given to the school in Lugarde, which has them recycled: they help to fund outings, school transport, equipment and the children's activities.</p>
+      <p>A small gesture for you, a real boost for the school. Thank you all for your participation and support.</p>
+  nl:
+    titre: "Inktpatronen: lever ze in bij het gemeentehuis"
+    resume: "Het gemeentehuis zamelt het hele jaar uw lege inktpatronen in. Ze gaan naar de school van Lugarde, die ze laat recyclen om de activiteiten van de kinderen te helpen betalen."
+    texte: |
+      <p><strong>Gooi uw inktpatronen niet meer weg!</strong> Het gemeentehuis van Saint-Bonnet-de-Condat zamelt ze het hele jaar in om ze een tweede leven te geven.</p>
+      <p>Lever uw patronen in bij het gemeentehuis. Ze gaan daarna naar de school van Lugarde, die ze laat recyclen: zo helpen ze uitstapjes, schoolvervoer, materiaal en activiteiten van de kinderen te betalen.</p>
+      <p>Een klein gebaar voor u, een echte steun voor de school. Iedereen bedankt voor de deelname en de steun.</p>
 
 - date: "2026-10-02"
   type: info
@@ -176,6 +404,20 @@
     <p>Du <strong>lundi 5 octobre au vendredi 9 octobre 2026 inclus</strong>, la circulation sera limitée sur la rue des Rochers afin de maintenir une voie de passage libre et de garantir la sécurité de tous (arrêté municipal temporaire n° AR 016 2026 du 2 octobre 2026).</p>
     <p>Nous invitons les véhicules légers à emprunter de préférence <strong>la rue du Frêne</strong> ou <strong>le chemin du Ruisseau</strong>.</p>
     <p>L'accès aux riverains, aux services publics et aux véhicules de secours reste maintenu. Merci de votre compréhension.</p>
+  en:
+    titre: "Restricted traffic on Rue des Rochers, from 5 to 9 October"
+    resume: "From Monday 5 to Friday 9 October 2026 inclusive, traffic is restricted on Rue des Rochers. Cars are asked to use Rue du Frêne or Chemin du Ruisseau instead."
+    texte: |
+      <p>From <strong>Monday 5 October to Friday 9 October 2026 inclusive</strong>, traffic will be restricted on Rue des Rochers to keep a lane clear and ensure everyone's safety (temporary municipal order no. AR 016 2026 of 2 October 2026).</p>
+      <p>We ask cars to use <strong>Rue du Frêne</strong> or <strong>Chemin du Ruisseau</strong> instead.</p>
+      <p>Access for residents, public services and emergency vehicles is maintained. Thank you for your understanding.</p>
+  nl:
+    titre: "Beperkt verkeer in de rue des Rochers, van 5 tot 9 oktober"
+    resume: "Van maandag 5 tot en met vrijdag 9 oktober 2026 is het verkeer in de rue des Rochers beperkt. Personenauto's wordt gevraagd via de rue du Frêne of de chemin du Ruisseau te rijden."
+    texte: |
+      <p>Van <strong>maandag 5 oktober tot en met vrijdag 9 oktober 2026</strong> is het verkeer in de rue des Rochers beperkt, om een rijstrook vrij te houden en ieders veiligheid te garanderen (tijdelijk gemeentelijk besluit nr. AR 016 2026 van 2 oktober 2026).</p>
+      <p>Personenauto's wordt gevraagd bij voorkeur <strong>de rue du Frêne</strong> of <strong>de chemin du Ruisseau</strong> te nemen.</p>
+      <p>Aanwonenden, openbare diensten en hulpdiensten blijven toegang hebben. Dank voor uw begrip.</p>
 
 - date: "2026-10-02"
   type: info
@@ -191,6 +433,28 @@
       <li>Responsable des travaux : M. Rousset – <a href="tel:+33648662289">06 48 66 22 89</a></li>
     </ul>
     <p>Pour toute information complémentaire, vous pouvez contacter l'entreprise chargée des travaux. Merci de votre compréhension.</p>
+  en:
+    titre: "Tree trimming and felling near power lines"
+    resume: "From 8 October 2026, trees are being trimmed and felled near the overhead power lines (20 kV HTA), for the safety of people and of the network."
+    texte: |
+      <p>The municipality informs residents that trees will be trimmed and felled near the 20 kV HTA overhead lines, to ensure the safety of people and of the electricity network.</p>
+      <ul>
+        <li>Start of works: from <strong>8 October 2026</strong></li>
+        <li>Company carrying out the works: SARL Rivière Jean Marie, Lavergne, 15200 Chalvignac – <a href="tel:+33687351777">06 87 35 17 77</a></li>
+        <li>Works manager: Mr Rousset – <a href="tel:+33648662289">06 48 66 22 89</a></li>
+      </ul>
+      <p>For further information, you can contact the company carrying out the works. Thank you for your understanding.</p>
+  nl:
+    titre: "Snoei- en kapwerkzaamheden bij de elektriciteitsleidingen"
+    resume: "Vanaf 8 oktober 2026 worden bomen gesnoeid en gekapt langs de bovengrondse elektriciteitsleidingen (HTA 20 kV), voor de veiligheid van personen en van het net."
+    texte: |
+      <p>De gemeente laat de inwoners weten dat er bomen worden gesnoeid en gekapt langs de bovengrondse HTA-lijnen van 20 kV, voor de veiligheid van personen en van het elektriciteitsnet.</p>
+      <ul>
+        <li>Start van de werkzaamheden: vanaf <strong>8 oktober 2026</strong></li>
+        <li>Bedrijf dat de werkzaamheden uitvoert: SARL Rivière Jean Marie, Lavergne, 15200 Chalvignac – <a href="tel:+33687351777">06 87 35 17 77</a></li>
+        <li>Verantwoordelijke voor de werkzaamheden: de heer Rousset – <a href="tel:+33648662289">06 48 66 22 89</a></li>
+      </ul>
+      <p>Voor meer informatie kunt u contact opnemen met het bedrijf dat de werkzaamheden uitvoert. Dank voor uw begrip.</p>
 
 - date: "2026-10-02"
   type: info
@@ -226,6 +490,68 @@
       <li>OC'TEHA (amélioration de l'habitat) : sur rendez-vous au <a href="tel:+33471456212">04 71 45 62 12</a>, deux fois par mois, le mercredi matin ou après-midi ;</li>
       <li>Mission Locale Hautes Terres : le 2<sup>e</sup> jeudi (matin) et le 4<sup>e</sup> mardi (après-midi), en permanence physique, avec ou sans rendez-vous, au <a href="tel:+33471673111">04 71 67 31 11</a>.</li>
     </ul>
+  en:
+    titre: "France Services: October drop-in sessions"
+    resume: "The October schedule of sessions at the France Services centre in Riom-ès-Montagnes and in neighbouring town halls (Menet, Saint-Étienne-de-Chomeil, Trizac, Collandres)."
+    texte: |
+      <p>The France Services centre of the Pays Gentiane helps you free of charge with everyday paperwork: health, pensions, taxes, employment, housing, online procedures…</p>
+      <p><strong>France Services centre</strong>, Place de la Gare, 15400 Riom-ès-Montagnes · <a href="tel:+33471782950">04 71 78 29 50</a> · <a href="mailto:efs@pays-gentiane.com">efs@pays-gentiane.com</a>. Open Monday to Thursday from 9:00 to 12:00 and from 14:00 to 17:00, and on Friday from 9:00 to 12:00.</p>
+      <p><strong>Local drop-in sessions in October:</strong></p>
+      <ul>
+        <li>Tuesday 6 October: Menet town hall, from 14:00 to 16:30;</li>
+        <li>Thursday 8 October: Saint-Étienne-de-Chomeil town hall, from 14:00 to 16:30;</li>
+        <li>Friday 16 October: Trizac post office, from 9:30 to 11:30;</li>
+        <li>new: Collandres town hall, on 2 November and then on the first Monday every two months, from 9:30 to 11:30.</li>
+      </ul>
+      <p><strong>Partner organisations:</strong></p>
+      <ul>
+        <li>Family allowance fund (CAF): every day by video call, by appointment on <a href="tel:+33471782950">04 71 78 29 50</a>;</li>
+        <li>Health insurance fund (CPAM): every day by video call, by appointment on <a href="tel:+33471782950">04 71 78 29 50</a>;</li>
+        <li>Legal advice point (CDAD 15): by appointment on <a href="tel:+33471430010">04 71 43 00 10</a>;</li>
+        <li>Cantal Rénov' Énergie (home energy renovation): by appointment on <a href="tel:+33471464900">04 71 46 49 00</a>;</li>
+        <li>Cap Emploi (employment for people with disabilities): in person, by appointment on <a href="tel:+33471488900">04 71 48 89 00</a>;</li>
+        <li>UDAF 15 (union of family associations): by appointment on <a href="tel:+33471434343">04 71 43 43 43</a>;</li>
+        <li>Inter-institutional skills assessment centre (CIBC): by appointment on <a href="tel:+33471480983">04 71 48 09 83</a>;</li>
+        <li>CICAS, Agirc-Arrco supplementary pensions: by appointment on <a href="tel:+33970660660">09 70 66 06 60</a>;</li>
+        <li>Chamber of Commerce and Industry (CCI): by appointment on <a href="tel:+33471454040">04 71 45 40 40</a>;</li>
+        <li>France Travail (public employment service): by invitation;</li>
+        <li>CARSAT, social service: in person, by appointment on <a href="tel:3646">36 46</a> (say “<span lang="fr">Service social</span>”);</li>
+        <li>Chamber of Trades and Crafts of the Cantal: by appointment on <a href="tel:+33471456505">04 71 45 65 05</a>;</li>
+        <li>Agricultural social insurance (MSA): by appointment on <a href="tel:+33471646646">04 71 64 66 46</a>;</li>
+        <li>OC'TEHA (home improvement): by appointment on <a href="tel:+33471456212">04 71 45 62 12</a>, twice a month, on Wednesday morning or afternoon;</li>
+        <li>Mission Locale Hautes Terres (young people's employment): on the 2nd Thursday (morning) and the 4th Tuesday (afternoon), in person, with or without an appointment, on <a href="tel:+33471673111">04 71 67 31 11</a>.</li>
+      </ul>
+  nl:
+    titre: "France Services: spreekuren in oktober"
+    resume: "Het oktoberschema van de spreekuren in het France Services-centrum van Riom-ès-Montagnes en in de gemeentehuizen in de buurt (Menet, Saint-Étienne-de-Chomeil, Trizac, Collandres)."
+    texte: |
+      <p>Het France Services-centrum van het Pays Gentiane helpt u gratis bij uw dagelijkse administratie: gezondheid, pensioen, belastingen, werk, huisvesting, online procedures…</p>
+      <p><strong>France Services-centrum</strong>, Place de la Gare, 15400 Riom-ès-Montagnes · <a href="tel:+33471782950">04 71 78 29 50</a> · <a href="mailto:efs@pays-gentiane.com">efs@pays-gentiane.com</a>. Open van maandag tot donderdag van 9.00 tot 12.00 uur en van 14.00 tot 17.00 uur, op vrijdag van 9.00 tot 12.00 uur.</p>
+      <p><strong>Spreekuren op locatie in oktober:</strong></p>
+      <ul>
+        <li>dinsdag 6 oktober: gemeentehuis van Menet, van 14.00 tot 16.30 uur;</li>
+        <li>donderdag 8 oktober: gemeentehuis van Saint-Étienne-de-Chomeil, van 14.00 tot 16.30 uur;</li>
+        <li>vrijdag 16 oktober: postkantoor van Trizac, van 9.30 tot 11.30 uur;</li>
+        <li>nieuw: gemeentehuis van Collandres, op 2 november en daarna om de twee maanden op de eerste maandag, van 9.30 tot 11.30 uur.</li>
+      </ul>
+      <p><strong>Partnerorganisaties:</strong></p>
+      <ul>
+        <li>Kinderbijslagfonds (CAF): elke dag via videogesprek, op afspraak via <a href="tel:+33471782950">04 71 78 29 50</a>;</li>
+        <li>Ziektekostenverzekering (CPAM): elke dag via videogesprek, op afspraak via <a href="tel:+33471782950">04 71 78 29 50</a>;</li>
+        <li>Juridisch loket (CDAD 15): op afspraak via <a href="tel:+33471430010">04 71 43 00 10</a>;</li>
+        <li>Cantal Rénov' Énergie (energierenovatie van woningen): op afspraak via <a href="tel:+33471464900">04 71 46 49 00</a>;</li>
+        <li>Cap Emploi (werk voor mensen met een handicap): ter plaatse, op afspraak via <a href="tel:+33471488900">04 71 48 89 00</a>;</li>
+        <li>UDAF 15 (unie van gezinsverenigingen): op afspraak via <a href="tel:+33471434343">04 71 43 43 43</a>;</li>
+        <li>Centrum voor competentiebeoordeling (CIBC): op afspraak via <a href="tel:+33471480983">04 71 48 09 83</a>;</li>
+        <li>CICAS, aanvullend pensioen Agirc-Arrco: op afspraak via <a href="tel:+33970660660">09 70 66 06 60</a>;</li>
+        <li>Kamer van Koophandel en Industrie (CCI): op afspraak via <a href="tel:+33471454040">04 71 45 40 40</a>;</li>
+        <li>France Travail (openbare dienst voor arbeidsbemiddeling): op uitnodiging;</li>
+        <li>CARSAT, sociale dienst: ter plaatse, op afspraak via <a href="tel:3646">36 46</a> (zeg ‘<span lang="fr">Service social</span>’);</li>
+        <li>Kamer van Ambachten van de Cantal: op afspraak via <a href="tel:+33471456505">04 71 45 65 05</a>;</li>
+        <li>Sociale verzekering voor de landbouw (MSA): op afspraak via <a href="tel:+33471646646">04 71 64 66 46</a>;</li>
+        <li>OC'TEHA (woningverbetering): op afspraak via <a href="tel:+33471456212">04 71 45 62 12</a>, twee keer per maand, op woensdagochtend of -middag;</li>
+        <li>Mission Locale Hautes Terres (werk voor jongeren): op de 2e donderdag (ochtend) en de 4e dinsdag (middag), ter plaatse, met of zonder afspraak, via <a href="tel:+33471673111">04 71 67 31 11</a>.</li>
+      </ul>
 
 - date: "2026-09-28"
   type: info
@@ -237,6 +563,20 @@
     <p>L'association Les Rochers en Folie organise un repas le <strong>samedi 24 octobre 2026</strong> à la salle des fêtes de Saint-Bonnet-de-Condat.</p>
     <p>Au menu : truffade, jambon de pays, salade et tarte feuilletée aux pommes. Tarif : 15 € par personne (café et vin non compris).</p>
     <p><strong>Seulement 40 places, sur réservation uniquement</strong>, par SMS au <a href="sms:+33681925132">06 81 92 51 32</a> avec vos nom, prénom et nombre de repas souhaités.</p>
+  en:
+    titre: "Les Rochers en Folie dinner, Saturday 24 October"
+    resume: "Truffade, country ham, salad and apple puff pastry tart at the village hall on Saturday 24 October 2026. €15 per person, 40 places, by reservation only."
+    texte: |
+      <p>The association Les Rochers en Folie is organising a dinner on <strong>Saturday 24 October 2026</strong> at the Saint-Bonnet-de-Condat village hall.</p>
+      <p>On the menu: truffade (a local potato and cheese dish), country ham, salad and apple puff pastry tart. Price: €15 per person (coffee and wine not included).</p>
+      <p><strong>Only 40 places, by reservation only</strong>, by text message on <a href="sms:+33681925132">06 81 92 51 32</a> with your surname, first name and the number of meals you want.</p>
+  nl:
+    titre: "Maaltijd van Les Rochers en Folie, zaterdag 24 oktober"
+    resume: "Truffade, boerenham, salade en appeltaart van bladerdeeg in het dorpshuis op zaterdag 24 oktober 2026. € 15 per persoon, 40 plaatsen, alleen op reservering."
+    texte: |
+      <p>De vereniging Les Rochers en Folie organiseert een maaltijd op <strong>zaterdag 24 oktober 2026</strong> in het dorpshuis van Saint-Bonnet-de-Condat.</p>
+      <p>Op het menu: truffade (streekgerecht van aardappelen en kaas), boerenham, salade en appeltaart van bladerdeeg. Prijs: € 15 per persoon (koffie en wijn niet inbegrepen).</p>
+      <p><strong>Slechts 40 plaatsen, alleen op reservering</strong>, per sms op <a href="sms:+33681925132">06 81 92 51 32</a> met uw naam, voornaam en het gewenste aantal maaltijden.</p>
 
 - date: "2026-09-26"
   type: info
@@ -247,6 +587,18 @@
   texte: |
     <p>À compter du jeudi 1er octobre 2026, le secrétariat de mairie et le Point Poste seront ouverts au public <strong>de 9 h à 12 h</strong>, les lundis, mardis, jeudis et vendredis (jours d'ouverture inchangés).</p>
     <p>Merci de votre compréhension.</p>
+  en:
+    titre: "New opening hours for the town hall and post office counter"
+    resume: "Since Thursday 1 October 2026, the town hall office and the post office counter have been open to the public from 9:00 to 12:00 on Mondays, Tuesdays, Thursdays and Fridays."
+    texte: |
+      <p>From Thursday 1 October 2026, the town hall office and the post office counter (Point Poste) will be open to the public <strong>from 9:00 to 12:00</strong> on Mondays, Tuesdays, Thursdays and Fridays (opening days unchanged).</p>
+      <p>Thank you for your understanding.</p>
+  nl:
+    titre: "Nieuwe openingstijden van het gemeentehuis en het postpunt"
+    resume: "Sinds donderdag 1 oktober 2026 zijn het secretariaat van het gemeentehuis en het postpunt open voor het publiek van 9.00 tot 12.00 uur, op maandag, dinsdag, donderdag en vrijdag."
+    texte: |
+      <p>Vanaf donderdag 1 oktober 2026 zijn het secretariaat van het gemeentehuis en het postpunt (Point Poste) open voor het publiek <strong>van 9.00 tot 12.00 uur</strong>, op maandag, dinsdag, donderdag en vrijdag (openingsdagen ongewijzigd).</p>
+      <p>Dank voor uw begrip.</p>
 
 - date: "2026-09-21"
   heure: "20:17"
@@ -259,6 +611,22 @@
     <p><strong>La remise en service est prévue demain à partir de 8 h 30.</strong></p>
     <p>Le château d'eau ne remontant pas suffisamment, nous vous tiendrons informés afin de vous préciser si cette fermeture devra être renouvelée les prochains jours ou si elle restera exceptionnelle.</p>
     <p>Merci à tous pour votre compréhension et votre vigilance.</p>
+  en:
+    titre: "Water network supplied by the Chancel water tower shut off"
+    resume: "The network supplied by the Chancel water tower is shut off this evening from 20:00. Supply is expected to resume tomorrow from 8:30."
+    texte: |
+      <p>The network supplied by the Chancel water tower will be shut off this evening from 20:00. Please plan your water needs before the cut.</p>
+      <p><strong>Supply is expected to resume tomorrow from 8:30.</strong></p>
+      <p>As the water tower is not refilling sufficiently, we will keep you informed whether this shut-off needs to be repeated over the next few days or will remain exceptional.</p>
+      <p>Thank you all for your understanding and vigilance.</p>
+  nl:
+    titre: "Afsluiting van het net van de watertoren van Chancel"
+    resume: "Het net dat door de watertoren van Chancel wordt gevoed, is vanavond vanaf 20.00 uur afgesloten. Het water komt naar verwachting morgen vanaf 8.30 uur terug."
+    texte: |
+      <p>Het net dat door de watertoren van Chancel wordt gevoed, wordt vanavond vanaf 20.00 uur afgesloten. Zorg vóór de afsluiting voor het water dat u nodig hebt.</p>
+      <p><strong>Het water komt naar verwachting morgen vanaf 8.30 uur terug.</strong></p>
+      <p>Omdat de watertoren niet voldoende bijvult, laten we u weten of deze afsluiting de komende dagen moet worden herhaald of een uitzondering blijft.</p>
+      <p>Iedereen bedankt voor het begrip en de waakzaamheid.</p>
 
 - date: "2026-09-16"
   heure: "14:35"
@@ -272,6 +640,24 @@
     <p><strong>Exceptionnellement ce soir, l'eau sera coupée à partir de 21 h.</strong> Des travaux étant programmés demain matin de bonne heure, la remise en eau n'interviendra qu'après 9 h, une fois les travaux réalisés.</p>
     <p>Nous vous tiendrons informés de la suite des opérations. Nous invitons une nouvelle fois chacun à faire preuve de la plus grande vigilance et à limiter au maximum sa consommation d'eau, afin de préserver les réserves disponibles.</p>
     <p>Merci à tous pour votre compréhension et votre coopération.</p>
+  en:
+    titre: "Water cut and work on the network"
+    resume: "The night-time water cuts continue. Tonight, the water is cut from 21:00; supply resumes tomorrow after 9:00, once the work is done."
+    texte: |
+      <p>Following last night's water shut-off, we found that the level in the water tower had risen well. Conversely, when the supply stays open during the night, the level does not rise, which points to particularly high water consumption at night.</p>
+      <p>To preserve the reserves and continue our investigations, the night-time cuts will therefore continue.</p>
+      <p><strong>Exceptionally this evening, the water will be cut from 21:00.</strong> As work is planned early tomorrow morning, the water will only come back after 9:00, once the work has been done.</p>
+      <p>We will keep you informed of the next steps. Once again, we ask everyone to be extremely vigilant and to limit their water consumption as much as possible, to preserve the available reserves.</p>
+      <p>Thank you all for your understanding and cooperation.</p>
+  nl:
+    titre: "Wateronderbreking en werkzaamheden aan het net"
+    resume: "De nachtelijke onderbrekingen blijven gelden. Vanavond wordt het water vanaf 21.00 uur afgesloten; het komt morgen na 9.00 uur terug, zodra de werkzaamheden klaar zijn."
+    texte: |
+      <p>Na de afsluiting van het water afgelopen nacht hebben we vastgesteld dat het niveau in de watertoren goed is gestegen. Blijft de toevoer ’s nachts open, dan stijgt het niveau niet, wat wijst op een bijzonder hoog waterverbruik ’s nachts.</p>
+      <p>Om de voorraad te sparen en ons onderzoek voort te zetten, blijven de nachtelijke onderbrekingen dus gelden.</p>
+      <p><strong>Vanavond wordt het water uitzonderlijk vanaf 21.00 uur afgesloten.</strong> Omdat er morgenvroeg werkzaamheden gepland zijn, komt het water pas na 9.00 uur terug, zodra de werkzaamheden klaar zijn.</p>
+      <p>We houden u op de hoogte van het vervolg. We vragen iedereen opnieuw om heel waakzaam te zijn en het waterverbruik zoveel mogelijk te beperken, om de beschikbare voorraad te sparen.</p>
+      <p>Iedereen bedankt voor het begrip en de medewerking.</p>
 
 - date: "2026-09-15"
   heure: "16:32"
@@ -285,6 +671,24 @@
     <p><strong>À compter de ce soir, l'eau sera coupée à partir de 20 h et remise en service à 7 h le lendemain matin.</strong> Cette mesure sera reconduite chaque nuit, jusqu'au retour à une situation normale, afin d'éviter la vidange complète du château d'eau et de préserver au maximum les réserves disponibles.</p>
     <p>Nous demandons à l'ensemble des usagers concernés de prendre toutes les dispositions nécessaires avant 20 h et d'anticiper leurs besoins en eau pour la nuit. Dans le contexte actuel, toute consommation non indispensable doit impérativement être évitée.</p>
     <p>La commune remercie chacun pour sa compréhension, sa vigilance et le strict respect de ces consignes.</p>
+  en:
+    titre: "Night-time water cuts – Laurus water tower"
+    resume: "Because the level of the Laurus water tower is falling very fast, the water is cut every night from 20:00 to 7:00 until the situation returns to normal."
+    texte: |
+      <p><strong>Official notice – temporary restriction of the water supply.</strong></p>
+      <p>Because the level of the Laurus water tower has fallen very sharply and particularly quickly, the municipality has to introduce night-time cuts to the water supply.</p>
+      <p><strong>From this evening, the water will be cut from 20:00 and restored at 7:00 the following morning.</strong> This measure will be repeated every night until the situation returns to normal, to prevent the water tower from emptying completely and to preserve the available reserves as much as possible.</p>
+      <p>We ask all users concerned to make all the necessary arrangements before 20:00 and to plan their water needs for the night. In the current situation, any non-essential water use must absolutely be avoided.</p>
+      <p>The municipality thanks everyone for their understanding, their vigilance and their strict compliance with these instructions.</p>
+  nl:
+    titre: "Nachtelijke wateronderbrekingen – watertoren van Laurus"
+    resume: "Omdat het niveau van de watertoren van Laurus zeer snel daalt, wordt het water elke nacht afgesloten van 20.00 tot 7.00 uur, tot de situatie weer normaal is."
+    texte: |
+      <p><strong>Officieel bericht – tijdelijke beperking van de watertoevoer.</strong></p>
+      <p>Door een zeer sterke en bijzonder snelle daling van het niveau van de watertoren van Laurus moet de gemeente de watertoevoer ’s nachts onderbreken.</p>
+      <p><strong>Vanaf vanavond wordt het water vanaf 20.00 uur afgesloten en de volgende ochtend om 7.00 uur weer opengezet.</strong> Deze maatregel wordt elke nacht herhaald tot de situatie weer normaal is, om te voorkomen dat de watertoren helemaal leegloopt en om de beschikbare voorraad zoveel mogelijk te sparen.</p>
+      <p>We vragen alle betrokken gebruikers om vóór 20.00 uur de nodige voorzorgen te nemen en te zorgen voor het water dat ze ’s nachts nodig hebben. In de huidige omstandigheden moet elk niet-noodzakelijk verbruik absoluut worden vermeden.</p>
+      <p>De gemeente dankt iedereen voor het begrip, de waakzaamheid en het strikt naleven van deze richtlijnen.</p>
 
 - date: "2026-09-15"
   type: info
@@ -296,6 +700,22 @@
     <p><strong>Il est strictement interdit de remplir des cuves avec l'eau provenant du réseau communal.</strong> Pour vos besoins, le point d'eau du Frayssinet reste à votre disposition.</p>
     <p>Des rondes de surveillance et des contrôles seront effectués. En cas d'abus ou de non-respect de ces consignes, la commune se verra dans l'obligation de prendre les mesures nécessaires et, le cas échéant, de sanctionner les comportements constatés.</p>
     <p>Merci à chacun de faire preuve de responsabilité afin de préserver au maximum les réserves d'eau.</p>
+  en:
+    titre: "Reminder to farmers: water consumption"
+    resume: "Use water only for essential needs, including watering livestock. Filling tanks from the municipal network is forbidden; the Frayssinet water point remains available."
+    texte: |
+      <p>Given the current situation on the water network, we remind everyone that it is <strong>essential</strong> to <strong>limit water use to what is strictly necessary</strong>, including for watering animals.</p>
+      <p><strong>It is strictly forbidden to fill tanks with water from the municipal network.</strong> For your needs, the Frayssinet water point remains available to you.</p>
+      <p>Patrols and checks will be carried out. In the event of abuse or failure to follow these instructions, the municipality will be obliged to take the necessary measures and, where appropriate, to penalise the behaviour observed.</p>
+      <p>We thank everyone for acting responsibly to preserve the water reserves as much as possible.</p>
+  nl:
+    titre: "Herinnering voor landbouwers: waterverbruik"
+    resume: "Verbruik alleen het strikt noodzakelijke, ook voor het drenken van vee. Tanks vullen met water van het gemeentelijke net is verboden; het watertappunt van Frayssinet blijft beschikbaar."
+    texte: |
+      <p>Gezien de huidige situatie op het waternet herinneren we eraan dat het <strong>absoluut noodzakelijk</strong> is dat iedereen zijn verbruik <strong>tot het strikt noodzakelijke beperkt</strong>, ook voor het drenken van de dieren.</p>
+      <p><strong>Het is strikt verboden tanks te vullen met water van het gemeentelijke net.</strong> Voor uw behoeften blijft het watertappunt van Frayssinet tot uw beschikking.</p>
+      <p>Er worden controlerondes en controles uitgevoerd. Bij misbruik of niet-naleving van deze richtlijnen zal de gemeente de nodige maatregelen moeten nemen en zo nodig het vastgestelde gedrag bestraffen.</p>
+      <p>We danken iedereen voor zijn verantwoordelijkheidsgevoel om de watervoorraad zoveel mogelijk te sparen.</p>
 
 - date: "2026-09-13"
   type: info
@@ -306,6 +726,20 @@
     <p>La fuite sur le réseau du château d'eau de Laurus a été localisée. <strong>Elle ne pourra malheureusement être réparée que demain.</strong></p>
     <p>En attendant, nous demandons à tous les habitants du bourg de réduire au maximum leur consommation d'eau aujourd'hui. Cette vigilance est essentielle pour permettre au château d'eau de retrouver un niveau suffisant, et aux habitants situés sur la conduite entre la mairie et le Lessard de retrouver l'eau le plus rapidement possible dès que la fuite sera réparée.</p>
     <p>Chaque économie d'eau compte. Merci à tous pour votre compréhension et votre coopération.</p>
+  en:
+    titre: "Water leak: please limit your water use"
+    resume: "The leak on the Laurus water tower network has been located and will be repaired tomorrow. Residents of the village centre are asked to reduce their water use as much as possible."
+    texte: |
+      <p>The leak on the Laurus water tower network has been located. <strong>Unfortunately, it cannot be repaired until tomorrow.</strong></p>
+      <p>In the meantime, we ask all residents of the village centre to reduce their water use as much as possible today. This vigilance is essential to allow the water tower to recover a sufficient level, and to allow residents on the pipe between the town hall and Le Lessard to get their water back as quickly as possible once the leak has been repaired.</p>
+      <p>Every drop saved counts. Thank you all for your understanding and cooperation.</p>
+  nl:
+    titre: "Waterlek: beperk uw verbruik"
+    resume: "Het lek in het net van de watertoren van Laurus is gevonden en wordt morgen hersteld. De inwoners van het dorpscentrum wordt gevraagd hun verbruik zoveel mogelijk te beperken."
+    texte: |
+      <p>Het lek in het net van de watertoren van Laurus is gevonden. <strong>Helaas kan het pas morgen worden hersteld.</strong></p>
+      <p>Intussen vragen we alle inwoners van het dorpscentrum om vandaag zo weinig mogelijk water te verbruiken. Die waakzaamheid is essentieel om de watertoren weer voldoende te laten vollopen, en om de inwoners langs de leiding tussen het gemeentehuis en Le Lessard zo snel mogelijk weer water te geven zodra het lek is hersteld.</p>
+      <p>Elke druppel telt. Iedereen bedankt voor het begrip en de medewerking.</p>
 
 - date: "2026-09-12"
   type: info
@@ -317,6 +751,22 @@
     <p>Tous les habitants du bourg et ceux desservis par Laurus sont invités à faire très attention à leur consommation d'eau et à la limiter au maximum.</p>
     <p>Des personnes vont intervenir sur le réseau cet après-midi afin de rechercher la fuite et de rétablir le réseau à la normale le plus rapidement possible. <strong>Des coupures d'eau peuvent avoir lieu le temps de l'intervention.</strong></p>
     <p>Merci à tous pour votre patience, votre vigilance et votre solidarité.</p>
+  en:
+    titre: "Leak at the Laurus water tower"
+    resume: "A leak is making the level of the Laurus water tower drop sharply. Work will be carried out this afternoon; water cuts are possible."
+    texte: |
+      <p><strong>Water alert – important information for residents.</strong> A leak has been found at the Laurus water tower. The water level is dropping sharply and the network is currently disrupted.</p>
+      <p>All residents of the village centre and those supplied by Laurus are asked to be very careful with their water use and to limit it as much as possible.</p>
+      <p>A team will work on the network this afternoon to find the leak and restore the network to normal as quickly as possible. <strong>Water cuts may occur during the work.</strong></p>
+      <p>Thank you all for your patience, vigilance and solidarity.</p>
+  nl:
+    titre: "Lek bij de watertoren van Laurus"
+    resume: "Door een lek daalt het niveau van de watertoren van Laurus sterk. Vanmiddag wordt eraan gewerkt; wateronderbrekingen zijn mogelijk."
+    texte: |
+      <p><strong>Waterwaarschuwing – belangrijke informatie voor de inwoners.</strong> Bij de watertoren van Laurus is een lek vastgesteld. Het waterniveau daalt sterk en het net is momenteel verstoord.</p>
+      <p>Alle inwoners van het dorpscentrum en wie door Laurus van water wordt voorzien, worden gevraagd heel zuinig met water om te gaan en het verbruik zoveel mogelijk te beperken.</p>
+      <p>Vanmiddag gaan er mensen aan het net werken om het lek te zoeken en het net zo snel mogelijk weer normaal te laten werken. <strong>Tijdens de werkzaamheden kan het water worden onderbroken.</strong></p>
+      <p>Iedereen bedankt voor het geduld, de waakzaamheid en de solidariteit.</p>
 
 - date: "2026-09-07"
   type: info
@@ -332,6 +782,30 @@
       <li>un justificatif de domicile (si besoin).</li>
     </ul>
     <p>Si vous ne souhaitez pas de prélèvement, vous pouvez régler vos factures d'eau par carte bancaire ou par virement.</p>
+  en:
+    titre: "Paying water bills"
+    resume: "Cheques are no longer accepted for paying water bills. Direct debit, bank card or bank transfer."
+    texte: |
+      <p><strong>Cheques are no longer accepted for paying water bills.</strong></p>
+      <p>To pay by direct debit, bring the following to the town hall before 30 September 2026:</p>
+      <ul>
+        <li>your bank details (RIB) in your name;</li>
+        <li>an identity document;</li>
+        <li>proof of address (if needed).</li>
+      </ul>
+      <p>If you do not want to pay by direct debit, you can pay your water bills by bank card or by bank transfer.</p>
+  nl:
+    titre: "Betaling van de waterrekeningen"
+    resume: "Cheques worden niet meer geaccepteerd voor de betaling van waterrekeningen. Automatische incasso, bankpas of overboeking."
+    texte: |
+      <p><strong>Cheques worden niet meer geaccepteerd voor de betaling van de waterrekeningen.</strong></p>
+      <p>Voor een automatische incasso brengt u vóór 30 september 2026 naar het gemeentehuis:</p>
+      <ul>
+        <li>uw bankgegevens (RIB) op uw naam;</li>
+        <li>een identiteitsbewijs;</li>
+        <li>een bewijs van woonadres (indien nodig).</li>
+      </ul>
+      <p>Wilt u geen automatische incasso, dan kunt u uw waterrekeningen betalen met uw bankpas of per overboeking.</p>
 
 - date: "2026-09-04"
   type: info
@@ -342,3 +816,17 @@
     <p><strong>Le château d'eau de Réghéat vient d'être rempli. Il est déconseillé de boire l'eau, au moins jusqu'à demain</strong> : elle peut encore être trouble suite au remplissage.</p>
     <p>Si besoin, des bouteilles d'eau sont disponibles en les demandant à Nathalie.</p>
     <p>Merci de votre compréhension. — La mairie</p>
+  en:
+    titre: "Réghéat water tower"
+    resume: "The Réghéat water tower has just been refilled: drinking the water is not recommended until tomorrow at least."
+    texte: |
+      <p><strong>The Réghéat water tower has just been refilled. Drinking the water is not recommended, until tomorrow at least</strong>: it may still be cloudy after the refilling.</p>
+      <p>If needed, bottles of water are available: just ask Nathalie.</p>
+      <p>Thank you for your understanding. — The town hall</p>
+  nl:
+    titre: "Watertoren van Réghéat"
+    resume: "De watertoren van Réghéat is net gevuld: het water drinken wordt afgeraden, zeker tot morgen."
+    texte: |
+      <p><strong>De watertoren van Réghéat is net gevuld. Het water drinken wordt afgeraden, zeker tot morgen</strong>: het kan na het vullen nog troebel zijn.</p>
+      <p>Indien nodig zijn er flessen water beschikbaar: vraag ernaar bij Nathalie.</p>
+      <p>Dank voor uw begrip. — Het gemeentehuis</p>
