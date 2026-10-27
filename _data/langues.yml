@@ -1,0 +1,496 @@
+# =====================================================================
+#  LANGUES DU SITE : français (langue principale), anglais et néerlandais
+#
+#  - Les pages françaises gardent leurs adresses ; les versions anglaises
+#    sont sous /en/, les néerlandaises sous /nl/.
+#  - Chaque page porte dans son front matter « lang » (fr, en ou nl) et « ref » :
+#    les trois versions d'une même page ont la même « ref » (c'est ce qui relie
+#    les liens « Français · English · Nederlands » du haut de chaque page).
+#  - Ce fichier contient les textes de l'interface (menus, boutons, pied de page…)
+#    dans chaque langue. Les textes des actualités sont dans _data/infos_alertes.yml
+#    (rubriques en: et nl: de chaque actualité).
+# =====================================================================
+
+# Ordre des langues dans le sélecteur
+ordre: [fr, en, nl]
+
+# Bandeau qui propose la version dans la langue du visiteur (chaque texte dans sa propre langue)
+suggestions:
+  fr:
+    texte: "Cette page existe aussi en français."
+    lien: "Lire en français"
+    fermer: "Non merci"
+    region: "Choix de la langue"
+  en:
+    texte: "This page is also available in English."
+    lien: "Read in English"
+    fermer: "No thanks"
+    region: "Language choice"
+  nl:
+    texte: "Deze pagina is ook beschikbaar in het Nederlands."
+    lien: "Lees in het Nederlands"
+    fermer: "Nee, bedankt"
+    region: "Taalkeuze"
+
+# ---------------------------------------------------------------------
+fr:
+  deux_points: " : "
+  nom: "Français"
+  locale: fr_FR
+  manifeste: /manifest.webmanifest
+  pages:
+    accueil: /
+    infos_alertes: /infos-alertes/
+    mairie: /mairie/
+    conseil_municipal: /conseil-municipal/
+    affichage_legal: /affichage-legal/
+    vie_pratique: /vie-pratique/
+    vie_locale: /vie-locale/
+    tourisme: /tourisme/
+    decouvrir: /decouvrir/
+    bulletin_municipal: /bulletin-municipal/
+    notifications: /notifications/
+    mentions_legales: /mentions-legales/
+    accessibilite: /accessibilite/
+    plan_du_site: /plan-du-site/
+  titre_accueil: "Site officiel de la commune"
+  evitement: "Aller au contenu"
+  mairie_ouverte: "Mairie ouverte"
+  ecrire_mairie: "Écrire à la mairie"
+  sous_titre: "Commune du Cantal"
+  accueil_cache: " – accueil"
+  blason_alt: "Blason du Cantal"
+  menu: "Menu"
+  fermer: "Fermer"
+  menu_principal: "Menu principal"
+  accueil: "Accueil"
+  langues_label: "Langue du site"
+  fil_ariane: "Fil d'Ariane"
+  annonce_label: "Annonce de la mairie"
+  # Pied de page
+  nom_mairie: "Mairie de Saint-Bonnet-de-Condat"
+  page_facebook_cache: " (page Facebook)"
+  carte_cache: " (ouvrir dans Google Maps)"
+  horaires_mairie: "Horaires de la mairie"
+  point_poste: "Le Point Poste est ouvert aux mêmes horaires."
+  acces_rapides: "Accès rapides"
+  restez_informes: "Restez informés"
+  copyright: "Commune de Saint-Bonnet-de-Condat"
+  plan_du_site: "Plan du site"
+  mentions_legales: "Mentions légales"
+  accessibilite: "Accessibilité"
+  etats:
+    totalement conforme: "totalement conforme"
+    partiellement conforme: "partiellement conforme"
+    non conforme: "non conforme"
+  # Horaires et dates
+  jours_semaine: ["", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"]
+  fermee: "Fermée"
+  # Actualités (Infos & Alertes)
+  etiquette_alerte: "Alerte"
+  etiquette_info: "Info"
+  en_francais: "En français"
+  heure_avant: " à "
+  pdf_titre_cache: " (actualité en PDF, nouvel onglet)"
+  ouvrir_pdf: "Ouvrir l'actualité (PDF)"
+  pdf_avant_titre: " : "
+  pdf_apres_titre: ", nouvel onglet"
+  afficher_texte: "Afficher le texte de l'actualité"
+  afficher_complet: "Afficher l'actualité complète"
+  # Articles du bulletin
+  bulletin: "Bulletin municipal"
+  bulletin_retour: "Le bulletin municipal"
+  a_lire_aussi: "À lire aussi"
+
+  # Page d'accueil
+  page_accueil:
+    invitation: "Recevez les actualités de la mairie en notification."
+    activer: "Activer"
+    alerte_region: "Alerte de la mairie"
+    alerte_prefixe: "Alerte : "
+    lire_alerte: "Lire l'alerte"
+    bienvenue: "Bienvenue à"
+    intro: "Un village de 113 habitants dans la vallée de la Santoire, à la croisée du Cézallier et des monts du Cantal."
+    photos_groupe: "Photos de l'accueil"
+    photos: ["Photo 1 sur 4 : la mairie", "Photo 2 sur 4 : le camping La Santoire", "Photo 3 sur 4 : le village sous la neige", "Photo 4 sur 4 : coucher de soleil"]
+    acces_label: "Accès rapides de l'accueil"
+    acces_infos: "Infos &amp; Alertes"
+    acces_horaires: "Horaires et contact"
+    acces_conseil: "Conseil municipal"
+    acces_sante: "Santé &amp; Bien-être"
+    acces_patrimoine: "Patrimoine"
+    acces_tourisme: "Tourisme"
+    infos_intro: "Les dernières actualités de la mairie."
+    infos_notifications: "Recevoir les actualités de la mairie sur votre téléphone"
+    toutes_actualites: "Toutes les actualités"
+    mairie_titre: "La mairie"
+    services_mairie: "Les services de la mairie"
+    bulletin_titre: "Le bulletin municipal"
+    bulletin_intro: "Les articles de <em>La Gazette des Saint-Bonnetoux</em> n°1, été 2026."
+    elus_titre: "Vos élus à votre écoute"
+    elus_intro: "Sarah Chabrier, maire, et ses adjoints reçoivent les habitants."
+    conseil_lien: "Le conseil municipal"
+    pour: "Pour"
+  # Page Infos & Alertes (filtres)
+  infos:
+    filtrer: "Filtrer les actualités"
+    tous: "Tous"
+    alertes: "Alertes"
+    eau: "Eau"
+    travaux: "Travaux"
+    vie: "Services et vie locale"
+  # Page du conseil municipal
+  conseil:
+    titre: "Le maire et les adjoints"
+    intro: "Pour toute question, contactez l'élu chargé du sujet, ou la mairie au"
+    demandes: "Pour toutes vos demandes concernant"
+    conseillers: "Les conseillers municipaux"
+    personnel: "Le personnel communal"
+    bilan: "Le bilan des trois premiers mois de mandat"
+  # Page de l'affichage légal
+  affichage:
+    deliberations: "Les délibérations du conseil municipal sont disponibles sur demande en contactant la mairie, au"
+    ou_a: "ou à"
+    type: "Type"
+    tous: "Tous"
+    annee: "Année"
+    toutes: "Toutes"
+    numero: "n°"
+    pdf_cache: " (PDF, nouvel onglet)"
+    ouvrir: "Ouvrir le document (PDF)"
+    afficher_texte: "Afficher le texte du document"
+    aucun: "Aucun document n'est publié pour le moment."
+    question: "Une question sur un document ? Contactez la mairie au"
+  # Plan du site
+  plan:
+    notifications: "Notifications sur téléphone"
+    autres_langues: "Le site dans d'autres langues"
+  # Textes utilisés par assets/js/site.js
+  js:
+    aujourdhui: "aujourd'hui"
+    aucune_actualite: "Aucune actualité dans cette catégorie."
+    actualites_affichees: " actualités affichées."
+    actualite_affichee: " actualité affichée."
+    aucun_document: "Aucun document ne correspond à cette sélection."
+    documents_affiches: " documents affichés."
+    document_affiche: " document affiché."
+    lancer_diaporama: "Lancer le diaporama"
+    pause_diaporama: "Mettre en pause le diaporama"
+  # Textes utilisés par assets/js/notifications.js (page Notifications)
+  notifications:
+    chargement: "Vérification…"
+    bientot: "Les notifications seront bientôt disponibles."
+    ios: "Sur iPhone et iPad, ajoutez d'abord le site à l'écran d'accueil (étapes ci-dessous), puis ouvrez-le avec son icône pour activer les notifications."
+    incompatible: "Ce navigateur ne permet pas de recevoir les notifications. Essayez avec Safari sur iPhone ou Chrome sur Android."
+    pret: "Les notifications ne sont pas activées sur cet appareil."
+    activation: "Activation…"
+    actif: "Les notifications sont activées sur cet appareil."
+    refuse: "Les notifications sont bloquées pour ce site. Autorisez-les dans les réglages de votre appareil, puis revenez sur cette page."
+    erreur: "L'activation n'a pas abouti. Vérifiez votre connexion internet, puis réessayez."
+    bienvenue_titre: "Notifications activées"
+    bienvenue_texte: "Vous recevrez les actualités de la mairie de Saint-Bonnet-de-Condat."
+    langue_actuelle: "Les notifications arrivent en français."
+    langue_changer: "Recevoir les notifications en français"
+    langue_changee: "Les notifications arriveront désormais en français."
+
+# ---------------------------------------------------------------------
+en:
+  deux_points: ": "
+  nom: "English"
+  locale: en_GB
+  manifeste: /en/manifest.webmanifest
+  description_site: "Official website of the municipality of Saint-Bonnet-de-Condat (Cantal, France): town hall, news and alerts, practical information, local life and heritage."
+  pages:
+    accueil: /en/
+    infos_alertes: /en/news-and-alerts/
+    mairie: /en/town-hall/
+    conseil_municipal: /en/municipal-council/
+    affichage_legal: /en/official-notices/
+    vie_pratique: /en/practical-information/
+    vie_locale: /en/local-life/
+    tourisme: /en/tourism/
+    decouvrir: /en/discover/
+    bulletin_municipal: /en/newsletter/
+    notifications: /en/notifications/
+    mentions_legales: /en/legal-notice/
+    accessibilite: /en/accessibility/
+    plan_du_site: /en/site-map/
+  titre_accueil: "Official website of the municipality"
+  evitement: "Skip to content"
+  mairie_ouverte: "Town hall open"
+  ecrire_mairie: "Email the town hall"
+  sous_titre: "Commune in the Cantal"
+  accueil_cache: " – home"
+  blason_alt: "Coat of arms of the Cantal"
+  menu: "Menu"
+  fermer: "Close"
+  menu_principal: "Main menu"
+  accueil: "Home"
+  langues_label: "Site language"
+  fil_ariane: "Breadcrumb"
+  annonce_label: "Town hall announcement"
+  nom_mairie: "Saint-Bonnet-de-Condat town hall"
+  page_facebook_cache: " (Facebook page)"
+  carte_cache: " (open in Google Maps)"
+  horaires_mairie: "Town hall opening hours"
+  point_poste: "The post office counter (Point Poste) is open at the same times."
+  acces_rapides: "Quick links"
+  restez_informes: "Stay informed"
+  copyright: "Municipality of Saint-Bonnet-de-Condat"
+  plan_du_site: "Site map"
+  mentions_legales: "Legal notice"
+  accessibilite: "Accessibility"
+  etats:
+    totalement conforme: "fully compliant"
+    partiellement conforme: "partially compliant"
+    non conforme: "not compliant"
+  jours_semaine: ["", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+  fermee: "Closed"
+  etiquette_alerte: "Alert"
+  etiquette_info: "Info"
+  en_francais: "In French"
+  heure_avant: " at "
+  pdf_titre_cache: " (notice in PDF, in French, new tab)"
+  ouvrir_pdf: "Open the notice (PDF, in French)"
+  pdf_avant_titre: ": "
+  pdf_apres_titre: ", new tab"
+  afficher_texte: "Show the text of the notice"
+  afficher_complet: "Show the full notice"
+  bulletin: "Newsletter"
+  bulletin_retour: "The municipal newsletter"
+  a_lire_aussi: "Also read"
+
+  page_accueil:
+    invitation: "Get the town hall's news as notifications."
+    activer: "Turn on"
+    alerte_region: "Town hall alert"
+    alerte_prefixe: "Alert: "
+    lire_alerte: "Read the alert"
+    bienvenue: "Welcome to"
+    intro: "A village of 113 inhabitants in the Santoire valley, where the Cézallier meets the Cantal mountains."
+    photos_groupe: "Home page photos"
+    photos: ["Photo 1 of 4: the town hall", "Photo 2 of 4: the La Santoire campsite", "Photo 3 of 4: the village under snow", "Photo 4 of 4: sunset"]
+    acces_label: "Home page quick links"
+    acces_infos: "News &amp; Alerts"
+    acces_horaires: "Opening hours and contact"
+    acces_conseil: "Municipal council"
+    acces_sante: "Health &amp; Wellbeing"
+    acces_patrimoine: "Heritage"
+    acces_tourisme: "Tourism"
+    infos_intro: "The latest news from the town hall."
+    infos_notifications: "Get the town hall's news on your phone"
+    toutes_actualites: "All news"
+    mairie_titre: "The town hall"
+    services_mairie: "Town hall services"
+    bulletin_titre: "The municipal newsletter"
+    bulletin_intro: "Articles from <em>La Gazette des Saint-Bonnetoux</em> no. 1, summer 2026."
+    elus_titre: "Your councillors are here for you"
+    elus_intro: "Sarah Chabrier, the mayor, and her deputies meet residents."
+    conseil_lien: "The municipal council"
+    pour: "For"
+  infos:
+    filtrer: "Filter the notices"
+    tous: "All"
+    alertes: "Alerts"
+    eau: "Water"
+    travaux: "Works"
+    vie: "Services and local life"
+  conseil:
+    titre: "The mayor and deputy mayors"
+    intro: "For any question, contact the councillor in charge of the subject, or the town hall on"
+    demandes: "For all requests about"
+    conseillers: "Councillors"
+    personnel: "Municipal staff"
+    bilan: "The first three months in office"
+  affichage:
+    deliberations: "Council decisions are available on request from the town hall, on"
+    ou_a: "or at"
+    type: "Type"
+    tous: "All"
+    annee: "Year"
+    toutes: "All"
+    numero: "No."
+    pdf_cache: " (PDF, in French, new tab)"
+    ouvrir: "Open the document (PDF, in French)"
+    afficher_texte: "Show the text of the document"
+    aucun: "No documents have been published yet."
+    question: "A question about a document? Contact the town hall on"
+  plan:
+    notifications: "Notifications on your phone"
+    autres_langues: "The website in other languages"
+  js:
+    aujourdhui: "today"
+    aucune_actualite: "No notices in this category."
+    actualites_affichees: " notices shown."
+    actualite_affichee: " notice shown."
+    aucun_document: "No documents match this selection."
+    documents_affiches: " documents shown."
+    document_affiche: " document shown."
+    lancer_diaporama: "Play the slideshow"
+    pause_diaporama: "Pause the slideshow"
+  notifications:
+    chargement: "Checking…"
+    bientot: "Notifications will be available soon."
+    ios: "On iPhone and iPad, first add the website to your Home Screen (steps below), then open it from its icon to turn on notifications."
+    incompatible: "This browser can't receive notifications. Try Safari on iPhone or Chrome on Android."
+    pret: "Notifications are not turned on on this device."
+    activation: "Turning on…"
+    actif: "Notifications are turned on on this device."
+    refuse: "Notifications are blocked for this website. Allow them in your device's settings, then come back to this page."
+    erreur: "Notifications couldn't be turned on. Check your internet connection, then try again."
+    bienvenue_titre: "Notifications turned on"
+    bienvenue_texte: "You'll receive the news from Saint-Bonnet-de-Condat town hall."
+    langue_actuelle: "Notifications arrive in English when a translation is available, otherwise in French."
+    langue_changer: "Receive notifications in English"
+    langue_changee: "Notifications will now arrive in English."
+
+# ---------------------------------------------------------------------
+nl:
+  deux_points: ": "
+  nom: "Nederlands"
+  locale: nl_NL
+  manifeste: /nl/manifest.webmanifest
+  description_site: "Officiële website van de gemeente Saint-Bonnet-de-Condat (Cantal, Frankrijk): gemeentehuis, nieuws en waarschuwingen, praktische informatie, dorpsleven en erfgoed."
+  pages:
+    accueil: /nl/
+    infos_alertes: /nl/nieuws-en-waarschuwingen/
+    mairie: /nl/gemeentehuis/
+    conseil_municipal: /nl/gemeenteraad/
+    affichage_legal: /nl/officiele-bekendmakingen/
+    vie_pratique: /nl/praktische-informatie/
+    vie_locale: /nl/dorpsleven/
+    tourisme: /nl/toerisme/
+    decouvrir: /nl/ontdekken/
+    bulletin_municipal: /nl/gemeentekrant/
+    notifications: /nl/meldingen/
+    mentions_legales: /nl/wettelijke-vermeldingen/
+    accessibilite: /nl/toegankelijkheid/
+    plan_du_site: /nl/sitemap/
+  titre_accueil: "Officiële website van de gemeente"
+  evitement: "Naar de inhoud"
+  mairie_ouverte: "Gemeentehuis open"
+  ecrire_mairie: "Mail het gemeentehuis"
+  sous_titre: "Gemeente in de Cantal"
+  accueil_cache: " – home"
+  blason_alt: "Wapen van de Cantal"
+  menu: "Menu"
+  fermer: "Sluiten"
+  menu_principal: "Hoofdmenu"
+  accueil: "Home"
+  langues_label: "Taal van de website"
+  fil_ariane: "Kruimelpad"
+  annonce_label: "Mededeling van het gemeentehuis"
+  nom_mairie: "Gemeentehuis van Saint-Bonnet-de-Condat"
+  page_facebook_cache: " (Facebookpagina)"
+  carte_cache: " (openen in Google Maps)"
+  horaires_mairie: "Openingstijden van het gemeentehuis"
+  point_poste: "Het postpunt (Point Poste) is op dezelfde tijden open."
+  acces_rapides: "Snel naar"
+  restez_informes: "Blijf op de hoogte"
+  copyright: "Gemeente Saint-Bonnet-de-Condat"
+  plan_du_site: "Sitemap"
+  mentions_legales: "Wettelijke vermeldingen"
+  accessibilite: "Toegankelijkheid"
+  etats:
+    totalement conforme: "volledig conform"
+    partiellement conforme: "gedeeltelijk conform"
+    non conforme: "niet conform"
+  jours_semaine: ["", "Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag", "Zondag"]
+  fermee: "Gesloten"
+  etiquette_alerte: "Waarschuwing"
+  etiquette_info: "Info"
+  en_francais: "In het Frans"
+  heure_avant: " om "
+  pdf_titre_cache: " (bericht in pdf, in het Frans, nieuw tabblad)"
+  ouvrir_pdf: "Bericht openen (pdf, in het Frans)"
+  pdf_avant_titre: ": "
+  pdf_apres_titre: ", nieuw tabblad"
+  afficher_texte: "Tekst van het bericht tonen"
+  afficher_complet: "Volledig bericht tonen"
+  bulletin: "Gemeentekrant"
+  bulletin_retour: "De gemeentekrant"
+  a_lire_aussi: "Lees ook"
+
+  page_accueil:
+    invitation: "Ontvang het nieuws van het gemeentehuis als melding."
+    activer: "Inschakelen"
+    alerte_region: "Waarschuwing van het gemeentehuis"
+    alerte_prefixe: "Waarschuwing: "
+    lire_alerte: "Waarschuwing lezen"
+    bienvenue: "Welkom in"
+    intro: "Een dorp met 113 inwoners in het dal van de Santoire, waar de Cézallier en de Monts du Cantal samenkomen."
+    photos_groupe: "Foto's van de startpagina"
+    photos: ["Foto 1 van 4: het gemeentehuis", "Foto 2 van 4: camping La Santoire", "Foto 3 van 4: het dorp in de sneeuw", "Foto 4 van 4: zonsondergang"]
+    acces_label: "Snel naar, op de startpagina"
+    acces_infos: "Nieuws &amp; waarschuwingen"
+    acces_horaires: "Openingstijden en contact"
+    acces_conseil: "Gemeenteraad"
+    acces_sante: "Gezondheid &amp; welzijn"
+    acces_patrimoine: "Erfgoed"
+    acces_tourisme: "Toerisme"
+    infos_intro: "Het laatste nieuws van het gemeentehuis."
+    infos_notifications: "Ontvang het nieuws van het gemeentehuis op uw telefoon"
+    toutes_actualites: "Al het nieuws"
+    mairie_titre: "Het gemeentehuis"
+    services_mairie: "Diensten van het gemeentehuis"
+    bulletin_titre: "De gemeentekrant"
+    bulletin_intro: "De artikelen uit <em>La Gazette des Saint-Bonnetoux</em> nr. 1, zomer 2026."
+    elus_titre: "Uw raadsleden staan voor u klaar"
+    elus_intro: "Burgemeester Sarah Chabrier en haar wethouders ontvangen de inwoners."
+    conseil_lien: "De gemeenteraad"
+    pour: "Voor"
+  infos:
+    filtrer: "Berichten filteren"
+    tous: "Alle"
+    alertes: "Waarschuwingen"
+    eau: "Water"
+    travaux: "Werkzaamheden"
+    vie: "Diensten en dorpsleven"
+  conseil:
+    titre: "De burgemeester en de wethouders"
+    intro: "Neem voor vragen contact op met het verantwoordelijke raadslid of met het gemeentehuis op"
+    demandes: "Voor al uw vragen over"
+    conseillers: "De gemeenteraadsleden"
+    personnel: "Het gemeentepersoneel"
+    bilan: "Terugblik op de eerste drie maanden van het mandaat"
+  affichage:
+    deliberations: "De raadsbesluiten zijn op aanvraag verkrijgbaar bij het gemeentehuis, op"
+    ou_a: "of via"
+    type: "Soort"
+    tous: "Alle"
+    annee: "Jaar"
+    toutes: "Alle"
+    numero: "nr."
+    pdf_cache: " (pdf, in het Frans, nieuw tabblad)"
+    ouvrir: "Document openen (pdf, in het Frans)"
+    afficher_texte: "Tekst van het document tonen"
+    aucun: "Er zijn nog geen documenten gepubliceerd."
+    question: "Een vraag over een document? Neem contact op met het gemeentehuis op"
+  plan:
+    notifications: "Meldingen op uw telefoon"
+    autres_langues: "De website in andere talen"
+  js:
+    aujourdhui: "vandaag"
+    aucune_actualite: "Geen berichten in deze categorie."
+    actualites_affichees: " berichten getoond."
+    actualite_affichee: " bericht getoond."
+    aucun_document: "Geen documenten voor deze selectie."
+    documents_affiches: " documenten getoond."
+    document_affiche: " document getoond."
+    lancer_diaporama: "Diavoorstelling starten"
+    pause_diaporama: "Diavoorstelling pauzeren"
+  notifications:
+    chargement: "Controleren…"
+    bientot: "Meldingen zijn binnenkort beschikbaar."
+    ios: "Zet op iPhone en iPad eerst de website op het beginscherm (zie de stappen hieronder) en open hem daarna via het symbool om meldingen in te schakelen."
+    incompatible: "Deze browser kan geen meldingen ontvangen. Probeer Safari op de iPhone of Chrome op Android."
+    pret: "Meldingen zijn op dit apparaat niet ingeschakeld."
+    activation: "Inschakelen…"
+    actif: "Meldingen zijn op dit apparaat ingeschakeld."
+    refuse: "Meldingen zijn geblokkeerd voor deze website. Sta ze toe in de instellingen van uw apparaat en kom daarna terug naar deze pagina."
+    erreur: "Het inschakelen is niet gelukt. Controleer uw internetverbinding en probeer het opnieuw."
+    bienvenue_titre: "Meldingen ingeschakeld"
+    bienvenue_texte: "U ontvangt het nieuws van het gemeentehuis van Saint-Bonnet-de-Condat."
+    langue_actuelle: "Meldingen komen in het Nederlands als er een vertaling is, anders in het Frans."
+    langue_changer: "Meldingen in het Nederlands ontvangen"
+    langue_changee: "Meldingen komen voortaan in het Nederlands."

@@ -1,0 +1,18 @@
+{
+  "id": "/nl/",
+  "name": "Saint-Bonnet-de-Condat",
+  "short_name": "Saint-Bonnet",
+  "description": "Officiële website van de gemeente Saint-Bonnet-de-Condat (Cantal, Frankrijk): nieuws en waarschuwingen van het gemeentehuis.",
+  "lang": "nl",
+  "dir": "ltr",
+  "start_url": "/nl/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#1E2B5E",
+  "icons": [
+    { "src": "/assets/icones/icone-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icones/icone-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icones/icone-masquable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

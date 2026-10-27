@@ -1,33 +1,53 @@
 {%- assign m = site.data.mairie -%}
-<a class="lien-evitement" href="#contenu">Aller au contenu</a>
+{%- assign langue = page.lang | default: "fr" -%}
+{%- assign L = site.data.langues -%}
+{%- assign t = L[langue] -%}
+<a class="lien-evitement" href="#contenu">{{ t.evitement }}</a>
 <header class="en-tete-site">
 <div class="bandeau-haut">
   <div class="conteneur bandeau-haut-interieur">
-    <p class="bandeau-haut-horaires">{% include icone.html nom="horloge" %}<span>Mairie ouverte {{ m.horaires_court }}</span></p>
+    <p class="bandeau-haut-horaires">{% include icone.html nom="horloge" %}<span>{{ t.mairie_ouverte }} {{ m.horaires_court[langue] }}</span></p>
+    <div class="bandeau-haut-droite">
     <p class="bandeau-haut-contacts">
       <a href="tel:{{ m.telephone_lien }}">{% include icone.html nom="telephone" %}<span>{{ m.telephone }}</span></a>
-      <a href="mailto:{{ m.email }}">{% include icone.html nom="email" %}<span>Écrire à la mairie</span></a>
+      <a href="mailto:{{ m.email }}">{% include icone.html nom="email" %}<span>{{ t.ecrire_mairie }}</span></a>
     </p>
+    {%- comment -%} Sélecteur de langue : chaque lien mène à la même page dans l'autre langue (même « ref »), sinon à son accueil {%- endcomment %}
+    <nav class="langues" aria-label="{{ t.langues_label }}">
+      {% include icone.html nom="globe" %}
+      <ul>
+        {%- for code in L.ordre %}
+        {%- assign version = nil -%}
+        {%- if page.ref -%}
+        {%- assign version = site.pages | where: "ref", page.ref | where: "lang", code | first -%}
+        {%- unless version %}{% assign version = site.posts | where: "ref", page.ref | where: "lang", code | first %}{% endunless -%}
+        {%- endif -%}
+        {%- if version %}{% assign lien_langue = version.url %}{% else %}{% assign lien_langue = L[code].pages.accueil %}{% endif %}
+        <li><a href="{{ lien_langue | relative_url }}" hreflang="{{ code }}" lang="{{ code }}"{% if version %} data-version{% endif %}{% if code == langue %} aria-current="true"{% endif %}>{{ L[code].nom }}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
+    </div>
   </div>
 </div>
 <div class="entete">
   <div class="conteneur entete-interieur">
-    <a class="marque" href="{{ '/' | relative_url }}">
+    <a class="marque" href="{{ t.pages.accueil | relative_url }}">
       <span class="marque-nom">Saint-Bonnet-de-Condat</span>
-      <span class="marque-sous-titre">Commune du Cantal</span>
-      <span class="visuellement-cache"> – accueil</span>
+      <span class="marque-sous-titre">{{ t.sous_titre }}</span>
+      <span class="visuellement-cache">{{ t.accueil_cache }}</span>
     </a>
-    <img class="logo-entete" src="{{ '/assets/images/blason-cantal.png' | relative_url }}" alt="Blason du Cantal" width="217" height="240">
+    <img class="logo-entete" src="{{ '/assets/images/blason-cantal.png' | relative_url }}" alt="{{ t.blason_alt }}" width="217" height="240">
     <button class="bouton-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
-      <span class="bouton-menu-ouvrir">{% include icone.html nom="menu" %}<span class="bouton-menu-libelle">Menu</span></span>
-      <span class="bouton-menu-fermer">{% include icone.html nom="fermer" %}<span class="bouton-menu-libelle">Fermer</span></span>
+      <span class="bouton-menu-ouvrir">{% include icone.html nom="menu" %}<span class="bouton-menu-libelle">{{ t.menu }}</span></span>
+      <span class="bouton-menu-fermer">{% include icone.html nom="fermer" %}<span class="bouton-menu-libelle">{{ t.fermer }}</span></span>
     </button>
   </div>
-  <nav class="navigation" id="menu-principal" aria-label="Menu principal">
+  <nav class="navigation" id="menu-principal" aria-label="{{ t.menu_principal }}">
     <div class="conteneur">
       <ul>
-        <li><a href="{{ '/' | relative_url }}"{% if page.url == "/" %} aria-current="page"{% endif %}>Accueil</a></li>
-        {%- for lien in site.data.navigation %}
+        <li><a href="{{ t.pages.accueil | relative_url }}"{% if page.ref == "accueil" %} aria-current="page"{% endif %}>{{ t.accueil }}</a></li>
+        {%- for lien in site.data.navigation[langue] %}
         {%- assign courant = "" %}
         {%- if page.url == lien.url %}{% assign courant = "page" %}{% elsif page.url contains lien.url %}{% assign courant = "true" %}{% endif %}
         <li><a href="{{ lien.url | relative_url }}"{% if courant != "" %} aria-current="{{ courant }}"{% endif %}>{{ lien.titre }}</a></li>

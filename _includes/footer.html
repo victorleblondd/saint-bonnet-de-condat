@@ -1,52 +1,87 @@
 {%- assign m = site.data.mairie -%}
+{%- assign langue = page.lang | default: "fr" -%}
+{%- assign t = site.data.langues[langue] -%}
+{%- assign P = t.pages -%}
 <footer class="pied">
   <div class="conteneur pied-grille">
     <section class="pied-bloc" aria-labelledby="pied-mairie">
-      <h2 class="pied-titre"><a href="{{ m.facebook_url }}" rel="noopener"><span id="pied-mairie">{{ m.nom }}</span><span class="visuellement-cache"> (page Facebook)</span></a></h2>
+      <h2 class="pied-titre"><a href="{{ m.facebook_url }}" rel="noopener"><span id="pied-mairie">{{ t.nom_mairie }}</span><span class="visuellement-cache">{{ t.page_facebook_cache }}</span></a></h2>
       <address>
-        <p>{% include icone.html nom="lieu" %}<a href="{{ m.carte_url | escape }}" rel="noopener">{{ m.adresse_ligne1 }}<br>{{ m.adresse_ligne2 }}<span class="visuellement-cache"> (ouvrir dans Google Maps)</span></a></p>
+        <p>{% include icone.html nom="lieu" %}<a href="{{ m.carte_url | escape }}" rel="noopener">{{ m.adresse_ligne1 }}<br>{{ m.adresse_ligne2 }}<span class="visuellement-cache">{{ t.carte_cache }}</span></a></p>
         <p>{% include icone.html nom="telephone" %}<a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a></p>
         <p>{% include icone.html nom="email" %}<a href="mailto:{{ m.email }}">{{ m.email | replace: "@", "@<wbr>" }}</a></p>
       </address>
     </section>
     <section class="pied-bloc" aria-labelledby="pied-horaires">
-      <h2 id="pied-horaires" class="pied-titre">Horaires de la mairie</h2>
+      <h2 id="pied-horaires" class="pied-titre">{{ t.horaires_mairie }}</h2>
       <dl class="pied-horaires">
-        {%- for h in m.horaires %}{% unless h.jour == "Samedi" or h.jour == "Dimanche" %}
-        <div{% if h.ferme %} class="ferme"{% endif %}><dt>{{ h.jour }}</dt><dd>{{ h.heures }}</dd></div>
+        {%- for h in m.horaires %}{% unless h.jour > 5 %}
+        <div{% if h.ferme %} class="ferme"{% endif %}><dt>{{ t.jours_semaine[h.jour] }}</dt><dd>{% if h.ferme %}{{ t.fermee }}{% else %}{% include heures.html valeur=h.heures %}{% endif %}</dd></div>
         {%- endunless %}{% endfor %}
       </dl>
-      <p class="pied-note">Le Point Poste est ouvert aux mêmes horaires.</p>
+      <p class="pied-note">{{ t.point_poste }}</p>
     </section>
     <nav class="pied-bloc" aria-labelledby="pied-liens">
-      <h2 id="pied-liens" class="pied-titre">Accès rapides</h2>
+      <h2 id="pied-liens" class="pied-titre">{{ t.acces_rapides }}</h2>
       <ul>
-        <li><a href="{{ '/infos-alertes/' | relative_url }}">Infos &amp; Alertes</a></li>
-        <li><a href="{{ '/mairie/' | relative_url }}">La mairie et ses services</a></li>
-        <li><a href="{{ '/conseil-municipal/' | relative_url }}">Le conseil municipal</a></li>
-        <li><a href="{{ '/affichage-legal/' | relative_url }}">Affichage légal</a></li>
-        <li><a href="{{ '/vie-pratique/' | relative_url }}">Vie pratique</a></li>
-        <li><a href="{{ '/bulletin-municipal/' | relative_url }}">Le bulletin municipal</a></li>
+        {%- case langue %}
+        {%- when "en" %}
+        <li><a href="{{ P.infos_alertes | relative_url }}">News &amp; Alerts</a></li>
+        <li><a href="{{ P.mairie | relative_url }}">The town hall and its services</a></li>
+        <li><a href="{{ P.conseil_municipal | relative_url }}">The municipal council</a></li>
+        <li><a href="{{ P.affichage_legal | relative_url }}">Official notices</a></li>
+        <li><a href="{{ P.vie_pratique | relative_url }}">Practical information</a></li>
+        <li><a href="{{ P.bulletin_municipal | relative_url }}">The municipal newsletter</a></li>
+        {%- when "nl" %}
+        <li><a href="{{ P.infos_alertes | relative_url }}">Nieuws &amp; waarschuwingen</a></li>
+        <li><a href="{{ P.mairie | relative_url }}">Het gemeentehuis en zijn diensten</a></li>
+        <li><a href="{{ P.conseil_municipal | relative_url }}">De gemeenteraad</a></li>
+        <li><a href="{{ P.affichage_legal | relative_url }}">Officiële bekendmakingen</a></li>
+        <li><a href="{{ P.vie_pratique | relative_url }}">Praktische informatie</a></li>
+        <li><a href="{{ P.bulletin_municipal | relative_url }}">De gemeentekrant</a></li>
+        {%- else %}
+        <li><a href="{{ P.infos_alertes | relative_url }}">Infos &amp; Alertes</a></li>
+        <li><a href="{{ P.mairie | relative_url }}">La mairie et ses services</a></li>
+        <li><a href="{{ P.conseil_municipal | relative_url }}">Le conseil municipal</a></li>
+        <li><a href="{{ P.affichage_legal | relative_url }}">Affichage légal</a></li>
+        <li><a href="{{ P.vie_pratique | relative_url }}">Vie pratique</a></li>
+        <li><a href="{{ P.bulletin_municipal | relative_url }}">Le bulletin municipal</a></li>
+        {%- endcase %}
       </ul>
     </nav>
     <section class="pied-bloc" aria-labelledby="pied-infos">
-      <h2 id="pied-infos" class="pied-titre">Restez informés</h2>
+      <h2 id="pied-infos" class="pied-titre">{{ t.restez_informes }}</h2>
       <ul class="pied-infos">
-        <li>Les <a href="{{ '/infos-alertes/' | relative_url }}">Infos &amp; Alertes</a> de la mairie sur ce site</li>
-        <li>Les <a href="{{ '/notifications/' | relative_url }}">notifications</a> sur votre téléphone</li>
+        {%- case langue %}
+        {%- when "en" %}
+        <li>The town hall's <a href="{{ P.infos_alertes | relative_url }}">News &amp; Alerts</a> on this website</li>
+        <li><a href="{{ P.notifications | relative_url }}">Notifications</a> on your phone</li>
+        <li>The town hall's <a href="{{ m.facebook_url }}" rel="noopener">Facebook page</a> (in French)</li>
+        <li><a href="{{ P.bulletin_municipal | relative_url }}">La Gazette des Saint-Bonnetoux</a>, twice a year</li>
+        <li>The municipality's notice boards</li>
+        {%- when "nl" %}
+        <li>Het <a href="{{ P.infos_alertes | relative_url }}">nieuws en de waarschuwingen</a> van het gemeentehuis op deze website</li>
+        <li><a href="{{ P.notifications | relative_url }}">Meldingen</a> op uw telefoon</li>
+        <li>De <a href="{{ m.facebook_url }}" rel="noopener">Facebookpagina</a> van het gemeentehuis (in het Frans)</li>
+        <li><a href="{{ P.bulletin_municipal | relative_url }}">La Gazette des Saint-Bonnetoux</a>, twee keer per jaar</li>
+        <li>De mededelingenborden van de gemeente</li>
+        {%- else %}
+        <li>Les <a href="{{ P.infos_alertes | relative_url }}">Infos &amp; Alertes</a> de la mairie sur ce site</li>
+        <li>Les <a href="{{ P.notifications | relative_url }}">notifications</a> sur votre téléphone</li>
         <li>La <a href="{{ m.facebook_url }}" rel="noopener">page Facebook</a> de la mairie</li>
-        <li><a href="{{ '/bulletin-municipal/' | relative_url }}">La Gazette des Saint-Bonnetoux</a>, deux fois par an</li>
+        <li><a href="{{ P.bulletin_municipal | relative_url }}">La Gazette des Saint-Bonnetoux</a>, deux fois par an</li>
         <li>Les panneaux d'affichage de la commune</li>
+        {%- endcase %}
       </ul>
     </section>
   </div>
   <div class="pied-bas">
     <div class="conteneur pied-bas-interieur">
-      <p>© {{ site.time | date: "%Y" }} Commune de Saint-Bonnet-de-Condat</p>
+      <p>© {{ site.time | date: "%Y" }} {{ t.copyright }}</p>
       <ul>
-        <li><a href="{{ '/plan-du-site/' | relative_url }}">Plan du site</a></li>
-        <li><a href="{{ '/mentions-legales/' | relative_url }}">Mentions légales</a></li>
-        <li><a href="{{ '/accessibilite/' | relative_url }}">Accessibilité : {{ site.data.accessibilite.etat }}</a></li>
+        <li><a href="{{ P.plan_du_site | relative_url }}">{{ t.plan_du_site }}</a></li>
+        <li><a href="{{ P.mentions_legales | relative_url }}">{{ t.mentions_legales }}</a></li>
+        <li><a href="{{ P.accessibilite | relative_url }}">{{ t.accessibilite }}{{ t.deux_points }}{{ t.etats[site.data.accessibilite.etat] }}</a></li>
       </ul>
     </div>
   </div>

@@ -1,0 +1,25 @@
+{%- comment -%}
+  Plan du site, commun aux trois langues. Textes : rubrique « plan » de _data/langues.yml.
+{%- endcomment -%}
+{%- assign langue = page.lang | default: "fr" -%}
+{%- assign L = site.data.langues -%}
+{%- assign t = L[langue] -%}
+{%- assign articles_langue = site.posts | where: "lang", langue -%}
+<ul class="plan-du-site">
+  <li><a href="{{ t.pages.accueil | relative_url }}">{{ t.accueil }}</a></li>
+  {%- for lien in site.data.navigation[langue] %}
+  <li><a href="{{ lien.url | relative_url }}">{{ lien.titre }}</a></li>
+  {%- endfor %}
+  <li><a href="{{ t.pages.bulletin_municipal | relative_url }}">{{ t.bulletin_retour }}</a>
+    <ul>
+      {%- for article in articles_langue %}
+      <li><a href="{{ article.url | relative_url }}">{{ article.title }}</a></li>
+      {%- endfor %}
+    </ul>
+  </li>
+  <li><a href="{{ t.pages.notifications | relative_url }}">{{ t.plan.notifications }}</a></li>
+  <li><a href="{{ t.pages.mentions_legales | relative_url }}">{{ t.mentions_legales }}</a></li>
+  <li><a href="{{ t.pages.accessibilite | relative_url }}">{{ t.accessibilite }}</a></li>
+  <li>{{ t.plan.autres_langues }}{{ t.deux_points }}
+    {%- assign n = 0 %}{% for code in L.ordre %}{% if code != langue %}{% if n > 0 %} · {% endif %}<a href="{{ L[code].pages.plan_du_site | relative_url }}" hreflang="{{ code }}" lang="{{ code }}">{{ L[code].nom }}</a>{% assign n = n | plus: 1 %}{% endif %}{% endfor %}</li>
+</ul>

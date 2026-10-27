@@ -1,0 +1,5 @@
+{%- comment -%} Scripts de la page « Notifications » (trois langues) et ses textes, tirés de _data/langues.yml {%- endcomment -%}
+{%- assign _t = site.data.langues[page.lang] | default: site.data.langues.fr -%}
+<script id="textes-notifications" type="application/json">{{ _t.notifications | jsonify }}</script>
+<script src="{{ '/assets/js/notifications-commun.js' | relative_url }}?v=2" defer></script>
+<script src="{{ '/assets/js/notifications.js' | relative_url }}?v=2" defer></script>

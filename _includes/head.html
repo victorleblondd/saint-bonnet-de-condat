@@ -1,25 +1,38 @@
+{%- assign langue = page.lang | default: "fr" -%}
+{%- assign t = site.data.langues[langue] -%}
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-{%- if page.url == "/" %}
-<title>{{ site.title }} – Site officiel de la commune</title>
+{%- if page.ref == "accueil" %}
+<title>{{ site.title }} – {{ t.titre_accueil }}</title>
 {%- else %}
 <title>{{ page.title }} – {{ site.title }}</title>
 {%- endif %}
-{%- assign description = page.description | default: page.resume | default: site.description | strip_html | strip_newlines | truncate: 200 %}
+{%- assign description = page.description | default: page.resume | default: t.description_site | default: site.description | strip_html | strip_newlines | truncate: 200 %}
 <meta name="description" content="{{ description | escape }}">
 <link rel="canonical" href="{{ page.url | absolute_url }}">
+{%- comment -%} Versions de la page dans les autres langues (même « ref ») {%- endcomment -%}
+{%- if page.ref %}{% for code in site.data.langues.ordre %}
+{%- assign version = site.pages | where: "ref", page.ref | where: "lang", code | first -%}
+{%- unless version %}{% assign version = site.posts | where: "ref", page.ref | where: "lang", code | first %}{% endunless -%}
+{%- if version %}
+<link rel="alternate" hreflang="{{ code }}" href="{{ version.url | absolute_url }}">
+{%- if code == "fr" %}
+<link rel="alternate" hreflang="x-default" href="{{ version.url | absolute_url }}">
+{%- endif %}
+{%- endif %}
+{%- endfor %}{% endif %}
 <meta name="theme-color" content="#1E2B5E">
-<link rel="manifest" href="{{ '/manifest.webmanifest' | relative_url }}">
+<link rel="manifest" href="{{ t.manifeste | relative_url }}">
 <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/icones/favicon-32.png' | relative_url }}">
 <link rel="icon" type="image/png" sizes="192x192" href="{{ '/assets/icones/icone-192.png' | relative_url }}">
 <link rel="apple-touch-icon" href="{{ '/assets/icones/apple-touch-icon.png' | relative_url }}">
 <meta name="apple-mobile-web-app-title" content="Saint-Bonnet">
 <meta property="og:type" content="{% if page.layout == 'article' %}article{% else %}website{% endif %}">
-<meta property="og:locale" content="fr_FR">
+<meta property="og:locale" content="{{ t.locale }}">
 <meta property="og:site_name" content="{{ site.title }}">
-<meta property="og:title" content="{% if page.url == '/' %}{{ site.title }}{% else %}{{ page.title | escape }}{% endif %}">
+<meta property="og:title" content="{% if page.ref == 'accueil' %}{{ site.title }}{% else %}{{ page.title | escape }}{% endif %}">
 <meta property="og:description" content="{{ description | escape }}">
 <meta property="og:url" content="{{ page.url | absolute_url }}">
 <meta property="og:image" content="{{ page.image | default: '/assets/images/mairie.jpg' | absolute_url }}">
-<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v=14">
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v=15">
 <script>document.documentElement.className += ' js';</script>

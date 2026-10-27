@@ -1,0 +1,46 @@
+---
+title: "Wettelijke vermeldingen"
+permalink: /nl/wettelijke-vermeldingen/
+ref: mentions-legales
+lang: nl
+description: "Wettelijke vermeldingen, persoonsgegevens en toegankelijkheid van de website van de gemeente Saint-Bonnet-de-Condat."
+---
+{%- assign m = site.data.mairie -%}
+<div class="texte-legal">
+  <p>Deze pagina is een vertaling. Alleen de <a href="{{ '/mentions-legales/' | relative_url }}" hreflang="fr">Franse versie (<span lang="fr">Mentions légales</span>)</a> is juridisch bindend.</p>
+
+  <section class="bloc" aria-labelledby="titre-editeur">
+    <h2 id="titre-editeur">Uitgever van de website</h2>
+    <p>Gemeente Saint-Bonnet-de-Condat<br><span lang="fr">{{ m.nom }}</span>, {{ m.adresse_ligne1 }}, {{ m.adresse_ligne2 }}, Frankrijk<br>Telefoon: <a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a> · E-mail: <a href="mailto:{{ m.email }}">{{ m.email }}</a></p>
+    <p>Verantwoordelijke uitgever: Victor Leblond.</p>
+  </section>
+
+  <section class="bloc" aria-labelledby="titre-hebergement">
+    <h2 id="titre-hebergement">Hosting</h2>
+    <p>GitHub, Inc. (dienst GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, Verenigde Staten.</p>
+    <p>Abonnementen op meldingen: Supabase, gegevens bewaard in de Europese Unie (Parijs).</p>
+  </section>
+
+  <section class="bloc" aria-labelledby="titre-credits">
+    <h2 id="titre-credits">Inhoud en bronnen</h2>
+    <p>De teksten, berichten en affiches worden gepubliceerd door het gemeentehuis van Saint-Bonnet-de-Condat. De artikelen komen uit <em>La Gazette des Saint-Bonnetoux</em>, de gemeentekrant. De Nederlandse vertalingen zijn ter informatie.</p>
+    <p>Wapen van de Cantal: tekening van Gretaz en anderen, <a href="https://commons.wikimedia.org/wiki/File:Blason_d%C3%A9partement_fr_Cantal.svg">Wikimedia Commons</a>, licentie <a class="sans-retour" href="https://creativecommons.org/licenses/by-sa/3.0/deed.nl" hreflang="nl">CC BY-SA 3.0</a>, aangepaste afbeelding.</p>
+    <p>Foto van de camping (startpagina): <a href="https://www.campinglasantoire.fr/" hreflang="nl">Camping La Santoire</a>.</p>
+    <p>Logo's op de pagina <a href="{{ '/nl/toerisme/' | relative_url }}">Toerisme</a>: die van Camping La Santoire, NaturÉpure en La Maison des Volcans, overgenomen van hun officiële websites.</p>
+    <p>Logo's van L'Instant Libellule en Prestige Nails by Sonia (pagina <a href="{{ '/nl/dorpsleven/' | relative_url }}">Dorpsleven</a>): overgenomen van hun Facebookpagina's.</p>
+  </section>
+
+  <section class="bloc" id="donnees" aria-labelledby="titre-donnees">
+    <h2 id="titre-donnees">Persoonsgegevens</h2>
+    <p>Deze website heeft geen formulieren, geen cookies en geen bezoekersstatistieken. De hostingprovider kan technische verbindingsgegevens registreren, zoals het IP-adres, voor de veiligheid van de dienst.</p>
+    <p><strong>Taal.</strong> Als u een taal kiest met de links ‘Français · English · Nederlands’, of de taalsuggestie sluit, onthoudt uw browser dat op uw apparaat (lokale opslag), zodat de website u die taal kan aanbieden. Deze informatie verlaat uw apparaat niet.</p>
+    <p><strong>Meldingen.</strong> Als u <a href="{{ '/nl/meldingen/' | relative_url }}">meldingen</a> inschakelt, bewaart de website het abonnementsadres dat uw apparaat doorgeeft en de bijbehorende versleutelingssleutels: geen naam, geen telefoonnummer, geen e-mailadres. Ze dienen alleen om u de berichten van het gemeentehuis te sturen, worden bewaard in de Europese Unie (Supabase, Parijs) en worden verwijderd zodra u de meldingen uitschakelt of zodra ze niet meer geldig zijn. De taal van uw meldingen wordt alleen op uw apparaat bewaard. Meldingen lopen via de meldingendienst van uw apparaat (Apple, Google of Mozilla).</p>
+    <p>Neem bij vragen contact op met het gemeentehuis.</p>
+  </section>
+
+  <section class="bloc" id="accessibilite" aria-labelledby="titre-accessibilite">
+    <h2 id="titre-accessibilite">Toegankelijkheid</h2>
+    <p>De gemeente Saint-Bonnet-de-Condat zet zich in om haar website toegankelijk te maken, overeenkomstig artikel 47 van de Franse wet nr. 2005-102 van 11 februari 2005.</p>
+    <p><strong>Nalevingsstatus: {{ site.data.langues.nl.etats[site.data.accessibilite.etat] }}.</strong> De details staan in de <a href="{{ '/nl/toegankelijkheid/' | relative_url }}">toegankelijkheidsverklaring</a>.</p>
+  </section>
+</div>

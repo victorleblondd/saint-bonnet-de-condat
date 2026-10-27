@@ -153,6 +153,27 @@ time, .chiffre { font-variant-numeric: tabular-nums; }
 .bandeau-haut a:hover { text-decoration: underline; }
 @media (max-width: 720px) { .bandeau-haut-horaires { display: none !important; } .bandeau-haut-interieur { justify-content: center; } }
 
+/* ---------- Sélecteur de langue (bandeau du haut) : Français · English · Nederlands ---------- */
+/* Contacts et langues restent groupés à droite ; sur une ligne trop courte, ils passent à la ligne alignés à droite. */
+.bandeau-haut-droite { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 4px 24px; margin-left: auto; }
+.langues { display: flex; align-items: center; gap: 6px; }
+.langues > .icone { width: 18px; height: 18px; flex: none; }
+.langues ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 2px; }
+.langues li { margin: 0; }
+.bandeau-haut .langues a { padding: 2px 7px; border-radius: 6px; font-weight: 600; }
+.bandeau-haut .langues a[aria-current] { background: rgba(255, 255, 255, .16); font-weight: 800; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+@media (max-width: 720px) { .bandeau-haut-droite { justify-content: center; margin-left: 0; } .bandeau-haut-contacts { justify-content: center; } }
+
+/* ---------- Proposition de la page dans la langue du visiteur (ajoutée par site.js) ---------- */
+.suggestion-langue { background: var(--accent-pale); color: var(--encre); border-bottom: 1px solid var(--ligne); }
+.suggestion-langue .conteneur { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 6px 18px; padding-block: 10px; }
+.suggestion-langue p { margin: 0; display: flex; align-items: center; gap: 8px; font-weight: 600; line-height: 1.35; }
+.suggestion-langue .icone { width: 1.25em; height: 1.25em; flex: none; color: var(--accent); }
+.suggestion-langue-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; }
+.suggestion-langue-actions a { font-weight: 700; }
+.bouton-discret { font: inherit; font-weight: 600; color: var(--lien); background: none; border: 0; padding: 2px 0; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.bouton-discret:hover { text-decoration-thickness: 2px; }
+
 /* ---------- En-tête ---------- */
 .entete { background: var(--surface); border-bottom: 1px solid var(--ligne); position: relative; z-index: 10; }
 .entete-interieur { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 16px; }
@@ -183,6 +204,8 @@ time, .chiffre { font-variant-numeric: tabular-nums; }
 .navigation a:hover { color: var(--accent); box-shadow: inset 0 -3px 0 var(--vert); }
 .navigation a[aria-current] { color: var(--accent); box-shadow: inset 0 -3px 0 var(--accent); }
 @media (min-width: 1011px) and (max-width: 1179px) { .navigation a { padding-inline: 10px; font-size: .95rem; } .navigation li:first-child a { padding-left: 0; } }
+/* Menu néerlandais, aux libellés plus longs : liens un peu plus resserrés pour tenir sur une ligne */
+@media (min-width: 1011px) and (max-width: 1179px) { html[lang="nl"] .navigation a { padding-inline: 8px; } html[lang="nl"] .navigation li:first-child a { padding-left: 0; } }
 
 @media (max-width: 1010px) {
   .bouton-menu { display: inline-flex; }
@@ -579,6 +602,8 @@ tbody tr:last-child td { border-bottom: 0; }
 .notif[data-statut="refuse"] .notif-etat, .notif[data-statut="erreur"] .notif-etat { color: var(--alerte); }
 .notif-actions { margin: 0; display: flex; flex-wrap: wrap; gap: 10px; }
 .notif-actions:not(:has(.bouton:not([hidden]))) { display: none; }
+.notif-langue { margin: 0; font-size: .95rem; color: var(--encre-2); }
+.notif-langue:focus { outline: none; }
 .etapes { padding-left: 1.4em; }
 .etapes li + li { margin-top: .6em; }
 
@@ -597,7 +622,7 @@ tbody tr:last-child td { border-bottom: 0; }
 
 /* ---------- Impression ---------- */
 @media print {
-  .bandeau-haut, .navigation, .bouton-menu, .entete-actions, .acces-rapides, .pied-grille, .filtres, .autres-articles { display: none !important; }
+  .bandeau-haut, .suggestion-langue, .navigation, .bouton-menu, .entete-actions, .acces-rapides, .pied-grille, .filtres, .autres-articles { display: none !important; }
   body { background: #fff; color: #000; font-size: 11pt; }
   .entete-page, .heros { background: none !important; color: #000; min-height: 0; padding: 0; }
   .entete-page h1, .heros h1 { color: #000; }

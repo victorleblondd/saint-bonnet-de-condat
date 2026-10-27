@@ -1,0 +1,27 @@
+{%- comment -%}
+  Affiche une date dans la langue de la page (français, anglais ou néerlandais).
+  Paramètres : date (obligatoire), jour=true (ajoute le jour de la semaine), sans_annee=true, mois_seul=true
+  Exemples : « samedi 24 octobre 2026 », « Saturday 24 October 2026 », « zaterdag 24 oktober 2026 ».
+{%- endcomment -%}
+{%- assign _langue = page.lang | default: "fr" -%}
+{%- if _langue == "en" -%}
+{%- assign _mois = "January,February,March,April,May,June,July,August,September,October,November,December" | split: "," -%}
+{%- assign _jours = "Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday" | split: "," -%}
+{%- elsif _langue == "nl" -%}
+{%- assign _mois = "januari,februari,maart,april,mei,juni,juli,augustus,september,oktober,november,december" | split: "," -%}
+{%- assign _jours = "zondag,maandag,dinsdag,woensdag,donderdag,vrijdag,zaterdag" | split: "," -%}
+{%- else -%}
+{%- assign _mois = "janvier,février,mars,avril,mai,juin,juillet,août,septembre,octobre,novembre,décembre" | split: "," -%}
+{%- assign _jours = "dimanche,lundi,mardi,mercredi,jeudi,vendredi,samedi" | split: "," -%}
+{%- endif -%}
+{%- assign _m = include.date | date: "%-m" | minus: 1 -%}
+{%- assign _w = include.date | date: "%w" | plus: 0 -%}
+{%- assign _d = include.date | date: "%-d" -%}
+{%- if _d == "1" and _langue == "fr" -%}{%- assign _d = "1er" -%}{%- endif -%}
+{%- if include.mois_seul -%}
+{{- _mois[_m] }} {{ include.date | date: "%Y" -}}
+{%- else -%}
+{%- if include.jour -%}{{ _jours[_w] }} {% endif -%}
+{{- _d }} {{ _mois[_m] -}}
+{%- unless include.sans_annee %} {{ include.date | date: "%Y" }}{% endunless -%}
+{%- endif -%}

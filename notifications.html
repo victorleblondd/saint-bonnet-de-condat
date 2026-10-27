@@ -1,6 +1,7 @@
 ---
 title: "Notifications"
 permalink: /notifications/
+ref: notifications
 chapo: "Recevez les actualités et alertes de la mairie sur votre téléphone, même quand il est verrouillé, sans application à installer."
 description: "Ajoutez le site de Saint-Bonnet-de-Condat à l'écran d'accueil de votre téléphone et recevez les actualités et alertes de la mairie en notification."
 ---
@@ -14,6 +15,7 @@ description: "Ajoutez le site de Saint-Bonnet-de-Condat à l'écran d'accueil de
           <button type="button" class="bouton" data-activer hidden>{% include icone.html nom="cloche" %}Activer les notifications</button>
           <button type="button" class="bouton bouton--secondaire" data-desactiver hidden>Désactiver les notifications</button>
         </p>
+        <p class="notif-langue" data-langue-notifications hidden></p>
         <noscript><p>Activez JavaScript dans votre navigateur pour recevoir les notifications.</p></noscript>
       </div>
     </section>
@@ -42,6 +44,7 @@ description: "Ajoutez le site de Saint-Bonnet-de-Condat à l'écran d'accueil de
     <div class="panneau panneau--info">
       <h2 class="h3-like">Ce que vous recevrez</h2>
       <p>Une notification à chaque nouvelle actualité de la mairie publiée dans <a href="{{ '/infos-alertes/' | relative_url }}">Infos &amp; Alertes</a> : coupures d'eau, travaux, fermetures, événements. Elle s'affiche aussi sur l'écran verrouillé.</p>
+      <p>Les notifications arrivent dans la langue de la page où vous les avez activées : en français ici.</p>
     </div>
     <div class="panneau">
       <h2 class="h3-like">Vos données</h2>
@@ -50,5 +53,4 @@ description: "Ajoutez le site de Saint-Bonnet-de-Condat à l'écran d'accueil de
     </div>
   </aside>
 </div>
-<script src="{{ '/assets/js/notifications-commun.js' | relative_url }}" defer></script>
-<script src="{{ '/assets/js/notifications.js' | relative_url }}" defer></script>
+{% include notifications-scripts.html -%}

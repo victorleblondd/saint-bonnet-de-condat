@@ -1,0 +1,118 @@
+---
+title: "Accessibility"
+permalink: /en/accessibility/
+ref: accessibilite
+lang: en
+chapo: "Accessibility statement for the Saint-Bonnet-de-Condat municipal website."
+description: "Accessibility statement for saint-bonnet-de-condat.fr: compliance status with the RGAA, test results, non-accessible content, contact and remedies."
+---
+{%- assign a = site.data.accessibilite -%}
+{%- assign m = site.data.mairie -%}
+{%- assign articles_en = site.posts | where: "lang", "en" -%}
+<div class="texte-legal">
+  <p>The municipality of Saint-Bonnet-de-Condat is committed to making its website accessible, in accordance with Article 47 of French Law no. 2005-102 of 11 February 2005.</p>
+  <p>This accessibility statement applies to the website <strong>saint-bonnet-de-condat.fr</strong>, in French, English and Dutch. It is a translation: the <a href="{{ '/accessibilite/' | relative_url }}" hreflang="fr">French statement (<span lang="fr">Déclaration d'accessibilité</span>)</a> is the reference.</p>
+
+  <section class="bloc" aria-labelledby="titre-etat">
+    <h2 id="titre-etat">Compliance status</h2>
+    {%- if a.etat == "totalement conforme" %}
+    <p>The website saint-bonnet-de-condat.fr is <strong>fully compliant</strong> with the French accessibility framework (RGAA, <span lang="fr">référentiel général d'amélioration de l'accessibilité</span>), version 4.1.2.</p>
+    {%- elsif a.etat == "partiellement conforme" %}
+    <p>The website saint-bonnet-de-condat.fr is <strong>partially compliant</strong> with the French accessibility framework (RGAA), version 4.1.2, because of the non-compliances listed below.</p>
+    {%- else %}
+    <p>The website saint-bonnet-de-condat.fr is <strong>not compliant</strong> with the French accessibility framework (RGAA), version 4.1.2.</p>
+    {%- endif %}
+  </section>
+
+  <section class="bloc" aria-labelledby="titre-resultats">
+    <h2 id="titre-resultats">Test results</h2>
+    <p>The compliance self-assessment carried out internally by the municipality on {% include date.html date=a.date %} shows that <strong>{{ a.taux }}% of the criteria of RGAA version 4.1.2 are met</strong>:</p>
+    <ul>
+      <li>criteria met: {{ a.conformes }};</li>
+      <li>criteria not met: {{ a.non_conformes }};</li>
+      <li>criteria not applicable: {{ a.non_applicables }}.</li>
+    </ul>
+    <p>{{ a.en.non_applicables_detail }}</p>
+  </section>
+
+  <section class="bloc" aria-labelledby="titre-contenus">
+    <h2 id="titre-contenus">Non-accessible content</h2>
+    <h3>Non-compliances</h3>
+    {%- if a.non_conformites and a.non_conformites.size > 0 %}
+    <ul lang="fr">
+      {%- for nc in a.non_conformites %}
+      <li>{{ nc }}</li>
+      {%- endfor %}
+    </ul>
+    {%- else %}
+    <p>No non-compliance was found during the self-assessment.</p>
+    {%- endif %}
+    <h3>Exemptions for disproportionate burden</h3>
+    <p>None.</p>
+    <h3>Content not subject to the accessibility obligation</h3>
+    <ul>
+      <li>The walk route sheet in PDF from the Volcans d'Auvergne Regional Nature Park, linked from the <a href="{{ '/en/discover/' | relative_url }}">Discover</a> page: third-party content that is neither funded nor developed by the municipality and is not under its control.</li>
+    </ul>
+    <h3>PDF documents</h3>
+    <p>The posters published as PDFs in the <a href="{{ '/en/news-and-alerts/' | relative_url }}">News &amp; Alerts</a> section are images, in French. Their full text is given on the page, below each notice, with the “Show the text of the notice” button, in French on the French page and translated on the English and Dutch pages.</p>
+  </section>
+
+  <section class="bloc" aria-labelledby="titre-etablissement">
+    <h2 id="titre-etablissement">Preparation of this accessibility statement</h2>
+    <p>This statement was drawn up on {% include date.html date=a.date %}.</p>
+    <h3>Technologies used to build the website</h3>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>SVG</li>
+    </ul>
+    <h3>Test environment</h3>
+    <p>{{ a.en.environnement }}</p>
+    <h3>Tools used to assess accessibility</h3>
+    <ul>
+      {%- for outil in a.en.outils %}
+      <li>{{ outil }}</li>
+      {%- endfor %}
+    </ul>
+    <h3>Pages of the website checked for compliance</h3>
+    <p>All pages of the website were checked, in French, English and Dutch:</p>
+    <ul>
+      <li><a href="{{ '/en/' | relative_url }}">Home</a></li>
+      <li><a href="{{ '/en/news-and-alerts/' | relative_url }}">News &amp; Alerts</a></li>
+      <li><a href="{{ '/en/notifications/' | relative_url }}">Notifications</a></li>
+      <li><a href="{{ '/en/town-hall/' | relative_url }}">The town hall</a></li>
+      <li><a href="{{ '/en/municipal-council/' | relative_url }}">The municipal council</a></li>
+      <li><a href="{{ '/en/official-notices/' | relative_url }}">Official notices</a></li>
+      <li><a href="{{ '/en/practical-information/' | relative_url }}">Practical information</a></li>
+      <li><a href="{{ '/en/local-life/' | relative_url }}">Local life</a></li>
+      <li><a href="{{ '/en/tourism/' | relative_url }}">Tourism</a></li>
+      <li><a href="{{ '/en/discover/' | relative_url }}">Discover Saint-Bonnet-de-Condat</a></li>
+      <li><a href="{{ '/en/newsletter/' | relative_url }}">The municipal newsletter</a> and its {{ articles_en.size }} articles</li>
+      <li><a href="{{ '/en/legal-notice/' | relative_url }}">Legal notice</a></li>
+      <li><a href="{{ '/en/accessibility/' | relative_url }}">Accessibility</a></li>
+      <li><a href="{{ '/en/site-map/' | relative_url }}">Site map</a></li>
+      <li>“Page not found” error page</li>
+    </ul>
+  </section>
+
+  <section class="bloc" aria-labelledby="titre-contact">
+    <h2 id="titre-contact">Feedback and contact</h2>
+    <p>If you cannot access a piece of content or a service, you can contact the town hall to be directed to an accessible alternative or to obtain the content in another form:</p>
+    <ul>
+      <li>by telephone: <a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a>;</li>
+      <li>by email: <a href="mailto:{{ m.email }}">{{ m.email | replace: "@", "@<wbr>" }}</a>;</li>
+      <li>by post: <span lang="fr">{{ m.nom }}</span>, {{ m.adresse_ligne1 }}, {{ m.adresse_ligne2 }}, France.</li>
+    </ul>
+  </section>
+
+  <section class="bloc" aria-labelledby="titre-recours">
+    <h2 id="titre-recours">Remedies</h2>
+    <p>Use this procedure in the following case: you have reported to the town hall an accessibility problem that prevents you from accessing a piece of content or a service on the website, and you have not received a satisfactory answer.</p>
+    <ul>
+      <li><a href="https://formulaire.defenseurdesdroits.fr/" hreflang="fr">Write a message to the Defender of Rights (<span lang="fr">Défenseur des droits</span>)</a> (in French);</li>
+      <li><a href="https://www.defenseurdesdroits.fr/saisir/delegues" hreflang="fr">Contact the Defender of Rights' delegate in your region</a> (in French);</li>
+      <li>send a letter by post (free of charge, no stamp needed): <span lang="fr">Défenseur des droits, Libre réponse 71120, 75342 Paris CEDEX 07</span>.</li>
+    </ul>
+  </section>
+</div>

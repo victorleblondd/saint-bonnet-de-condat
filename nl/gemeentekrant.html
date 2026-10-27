@@ -1,0 +1,49 @@
+---
+title: "De gemeentekrant"
+permalink: /nl/gemeentekrant/
+ref: bulletin-municipal
+lang: nl
+chapo: "La Gazette des Saint-Bonnetoux verschijnt twee keer per jaar, met een zomer- en een winteruitgave."
+description: "La Gazette des Saint-Bonnetoux, de gemeentekrant van Saint-Bonnet-de-Condat: het woord van de burgemeester en de artikelen van nummer 1 (zomer 2026)."
+---
+<div class="grille-asymetrique bloc">
+  <section class="bloc" aria-labelledby="titre-mot">
+    <p class="surtitre">Nummer 1 · zomer 2026</p>
+    <h2 id="titre-mot">Het woord van de burgemeester</h2>
+    <p>Beste inwoners van Saint-Bonnet,</p>
+    <p>Met plezier stellen wij u het eerste nummer voor van <em>La Gazette des Saint-Bonnetoux</em>, de nieuwe gemeentekrant van onze gemeente.</p>
+    <p>Deze krant wil u regelmatig informeren over het leven in Saint-Bonnet-de-Condat, de lopende projecten, de uitgevoerde werkzaamheden, de komende evenementen en het werk van de gemeenteraad.</p>
+    <p>Om regelmatig contact te houden met alle inwoners verschijnt <em>La Gazette des Saint-Bonnetoux</em> twee keer per jaar, met een zomer- en een winteruitgave.</p>
+    <p>We hopen dat deze uitgave aan uw verwachtingen voldoet en bijdraagt aan de communicatie en de levendigheid van onze gemeente.</p>
+    <p>Veel leesplezier.</p>
+    <p class="signature">De burgemeester en de gemeenteraad</p>
+  </section>
+  <aside class="panneau" aria-labelledby="titre-sommaire">
+    <h2 id="titre-sommaire" class="h3-like">In nummer 1</h2>
+    <ul class="liste-simple">
+      <li><a href="{{ '/nl/gemeenteraad/' | relative_url }}">Ons gemeentebestuur</a></li>
+      <li><a href="{{ '/nl/gemeentehuis/' | relative_url }}#services">Diensten voor de inwoners</a></li>
+      <li><a href="{{ '/nl/gemeentekrant/drinkwater-bronnen-onderhouden-en-beveiligd/' | relative_url }}">Drinkwater en riolering</a></li>
+      <li><a href="{{ '/nl/gemeentekrant/begraafplaats-en-parkeerterrein-heringericht/' | relative_url }}">Begraafplaats en gemeentelijk parkeerterrein</a></li>
+      <li><a href="{{ '/nl/gemeentekrant/onderhoud-van-de-gehuchten-de-broodoven-van-regheat/' | relative_url }}">Onderhoud en verfraaiing van de gehuchten</a></li>
+      <li><a href="{{ '/nl/gemeentekrant/bloemen-en-verfraaiing-van-het-dorp/' | relative_url }}">Bloemen in het dorp</a></li>
+      <li><a href="{{ '/nl/gemeentekrant/straatverlichting-en-glasvezel/' | relative_url }}">Straatverlichting en glasvezel</a></li>
+      <li><a href="{{ '/nl/gemeentekrant/bezoek-van-de-senatoren-van-de-cantal/' | relative_url }}">Ontmoetingen en dorpsleven</a></li>
+      <li><a href="{{ '/nl/gemeentekrant/herdenking-8-mei/' | relative_url }}">Herdenking van 8 mei</a></li>
+      <li><a href="{{ '/nl/dorpsleven/' | relative_url }}">Verenigingen en evenementen</a></li>
+      <li><a href="{{ '/nl/ontdekken/' | relative_url }}#raconte-moi"><span lang="fr">Raconte-moi Saint-Bonnet</span></a></li>
+      <li><a href="{{ '/nl/gemeentekrant/de-eerste-drie-maanden-van-het-mandaat/' | relative_url }}">Terugblik op de eerste drie maanden van het mandaat</a></li>
+      <li><a href="{{ '/nl/praktische-informatie/' | relative_url }}">Praktische informatie</a></li>
+    </ul>
+  </aside>
+</div>
+
+<section class="bloc" id="articles" aria-labelledby="titre-articles">
+  <h2 id="titre-articles" class="titre-decore">De artikelen van nummer 1</h2>
+  <div class="grille-cartes">
+    {%- assign articles_langue = site.posts | where: "lang", "nl" %}
+    {%- for p in articles_langue %}
+    {% include carte-article.html article=p %}
+    {%- endfor %}
+  </div>
+</section>

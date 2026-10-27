@@ -1,0 +1,57 @@
+---
+title: "Notifications"
+permalink: /en/notifications/
+ref: notifications
+lang: en
+chapo: "Get news and alerts from the town hall on your phone, even when it is locked, with no app to install."
+description: "Add the Saint-Bonnet-de-Condat website to your phone's Home Screen and get news and alerts from the town hall as notifications."
+---
+<div class="grille-asymetrique">
+  <div>
+    <section class="bloc" aria-labelledby="titre-appareil">
+      <h2 id="titre-appareil">On this device</h2>
+      <div class="panneau notif" data-notifications data-statut="chargement">
+        <p class="notif-etat" data-etat role="status" aria-live="polite">Checking…</p>
+        <p class="notif-actions">
+          <button type="button" class="bouton" data-activer hidden>{% include icone.html nom="cloche" %}Turn on notifications</button>
+          <button type="button" class="bouton bouton--secondaire" data-desactiver hidden>Turn off notifications</button>
+        </p>
+        <p class="notif-langue" data-langue-notifications hidden></p>
+        <noscript><p>Turn on JavaScript in your browser to receive notifications.</p></noscript>
+      </div>
+    </section>
+
+    <section class="bloc" id="iphone" aria-labelledby="titre-iphone">
+      <h2 id="titre-iphone">On iPhone or iPad</h2>
+      <ol class="etapes">
+        <li>Open <strong>saint-bonnet-de-condat.fr/en/</strong> in Safari.</li>
+        <li>Tap the <strong>Share</strong> button (on recent versions, it is in the <strong>“<span aria-hidden="true">⋯</span><span class="visuellement-cache">three dots</span>”</strong> menu), then <strong>“Add to Home Screen”</strong>. If the <strong>“Open as Web App”</strong> option appears, leave it turned on. Tap <strong>“Add”</strong>.</li>
+        <li>Open the website using the new <strong>“Saint-Bonnet”</strong> icon on your Home Screen.</li>
+        <li>Tap <strong>“Turn on”</strong> in the blue banner at the top of the home page (or come back to this page), then <strong>“Turn on notifications”</strong> and <strong>“Allow”</strong>.</li>
+      </ol>
+      <p class="note">You need iOS 16.4 or later. On iPhone and iPad, notifications only work from the Home Screen icon.</p>
+    </section>
+
+    <section class="bloc" id="android" aria-labelledby="titre-android">
+      <h2 id="titre-android">On Android</h2>
+      <ol class="etapes">
+        <li>Open <strong>saint-bonnet-de-condat.fr/en/</strong> in Chrome, tap <strong>“Turn on notifications”</strong> on this page, then <strong>“Allow”</strong>.</li>
+        <li>To have the icon on your Home screen: tap the <strong><span aria-hidden="true">⋮</span><span class="visuellement-cache">three vertical dots</span></strong> menu, then <strong>“Add to Home screen”</strong> (or <strong>“Install app”</strong>).</li>
+      </ol>
+    </section>
+  </div>
+
+  <aside class="pile-laterale">
+    <div class="panneau panneau--info">
+      <h2 class="h3-like">What you will receive</h2>
+      <p>A notification for each new notice from the town hall published in <a href="{{ '/en/news-and-alerts/' | relative_url }}">News &amp; Alerts</a>: water cuts, works, closures, events. It also appears on the lock screen.</p>
+      <p>Notifications arrive in the language of the page on which you turned them on: in English here, when a translation is available, otherwise in French.</p>
+    </div>
+    <div class="panneau">
+      <h2 class="h3-like">Your data</h2>
+      <p>The website only stores the technical subscription address provided by your device: no name, no phone number, no email address. It is hosted in the European Union and deleted as soon as you turn off notifications.</p>
+      <p><a href="{{ '/en/legal-notice/' | relative_url }}#donnees">Personal data</a></p>
+    </div>
+  </aside>
+</div>
+{% include notifications-scripts.html -%}

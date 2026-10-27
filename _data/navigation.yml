@@ -1,17 +1,55 @@
-# Menu principal du site (dans l'ordre d'affichage)
-- titre: "Infos & Alertes"
-  url: /infos-alertes/
-- titre: "Mairie"
-  url: /mairie/
-- titre: "Conseil municipal"
-  url: /conseil-municipal/
-- titre: "Affichage légal"
-  url: /affichage-legal/
-- titre: "Vie pratique"
-  url: /vie-pratique/
-- titre: "Vie locale"
-  url: /vie-locale/
-- titre: "Tourisme"
-  url: /tourisme/
-- titre: "Découvrir"
-  url: /decouvrir/
+# Menu principal du site (dans l'ordre d'affichage), dans chaque langue.
+# Le lien « Accueil » (Home) est ajouté automatiquement en tête du menu.
+fr:
+  - titre: "Infos & Alertes"
+    url: /infos-alertes/
+  - titre: "Mairie"
+    url: /mairie/
+  - titre: "Conseil municipal"
+    url: /conseil-municipal/
+  - titre: "Affichage légal"
+    url: /affichage-legal/
+  - titre: "Vie pratique"
+    url: /vie-pratique/
+  - titre: "Vie locale"
+    url: /vie-locale/
+  - titre: "Tourisme"
+    url: /tourisme/
+  - titre: "Découvrir"
+    url: /decouvrir/
+
+en:
+  - titre: "News & Alerts"
+    url: /en/news-and-alerts/
+  - titre: "Town hall"
+    url: /en/town-hall/
+  - titre: "Council"
+    url: /en/municipal-council/
+  - titre: "Official notices"
+    url: /en/official-notices/
+  - titre: "Practical info"
+    url: /en/practical-information/
+  - titre: "Local life"
+    url: /en/local-life/
+  - titre: "Tourism"
+    url: /en/tourism/
+  - titre: "Discover"
+    url: /en/discover/
+
+nl:
+  - titre: "Nieuws"
+    url: /nl/nieuws-en-waarschuwingen/
+  - titre: "Gemeentehuis"
+    url: /nl/gemeentehuis/
+  - titre: "Gemeenteraad"
+    url: /nl/gemeenteraad/
+  - titre: "Bekendmakingen"
+    url: /nl/officiele-bekendmakingen/
+  - titre: "Praktische info"
+    url: /nl/praktische-informatie/
+  - titre: "Dorpsleven"
+    url: /nl/dorpsleven/
+  - titre: "Toerisme"
+    url: /nl/toerisme/
+  - titre: "Ontdekken"
+    url: /nl/ontdekken/

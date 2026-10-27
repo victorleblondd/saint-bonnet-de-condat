@@ -1,6 +1,7 @@
 ---
 title: "Le bulletin municipal"
 permalink: /bulletin-municipal/
+ref: bulletin-municipal
 chapo: "La Gazette des Saint-Bonnetoux paraît deux fois par an, avec une édition estivale et une édition hivernale."
 description: "La Gazette des Saint-Bonnetoux, bulletin municipal de Saint-Bonnet-de-Condat : le mot du maire et les articles du n°1 (été 2026)."
 ---
@@ -39,7 +40,8 @@ description: "La Gazette des Saint-Bonnetoux, bulletin municipal de Saint-Bonnet
 <section class="bloc" id="articles" aria-labelledby="titre-articles">
   <h2 id="titre-articles" class="titre-decore">Les articles du n°1</h2>
   <div class="grille-cartes">
-    {%- for p in site.posts %}
+    {%- assign articles_langue = site.posts | where: "lang", "fr" %}
+    {%- for p in articles_langue %}
     {% include carte-article.html article=p %}
     {%- endfor %}
   </div>

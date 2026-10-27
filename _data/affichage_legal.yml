@@ -15,29 +15,42 @@
 #    pdf: "AAAA-MM-JJ-sujet-court.pdf"  nom exact du fichier déposé
 #    texte: |                          texte du document (voir ci-dessous)
 #      <p>…</p>
+#    en: / nl:                         facultatif : titre et texte traduits
+#      titre: "…"                      (sans traduction, le titre et le texte français
+#      texte: |                        s'affichent sur les pages anglaises et néerlandaises)
 #
 #  Accessibilité : un PDF scanné ou en image n'est pas lisible par les
 #  lecteurs d'écran. Dans ce cas, recopier le texte du document dans
 #  « texte » : il s'affiche sous le bouton « Afficher le texte du document ».
 # =====================================================================
 
-# Types de documents proposés dans le filtre
+# Types de documents proposés dans le filtre (nom au singulier et au pluriel, en français, anglais et néerlandais)
 types:
   - code: arrete-municipal
     nom: "Arrêté municipal"
     pluriel: "Arrêtés municipaux"
+    en: { nom: "Municipal order", pluriel: "Municipal orders" }
+    nl: { nom: "Gemeentelijk besluit", pluriel: "Gemeentelijke besluiten" }
   - code: arrete-prefectoral
     nom: "Arrêté préfectoral"
     pluriel: "Arrêtés préfectoraux"
+    en: { nom: "Prefectoral order", pluriel: "Prefectoral orders" }
+    nl: { nom: "Prefectoraal besluit", pluriel: "Prefectorale besluiten" }
   - code: deliberation
     nom: "Délibération"
     pluriel: "Délibérations"
+    en: { nom: "Council decision", pluriel: "Council decisions" }
+    nl: { nom: "Raadsbesluit", pluriel: "Raadsbesluiten" }
   - code: proces-verbal
     nom: "Procès-verbal"
     pluriel: "Procès-verbaux"
+    en: { nom: "Minutes", pluriel: "Minutes" }
+    nl: { nom: "Notulen", pluriel: "Notulen" }
   - code: divers
     nom: "Divers"
     pluriel: "Divers"
+    en: { nom: "Other", pluriel: "Other" }
+    nl: { nom: "Overige", pluriel: "Overige" }
 
 # Années proposées dans le filtre
 annees: [2026, 2027]

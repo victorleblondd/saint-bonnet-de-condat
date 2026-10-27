@@ -111,7 +111,7 @@ async function envoyer(messages) {
   let tentatives = 0;
   let erreursTotales = 0;
   for (const m of messages) {
-    const charge = JSON.stringify({ title: m.title, body: m.body, url: m.url, tag: m.tag });
+    const charge = JSON.stringify({ title: m.title, body: m.body, url: m.url, tag: m.tag, langues: m.langues });
     let envoyees = 0;
     let expires = 0;
     let erreurs = 0;

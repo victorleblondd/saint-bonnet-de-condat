@@ -1,37 +1,54 @@
 {%- comment -%}
   Une publication « Infos & Alertes ».
   Paramètres : item (une entrée de _data/infos_alertes.yml), compact=true (page d'accueil)
+  Sur les pages anglaises et néerlandaises : la traduction de l'actualité (rubriques en: et nl:) si elle existe,
+  sinon le texte français, signalé « En français » et marqué lang="fr". L'ancre est la même dans les trois langues.
 {%- endcomment -%}
 {%- assign it = include.item -%}
+{%- assign langue = page.lang | default: "fr" -%}
+{%- assign t = site.data.langues[langue] -%}
+{%- assign tr = nil -%}
+{%- if langue != "fr" -%}{%- assign tr = it[langue] -%}{%- endif -%}
+{%- assign vf = false -%}
+{%- if tr and tr.titre -%}
+{%- assign titre = tr.titre -%}{%- assign resume = tr.resume -%}{%- assign texte = tr.texte -%}
+{%- else -%}
+{%- assign titre = it.titre -%}{%- assign resume = it.resume -%}{%- assign texte = it.texte -%}
+{%- if langue != "fr" -%}{%- assign vf = true -%}{%- endif -%}
+{%- endif -%}
+{%- capture titre_html -%}{% if vf %}<span lang="fr">{{ titre }}</span>{% else %}{{ titre }}{% endif %}{%- endcapture -%}
 {%- capture ancre -%}{{ it.date }}-{{ it.titre | slugify: "latin" }}{%- endcapture -%}
 {%- if it.pdf -%}{%- assign lien_pdf = "/documents/infos-alertes/" | append: it.pdf | relative_url -%}{%- endif -%}
 <article class="avis avis--{{ it.type }}{% if include.compact %} avis--compact{% endif %}" id="{{ ancre }}" data-type="{{ it.type }}" data-theme="{{ it.theme }}">
   <div class="avis-meta">
     {% if it.type == "alerte" -%}
-    <span class="etiquette etiquette--alerte">{% include icone.html nom="alerte" %}Alerte</span>
+    <span class="etiquette etiquette--alerte">{% include icone.html nom="alerte" %}{{ t.etiquette_alerte }}</span>
     {%- else -%}
-    <span class="etiquette etiquette--info">Info</span>
+    <span class="etiquette etiquette--info">{{ t.etiquette_info }}</span>
     {%- endif %}
-    <time datetime="{{ it.date }}{% if it.heure %}T{{ it.heure }}{% endif %}">{% include date-fr.html date=it.date jour=true %}{% if it.heure %} à {{ it.heure | replace: ":", " h " }}{% endif %}</time>
+    <time datetime="{{ it.date }}{% if it.heure %}T{{ it.heure }}{% endif %}">{% include date.html date=it.date jour=true %}{% if it.heure %}{{ t.heure_avant }}{% if langue == "en" %}{{ it.heure }}{% elsif langue == "nl" %}{{ it.heure | replace: ":", "." }} uur{% else %}{{ it.heure | replace: ":", " h " }}{% endif %}{% endif %}</time>
+    {%- if vf %}
+    <span class="etiquette etiquette--neutre">{{ t.en_francais }}</span>
+    {%- endif %}
   </div>
   <h3 class="avis-titre">
     {%- if include.compact -%}
-    <a href="{{ '/infos-alertes/' | relative_url }}#{{ ancre }}">{{ it.titre }}</a>
+    <a href="{{ t.pages.infos_alertes | relative_url }}#{{ ancre }}">{{ titre_html }}</a>
     {%- elsif it.pdf -%}
-    <a href="{{ lien_pdf }}" target="_blank" rel="noopener">{{ it.titre }}<span class="visuellement-cache"> (actualité en PDF, nouvel onglet)</span></a>
+    <a href="{{ lien_pdf }}" target="_blank" rel="noopener">{{ titre_html }}<span class="visuellement-cache">{{ t.pdf_titre_cache }}</span></a>
     {%- else -%}
-    {{ it.titre }}
+    {{ titre_html }}
     {%- endif -%}
   </h3>
-  {% if it.resume %}<p class="avis-resume">{{ it.resume }}</p>{% endif %}
+  {% if resume %}<p class="avis-resume"{% if vf %} lang="fr"{% endif %}>{{ resume }}</p>{% endif %}
   {%- if it.pdf %}
-  <p class="avis-actions"><a class="bouton bouton--pdf" href="{{ lien_pdf }}" target="_blank" rel="noopener">{% include icone.html nom="document" %}Ouvrir l'actualité (PDF)<span class="visuellement-cache"> : {{ it.titre }}, nouvel onglet</span></a></p>
+  <p class="avis-actions"><a class="bouton bouton--pdf" href="{{ lien_pdf }}" target="_blank" rel="noopener">{% include icone.html nom="document" %}{{ t.ouvrir_pdf }}<span class="visuellement-cache">{{ t.pdf_avant_titre }}{{ titre_html }}{{ t.pdf_apres_titre }}</span></a></p>
   {%- endif %}
-  {%- if it.texte %}{% unless include.compact %}
+  {%- if texte %}{% unless include.compact %}
   <details class="avis-texte">
-    <summary>{% if it.pdf %}Afficher le texte de l'actualité{% else %}Afficher l'actualité complète{% endif %}</summary>
-    <div class="avis-texte-corps">
-{{ it.texte }}
+    <summary>{% if it.pdf %}{{ t.afficher_texte }}{% else %}{{ t.afficher_complet }}{% endif %}</summary>
+    <div class="avis-texte-corps"{% if vf %} lang="fr"{% endif %}>
+{{ texte }}
     </div>
   </details>
   {%- endunless %}{% endif %}

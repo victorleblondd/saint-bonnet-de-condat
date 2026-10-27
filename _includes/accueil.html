@@ -1,0 +1,151 @@
+{%- comment -%}
+  Contenu de la page d'accueil, commun aux trois langues (index.html, en/index.html, nl/index.html).
+  Textes : rubrique « page_accueil » de _data/langues.yml ; élus : _data/elus.yml.
+{%- endcomment -%}
+{%- assign m = site.data.mairie -%}
+{%- assign langue = page.lang | default: "fr" -%}
+{%- assign t = site.data.langues[langue] -%}
+{%- assign A = t.page_accueil -%}
+{%- assign P = t.pages -%}
+{%- include bandeau-annonce.html -%}
+<div class="bandeau-invitation" data-invitation-notifications hidden>
+  <p class="conteneur">{% include icone.html nom="cloche" %}{{ A.invitation }}<a href="{{ P.notifications | relative_url }}">{{ A.activer }}</a></p>
+</div>
+{%- assign alerte = nil -%}
+{%- for it in site.data.infos_alertes -%}{%- if it.type == "alerte" -%}{%- assign alerte = it -%}{%- break -%}{%- endif -%}{%- endfor -%}
+{%- if alerte %}
+{%- capture ancre_alerte -%}{{ alerte.date }}-{{ alerte.titre | slugify: "latin" }}{%- endcapture -%}
+{%- assign alerte_tr = nil -%}{%- if langue != "fr" -%}{%- assign alerte_tr = alerte[langue] -%}{%- endif -%}
+<div class="bandeau-alerte" role="region" aria-label="{{ A.alerte_region }}" data-bandeau-date="{{ alerte.date }}"{% if alerte.bandeau_jusquau %} data-bandeau-fin="{{ alerte.bandeau_jusquau }}"{% endif %} hidden>
+  <div class="conteneur">
+    {% include icone.html nom="alerte" %}
+    <div class="bandeau-alerte-texte">
+      {%- if alerte_tr and alerte_tr.titre %}
+      <p class="bandeau-alerte-titre">{{ A.alerte_prefixe }}{{ alerte_tr.titre }}</p>
+      <p>{{ alerte_tr.resume }}</p>
+      {%- elsif langue != "fr" %}
+      <p class="bandeau-alerte-titre">{{ A.alerte_prefixe }}<span lang="fr">{{ alerte.titre }}</span></p>
+      <p lang="fr">{{ alerte.resume }}</p>
+      {%- else %}
+      <p class="bandeau-alerte-titre">{{ A.alerte_prefixe }}{{ alerte.titre }}</p>
+      <p>{{ alerte.resume }}</p>
+      {%- endif %}
+    </div>
+    <a class="bouton bouton--clair" href="{{ P.infos_alertes | relative_url }}#{{ ancre_alerte }}">{{ A.lire_alerte }}</a>
+  </div>
+</div>
+{%- endif %}
+
+<section class="heros" aria-labelledby="titre-accueil" data-diaporama>
+  {%- comment -%} Diaporama : la première photo s'affiche tout de suite, les suivantes se chargent après la page. {%- endcomment %}
+  <div class="heros-diapos" aria-hidden="true">
+    <div class="heros-diapo heros-diapo--mairie heros-diapo--active" style="--photo: url('{{ '/assets/images/mairie.jpg' | relative_url }}')"></div>
+    <div class="heros-diapo heros-diapo--camping" data-photo="{{ '/assets/images/camping.jpg' | relative_url }}"></div>
+    <div class="heros-diapo heros-diapo--neige" data-photo="{{ '/assets/images/village-neige.jpg' | relative_url }}"></div>
+    <div class="heros-diapo heros-diapo--coucher" data-photo="{{ '/assets/images/coucher-de-soleil.jpg' | relative_url }}"></div>
+  </div>
+  <div class="conteneur">
+    <div class="heros-contenu">
+      <img class="heros-logo" src="{{ '/assets/images/logo-massif-du-cezallier.png' | relative_url }}" alt="Massif du Cézallier" width="300" height="283">
+      <h1 id="titre-accueil">{{ A.bienvenue }} <span class="nom-commune">Saint-Bonnet-de-Condat</span></h1>
+      <p>{{ A.intro }}</p>
+    </div>
+  </div>
+  <div class="heros-commandes" role="group" aria-label="{{ A.photos_groupe }}" hidden>
+    <button type="button" class="heros-pause" data-pause aria-label="{{ t.js.pause_diaporama }}">{% include icone.html nom="pause" classe="icone-pause" %}{% include icone.html nom="lecture" classe="icone-lecture" %}</button>
+    <button type="button" class="heros-point" data-diapo="0" aria-label="{{ A.photos[0] }}" aria-current="true"></button>
+    <button type="button" class="heros-point" data-diapo="1" aria-label="{{ A.photos[1] }}"></button>
+    <button type="button" class="heros-point" data-diapo="2" aria-label="{{ A.photos[2] }}"></button>
+    <button type="button" class="heros-point" data-diapo="3" aria-label="{{ A.photos[3] }}"></button>
+  </div>
+</section>
+
+<nav class="conteneur acces-rapides" aria-label="{{ A.acces_label }}">
+  <ul>
+    <li><a href="{{ P.infos_alertes | relative_url }}"><span class="pastille pastille--alerte">{% include icone.html nom="alerte" %}</span>{{ A.acces_infos }}</a></li>
+    <li><a href="{{ P.mairie | relative_url }}#contact"><span class="pastille">{% include icone.html nom="horloge" %}</span>{{ A.acces_horaires }}</a></li>
+    <li><a href="{{ P.conseil_municipal | relative_url }}"><span class="pastille">{% include icone.html nom="personnes" %}</span>{{ A.acces_conseil }}</a></li>
+    <li><a href="{{ P.vie_locale | relative_url }}#sante-bien-etre"><span class="pastille">{% include icone.html nom="coeur" %}</span>{{ A.acces_sante }}</a></li>
+    <li><a href="{{ P.decouvrir | relative_url }}#patrimoine"><span class="pastille">{% include icone.html nom="eglise" %}</span>{{ A.acces_patrimoine }}</a></li>
+    <li><a href="{{ P.tourisme | relative_url }}"><span class="pastille">{% include icone.html nom="montagne" %}</span>{{ A.acces_tourisme }}</a></li>
+  </ul>
+</nav>
+
+<section class="section" aria-labelledby="titre-infos">
+  <div class="conteneur accueil-infos">
+    <div>
+      <div class="section-entete">
+        <div>
+          <h2 id="titre-infos">{{ A.acces_infos }}</h2>
+          <p>{{ A.infos_intro }} <a href="{{ P.notifications | relative_url }}">{{ A.infos_notifications }}</a></p>
+        </div>
+        <a class="lien-fleche" href="{{ P.infos_alertes | relative_url }}">{{ A.toutes_actualites }}{% include icone.html nom="fleche" %}</a>
+      </div>
+      <div class="liste-avis">
+        {%- for it in site.data.infos_alertes limit: 3 %}
+        {% include avis.html item=it compact=true %}
+        {%- endfor %}
+      </div>
+    </div>
+    <aside class="carte carte-mairie" aria-labelledby="titre-mairie">
+      <h2 id="titre-mairie">{{ A.mairie_titre }}</h2>
+      <div class="coordonnees">
+        <p>{% include icone.html nom="lieu" %}<span>{{ m.adresse_ligne1 }}<br>{{ m.adresse_ligne2 }}</span></p>
+        <p>{% include icone.html nom="telephone" %}<a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a></p>
+        <p>{% include icone.html nom="email" %}<a href="mailto:{{ m.email }}">{{ m.email | replace: "@", "@<wbr>" }}</a></p>
+      </div>
+      {% include horaires.html %}
+      <p class="note">{{ t.point_poste }}</p>
+      <a class="lien-fleche" href="{{ P.mairie | relative_url }}">{{ A.services_mairie }}{% include icone.html nom="fleche" %}</a>
+    </aside>
+  </div>
+</section>
+
+<section class="section section--teintee" aria-labelledby="titre-bulletin">
+  <div class="conteneur">
+    <div class="section-entete">
+      <div>
+        <h2 id="titre-bulletin">{{ A.bulletin_titre }}</h2>
+        <p>{{ A.bulletin_intro }}</p>
+      </div>
+      <a class="lien-fleche" href="{{ P.bulletin_municipal | relative_url }}">{{ A.bulletin_titre }}{% include icone.html nom="fleche" %}</a>
+    </div>
+    <div class="grille-cartes">
+      {%- assign articles_langue = site.posts | where: "lang", langue %}
+      {%- for p in articles_langue limit: 3 %}
+      {% include carte-article.html article=p %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="titre-elus">
+  <div class="conteneur">
+    <div class="section-entete">
+      <div>
+        <h2 id="titre-elus">{{ A.elus_titre }}</h2>
+        <p>{{ A.elus_intro }}</p>
+      </div>
+      <a class="lien-fleche" href="{{ P.conseil_municipal | relative_url }}">{{ A.conseil_lien }}{% include icone.html nom="fleche" %}</a>
+    </div>
+    {%- assign e = site.data.elus %}
+    {%- assign maire = e.maire[langue] | default: e.maire %}
+    <div class="grille-3">
+      <div class="panneau carte-elu">
+        <p class="fonction">{{ maire.fonction }}</p>
+        <p class="nom">{{ e.maire.nom }}</p>
+        <p class="permanence">{{ maire.permanence }}</p>
+        <p class="telephone"><a href="tel:{{ e.maire.telephone_lien }}">{% include icone.html nom="telephone" %}{{ e.maire.telephone }}</a></p>
+      </div>
+      {%- for a in e.adjoints %}
+      {%- assign adjoint = a[langue] | default: a %}
+      <div class="panneau carte-elu">
+        <p class="fonction">{% if langue == "fr" %}{{ a.fonction | replace: "1er", "1<sup>er</sup>" | replace: "2e", "2<sup>e</sup>" }}{% else %}{{ adjoint.fonction }}{% endif %}</p>
+        <p class="nom">{{ a.nom }}</p>
+        <p class="permanence">{{ adjoint.permanence }} {{ A.pour }} {{ adjoint.domaines }}.</p>
+        <p class="telephone"><a href="tel:{{ a.telephone_lien }}">{% include icone.html nom="telephone" %}{{ a.telephone }}</a></p>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>

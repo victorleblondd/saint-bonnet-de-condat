@@ -1,6 +1,7 @@
 {%- assign m = site.data.mairie -%}
+{%- assign _t = site.data.langues[page.lang] | default: site.data.langues.fr -%}
 <dl class="horaires">
-  {%- for h in m.horaires %}{% unless include.semaine_complete != true and h.ferme and h.jour != "Mercredi" %}
-  <div data-jour="{{ forloop.index }}"{% if h.ferme %} class="ferme"{% endif %}><dt>{{ h.jour }}</dt><dd>{{ h.heures }}</dd></div>
+  {%- for h in m.horaires %}{% unless include.semaine_complete != true and h.ferme and h.jour != 3 %}
+  <div data-jour="{{ h.jour }}"{% if h.ferme %} class="ferme"{% endif %}><dt>{{ _t.jours_semaine[h.jour] }}</dt><dd>{% if h.ferme %}{{ _t.fermee }}{% else %}{% include heures.html valeur=h.heures %}{% endif %}</dd></div>
   {%- endunless %}{% endfor %}
 </dl>

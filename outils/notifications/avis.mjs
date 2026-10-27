@@ -42,14 +42,36 @@ export function nouveauxAvis(anciens, recents, maintenant = new Date()) {
     .slice(0, 3);
 }
 
+// Page Infos & Alertes et préfixe des alertes dans chaque langue (voir _data/langues.yml, rubrique pages)
+export const LANGUES = {
+  fr: { page: '/infos-alertes/', alerte: 'Alerte : ' },
+  en: { page: '/en/news-and-alerts/', alerte: 'Alert: ' },
+  nl: { page: '/nl/nieuws-en-waarschuwingen/', alerte: 'Waarschuwing: ' },
+};
+
+// Message d'un avis. Le texte français est en tête ; « langues » donne les versions anglaise et néerlandaise
+// (rubriques en: et nl: de l'avis). Sans traduction, l'avis part en français mais ouvre la page dans la langue
+// de l'appareil. Le service worker (/sw.js) choisit la version selon la langue enregistrée sur l'appareil.
 export function messageAvis(a) {
   const ancre = `${dateIso(a.date)}-${slug(a.titre)}`;
+  const alerte = a.type === 'alerte';
+  const langues = {};
+  for (const code of ['en', 'nl']) {
+    const tr = a[code] && a[code].titre ? a[code] : null;
+    langues[code] = {
+      title: (alerte ? (tr ? LANGUES[code].alerte : LANGUES.fr.alerte) : '') + (tr ? tr.titre : a.titre),
+      body: raccourcir((tr ? tr.resume : a.resume) || '', 200),
+      url: `${LANGUES[code].page}#${ancre}`,
+      lang: tr ? code : 'fr',
+    };
+  }
   return {
-    title: (a.type === 'alerte' ? 'Alerte : ' : '') + a.titre,
+    title: (alerte ? LANGUES.fr.alerte : '') + a.titre,
     body: raccourcir(a.resume || '', 200),
-    url: `/infos-alertes/#${ancre}`,
+    url: `${LANGUES.fr.page}#${ancre}`,
     tag: ancre,
-    urgent: a.type === 'alerte',
+    urgent: alerte,
     ancre,
+    langues,
   };
 }

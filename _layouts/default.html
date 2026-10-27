@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+{% assign langue = page.lang | default: "fr" %}{% assign t = site.data.langues[langue] %}<html lang="{{ langue }}">
 <head>
 {% include head.html %}
 </head>
@@ -9,6 +9,7 @@
 {{ content }}
 </main>
 {% include footer.html %}
-<script src="{{ '/assets/js/site.js' | relative_url }}?v=5" defer></script>
+<script id="textes-site" type="application/json">{"textes":{{ t.js | jsonify }},"suggestions":{{ site.data.langues.suggestions | jsonify }}}</script>
+<script src="{{ '/assets/js/site.js' | relative_url }}?v=6" defer></script>
 </body>
 </html>
