@@ -1,0 +1,49 @@
+---
+title: "The municipal newsletter"
+permalink: /en/newsletter/
+ref: bulletin-municipal
+lang: en
+chapo: "La Gazette des Saint-Bonnetoux comes out twice a year, with a summer edition and a winter edition."
+description: "La Gazette des Saint-Bonnetoux, the municipal newsletter of Saint-Bonnet-de-Condat: the mayor's message and the articles of issue no. 1 (summer 2026)."
+---
+<div class="grille-asymetrique bloc">
+  <section class="bloc" aria-labelledby="titre-mot">
+    <p class="surtitre">Issue no. 1 · summer 2026</p>
+    <h2 id="titre-mot">A word from the mayor</h2>
+    <p>Dear residents of Saint-Bonnet,</p>
+    <p>We are pleased to present the first issue of <em>La Gazette des Saint-Bonnetoux</em>, our municipality's new newsletter.</p>
+    <p>Its aim is to keep you regularly informed about life in Saint-Bonnet-de-Condat, current projects, completed works, upcoming events and the work of the municipal council.</p>
+    <p>To keep in regular touch with all residents, <em>La Gazette des Saint-Bonnetoux</em> will come out twice a year, with a summer edition and a winter edition.</p>
+    <p>We hope that this publication will meet your expectations and help to strengthen communication and the vitality of our municipality.</p>
+    <p>We hope you enjoy reading it.</p>
+    <p class="signature">The Mayor and the Municipal Council</p>
+  </section>
+  <aside class="panneau" aria-labelledby="titre-sommaire">
+    <h2 id="titre-sommaire" class="h3-like">In issue no. 1</h2>
+    <ul class="liste-simple">
+      <li><a href="{{ '/en/municipal-council/' | relative_url }}">Our municipal team</a></li>
+      <li><a href="{{ '/en/town-hall/' | relative_url }}#services">Services for residents</a></li>
+      <li><a href="{{ '/en/newsletter/drinking-water-springs-maintained-and-secured/' | relative_url }}">Drinking water and sewerage</a></li>
+      <li><a href="{{ '/en/newsletter/cemetery-and-car-park-redeveloped/' | relative_url }}">Cemetery and municipal car park</a></li>
+      <li><a href="{{ '/en/newsletter/hamlets-the-regheat-bread-oven/' | relative_url }}">Upkeep and improvement of the hamlets</a></li>
+      <li><a href="{{ '/en/newsletter/flowers-and-village-improvements/' | relative_url }}">Flowers in the village</a></li>
+      <li><a href="{{ '/en/newsletter/street-lighting-and-fibre-broadband/' | relative_url }}">Street lighting and fibre optic broadband</a></li>
+      <li><a href="{{ '/en/newsletter/visits-by-the-senators-of-the-cantal/' | relative_url }}">Meetings and local life</a></li>
+      <li><a href="{{ '/en/newsletter/8-may-commemoration/' | relative_url }}">8 May commemoration</a></li>
+      <li><a href="{{ '/en/local-life/' | relative_url }}">Associations and events</a></li>
+      <li><a href="{{ '/en/discover/' | relative_url }}#raconte-moi"><span lang="fr">Raconte-moi Saint-Bonnet</span></a></li>
+      <li><a href="{{ '/en/newsletter/the-first-three-months-in-office/' | relative_url }}">The first three months in office</a></li>
+      <li><a href="{{ '/en/practical-information/' | relative_url }}">Practical information</a></li>
+    </ul>
+  </aside>
+</div>
+
+<section class="bloc" id="articles" aria-labelledby="titre-articles">
+  <h2 id="titre-articles" class="titre-decore">Articles from issue no. 1</h2>
+  <div class="grille-cartes">
+    {%- assign articles_langue = site.posts | where: "lang", "en" %}
+    {%- for p in articles_langue %}
+    {% include carte-article.html article=p %}
+    {%- endfor %}
+  </div>
+</section>

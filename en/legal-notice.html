@@ -1,0 +1,46 @@
+---
+title: "Legal notice"
+permalink: /en/legal-notice/
+ref: mentions-legales
+lang: en
+description: "Legal notice, personal data and accessibility of the Saint-Bonnet-de-Condat municipal website."
+---
+{%- assign m = site.data.mairie -%}
+<div class="texte-legal">
+  <p>This page is a translation. Only the <a href="{{ '/mentions-legales/' | relative_url }}" hreflang="fr">French version (<span lang="fr">Mentions légales</span>)</a> is legally binding.</p>
+
+  <section class="bloc" aria-labelledby="titre-editeur">
+    <h2 id="titre-editeur">Website publisher</h2>
+    <p>Municipality of Saint-Bonnet-de-Condat<br><span lang="fr">{{ m.nom }}</span>, {{ m.adresse_ligne1 }}, {{ m.adresse_ligne2 }}, France<br>Telephone: <a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a> · Email: <a href="mailto:{{ m.email }}">{{ m.email }}</a></p>
+    <p>Director of publication: Victor Leblond.</p>
+  </section>
+
+  <section class="bloc" aria-labelledby="titre-hebergement">
+    <h2 id="titre-hebergement">Hosting</h2>
+    <p>GitHub, Inc. (GitHub Pages service), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, United States.</p>
+    <p>Notification subscriptions: Supabase, data hosted in the European Union (Paris).</p>
+  </section>
+
+  <section class="bloc" aria-labelledby="titre-credits">
+    <h2 id="titre-credits">Content and credits</h2>
+    <p>The texts, notices and posters are published by Saint-Bonnet-de-Condat town hall. The articles are taken from <em>La Gazette des Saint-Bonnetoux</em>, the municipal newsletter. The English translations are provided for information.</p>
+    <p>Coat of arms of the Cantal: drawing by Gretaz and contributors, <a href="https://commons.wikimedia.org/wiki/File:Blason_d%C3%A9partement_fr_Cantal.svg">Wikimedia Commons</a>, licence <a class="sans-retour" href="https://creativecommons.org/licenses/by-sa/3.0/deed.en" hreflang="en">CC BY-SA 3.0</a>, adapted image.</p>
+    <p>Campsite photo (home page): <a href="https://www.campinglasantoire.fr/en/" hreflang="en">Camping La Santoire</a>.</p>
+    <p>Logos on the <a href="{{ '/en/tourism/' | relative_url }}">Tourism</a> page: those of Camping La Santoire, NaturÉpure and La Maison des Volcans, taken from their official websites.</p>
+    <p>Logos of L'Instant Libellule and Prestige Nails by Sonia (<a href="{{ '/en/local-life/' | relative_url }}">Local life</a> page): taken from their Facebook pages.</p>
+  </section>
+
+  <section class="bloc" id="donnees" aria-labelledby="titre-donnees">
+    <h2 id="titre-donnees">Personal data</h2>
+    <p>This website has no forms, no cookies and no audience measurement tools. The host may record technical connection data, such as the IP address, to keep the service secure.</p>
+    <p><strong>Language.</strong> If you choose a language with the “Français · English · Nederlands” links, or close the language suggestion, your browser remembers it on your device (local storage), so that the website can offer you that language. This information never leaves your device.</p>
+    <p><strong>Notifications.</strong> If you turn on <a href="{{ '/en/notifications/' | relative_url }}">notifications</a>, the website stores the subscription address provided by your device and its encryption keys: no name, no phone number, no email address. They are only used to send you the town hall's notices, are hosted in the European Union (Supabase, Paris) and are deleted as soon as you turn off notifications or they are no longer valid. The language of your notifications is stored only on your device. Notifications go through your device's notification service (Apple, Google or Mozilla).</p>
+    <p>If you have any questions, contact the town hall.</p>
+  </section>
+
+  <section class="bloc" id="accessibilite" aria-labelledby="titre-accessibilite">
+    <h2 id="titre-accessibilite">Accessibility</h2>
+    <p>The municipality of Saint-Bonnet-de-Condat is committed to making its website accessible, in accordance with Article 47 of French Law no. 2005-102 of 11 February 2005.</p>
+    <p><strong>Compliance status: {{ site.data.langues.en.etats[site.data.accessibilite.etat] }}.</strong> Details are given in the <a href="{{ '/en/accessibility/' | relative_url }}">accessibility statement</a>.</p>
+  </section>
+</div>

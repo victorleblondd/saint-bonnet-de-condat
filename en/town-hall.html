@@ -1,0 +1,70 @@
+---
+title: "The town hall"
+permalink: /en/town-hall/
+ref: mairie
+lang: en
+chapo: "Opening hours, contact details and services offered to residents by Saint-Bonnet-de-Condat town hall."
+description: "Saint-Bonnet-de-Condat town hall: address, telephone, opening hours, post office counter, village hall, photocopies, bulky waste collection and library service."
+---
+{%- assign m = site.data.mairie -%}
+<section class="bloc" id="contact" aria-labelledby="titre-contact">
+  <h2 id="titre-contact" class="titre-decore">Contact us</h2>
+  <div class="grille-3">
+    <div class="panneau">
+      <h3>Contact details</h3>
+      <div class="coordonnees">
+        <p>{% include icone.html nom="lieu" %}<span><span lang="fr">{{ m.nom }}</span><br>{{ m.adresse_ligne1 }}<br>{{ m.adresse_ligne2 }}</span></p>
+        <p>{% include icone.html nom="telephone" %}<a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a></p>
+        <p>{% include icone.html nom="email" %}<a href="mailto:{{ m.email }}">{{ m.email | replace: "@", "@<wbr>" }}</a></p>
+        <p>{% include icone.html nom="externe" %}<a href="{{ m.facebook_url }}" rel="noopener">Town hall Facebook page (in French)</a></p>
+      </div>
+    </div>
+    <div class="panneau">
+      <h3>Opening hours</h3>
+      {% include horaires.html semaine_complete=true %}
+      <p class="note">Since 1 October 2026. The post office counter (Point Poste) is open at the same times.</p>
+    </div>
+    <div class="panneau panneau--info">
+      <h3>Reception</h3>
+      <p>The town hall office is run by <strong>Nadège Rodde</strong>, town hall secretary.</p>
+      <p><strong>Sarah Chabrier</strong>, the mayor, is at the town hall <strong>every Thursday morning, no appointment needed</strong>. Other days by appointment.</p>
+      <p><a class="lien-fleche" href="{{ '/en/municipal-council/' | relative_url }}">Contact a councillor{% include icone.html nom="fleche" %}</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="bloc" id="services" aria-labelledby="titre-services">
+  <h2 id="titre-services" class="titre-decore">Town hall services</h2>
+  <div class="grille-2">
+    <div class="panneau" id="point-poste">
+      <h3>Post office counter (Point Poste)</h3>
+      <p>The post office counter is in the town hall. It is open on Mondays, Tuesdays, Thursdays and Fridays, from 9:00 to 12:00.</p>
+    </div>
+    <div class="panneau" id="salle-des-fetes">
+      <h3>Hiring the village hall</h3>
+      <p>The village hall (<span lang="fr">salle des fêtes</span>) is available for family events and events organised by associations.</p>
+      <div class="tarifs">
+        <p><span class="chiffre-cle">Free</span>for residents of Saint-Bonnet-de-Condat</p>
+        <p><span class="chiffre-cle">€50</span>for people from outside the municipality</p>
+      </div>
+      <p>Bookings through the town hall: <a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a> or <a href="mailto:{{ m.email }}">{{ m.email | replace: "@", "@<wbr>" }}</a>.</p>
+    </div>
+    <div class="panneau" id="encombrants">
+      <h3>Bulky waste collection</h3>
+      <p>The municipality collects bulky items <strong>on the last Friday of the month</strong>. From January 2027, the collection will take place <strong>once every two months</strong>.</p>
+      <p><strong>You must register at the town hall before the collection</strong>, on <a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a>.</p>
+    </div>
+    <div class="panneau" id="photocopies">
+      <h3>Free photocopies</h3>
+      <p>The town hall offers residents a free photocopying service, <strong>in black and white only</strong> (no colour copies), for their everyday administrative paperwork. Ask at the town hall office.</p>
+    </div>
+    <div class="panneau" id="cartouches">
+      <h3>Used ink cartridges</h3>
+      <p>Drop off your used ink cartridges at the town hall, all year round. They are given to the school in Lugarde, which has them recycled to help pay for the children's outings, equipment and activities.</p>
+    </div>
+    <div class="panneau" id="mediatheque">
+      <h3>Cantal library service</h3>
+      <p>Every Friday afternoon, make the most of the library service: thousands of books, magazines, audiobooks and digital resources. Registration and reservations on <a href="https://culture.cantal.fr" rel="noopener" hreflang="fr">culture.cantal.fr</a> (in French).</p>
+    </div>
+  </div>
+</section>
