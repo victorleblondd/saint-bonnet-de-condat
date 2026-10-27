@@ -1,0 +1,118 @@
+---
+title: "Toegankelijkheid"
+permalink: /nl/toegankelijkheid/
+ref: accessibilite
+lang: nl
+chapo: "Toegankelijkheidsverklaring van de website van de gemeente Saint-Bonnet-de-Condat."
+description: "Toegankelijkheidsverklaring van saint-bonnet-de-condat.fr: nalevingsstatus volgens het RGAA, testresultaten, niet-toegankelijke inhoud, contact en beroepsmogelijkheden."
+---
+{%- assign a = site.data.accessibilite -%}
+{%- assign m = site.data.mairie -%}
+{%- assign articles_nl = site.posts | where: "lang", "nl" -%}
+<div class="texte-legal">
+  <p>De gemeente Saint-Bonnet-de-Condat zet zich in om haar website toegankelijk te maken, overeenkomstig artikel 47 van de Franse wet nr. 2005-102 van 11 februari 2005.</p>
+  <p>Deze toegankelijkheidsverklaring geldt voor de website <strong>saint-bonnet-de-condat.fr</strong>, in het Frans, Engels en Nederlands. Het is een vertaling: de <a href="{{ '/accessibilite/' | relative_url }}" hreflang="fr">Franse verklaring (<span lang="fr">Déclaration d'accessibilité</span>)</a> is de referentie.</p>
+
+  <section class="bloc" aria-labelledby="titre-etat">
+    <h2 id="titre-etat">Nalevingsstatus</h2>
+    {%- if a.etat == "totalement conforme" %}
+    <p>De website saint-bonnet-de-condat.fr is <strong>volledig conform</strong> met het Franse toegankelijkheidskader (RGAA, <span lang="fr">référentiel général d'amélioration de l'accessibilité</span>), versie 4.1.2.</p>
+    {%- elsif a.etat == "partiellement conforme" %}
+    <p>De website saint-bonnet-de-condat.fr is <strong>gedeeltelijk conform</strong> met het Franse toegankelijkheidskader (RGAA), versie 4.1.2, door de hieronder vermelde tekortkomingen.</p>
+    {%- else %}
+    <p>De website saint-bonnet-de-condat.fr is <strong>niet conform</strong> met het Franse toegankelijkheidskader (RGAA), versie 4.1.2.</p>
+    {%- endif %}
+  </section>
+
+  <section class="bloc" aria-labelledby="titre-resultats">
+    <h2 id="titre-resultats">Testresultaten</h2>
+    <p>Uit de zelfevaluatie die de gemeente op {% include date.html date=a.date %} intern heeft uitgevoerd, blijkt dat <strong>{{ a.taux }}% van de criteria van het RGAA versie 4.1.2 wordt nageleefd</strong>:</p>
+    <ul>
+      <li>nageleefde criteria: {{ a.conformes }};</li>
+      <li>niet-nageleefde criteria: {{ a.non_conformes }};</li>
+      <li>niet-toepasselijke criteria: {{ a.non_applicables }}.</li>
+    </ul>
+    <p>{{ a.nl.non_applicables_detail }}</p>
+  </section>
+
+  <section class="bloc" aria-labelledby="titre-contenus">
+    <h2 id="titre-contenus">Niet-toegankelijke inhoud</h2>
+    <h3>Tekortkomingen</h3>
+    {%- if a.non_conformites and a.non_conformites.size > 0 %}
+    <ul lang="fr">
+      {%- for nc in a.non_conformites %}
+      <li>{{ nc }}</li>
+      {%- endfor %}
+    </ul>
+    {%- else %}
+    <p>Bij de zelfevaluatie is geen enkele tekortkoming vastgesteld.</p>
+    {%- endif %}
+    <h3>Uitzonderingen wegens onevenredige last</h3>
+    <p>Geen.</p>
+    <h3>Inhoud die niet onder de toegankelijkheidsverplichting valt</h3>
+    <ul>
+      <li>De routebeschrijving in pdf van het regionaal natuurpark Volcans d'Auvergne, gelinkt vanaf de pagina <a href="{{ '/nl/ontdekken/' | relative_url }}">Ontdekken</a>: inhoud van derden, die de gemeente niet financiert of ontwikkelt en niet beheert.</li>
+    </ul>
+    <h3>Pdf-documenten</h3>
+    <p>De affiches die als pdf zijn gepubliceerd bij <a href="{{ '/nl/nieuws-en-waarschuwingen/' | relative_url }}">Nieuws &amp; waarschuwingen</a> zijn afbeeldingen, in het Frans. De volledige tekst staat op de pagina, onder elk bericht, via de knop ‘Tekst van het bericht tonen’: in het Frans op de Franse pagina en vertaald op de Engelse en Nederlandse pagina's.</p>
+  </section>
+
+  <section class="bloc" aria-labelledby="titre-etablissement">
+    <h2 id="titre-etablissement">Opstelling van deze toegankelijkheidsverklaring</h2>
+    <p>Deze verklaring is opgesteld op {% include date.html date=a.date %}.</p>
+    <h3>Technologieën gebruikt voor de website</h3>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>SVG</li>
+    </ul>
+    <h3>Testomgeving</h3>
+    <p>{{ a.nl.environnement }}</p>
+    <h3>Hulpmiddelen om de toegankelijkheid te beoordelen</h3>
+    <ul>
+      {%- for outil in a.nl.outils %}
+      <li>{{ outil }}</li>
+      {%- endfor %}
+    </ul>
+    <h3>Gecontroleerde pagina's van de website</h3>
+    <p>Alle pagina's van de website zijn gecontroleerd, in het Frans, Engels en Nederlands:</p>
+    <ul>
+      <li><a href="{{ '/nl/' | relative_url }}">Home</a></li>
+      <li><a href="{{ '/nl/nieuws-en-waarschuwingen/' | relative_url }}">Nieuws &amp; waarschuwingen</a></li>
+      <li><a href="{{ '/nl/meldingen/' | relative_url }}">Meldingen</a></li>
+      <li><a href="{{ '/nl/gemeentehuis/' | relative_url }}">Het gemeentehuis</a></li>
+      <li><a href="{{ '/nl/gemeenteraad/' | relative_url }}">De gemeenteraad</a></li>
+      <li><a href="{{ '/nl/officiele-bekendmakingen/' | relative_url }}">Officiële bekendmakingen</a></li>
+      <li><a href="{{ '/nl/praktische-informatie/' | relative_url }}">Praktische informatie</a></li>
+      <li><a href="{{ '/nl/dorpsleven/' | relative_url }}">Dorpsleven</a></li>
+      <li><a href="{{ '/nl/toerisme/' | relative_url }}">Toerisme</a></li>
+      <li><a href="{{ '/nl/ontdekken/' | relative_url }}">Saint-Bonnet-de-Condat ontdekken</a></li>
+      <li><a href="{{ '/nl/gemeentekrant/' | relative_url }}">De gemeentekrant</a> en de {{ articles_nl.size }} artikelen</li>
+      <li><a href="{{ '/nl/wettelijke-vermeldingen/' | relative_url }}">Wettelijke vermeldingen</a></li>
+      <li><a href="{{ '/nl/toegankelijkheid/' | relative_url }}">Toegankelijkheid</a></li>
+      <li><a href="{{ '/nl/sitemap/' | relative_url }}">Sitemap</a></li>
+      <li>Foutpagina ‘Pagina niet gevonden’</li>
+    </ul>
+  </section>
+
+  <section class="bloc" aria-labelledby="titre-contact">
+    <h2 id="titre-contact">Feedback en contact</h2>
+    <p>Als u geen toegang hebt tot bepaalde inhoud of een dienst, kunt u contact opnemen met het gemeentehuis om naar een toegankelijk alternatief te worden verwezen of de inhoud in een andere vorm te krijgen:</p>
+    <ul>
+      <li>per telefoon: <a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a>;</li>
+      <li>per e-mail: <a href="mailto:{{ m.email }}">{{ m.email | replace: "@", "@<wbr>" }}</a>;</li>
+      <li>per post: <span lang="fr">{{ m.nom }}</span>, {{ m.adresse_ligne1 }}, {{ m.adresse_ligne2 }}, Frankrijk.</li>
+    </ul>
+  </section>
+
+  <section class="bloc" aria-labelledby="titre-recours">
+    <h2 id="titre-recours">Beroepsmogelijkheden</h2>
+    <p>Deze procedure is bedoeld voor het volgende geval: u hebt het gemeentehuis gemeld dat een toegankelijkheidsprobleem u de toegang tot inhoud of een dienst van de website belet, en u hebt geen bevredigend antwoord gekregen.</p>
+    <ul>
+      <li><a href="https://formulaire.defenseurdesdroits.fr/" hreflang="fr">Een bericht sturen aan de Franse ombudsman (<span lang="fr">Défenseur des droits</span>)</a> (in het Frans);</li>
+      <li><a href="https://www.defenseurdesdroits.fr/saisir/delegues" hreflang="fr">Contact opnemen met de afgevaardigde van de <span lang="fr">Défenseur des droits</span> in uw regio</a> (in het Frans);</li>
+      <li>een brief sturen per post (gratis, geen postzegel nodig): <span lang="fr">Défenseur des droits, Libre réponse 71120, 75342 Paris CEDEX 07</span>.</li>
+    </ul>
+  </section>
+</div>

@@ -1,0 +1,70 @@
+---
+title: "Het gemeentehuis"
+permalink: /nl/gemeentehuis/
+ref: mairie
+lang: nl
+chapo: "Openingstijden, contactgegevens en diensten van het gemeentehuis van Saint-Bonnet-de-Condat voor de inwoners."
+description: "Gemeentehuis van Saint-Bonnet-de-Condat: adres, telefoon, openingstijden, postpunt, dorpshuis, kopieën, inzameling van grofvuil en bibliotheekdienst."
+---
+{%- assign m = site.data.mairie -%}
+<section class="bloc" id="contact" aria-labelledby="titre-contact">
+  <h2 id="titre-contact" class="titre-decore">Contact</h2>
+  <div class="grille-3">
+    <div class="panneau">
+      <h3>Contactgegevens</h3>
+      <div class="coordonnees">
+        <p>{% include icone.html nom="lieu" %}<span><span lang="fr">{{ m.nom }}</span><br>{{ m.adresse_ligne1 }}<br>{{ m.adresse_ligne2 }}</span></p>
+        <p>{% include icone.html nom="telephone" %}<a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a></p>
+        <p>{% include icone.html nom="email" %}<a href="mailto:{{ m.email }}">{{ m.email | replace: "@", "@<wbr>" }}</a></p>
+        <p>{% include icone.html nom="externe" %}<a href="{{ m.facebook_url }}" rel="noopener">Facebookpagina van het gemeentehuis (in het Frans)</a></p>
+      </div>
+    </div>
+    <div class="panneau">
+      <h3>Openingstijden</h3>
+      {% include horaires.html semaine_complete=true %}
+      <p class="note">Sinds 1 oktober 2026. Het postpunt (Point Poste) is op dezelfde tijden open.</p>
+    </div>
+    <div class="panneau panneau--info">
+      <h3>Ontvangst</h3>
+      <p>Het secretariaat wordt verzorgd door <strong>Nadège Rodde</strong>, gemeentesecretaris.</p>
+      <p>Burgemeester <strong>Sarah Chabrier</strong> is <strong>elke donderdagochtend zonder afspraak</strong> aanwezig in het gemeentehuis. Op andere dagen op afspraak.</p>
+      <p><a class="lien-fleche" href="{{ '/nl/gemeenteraad/' | relative_url }}">Contact opnemen met een raadslid{% include icone.html nom="fleche" %}</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="bloc" id="services" aria-labelledby="titre-services">
+  <h2 id="titre-services" class="titre-decore">Diensten van het gemeentehuis</h2>
+  <div class="grille-2">
+    <div class="panneau" id="point-poste">
+      <h3>Postpunt (Point Poste)</h3>
+      <p>Het postpunt bevindt zich in het gemeentehuis. Het is open op maandag, dinsdag, donderdag en vrijdag van 9.00 tot 12.00 uur.</p>
+    </div>
+    <div class="panneau" id="salle-des-fetes">
+      <h3>Het dorpshuis huren</h3>
+      <p>Het dorpshuis (<span lang="fr">salle des fêtes</span>) kan worden gehuurd voor familiefeesten en activiteiten van verenigingen.</p>
+      <div class="tarifs">
+        <p><span class="chiffre-cle">Gratis</span>voor inwoners van Saint-Bonnet-de-Condat</p>
+        <p><span class="chiffre-cle">€ 50</span>voor wie niet in de gemeente woont</p>
+      </div>
+      <p>Reserveren bij het gemeentehuis: <a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a> of <a href="mailto:{{ m.email }}">{{ m.email | replace: "@", "@<wbr>" }}</a>.</p>
+    </div>
+    <div class="panneau" id="encombrants">
+      <h3>Inzameling van grofvuil</h3>
+      <p>De gemeente zamelt grofvuil in <strong>op de laatste vrijdag van de maand</strong>. Vanaf januari 2027 vindt de inzameling <strong>eens per twee maanden</strong> plaats.</p>
+      <p><strong>Vooraf aanmelden bij het gemeentehuis is verplicht</strong>, op <a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a>.</p>
+    </div>
+    <div class="panneau" id="photocopies">
+      <h3>Gratis kopieën</h3>
+      <p>Het gemeentehuis biedt de inwoners gratis een kopieerdienst aan, <strong>alleen in zwart-wit</strong> (geen kleurenkopieën), voor hun gewone administratieve zaken. Inlichtingen bij het secretariaat.</p>
+    </div>
+    <div class="panneau" id="cartouches">
+      <h3>Lege inktpatronen</h3>
+      <p>Lever uw lege inktpatronen het hele jaar in bij het gemeentehuis. Ze gaan naar de school van Lugarde, die ze laat recyclen om uitstapjes, materiaal en activiteiten van de kinderen te helpen betalen.</p>
+    </div>
+    <div class="panneau" id="mediatheque">
+      <h3>Bibliotheekdienst van de Cantal</h3>
+      <p>Elke vrijdagmiddag kunt u gebruikmaken van de bibliotheekdienst: duizenden boeken, tijdschriften, luisterboeken en digitale bronnen. Inschrijven en reserveren via <a href="https://culture.cantal.fr" rel="noopener" hreflang="fr">culture.cantal.fr</a> (in het Frans).</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,57 @@
+---
+title: "Meldingen"
+permalink: /nl/meldingen/
+ref: notifications
+lang: nl
+chapo: "Ontvang het nieuws en de waarschuwingen van het gemeentehuis op uw telefoon, ook als hij vergrendeld is, zonder een app te installeren."
+description: "Zet de website van Saint-Bonnet-de-Condat op het beginscherm van uw telefoon en ontvang het nieuws en de waarschuwingen van het gemeentehuis als melding."
+---
+<div class="grille-asymetrique">
+  <div>
+    <section class="bloc" aria-labelledby="titre-appareil">
+      <h2 id="titre-appareil">Op dit apparaat</h2>
+      <div class="panneau notif" data-notifications data-statut="chargement">
+        <p class="notif-etat" data-etat role="status" aria-live="polite">Controleren…</p>
+        <p class="notif-actions">
+          <button type="button" class="bouton" data-activer hidden>{% include icone.html nom="cloche" %}Meldingen inschakelen</button>
+          <button type="button" class="bouton bouton--secondaire" data-desactiver hidden>Meldingen uitschakelen</button>
+        </p>
+        <p class="notif-langue" data-langue-notifications hidden></p>
+        <noscript><p>Schakel JavaScript in uw browser in om meldingen te ontvangen.</p></noscript>
+      </div>
+    </section>
+
+    <section class="bloc" id="iphone" aria-labelledby="titre-iphone">
+      <h2 id="titre-iphone">Op iPhone of iPad</h2>
+      <ol class="etapes">
+        <li>Open <strong>saint-bonnet-de-condat.fr/nl/</strong> in Safari.</li>
+        <li>Tik op de knop <strong>Deel</strong> (in recente versies staat die in het menu <strong>‘<span aria-hidden="true">⋯</span><span class="visuellement-cache">drie puntjes</span>’</strong>) en vervolgens op <strong>‘Zet op beginscherm’</strong>. Als de optie <strong>‘Open als webapp’</strong> verschijnt, laat u die ingeschakeld. Tik op <strong>‘Voeg toe’</strong>.</li>
+        <li>Open de website met het nieuwe symbool <strong>‘Saint-Bonnet’</strong> op uw beginscherm.</li>
+        <li>Tik op <strong>‘Inschakelen’</strong> in de blauwe balk bovenaan de startpagina (of kom terug naar deze pagina), daarna op <strong>‘Meldingen inschakelen’</strong> en op <strong>‘Sta toe’</strong>.</li>
+      </ol>
+      <p class="note">U hebt iOS 16.4 of nieuwer nodig. Op iPhone en iPad werken meldingen alleen via het symbool op het beginscherm.</p>
+    </section>
+
+    <section class="bloc" id="android" aria-labelledby="titre-android">
+      <h2 id="titre-android">Op Android</h2>
+      <ol class="etapes">
+        <li>Open <strong>saint-bonnet-de-condat.fr/nl/</strong> in Chrome, tik op deze pagina op <strong>‘Meldingen inschakelen’</strong> en vervolgens op <strong>‘Toestaan’</strong>.</li>
+        <li>Om het symbool op uw startscherm te zetten: tik op het menu <strong><span aria-hidden="true">⋮</span><span class="visuellement-cache">drie verticale puntjes</span></strong> en vervolgens op <strong>‘Toevoegen aan startscherm’</strong> (of <strong>‘App installeren’</strong>).</li>
+      </ol>
+    </section>
+  </div>
+
+  <aside class="pile-laterale">
+    <div class="panneau panneau--info">
+      <h2 class="h3-like">Wat u ontvangt</h2>
+      <p>Een melding bij elk nieuw bericht van het gemeentehuis bij <a href="{{ '/nl/nieuws-en-waarschuwingen/' | relative_url }}">Nieuws &amp; waarschuwingen</a>: wateronderbrekingen, werkzaamheden, sluitingen, evenementen. De melding verschijnt ook op het vergrendelscherm.</p>
+      <p>Meldingen komen in de taal van de pagina waarop u ze hebt ingeschakeld: hier in het Nederlands als er een vertaling is, anders in het Frans.</p>
+    </div>
+    <div class="panneau">
+      <h2 class="h3-like">Uw gegevens</h2>
+      <p>De website bewaart alleen het technische abonnementsadres dat uw apparaat doorgeeft: geen naam, geen telefoonnummer, geen e-mailadres. Het wordt bewaard in de Europese Unie en verwijderd zodra u de meldingen uitschakelt.</p>
+      <p><a href="{{ '/nl/wettelijke-vermeldingen/' | relative_url }}#donnees">Persoonsgegevens</a></p>
+    </div>
+  </aside>
+</div>
+{% include notifications-scripts.html -%}
