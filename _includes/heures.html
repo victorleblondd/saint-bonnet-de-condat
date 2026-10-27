@@ -1,0 +1,20 @@
+{%- comment -%}
+  Affiche des heures d'ouverture dans la langue de la page.
+  Paramètre : valeur, au format « 9:00-12:00 » (plusieurs plages séparées par une virgule).
+  Français « 9 h – 12 h », anglais « 9:00 – 12:00 », néerlandais « 9.00 – 12.00 uur ».
+{%- endcomment -%}
+{%- assign _langue = page.lang | default: "fr" -%}
+{%- assign _plages = include.valeur | split: "," -%}
+{%- for _plage in _plages -%}
+{%- assign _bornes = _plage | strip | split: "-" -%}
+{%- for _borne in _bornes -%}
+{%- assign _hm = _borne | strip | split: ":" -%}
+{%- if _langue == "en" -%}{{ _hm[0] }}:{{ _hm[1] }}
+{%- elsif _langue == "nl" -%}{{ _hm[0] }}.{{ _hm[1] }}
+{%- else -%}{{ _hm[0] }} h{% if _hm[1] != "00" %} {{ _hm[1] }}{% endif %}
+{%- endif -%}
+{%- unless forloop.last %} – {% endunless -%}
+{%- endfor -%}
+{%- if _langue == "nl" %} uur{% endif -%}
+{%- unless forloop.last -%}{%- if _langue == "en" %} and {% elsif _langue == "nl" %} en {% else %} et {% endif -%}{%- endunless -%}
+{%- endfor -%}

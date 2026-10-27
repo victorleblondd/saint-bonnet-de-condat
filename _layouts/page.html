@@ -1,11 +1,12 @@
 ---
 layout: default
 ---
+{%- assign t = site.data.langues[page.lang] | default: site.data.langues.fr -%}
 <div class="entete-page">
   <div class="conteneur">
-    <nav class="fil-ariane" aria-label="Fil d'Ariane">
+    <nav class="fil-ariane" aria-label="{{ t.fil_ariane }}">
       <ol>
-        <li><a href="{{ '/' | relative_url }}">Accueil</a></li>
+        <li><a href="{{ t.pages.accueil | relative_url }}">{{ t.accueil }}</a></li>
         <li><span aria-current="page">{{ page.title }}</span></li>
       </ol>
     </nav>

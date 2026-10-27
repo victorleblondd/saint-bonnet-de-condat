@@ -1,0 +1,52 @@
+{%- comment -%}
+  Corps de la page du conseil municipal, commun aux trois langues. Textes : rubrique « conseil » de _data/langues.yml ;
+  fonctions et permanences des élus : _data/elus.yml (rubriques en: et nl:).
+{%- endcomment -%}
+{%- assign langue = page.lang | default: "fr" -%}
+{%- assign t = site.data.langues[langue] -%}
+{%- assign C = t.conseil -%}
+{%- assign e = site.data.elus -%}
+{%- assign maire = e.maire[langue] | default: e.maire -%}
+{%- assign bilan = site.posts | where: "ref", "bilan-des-trois-premiers-mois-de-mandat" | where: "lang", langue | first -%}
+<section class="bloc" aria-labelledby="titre-permanences">
+  <h2 id="titre-permanences" class="titre-decore">{{ C.titre }}</h2>
+  <p class="bloc-intro">{{ C.intro }} <a href="tel:{{ site.data.mairie.telephone_lien }}">{{ site.data.mairie.telephone }}</a>.</p>
+  <div class="grille-3">
+    <div class="panneau carte-elu">
+      <p class="fonction">{{ maire.fonction }}</p>
+      <h3 class="nom">{{ e.maire.nom }}</h3>
+      <p class="permanence">{{ maire.permanence }}</p>
+      <p class="telephone"><a href="tel:{{ e.maire.telephone_lien }}">{% include icone.html nom="telephone" %}{{ e.maire.telephone }}</a></p>
+    </div>
+    {%- for a in e.adjoints %}
+    {%- assign adjoint = a[langue] | default: a %}
+    <div class="panneau carte-elu">
+      <p class="fonction">{% if langue == "fr" %}{{ a.fonction | replace: "1er", "1<sup>er</sup>" | replace: "2e", "2<sup>e</sup>" }}{% else %}{{ adjoint.fonction }}{% endif %}</p>
+      <h3 class="nom">{{ a.nom }}</h3>
+      <p class="permanence">{{ adjoint.permanence }} {{ C.demandes }} {{ adjoint.domaines }}.</p>
+      <p class="telephone"><a href="tel:{{ a.telephone_lien }}">{% include icone.html nom="telephone" %}{{ a.telephone }}</a></p>
+    </div>
+    {%- endfor %}
+  </div>
+</section>
+
+<div class="grille-asymetrique bloc">
+  <section class="panneau" aria-labelledby="titre-conseillers">
+    <h2 id="titre-conseillers" class="h3-like">{{ C.conseillers }}</h2>
+    <ul class="liste-noms">
+      {%- for c in e.conseillers %}
+      <li>{{ c }}</li>
+      {%- endfor %}
+    </ul>
+  </section>
+  <section class="panneau panneau--info" aria-labelledby="titre-personnel">
+    <h2 id="titre-personnel" class="h3-like">{{ C.personnel }}</h2>
+    <ul class="liste-simple">
+      {%- for p in e.personnel %}
+      <li><strong>{{ p.nom }}</strong><br>{{ p[langue] | default: p.fonction }}</li>
+      {%- endfor %}
+    </ul>
+  </section>
+</div>
+
+<p><a class="lien-fleche" href="{{ bilan.url | relative_url }}">{{ C.bilan }}{% include icone.html nom="fleche" %}</a></p>

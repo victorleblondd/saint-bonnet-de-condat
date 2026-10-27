@@ -1,0 +1,77 @@
+{%- comment -%}
+  Corps de la page de l'affichage légal, commun aux trois langues. Textes : rubrique « affichage » de _data/langues.yml ;
+  types de documents : _data/affichage_legal.yml (rubriques en: et nl:). Les documents eux-mêmes restent en français.
+{%- endcomment -%}
+{%- assign langue = page.lang | default: "fr" -%}
+{%- assign t = site.data.langues[langue] -%}
+{%- assign AL = t.affichage -%}
+{%- assign al = site.data.affichage_legal -%}
+{%- assign docs = al.documents -%}
+{%- assign m = site.data.mairie -%}
+<div class="panneau panneau--info encart">
+  <p>{{ AL.deliberations }} <a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a> {{ AL.ou_a }} <a href="mailto:{{ m.email }}">{{ m.email | replace: "@", "@<wbr>" }}</a>.</p>
+</div>
+
+<div class="filtres-actes" data-filtres-actes hidden>
+  <div class="filtres-ligne">
+    <p class="filtres-titre" id="filtre-type">{{ AL.type }}</p>
+    <ul class="filtres" aria-labelledby="filtre-type">
+      <li><button type="button" data-critere="type" data-valeur="tout" aria-pressed="true">{{ AL.tous }}</button></li>
+      {%- for ty in al.types %}
+      <li><button type="button" data-critere="type" data-valeur="{{ ty.code }}" aria-pressed="false">{% if ty[langue] %}{{ ty[langue].pluriel }}{% else %}{{ ty.pluriel }}{% endif %}</button></li>
+      {%- endfor %}
+    </ul>
+  </div>
+  <div class="filtres-ligne">
+    <p class="filtres-titre" id="filtre-annee">{{ AL.annee }}</p>
+    <ul class="filtres" aria-labelledby="filtre-annee">
+      <li><button type="button" data-critere="annee" data-valeur="tout" aria-pressed="true">{{ AL.toutes }}</button></li>
+      {%- for a in al.annees %}
+      <li><button type="button" data-critere="annee" data-valeur="{{ a }}" aria-pressed="false">{{ a }}</button></li>
+      {%- endfor %}
+    </ul>
+  </div>
+</div>
+
+<div class="liste-actes">
+  {%- assign annee_courante = "" -%}
+  {%- for d in docs -%}
+  {%- assign annee = d.date | slice: 0, 4 -%}
+  {%- if annee != annee_courante %}
+  <h2 class="annee">{{ annee }}</h2>
+  {%- assign annee_courante = annee -%}
+  {%- endif -%}
+  {%- assign type_nom = d.type -%}
+  {%- for ty in al.types -%}{%- if ty.code == d.type -%}{%- if ty[langue] -%}{%- assign type_nom = ty[langue].nom -%}{%- else -%}{%- assign type_nom = ty.nom -%}{%- endif -%}{%- endif -%}{%- endfor -%}
+  {%- assign tr = nil -%}{%- if langue != "fr" -%}{%- assign tr = d[langue] -%}{%- endif -%}
+  {%- capture titre_doc -%}{% if tr and tr.titre %}{{ tr.titre }}{% elsif langue != "fr" %}<span lang="fr">{{ d.titre }}</span>{% else %}{{ d.titre }}{% endif %}{%- endcapture -%}
+  {%- assign lien = "/documents/affichage-legal/" | append: d.pdf | relative_url %}
+  <article class="acte" data-type="{{ d.type }}" data-annee="{{ annee }}">
+    <div class="avis-meta">
+      <span class="etiquette etiquette--neutre">{{ type_nom }}</span>
+      <time datetime="{{ d.date }}">{% include date.html date=d.date %}</time>
+      {%- if d.numero %}
+      <span>{{ AL.numero }} {{ d.numero }}</span>
+      {%- endif %}
+    </div>
+    <h3 class="avis-titre"><a href="{{ lien }}" target="_blank" rel="noopener">{{ titre_doc }}<span class="visuellement-cache">{{ AL.pdf_cache }}</span></a></h3>
+    <p class="avis-actions"><a class="bouton bouton--pdf" href="{{ lien }}" target="_blank" rel="noopener">{% include icone.html nom="document" %}{{ AL.ouvrir }}<span class="visuellement-cache">{{ t.pdf_avant_titre }}{{ titre_doc }}{{ t.pdf_apres_titre }}</span></a></p>
+    {%- if d.texte %}
+    <details class="avis-texte">
+      <summary>{{ AL.afficher_texte }}</summary>
+      <div class="avis-texte-corps"{% if langue != "fr" %}{% unless tr and tr.texte %} lang="fr"{% endunless %}{% endif %}>
+{% if tr and tr.texte %}{{ tr.texte }}{% else %}{{ d.texte }}{% endif %}
+      </div>
+    </details>
+    {%- endif %}
+  </article>
+  {%- endfor %}
+  {%- if docs.size > 0 %}
+  <p class="aucun-resultat" data-actes-vide hidden>{{ t.js.aucun_document }}</p>
+  <p class="visuellement-cache" role="status" data-statut-filtres></p>
+  {%- else %}
+  <p class="aucun-resultat">{{ AL.aucun }}</p>
+  {%- endif %}
+</div>
+
+<p class="note">{{ AL.question }} <a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a> {{ AL.ou_a }} <a href="mailto:{{ m.email }}">{{ m.email | replace: "@", "@<wbr>" }}</a>.</p>
