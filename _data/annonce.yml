@@ -5,7 +5,14 @@
 #  message: "Texte du bandeau"     laisser vide ("") pour ne rien afficher
 #  jusquau: "AAAA-MM-JJ"           dernier jour d'affichage (inclus) :
 #                                  le bandeau disparaît tout seul le lendemain
+#  en: / nl:                       facultatif : le texte en anglais et en néerlandais
+#    message: "…"                  (sans traduction, le texte français s'affiche aussi
+#                                  sur les pages anglaises et néerlandaises)
 # =====================================================================
 
 message: "Fermeture de la mairie et du bureau de poste du 12 au 18 octobre inclus"
 jusquau: "2026-10-18"
+en:
+  message: "Town hall and post office closed from 12 to 18 October inclusive"
+nl:
+  message: "Gemeentehuis en postkantoor gesloten van 12 tot en met 18 oktober"

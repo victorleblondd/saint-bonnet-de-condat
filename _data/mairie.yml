@@ -1,5 +1,5 @@
 # Coordonnées et horaires de la mairie — utilisés dans l'en-tête, le pied de page et les pages.
-# Modifier ici une seule fois : tout le site se met à jour.
+# Modifier ici une seule fois : tout le site se met à jour (versions française, anglaise et néerlandaise).
 
 nom: "Mairie de Saint-Bonnet-de-Condat"
 adresse_ligne1: "2 rue de la Santoire"
@@ -13,22 +13,27 @@ facebook_nom: "Mairie Saint Bonnet de Condat"
 facebook_url: "https://www.facebook.com/mairiesaintbonnetdecondat"
 
 # Horaires du secrétariat de mairie et du Point Poste (depuis le 1er octobre 2026)
-horaires_court: "le lundi, mardi, jeudi et vendredi, de 9 h à 12 h"
+# Phrase du bandeau du haut, dans chaque langue (à mettre à jour avec les horaires ci-dessous)
+horaires_court:
+  fr: "le lundi, mardi, jeudi et vendredi, de 9 h à 12 h"
+  en: "Monday, Tuesday, Thursday and Friday, 9:00 to 12:00"
+  nl: "op maandag, dinsdag, donderdag en vrijdag van 9.00 tot 12.00 uur"
+
+# Jour : 1 = lundi … 7 = dimanche. Heures au format « 9:00-12:00 » (plusieurs plages : « 9:00-12:00,14:00-17:30 »).
+# Elles s'affichent « 9 h – 12 h » en français, « 9:00 – 12:00 » en anglais et « 9.00 – 12.00 uur » en néerlandais.
+# Jour de fermeture : ferme: true (sans heures).
 horaires:
-  - jour: Lundi
-    heures: "9 h – 12 h"
-  - jour: Mardi
-    heures: "9 h – 12 h"
-  - jour: Mercredi
-    heures: "Fermée"
+  - jour: 1
+    heures: "9:00-12:00"
+  - jour: 2
+    heures: "9:00-12:00"
+  - jour: 3
     ferme: true
-  - jour: Jeudi
-    heures: "9 h – 12 h"
-  - jour: Vendredi
-    heures: "9 h – 12 h"
-  - jour: Samedi
-    heures: "Fermée"
+  - jour: 4
+    heures: "9:00-12:00"
+  - jour: 5
+    heures: "9:00-12:00"
+  - jour: 6
     ferme: true
-  - jour: Dimanche
-    heures: "Fermée"
+  - jour: 7
     ferme: true

@@ -1,30 +1,49 @@
 # =====================================================================
 #  ACCESSIBILITÉ : résultat de la dernière évaluation (RGAA 4.1.2)
-#  Utilisé par la page /accessibilite/ (déclaration d'accessibilité) et par la
-#  mention « Accessibilité : … » en bas de chaque page.
+#  Utilisé par la page /accessibilite/ (déclaration d'accessibilité), par ses traductions
+#  (/en/accessibility/, /nl/toegankelijkheid/) et par la mention « Accessibilité : … »
+#  en bas de chaque page.
 #
 #  etat : « totalement conforme » (100 % des critères respectés),
 #         « partiellement conforme » (au moins 50 %) ou « non conforme ».
 #  La grille détaillée de l'évaluation est dans outils/accessibilite/.
-#  Après une nouvelle évaluation, mettre à jour ce fichier et la grille.
+#  Après une nouvelle évaluation, mettre à jour ce fichier (rubriques en: et nl: comprises) et la grille.
 # =====================================================================
 
 etat: "totalement conforme"
-date: "2026-10-16"
-conformes: 59
+date: "2026-10-27"
+conformes: 61
 non_conformes: 0
-non_applicables: 47
+non_applicables: 45
 taux: 100
 
 # Non-conformités relevées (une phrase par contenu non accessible) ; vide si aucune
 non_conformites: []
 
-non_applicables_detail: "Les critères non applicables portent sur des contenus que le site ne comporte pas : cadres, contenus audio ou vidéo, CAPTCHA, images complexes, images texte ou images légendées, tableaux complexes ou de mise en forme, passages en langue étrangère, champs de formulaire, moteur de recherche, raccourcis clavier, contenus apparaissant au survol, limites de temps, effets de flash, gestes complexes et commandes par mouvement de l'appareil."
+non_applicables_detail: "Les critères non applicables portent sur des contenus que le site ne comporte pas : cadres, contenus audio ou vidéo, CAPTCHA, images complexes, images texte ou images légendées, tableaux complexes ou de mise en forme, champs de formulaire, moteur de recherche, raccourcis clavier, contenus apparaissant au survol, limites de temps, effets de flash, gestes complexes et commandes par mouvement de l'appareil."
 
-environnement: "Les vérifications ont été réalisées avec le navigateur Chromium 141, sur ordinateur (1 280 pixels de large) et en affichage de téléphone simulé (375 et 320 pixels de large), en thème clair et en thème sombre, avec un zoom à 200 % et un espacement du texte agrandi. La restitution des contenus a été contrôlée dans l'arbre d'accessibilité du navigateur. Aucun test n'a été réalisé avec un lecteur d'écran."
+environnement: "Les vérifications ont été réalisées avec le navigateur Chromium 141, sur ordinateur (1 280 pixels de large) et en affichage de téléphone simulé (375 et 320 pixels de large), en thème clair et en thème sombre, avec un zoom à 200 % et un espacement du texte agrandi, sur les pages en français, en anglais et en néerlandais. La restitution des contenus a été contrôlée dans l'arbre d'accessibilité du navigateur. Aucun test n'a été réalisé avec un lecteur d'écran."
 
 outils:
   - "axe-core 4.14 (Deque Systems) : tests automatiques, en thème clair et en thème sombre ;"
   - "Nu Html Checker (validateur du W3C) : validité du code HTML ;"
   - "Playwright et Chromium : parcours au clavier, visibilité et contraste du focus, affichage à 320 pixels, zoom, espacement du texte et contraste des textes sur les photos ;"
-  - "vérification manuelle de chacun des 106 critères du RGAA."
+  - "vérification manuelle de chacun des 106 critères du RGAA, dont la langue des pages et des passages dans une autre langue."
+
+# Traductions (pages anglaise et néerlandaise de la déclaration)
+en:
+  non_applicables_detail: "The criteria that do not apply concern content that the website does not contain: frames, audio or video content, CAPTCHAs, complex images, images of text or captioned images, complex or layout tables, form fields, search engine, keyboard shortcuts, content appearing on hover, time limits, flashing effects, complex gestures and device motion controls."
+  environnement: "The checks were carried out with the Chromium 141 browser, on a computer (1,280 pixels wide) and in a simulated phone display (375 and 320 pixels wide), in light and dark themes, with 200% zoom and increased text spacing, on the pages in French, English and Dutch. How the content is conveyed was checked in the browser's accessibility tree. No tests were carried out with a screen reader."
+  outils:
+    - "axe-core 4.14 (Deque Systems): automated tests, in light and dark themes;"
+    - "Nu Html Checker (W3C validator): validity of the HTML code;"
+    - "Playwright and Chromium: keyboard navigation, focus visibility and contrast, display at 320 pixels, zoom, text spacing and contrast of text over photos;"
+    - "manual check of each of the 106 RGAA criteria, including the language of the pages and of passages in another language."
+nl:
+  non_applicables_detail: "De niet-toepasselijke criteria gaan over inhoud die de website niet bevat: frames, audio- of video-inhoud, CAPTCHA's, complexe afbeeldingen, afbeeldingen van tekst of afbeeldingen met bijschrift, complexe tabellen of opmaaktabellen, formuliervelden, zoekmachine, sneltoetsen, inhoud die verschijnt bij aanwijzen, tijdslimieten, flitsende effecten, complexe gebaren en bediening door bewegingen van het apparaat."
+  environnement: "De controles zijn uitgevoerd met de browser Chromium 141, op een computer (1280 pixels breed) en in een gesimuleerde telefoonweergave (375 en 320 pixels breed), in licht en donker thema, met 200% zoom en vergrote tekstafstand, op de pagina's in het Frans, Engels en Nederlands. Hoe de inhoud wordt weergegeven, is gecontroleerd in de toegankelijkheidsboom van de browser. Er is niet getest met een schermlezer."
+  outils:
+    - "axe-core 4.14 (Deque Systems): automatische tests, in licht en donker thema;"
+    - "Nu Html Checker (validator van het W3C): geldigheid van de HTML-code;"
+    - "Playwright en Chromium: navigatie met het toetsenbord, zichtbaarheid en contrast van de focus, weergave op 320 pixels, zoom, tekstafstand en contrast van tekst op foto's;"
+    - "handmatige controle van elk van de 106 RGAA-criteria, waaronder de taal van de pagina's en van passages in een andere taal."

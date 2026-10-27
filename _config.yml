@@ -23,17 +23,21 @@ notifications:
   supabase_url: "https://luybdwrmpzmpvkwddbha.supabase.co"
   supabase_cle: "sb_publishable_74_5ITQasjnVJHQbt754Hg_X13bLZpu"
 
+# Langue par défaut des pages et des articles : le français. Les versions anglaises (dossier en/,
+# articles dans _posts/en/) et néerlandaises (dossier nl/, articles dans _posts/nl/) indiquent lang: en ou lang: nl.
 defaults:
   - scope:
       path: ""
       type: posts
     values:
       layout: article
+      lang: fr
   - scope:
       path: ""
       type: pages
     values:
       layout: page
+      lang: fr
 
 exclude:
   - README.md
