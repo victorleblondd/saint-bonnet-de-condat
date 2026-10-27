@@ -25,6 +25,25 @@ layout: null
     });
   }
 
+  /* Langue des notifications de cet appareil (fr, en ou nl) : gardée dans le navigateur (Cache Storage),
+     écrite par la page « Notifications » et lue par le service worker à l'arrivée de chaque notification. */
+  var CACHE_REGLAGES = 'sbc-reglages';
+  var CLE_LANGUE = '/__reglages/langue-notifications';
+  function lireLangue() {
+    if (!racine.caches) { return Promise.resolve(null); }
+    return racine.caches.open(CACHE_REGLAGES)
+      .then(function (cache) { return cache.match(CLE_LANGUE); })
+      .then(function (reponse) { return reponse ? reponse.text() : null; })
+      .then(function (code) { return ['fr', 'en', 'nl'].indexOf(code) !== -1 ? code : null; })
+      .catch(function () { return null; });
+  }
+  function ecrireLangue(code) {
+    if (!racine.caches) { return Promise.resolve(); }
+    return racine.caches.open(CACHE_REGLAGES)
+      .then(function (cache) { return cache.put(CLE_LANGUE, new Response(code, { headers: { 'Content-Type': 'text/plain' } })); })
+      .catch(function () {});
+  }
+
   racine.NOTIFICATIONS = {
     pret: Boolean(reglages.cleVapid && reglages.supabaseUrl && reglages.supabaseCle),
     /* Clé publique VAPID, au format attendu par pushManager.subscribe() */
@@ -41,6 +60,8 @@ layout: null
     },
     retirer: function (endpoint) {
       return appel('desabonner', { p_endpoint: endpoint });
-    }
+    },
+    lireLangue: lireLangue,
+    ecrireLangue: ecrireLangue
   };
 })(self);
