@@ -1,0 +1,323 @@
+# =====================================================================
+#  RANDONNÉES (page Tourisme) : traductions anglaises et néerlandaises
+#  des textes de l'office de tourisme Destination Haut Cantal.
+#
+#  Les textes français viennent des fiches Apidae de l'office de tourisme
+#  (outils/randonnees/source/) et ne sont jamais modifiés.
+#  - resumes : descriptifs courts, par identifiant Apidae ;
+#  - textes : textes repérés par les 8 premiers caractères de l'empreinte
+#    SHA-1 du texte français (affichée par generer.py s'il en manque une) ;
+#  - libelles : libellés courts, par leur texte français exact.
+#  L'itinéraire pas à pas et la présentation détaillée restent en français
+#  (avec lang="fr") sur les pages anglaises et néerlandaises.
+#  Après une modification : python3 outils/randonnees/generer.py
+# =====================================================================
+
+resumes:
+  4641141:
+    en: "This shady route leads to the abandoned medieval hamlet of Cotteughes, listed as a historic monument in 1924, and through the Bois du Marilhou protected natural area (Espace naturel sensible)."
+    nl: "Deze schaduwrijke route voert naar het verlaten middeleeuwse gehucht Cotteughes, sinds 1924 beschermd monument, en door het beschermde natuurgebied (Espace naturel sensible) van het Bois du Marilhou."
+  4641150:
+    en: "This discovery trail explains how peat bogs form and helps you read a landscape shaped by volcanic activity."
+    nl: "Dit ontdekkingspad legt uit hoe hoogvenen ontstaan en leert u het door vulkanisme gevormde landschap lezen."
+  4641153:
+    en: "In the municipality of Cheylade, this educational trail invites you to read the landscape in a playful way, thanks to its installations."
+    nl: "Dit educatieve pad in de gemeente Cheylade nodigt u uit om het landschap op een speelse manier te lezen, dankzij de voorzieningen langs de route."
+  4641156:
+    en: "This 3 km botanical trail starts in the village of Chassagne. Small signs along the way identify and explain the plants."
+    nl: "Dit botanische pad van 3 km vertrekt in het dorp Chassagne. Kleine bordjes langs de route benoemen en verklaren de planten."
+  4641160:
+    en: "La Font Sainte hosts many summer events, including the shepherds' festival in August, for which people from the surrounding villages once came on foot to share a friendly meal."
+    nl: "La Font Sainte is het decor van veel zomerse evenementen, waaronder het herdersfeest in augustus, waarvoor de inwoners van de omliggende dorpen vroeger te voet kwamen voor een gezellige maaltijd."
+  4641175:
+    en: "A lovely, shady 3 km route with fine views of the village and the lake, lined with stone sculptures created since 1996 for the Stone Symposium (Symposium de la Pierre)."
+    nl: "Een mooie, schaduwrijke route van 3 km met prachtig uitzicht op het dorp en het meer, langs stenen beelden die sinds 1996 zijn gemaakt tijdens het Steensymposium (Symposium de la Pierre)."
+  5000469:
+    en: "A pleasant walk around the monks' lake (lac des moines), taking in the history of the village of Condat and a superb volcanic needle."
+    nl: "Een aangename wandeling rond het monnikenmeer (lac des moines), langs de geschiedenis van het dorp Condat en een prachtige vulkanische naald."
+  5000573:
+    en: "A volcanic walk to the basalt columns, a jewel left by the lava flows of the Cantal volcano!"
+    nl: "Een vulkanische wandeling naar de basaltzuilen, een juweel achtergelaten door de lavastromen van de Cantal-vulkaan!"
+  5180595:
+    en: "The Tour des Vaches Rouges, to be walked in 8 or 11 days, is a magnificent hiking route across the unspoilt high plateaus of the Cézallier, between the Monts du Cantal and the Sancy massif, with breathtaking views."
+    nl: "De Tour des Vaches Rouges, te lopen in 8 of 11 dagen, is een prachtige wandelroute over de ongerepte hoogvlakten van de Cézallier, tussen de Monts du Cantal en het Sancymassief, met adembenemende uitzichten."
+  5363266:
+    en: "This walk takes you to the church of Sainte-Blaise and the castle ruins, with stunning views of the Monts du Cantal and the Grand Combe peat bogs."
+    nl: "Deze wandeling voert langs de kerk Sainte-Blaise en de kasteelruïne, met een prachtig uitzicht op de Monts du Cantal en de hoogvenen van Grand Combe."
+  5363586:
+    en: "Discover the Font Salée, a naturally sparkling mineral water spring."
+    nl: "Ontdek de Font Salée, een bron met natuurlijk bruisend mineraalwater."
+  5363687:
+    en: "A short, easy hike with wide-open views of the Monts du Cantal and the Sancy massif."
+    nl: "Een korte, makkelijke wandeling met weidse uitzichten op de Monts du Cantal en het Sancymassief."
+  5363795:
+    en: "A walk in the Cheylade valley. Beyond the village of Cheylade and its famous church with a painted ceiling, under the watchful eye of the Puy Mary, the trail explores the western side of the valley."
+    nl: "Een wandeling in het dal van Cheylade. Voorbij het dorp Cheylade en zijn beroemde kerk met beschilderd plafond, onder het waakzame oog van de Puy Mary, verkent het pad de westflank van het dal."
+  5363869:
+    en: "Please note: this is not a loop! Allow 25 km and 8 hours' walking (4 hours out, 4 hours back). Between Cheylade and Dienne, the path crosses the Limon plateau, a vast basalt plateau (planèze) at about 1,400 m."
+    nl: "Let op: dit is geen rondwandeling! Reken op 25 km en 8 uur lopen (4 uur heen, 4 uur terug). Tussen Cheylade en Dienne doorkruist het pad het plateau van Le Limon, een uitgestrekte basalthoogvlakte (planèze) op ongeveer 1400 m."
+  5366525:
+    en: "The walk starts from the car park opposite the town hall. Between the Suc de la Blatte, the Bois Mary and the Col de Serre, this trail offers a pleasant hike through rich, unspoilt nature."
+    nl: "De wandeling begint op de parkeerplaats tegenover het gemeentehuis. Tussen de Suc de la Blatte, het Bois Mary en de Col de Serre biedt dit pad een aangename tocht door een rijke, ongerepte natuur."
+  5366571:
+    en: "Starts from the town hall square in Le Claux. Can be done on foot or by mountain bike. A fine, technical route in the heart of the Petite Rhue glacial cirque, where fire and ice shaped these iconic Cantal landscapes."
+    nl: "Vertrek op het plein bij het gemeentehuis van Le Claux. Te voet of met de mountainbike. Een mooie, technische route in het hart van de gletsjerketel van de Petite Rhue, waar vuur en ijs deze kenmerkende landschappen van de Cantal hebben gevormd."
+  5366666:
+    en: "With a view of the Suc de Rome and a stretch along a wooded valley floor, this trail shows yet more of the Pays Gentiane's landscapes. People have lived here for thousands of years, as the fairies' cave (grotte des fées) shows."
+    nl: "Met uitzicht op de Suc de Rome en een stuk door een beboste dalbodem toont dit pad weer andere landschappen van het Pays Gentiane. Hier wonen al duizenden jaren mensen, zoals de feeëngrot (grotte des fées) laat zien."
+  5366700:
+    en: "Starts from the church square in Collandres."
+    nl: "Vertrek op het kerkplein van Collandres."
+  5367322:
+    en: "Heading towards Montboudif, Poulainville park."
+    nl: "Richting Montboudif, park van Poulainville."
+  5367394:
+    en: "This pretty, shady loop follows the Grande Rhue, crosses woodland and climbs to high pastures. To reach the start from Condat, follow the signs for Montgreleix, cross the small bridge and take the road to Le Vernet."
+    nl: "Deze mooie, schaduwrijke route volgt de Grande Rhue, gaat door bospercelen en klimt naar hooggelegen weiden. Naar het vertrekpunt: volg vanuit Condat de richting Montgreleix, steek het bruggetje over en neem de richting Le Vernet."
+  5369475:
+    en: "From the pretty village of Lugarde, an easy walk with fine viewpoints over the Santoire valley, the Cézallier plateau, Mont Chamaroux and the Sancy and Cantal massifs."
+    nl: "Vanuit het mooie dorp Lugarde voert een makkelijke wandeling langs mooie uitzichtpunten over het dal van de Santoire, het plateau van de Cézallier, de Mont Chamaroux en de massieven van de Sancy en de Cantal."
+  5369489:
+    en: "This wooded, shady route takes you to the hamlets of Vauzargues and Le Meynial and their restored bread ovens."
+    nl: "Deze beboste, schaduwrijke route voert naar de gehuchten Vauzargues en Le Meynial en hun gerestaureerde broodovens."
+  5369536:
+    en: "This hiking route takes you to the Barajol viaduct, where you may be lucky enough to see the Gentiane Express."
+    nl: "Deze wandelroute voert naar het viaduct van Barajol, waar u misschien het geluk hebt de Gentiane Express te zien."
+  5369571:
+    en: "This trail introduces the local geology, visible in particular in the building stones, then passes through the Aldy wood (bois d'Aldy)."
+    nl: "Dit pad laat u de plaatselijke geologie ontdekken, vooral zichtbaar in de bouwstenen, en gaat daarna door het bos van Aldy (bois d'Aldy)."
+  5378493:
+    en: "Listed as a 'Petite Cité de Caractère' (small town of character), Menet has a rich built heritage – its 12th-century church of Saint-Pierre, its houses, its fountain and more – as well as yearly and summer events."
+    nl: "Menet, erkend als 'Petite Cité de Caractère', heeft een rijk bouwkundig erfgoed – de Saint-Pierrekerk uit de 12e eeuw, de huizen, de fontein enz. – en jaarlijkse en zomerse evenementen."
+  5378887:
+    en: "This loop gives you a foretaste of the Artense plateau, in presidential country, with a fine viewpoint over the Rhue valley."
+    nl: "Deze rondwandeling geeft u een voorproefje van het plateau van de Artense, in presidentieel land, met een mooi uitzicht op het dal van de Rhue."
+  5379207:
+    en: "Staying close to the lakeshore, this trail makes a pleasant family walk."
+    nl: "Dit pad blijft dicht bij de oever van het meer en is een aangename gezinswandeling."
+  5379232:
+    en: "A gateway to the summer pastures, this trail overlooks the plateaus and offers stunning views of the Sancy and Cantal massifs."
+    nl: "Dit pad, een poort naar de zomerweiden, kijkt uit over de hoogvlakten en biedt prachtige uitzichten op de massieven van de Sancy en de Cantal."
+  5379710:
+    en: "Between the centre of Saint-Amandin and the village of Vezol, this trail takes you close to the Suc of the same name."
+    nl: "Tussen het centrum van Saint-Amandin en het dorp Vezol komt u via dit pad dicht bij de gelijknamige Suc."
+  5380179:
+    en: "Starting from the village of Saint-Étienne, the trail crosses part of the Algère forest on pleasant old paths, then runs along the Mont de Bélier lake."
+    nl: "Vanuit het dorp Saint-Étienne gaat het pad over oude, aangename paden deels door het bos van Algère en loopt daarna langs het meer van de Mont de Bélier."
+  5383868:
+    en: "Discover the Fayet wood on a hike suitable for everyone."
+    nl: "Ontdek het bos van Fayet tijdens een wandeling die voor iedereen geschikt is."
+  5955713:
+    en: "Discovery trail in the Poulainville forest park."
+    nl: "Ontdekkingspad in het bospark van Poulainville."
+  6051802:
+    en: "This route first follows the Sumène valley to the very old Pont de la Cliotte bridge, then passes near the Peyre-Grosse basalt columns, the Gour waterfall and the remarkable Roche Haut manor house."
+    nl: "Deze route volgt eerst het dal van de Sumène naar de zeer oude brug Pont de la Cliotte en komt daarna langs de basaltzuilen van Peyre-Grosse, de waterval van Le Gour en het opmerkelijke landhuis van Roche Haut."
+  6052071:
+    en: "Legend has it that God created the Salers cow out of molten lava: watching the Cantal volcano erupt, He wanted to keep that glowing red colour."
+    nl: "Volgens de legende schiep God de Salerskoe uit gesmolten lava: terwijl Hij een uitbarsting van de Cantal-vulkaan aanschouwde, wilde Hij die gloeiend rode kleur bewaren."
+  6052217:
+    en: "The Burons trail is a 14.4 km loop from Le Claux that takes you up to the summer pastures."
+    nl: "Het pad van de burons is een rondwandeling van 14,4 km vanuit Le Claux die u naar de zomerweiden brengt."
+  6479982:
+    en: "A short, pleasant trail in the heart of the Petite Rhue glacial valley, with fine views of the Lac des Cascades and the iconic peaks around it (Peyre Arse 1,806 m, Puy Mary 1,783 m, Puy de la Tourte 1,704 m)."
+    nl: "Een kort, aangenaam pad in het hart van het gletsjerdal van de Petite Rhue, met mooie uitzichten op het Lac des Cascades en de kenmerkende toppen eromheen (Peyre Arse 1806 m, Puy Mary 1783 m, Puy de la Tourte 1704 m)."
+  6493567:
+    en: "Created by the Pays Gentiane community of municipalities for environmental, tourism and educational purposes, this trail is designed above all to welcome visitors and help them discover the whole site."
+    nl: "Dit pad, aangelegd door de Communauté de communes du Pays Gentiane met een natuur-, toeristisch en educatief doel, is vooral bedoeld om bezoekers te ontvangen en hen het hele terrein te laten ontdekken."
+  6520524:
+    en: "A loop from the Pas de Peyrol up to the summit of the Puy Mary, before coming back down above the Col d'Eylac."
+    nl: "Een rondwandeling vanaf de Pas de Peyrol naar de top van de Puy Mary, met de afdaling boven de Col d'Eylac."
+  6520527:
+    en: "A loop that climbs the Puy Mary and comes back down through the Brèche de Rolland."
+    nl: "Een rondwandeling die de Puy Mary beklimt en via de Brèche de Rolland weer afdaalt."
+  6593874:
+    en: "This 17 km loop offers very varied landscapes."
+    nl: "Deze rondwandeling van 17 km biedt zeer gevarieerde landschappen."
+  6599257:
+    en: "Walk around the Majonenc pond and discover the Cousty dolmen and the Châteauneuf basalt columns."
+    nl: "Wandel rond de vijver van Majonenc en ontdek de dolmen van La Cousty en de basaltzuilen van Châteauneuf."
+  6920425:
+    en: "Starting from Pradiers, this variant of the Tour des Vaches Rouges explores the western part of the Cézallier's high summer-pasture plateaus, with many panoramic views of the Cantal and Sancy mountains."
+    nl: "Deze variant van de Tour des Vaches Rouges vertrekt in Pradiers en verkent het westelijke deel van de hoge zomerweideplateaus van de Cézallier, met talrijke panorama's op de Cantal- en Sancybergen."
+
+textes:
+  # Périodes
+  "3dcb39ee":
+    en: "All year round, every day. Subject to favourable weather."
+    nl: "Het hele jaar, elke dag. Onder voorbehoud van gunstig weer."
+  "6f113b39":
+    en: "All year round. Subject to favourable weather."
+    nl: "Het hele jaar. Onder voorbehoud van gunstig weer."
+  "d9c92240":
+    en: "All year round, every day. Subject to favourable snow and weather conditions."
+    nl: "Het hele jaar, elke dag. Onder voorbehoud van gunstige sneeuw- en weersomstandigheden."
+  "657af402":
+    en: "Passable from May to October."
+    nl: "Begaanbaar van mei tot oktober."
+  "c49a9b45":
+    en: "All year round, every day."
+    nl: "Het hele jaar, elke dag."
+  "0e59216b":
+    en: "All year round, every day, depending on the weather. Subject to favourable snow and weather conditions."
+    nl: "Het hele jaar, elke dag, afhankelijk van het weer. Onder voorbehoud van gunstige sneeuw- en weersomstandigheden."
+  "433bc9a3":
+    en: "All year round, every day, depending on the weather. Subject to favourable snow and weather conditions."
+    nl: "Het hele jaar, elke dag, afhankelijk van het weer. Onder voorbehoud van gunstige sneeuw- en weersomstandigheden."
+  "7f157d5e":
+    en: "All year round, every day, depending on the weather. Subject to favourable snow and weather conditions."
+    nl: "Het hele jaar, elke dag, afhankelijk van het weer. Onder voorbehoud van gunstige sneeuw- en weersomstandigheden."
+  "8ac650a9":
+    en: "Every day from 1 May to 31 December. Subject to favourable snow and weather conditions."
+    nl: "Elke dag van 1 mei tot en met 31 december. Onder voorbehoud van gunstige sneeuw- en weersomstandigheden."
+  "5a2d502c":
+    en: "Every day from 15 April to 31 October. Subject to favourable weather."
+    nl: "Elke dag van 15 april tot en met 31 oktober. Onder voorbehoud van gunstig weer."
+  # Chiens
+  "47666679":
+    en: "Animals on a lead."
+    nl: "Dieren aangelijnd."
+  "4a4aaf49":
+    en: "The route crosses private land and summer pastures. Dogs are not allowed, even on a lead."
+    nl: "De route gaat door privéterrein en zomerweiden. Honden zijn niet toegestaan, ook niet aangelijnd."
+  "03ead964":
+    en: "Animals are not allowed, even on a lead: the route crosses private land and pastures, with livestock on the summer pastures."
+    nl: "Dieren zijn niet toegestaan, ook niet aangelijnd: de route gaat door privéterrein en weiden, met vee op de zomerweiden."
+  "5f5f7450":
+    en: "Dogs on a lead are tolerated."
+    nl: "Aangelijnde honden worden getolereerd."
+  "b13a9ede":
+    en: "Dogs are not allowed, even on a lead. Livestock on the summer pastures; the route crosses private land."
+    nl: "Honden zijn niet toegestaan, ook niet aangelijnd. Vee op de zomerweiden; de route gaat door privéterrein."
+  # Topoguides et cartes
+  "324b93e1":
+    en: "Route card in the guidebook \"Explorer le Haut Cantal\", on sale for €10 at the Destination Haut Cantal tourist office in Riom-ès-Montagnes."
+    nl: "Routekaart in de gids \"Explorer le Haut Cantal\", te koop voor € 10 bij het toeristenbureau Destination Haut Cantal in Riom-ès-Montagnes."
+  "2a5b2513":
+    en: "A leaflet showing all the marker posts is available at the tourist office and at Menet town hall."
+    nl: "Een folder met alle markeringspaaltjes is verkrijgbaar bij het toeristenbureau en het gemeentehuis van Menet."
+  "ca8ba8b3":
+    en: "Route card in the guidebook \"Les Chemins du Pays Gentiane\", on sale for €7 at the Destination Haut Cantal tourist office in Riom-ès-Montagnes."
+    nl: "Routekaart in de gids \"Les Chemins du Pays Gentiane\", te koop voor € 7 bij het toeristenbureau Destination Haut Cantal in Riom-ès-Montagnes."
+  "da021ddf":
+    en: "Leaflet available at the Destination Haut Cantal tourist office."
+    nl: "Folder verkrijgbaar bij het toeristenbureau Destination Haut Cantal."
+  "755a3312":
+    en: "IGN map Mont du Cantal 2435OT"
+    nl: "IGN-kaart Mont du Cantal 2435OT"
+  "01dfc0aa":
+    en: "IGN map Monts du Cantal 2435OT"
+    nl: "IGN-kaart Monts du Cantal 2435OT"
+  # Passages délicats
+  "0816a32f":
+    en: "The descent after the summit of the Puy Mary."
+    nl: "De afdaling na de top van de Puy Mary."
+  "4338d6a9":
+    en: "The descent from the Puy Mary, Brèche de Rolland."
+    nl: "De afdaling van de Puy Mary, Brèche de Rolland."
+  "1cbc03fc":
+    en: "Crossing summer pastures: livestock present."
+    nl: "Doorsteek van zomerweiden: er loopt vee."
+  # Conseils
+  "eb9f624b":
+    en: "Fairly easy by mountain bike. Prefer the track between points 6 and 7."
+    nl: "Vrij makkelijk met de mountainbike. Neem tussen punt 6 en 7 bij voorkeur de onverharde weg."
+  "e4f7f4e5":
+    en: |-
+      For your safety, always take a bottle of water, a hat, warm and waterproof clothing, and wear suitable walking shoes.
+      Depending on the weather, some routes are not recommended in bad weather (fog), or are impassable or even closed in winter.
+      Bivouacking: during summer time, tents must be pitched after 8 pm and taken down before 8 am. Bivouacs must be at the edge of a forest, never on slopes, craters or volcano summits, unless signs on site say otherwise. Ask the permission of whoever owns or uses the land.
+      Open fires are allowed in specially equipped areas. Otherwise, all fires are forbidden within 200 m of a forest edge, wood or forest, or under a prefectoral order.
+      Portable gas stoves are, however, tolerated, used as safely as possible (stable, away from flammable material…).
+      Stay on the waymarked paths. Respect private property.
+      Bring a rubbish bag for picnic and snack waste, and use the bins found in almost every car park.
+      Do not disturb wildlife.
+      Do not pick flowers: many of them are protected (even those that look very ordinary or common).
+    nl: |-
+      Neem voor uw veiligheid altijd een fles water, een hoed, warme en regenwerende kleding mee en draag geschikte wandelschoenen.
+      Afhankelijk van het weer worden sommige routes bij slecht weer (mist) afgeraden, of zijn ze in de winter onbegaanbaar of zelfs verboden.
+      Wildkamperen (bivak): tijdens de zomertijd moet de tent na 20.00 uur worden opgezet en vóór 8.00 uur worden afgebroken. De bivakplek moet aan een bosrand liggen, nooit op hellingen, kraters of vulkaantoppen, tenzij ter plaatse anders aangegeven. Vraag toestemming aan wie het terrein gebruikt of bezit.
+      Open vuur is toegestaan op speciaal ingerichte plaatsen. Anders is elk vuur verboden binnen 200 m van een bosrand, een bosje of een bos, of wanneer een prefectoraal besluit het verbiedt.
+      Een draagbaar gasstel wordt wel getolereerd, zo veilig mogelijk gebruikt (stabiel, uit de buurt van brandbaar materiaal…).
+      Blijf op de gemarkeerde paden. Respecteer privé-eigendom.
+      Neem een vuilniszak mee voor het afval van picknick of tussendoortje, en gebruik de containers die op bijna alle parkeerplaatsen staan.
+      Verstoor de wilde dieren niet.
+      Pluk geen bloemen: veel ervan zijn beschermd (ook die er heel gewoon uitzien).
+  "0e6447fd":
+    en: |-
+      The route is within the reach of any good hiker used to walking in mountainous terrain and carrying a rucksack.
+      It takes 5 to 10 days, depending on the loops chosen.
+      For your safety, always take water, a hat, warm and waterproof clothing, and wear suitable walking shoes.
+    nl: |-
+      De route is haalbaar voor elke goede wandelaar die gewend is aan lopen in bergachtig terrein en het dragen van een rugzak.
+      De duur varieert van 5 tot 10 dagen, afhankelijk van de gekozen lussen.
+      Neem voor uw veiligheid altijd water, een hoed, warme en regenwerende kleding mee en draag geschikte wandelschoenen.
+  # Points forts
+  "19a1e16d":
+    en: |-
+      - High summer-pasture plateaus of the Massif Central.
+      - Views of the Chaîne des Puys, the Sancy massif and the Monts du Cantal.
+      - The Joran and Artout glacial cirques.
+      - The Sagnes nature reserve and the La Godivelle peat bog.
+      - The Signal du Luguet (1,551 m).
+      - The rich heritage of the Cézallier.
+      - Village architecture, churches, fountains, wash houses, bread ovens and vernacular heritage.
+      - Orthodox monastery (at La Traverse).
+    nl: |-
+      - Hoge zomerweideplateaus van het Centraal Massief.
+      - Uitzicht op de Chaîne des Puys, het Sancymassief en de Monts du Cantal.
+      - De gletsjerketels van Le Joran en Artout.
+      - Het natuurreservaat van Les Sagnes en het hoogveen van La Godivelle.
+      - De Signal du Luguet (1551 m).
+      - Het rijke erfgoed van de Cézallier.
+      - De architectuur van de dorpen, kerken, fonteinen, wasplaatsen, broodovens en het kleine erfgoed.
+      - Orthodox klooster (bij La Traverse).
+
+libelles:
+  # Environnement
+  "Vue montagne": {en: "Mountain view", nl: "Uitzicht op de bergen"}
+  "A la campagne": {en: "In the countryside", nl: "Op het platteland"}
+  "Présence de troupeaux et chiens de protection": {en: "Livestock and guard dogs present", nl: "Vee en kuddebeschermingshonden aanwezig"}
+  "En montagne": {en: "In the mountains", nl: "In de bergen"}
+  "En forêt": {en: "In the forest", nl: "In het bos"}
+  "Itinéraire G.R. à moins d'1 km": {en: "GR long-distance trail less than 1 km away", nl: "GR-route op minder dan 1 km"}
+  "Vue panoramique": {en: "Panoramic view", nl: "Panoramisch uitzicht"}
+  "Vue lac": {en: "Lake view", nl: "Uitzicht op een meer"}
+  "Etang à moins de 5 km": {en: "Pond less than 5 km away", nl: "Vijver op minder dan 5 km"}
+  "Dans une réserve naturelle": {en: "In a nature reserve", nl: "In een natuurreservaat"}
+  "Vue cascade": {en: "Waterfall view", nl: "Uitzicht op een waterval"}
+  "Arrêt navette à moins de 300 m": {en: "Shuttle stop less than 300 m away", nl: "Pendelbushalte op minder dan 300 m"}
+  "Arrêt de transport en commun à moins de 500 m": {en: "Public transport stop less than 500 m away", nl: "Ov-halte op minder dan 500 m"}
+  "Itinéraire cyclo touristique à moins d'1 km": {en: "Cycle touring route less than 1 km away", nl: "Fietsroute op minder dan 1 km"}
+  "Lac ou plan d'eau à moins de 300 m": {en: "Lake or pond less than 300 m away", nl: "Meer of plas op minder dan 300 m"}
+  "Village à -2 km": {en: "Village less than 2 km away", nl: "Dorp op minder dan 2 km"}
+  "Au bord de l'eau": {en: "By the water", nl: "Aan het water"}
+  "Site troglodyte": {en: "Cave dwelling site", nl: "Grotwoningen"}
+  "Centre village": {en: "Village centre", nl: "Dorpscentrum"}
+  # Équipements
+  "Parking": {en: "Car park", nl: "Parkeerplaats"}
+  "Parking gratuit": {en: "Free car park", nl: "Gratis parkeerplaats"}
+  "WC publics": {en: "Public toilets", nl: "Openbare toiletten"}
+  "Table d'orientation": {en: "Viewpoint indicator", nl: "Oriëntatietafel"}
+  "Défibrillateur": {en: "Defibrillator", nl: "Defibrillator"}
+  "Sentier botanique": {en: "Botanical trail", nl: "Botanisch pad"}
+  "Parking à proximité": {en: "Car park nearby", nl: "Parkeerplaats in de buurt"}
+  "Aire de pique-nique": {en: "Picnic area", nl: "Picknickplaats"}
+  # Nature du terrain
+  "Terre": {en: "Earth", nl: "Aarde"}
+  "Cailloux": {en: "Stones", nl: "Stenen"}
+  "Non adapté aux poussettes": {en: "Not suitable for pushchairs", nl: "Niet geschikt voor kinderwagens"}
+  "Revêtement dur (goudron, ciment, plancher)": {en: "Hard surface (tarmac, concrete, boardwalk)", nl: "Verharde ondergrond (asfalt, beton, planken)"}
+  "Gravillons": {en: "Gravel", nl: "Grind"}
+  "Rocher": {en: "Rock", nl: "Rots"}
+  # Balisage
+  "Bleu": {en: "Blue", nl: "Blauw"}
+  "Jaune": {en: "Yellow", nl: "Geel"}
+  "Vert": {en: "Green", nl: "Groen"}
+  "Bleu et balises numérotées": {en: "Blue, with numbered markers", nl: "Blauw, met genummerde markeringen"}
+  "Bornes": {en: "Marker posts", nl: "Markeringspaaltjes"}
+  "Vache Rouge": {en: "Red cow", nl: "Rode koe"}
+  "Tête de vache rouge sur fond blanc": {en: "Red cow's head on a white background", nl: "Rode koeienkop op een witte achtergrond"}
+  # Clientèle
+  "Spécial famille avec enfants": {en: "Especially for families with children", nl: "Speciaal voor gezinnen met kinderen"}
+  "Randonneurs": {en: "Hikers", nl: "Wandelaars"}
