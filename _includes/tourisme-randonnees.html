@@ -11,6 +11,11 @@
 {%- if L == "fr" -%}{%- assign _gu = "« " -%}{%- assign _gf = " »" -%}
 {%- elsif L == "nl" -%}{%- assign _gu = "‘" -%}{%- assign _gf = "’" -%}
 {%- else -%}{%- assign _gu = "“" -%}{%- assign _gf = "”" -%}{%- endif -%}
+{%- comment -%}
+  Repères à remplacer dans les textes de _data/langues.yml : posés ici par assign, car Liquid 4 (GitHub Pages)
+  termine une sortie entre doubles accolades à la première accolade fermante, même dans une chaîne.
+{%- endcomment -%}
+{%- assign _r_n = "{n}" -%}{%- assign _r_url = "{url}" -%}{%- assign _r_date = "{date}" -%}{%- assign _r_tel_lien = "{tel_lien}" -%}{%- assign _r_tel = "{tel}" -%}{%- assign _r_min = "{min}" -%}{%- assign _r_max = "{max}" -%}
 <section class="bloc" id="randonnees" aria-labelledby="titre-randonnees">
   <svg class="sprite-icones" aria-hidden="true" focusable="false"><defs>
     <symbol id="ri-lieu" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.2a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.6"/></g></symbol>
@@ -21,8 +26,8 @@
     <symbol id="ri-carte" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4.5 3.5 6.5v13L9 17.5l6 2 5.5-2v-13L15 6.5z"/><path d="M9 4.5v13M15 6.5v13"/></g></symbol>
   </defs></svg>
   <h2 id="titre-randonnees" class="titre-decore">{{ tt.rando_titre }}</h2>
-  <p>{{ tt.rando_intro | replace: "{n}", R.source.nombre }}</p>
-  <p class="note">{{ tt.rando_source_html | replace: "{url}", R.source.url | replace: "{date}", _date_releve | replace: "{tel_lien}", R.source.telephone_lien | replace: "{tel}", R.source.telephone }}</p>
+  <p>{{ tt.rando_intro | replace: _r_n, R.source.nombre }}</p>
+  <p class="note">{{ tt.rando_source_html | replace: _r_url, R.source.url | replace: _r_date, _date_releve | replace: _r_tel_lien, R.source.telephone_lien | replace: _r_tel, R.source.telephone }}</p>
 
   <form class="panneau panneau--info rando-filtres js-seulement" data-rando-filtres aria-labelledby="titre-rando-filtres">
     <h3 id="titre-rando-filtres">{{ tt.filtres_titre }}</h3>
@@ -151,7 +156,7 @@
               <summary>{{ tt.details }}{{ _nom_cache }}</summary>
               <div class="rando-details-contenu">
                 {%- if r.profil %}
-                {%- capture _legende_profil %}{{ tt.profil | replace: "{min}", x.profil.min | replace: "{max}", x.profil.max }}{% endcapture %}
+                {%- capture _legende_profil %}{{ tt.profil | replace: _r_min, x.profil.min | replace: _r_max, x.profil.max }}{% endcapture %}
                 <figure class="rando-profil" role="figure" aria-label="{{ _legende_profil | escape }}">
                   <svg viewBox="0 0 120 60" preserveAspectRatio="none" role="img" aria-label="{{ tt.profil_alt }}" focusable="false"><path class="rando-profil-aire" d="{{ r.profil.aire }}"/><path class="rando-profil-ligne" d="{{ r.profil.ligne }}"/></svg>
                   <figcaption>{{ _legende_profil }}</figcaption>
