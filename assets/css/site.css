@@ -128,6 +128,7 @@ time, .chiffre { font-variant-numeric: tabular-nums; }
 .bouton:hover { background: var(--marque-fond-2); border-color: var(--marque-fond-2); color: #fff; }
 @media (prefers-color-scheme: dark) { .bouton { color: #0F1420; } .bouton:hover { background: #DCE4FB; border-color: #DCE4FB; color: #0F1420; } }
 .bouton--secondaire { background: transparent; color: var(--accent); }
+.boutons { display: flex; flex-wrap: wrap; gap: 10px; }
 .bouton--secondaire:hover { background: var(--accent-pale); color: var(--accent); border-color: var(--accent); }
 @media (prefers-color-scheme: dark) {
   .bouton--secondaire, .bouton--secondaire:hover { color: var(--accent); }
@@ -153,15 +154,17 @@ time, .chiffre { font-variant-numeric: tabular-nums; }
 .bandeau-haut a:hover { text-decoration: underline; }
 @media (max-width: 720px) { .bandeau-haut-horaires { display: none !important; } .bandeau-haut-interieur { justify-content: center; } }
 
-/* ---------- Sélecteur de langue (bandeau du haut) : Français · English · Nederlands ---------- */
+/* ---------- Sélecteur de langue (bandeau du haut) : drapeaux français, britannique et néerlandais ---------- */
 /* Contacts et langues restent groupés à droite ; sur une ligne trop courte, ils passent à la ligne alignés à droite. */
 .bandeau-haut-droite { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 4px 24px; margin-left: auto; }
 .langues { display: flex; align-items: center; gap: 6px; }
 .langues > .icone { width: 18px; height: 18px; flex: none; }
 .langues ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 2px; }
 .langues li { margin: 0; }
-.bandeau-haut .langues a { padding: 2px 7px; border-radius: 6px; font-weight: 600; }
-.bandeau-haut .langues a[aria-current] { background: rgba(255, 255, 255, .16); font-weight: 800; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+/* Drapeaux : le nom de la langue est en texte masqué ; langue en cours : fond clair et trait sous le drapeau */
+.bandeau-haut .langues a { display: inline-flex; align-items: center; justify-content: center; min-width: 36px; min-height: 28px; padding: 4px 6px 6px; border-radius: 6px; }
+.langues .drapeau { display: block; width: 24px; height: 16px; border-radius: 2px; box-shadow: 0 0 0 1px rgba(255, 255, 255, .55); }
+.bandeau-haut .langues a[aria-current] { background: rgba(255, 255, 255, .22); box-shadow: inset 0 -3px 0 #FFFFFF; }
 @media (max-width: 720px) { .bandeau-haut-droite { justify-content: center; margin-left: 0; } .bandeau-haut-contacts { justify-content: center; } }
 
 /* ---------- Proposition de la page dans la langue du visiteur (ajoutée par site.js) ---------- */
@@ -620,9 +623,220 @@ tbody tr:last-child td { border-bottom: 0; }
 .fiche-entete-logo { display: block; flex: none; width: 96px; height: 96px; border-radius: 50%; border: 1px solid var(--ligne); background: #FFFFFF; }
 @media (max-width: 640px) { .fiche-entete-logo { width: 80px; height: 80px; } }
 
+/* ---------- Tourisme : météo, qualité de l'air et randonnées (assets/js/tourisme.js) ---------- */
+html:not(.js) .js-seulement { display: none !important; }
+.sprite-icones { position: absolute; width: 0; height: 0; overflow: hidden; }
+.source { margin: 14px 0 0; font-size: .86rem; color: var(--encre-2); }
+.grille-meteo { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+@media (max-width: 900px) { .grille-meteo { grid-template-columns: minmax(0, 1fr); } }
+.meteo h3 .icone, .air h3 .icone, .carte-bloc h3 .icone { margin-right: 8px; color: var(--or); }
+.meteo h4, .air h4 { margin: 18px 0 8px; font-family: var(--police-texte); font-size: .8rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--encre-3); }
+.meteo-contenu > h4:first-child { margin-top: 0; }
+.meteo-icone { display: inline-flex; flex: none; color: var(--or); }
+.meteo-icone svg { width: 28px; height: 28px; }
+.meteo-actuel { display: flex; align-items: center; gap: 14px; }
+.meteo-actuel .meteo-icone svg { width: 56px; height: 56px; }
+.meteo-temperature { margin: 0; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+.meteo-valeur { font-family: var(--police-titre); font-size: 2.4rem; font-weight: 700; line-height: 1; color: var(--accent); }
+.meteo-libelle { font-weight: 700; }
+.meteo-details { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 18px; margin: 16px 0 8px; }
+.meteo-details div { margin: 0; }
+.meteo-details dt { font-size: .76rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--encre-3); }
+.meteo-details dd { margin: 0; }
+@media (max-width: 480px) { .meteo-details { grid-template-columns: minmax(0, 1fr); } }
+.meteo-jours { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.meteo-jours li { margin: 0; padding: 12px; border: 1px solid var(--ligne); border-radius: 12px; background: var(--surface-2); }
+.meteo-jours p { margin: 0 0 4px; }
+.meteo-jours p:last-child { margin-bottom: 0; }
+.meteo-jour { font-weight: 800; }
+.meteo-ciel { display: flex; align-items: center; gap: 8px; font-size: .92rem; }
+.meteo-minmax { font-weight: 700; color: var(--accent); }
+@media (max-width: 1100px) { .meteo-jours { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 400px) { .meteo-jours { grid-template-columns: minmax(0, 1fr); } }
+.air-jours { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.air-jours li { margin: 0; padding: 12px 14px; border: 1px solid var(--ligne); border-radius: 12px; background: var(--surface-2); }
+.air-jours p { margin: 0; }
+.air-date { font-weight: 800; }
+.air-niveau { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-top: 4px !important; }
+.air-pastille { display: inline-block; width: 1.15em; height: 1.15em; flex: none; border-radius: 4px; border: 1px solid rgba(0, 0, 0, .4); }
+
+.rando-filtres { margin: 22px 0 10px; }
+.rando-filtres h3 { margin-bottom: 14px; }
+.rando-filtres-grille { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px 16px; }
+@media (max-width: 1000px) { .rando-filtres-grille { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .rando-filtres-grille { grid-template-columns: minmax(0, 1fr); } }
+.champ { margin: 0; display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.champ--large { grid-column: 1 / -1; }
+.champ label { font-size: .92rem; font-weight: 700; }
+.champ input, .champ select { width: 100%; min-height: 44px; padding: .45em .65em; font: inherit; color: var(--encre); background: var(--surface); border: 1px solid var(--encre-3); border-radius: 8px; }
+.rando-options { margin: 16px 0 0; padding: 0; border: 0; min-width: 0; }
+.rando-options legend { padding: 0; margin-bottom: 6px; font-size: .92rem; font-weight: 700; }
+.rando-options label, .rando-fond label { display: inline-flex; align-items: center; gap: 8px; min-height: 32px; margin: 0 18px 4px 0; cursor: pointer; }
+.rando-options input, .rando-fond input { width: 1.15em; height: 1.15em; margin: 0; flex: none; accent-color: var(--accent); }
+.rando-filtres-pied { margin: 12px 0 0; }
+.statut-filtre { margin: 12px 0 4px; font-weight: 700; }
+.statut-filtre:empty { display: none; }
+
+/* Cartes météo et qualité de l'air (page Tourisme) */
+.carte-bloc { margin-top: 24px; }
+.carte-bloc > p { max-width: 72ch; }
+.carte-commandes { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px 24px; margin: 14px 0 12px; }
+.segments-groupe { margin: 0; padding: 0; border: 0; min-width: 0; }
+.segments-groupe legend { padding: 0; margin-bottom: 6px; font-size: .92rem; font-weight: 700; }
+.segments { display: flex; flex-wrap: wrap; gap: 6px; }
+.segments label { position: relative; display: inline-flex; margin: 0; cursor: pointer; }
+.segments input { position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; }
+.segments label > span { display: inline-flex; align-items: center; min-height: 40px; padding: .4em .85em; border: 2px solid var(--accent); border-radius: 999px;
+  color: var(--accent); background: var(--surface); font-size: .93rem; font-weight: 700; line-height: 1.2; }
+.segments label:hover > span { background: var(--accent-pale); }
+.segments input:checked + span { background: var(--accent); color: var(--surface); }
+.segments input:focus-visible + span { outline: 3px solid var(--focus); outline-offset: 2px; }
+@media (prefers-color-scheme: dark) { .segments input:checked + span { color: #0F1420; } }
+@media (forced-colors: active) { .segments input:checked + span { outline: 3px solid Highlight; } }
+.carte-commandes-lieu { min-width: 220px; }
+.cm-legende { margin: 0 0 8px; }
+.cm-carte { position: relative; height: min(62vh, 520px); min-height: 340px; overflow: hidden; border: 1px solid var(--ligne); border-radius: var(--rayon);
+  background: var(--surface-2); font-family: var(--police-texte); }
+.cm-carte:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+/* Carte météo au clavier : repère au centre (Entrée donne la prévision de ce point) */
+.cm-carte[data-centre-repere]:focus-visible::after { content: ""; position: absolute; left: 50%; top: 50%; z-index: 800; width: 24px; height: 24px; margin: -12px 0 0 -12px;
+  border: 3px solid #1E2B5E; border-radius: 50%; box-shadow: 0 0 0 2px #FFFFFF, inset 0 0 0 2px #FFFFFF; pointer-events: none; }
+.cm-aide { margin: 8px 0 0; font-size: .85rem; }
+.cm-icone { width: 0 !important; height: 0 !important; }
+.cm-marque { position: absolute; left: 0; top: 0; transform: translate(-50%, -50%); width: max-content; display: inline-flex; align-items: center; gap: 3px; padding: 2px 8px 2px 4px;
+  border-radius: 999px; background: #FFFFFF; color: #1A2133; border: 1px solid rgba(26, 33, 51, .35); box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+  font: 800 14px/1.2 var(--police-texte); white-space: nowrap; cursor: pointer; }
+.cm-marque svg { flex: none; width: 22px; height: 22px; color: #9A5B00; }
+.cm-marque--vent { padding: 3px 8px 3px 5px; }
+.cm-marque--vent svg { width: 18px; height: 18px; color: #1E2B5E; }
+.cm-marque--uv { min-width: 30px; justify-content: center; padding: 4px 8px; }
+.cm-marque--choisie { border: 3px solid #1E2B5E; box-shadow: 0 0 0 2px #FFFFFF, 0 1px 6px rgba(0, 0, 0, .4); }
+.cm-masque { visibility: hidden; pointer-events: none; }
+.cm-uv-0 { background: #3EA72D; color: #1A2133; }
+.cm-uv-1 { background: #FFF300; color: #1A2133; }
+.cm-uv-2 { background: #F18B00; color: #1A2133; }
+.cm-uv-3 { background: #D8001D; color: #FFFFFF; }
+.cm-uv-4 { background: #8B3E87; color: #FFFFFF; }
+.cm-detail { margin-top: 16px; }
+.cm-detail-titre { margin: 0 0 10px; font-family: var(--police-texte); font-size: 1.05rem; font-weight: 800; }
+.cm-moments { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.cm-moments li { margin: 0; padding: 12px; border: 1px solid var(--ligne); border-radius: 12px; background: var(--surface-2); }
+.cm-moments li.cm-moment-choisi { border: 2px solid var(--accent); }
+.cm-moments p { margin: 0 0 4px; }
+.cm-moment { font-weight: 800; }
+@media (max-width: 900px) { .cm-moments { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 400px) { .cm-moments { grid-template-columns: minmax(0, 1fr); } }
+.cm-tableau { margin-top: 14px; }
+.cm-tableau summary { cursor: pointer; font-weight: 700; color: var(--lien); text-decoration: underline; text-underline-offset: 3px; }
+.cm-tableau-contenu { overflow-x: auto; margin-top: 10px; }
+.cm-table { border-collapse: collapse; width: 100%; font-size: .92rem; }
+.cm-table caption { text-align: left; font-weight: 700; margin-bottom: 6px; }
+.cm-table th, .cm-table td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--ligne); vertical-align: top; }
+.cm-table thead th { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--encre-3); }
+.ca-legende { margin-top: 10px; }
+.ca-legende-titre { margin: 0 0 6px; font-weight: 700; }
+.ca-legende ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.ca-legende li { display: inline-flex; align-items: center; gap: 6px; margin: 0; }
+
+.rando-explorateur { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 24px; align-items: start; margin-top: 18px; }
+/* Colonne de la carte : fixe pendant le défilement de la liste ; si elle dépasse la fenêtre, elle défile seule
+   (marge intérieure de 6 px pour ne pas couper le contour du focus) */
+.rando-carte-colonne { position: sticky; top: 6px; max-height: calc(100vh - 12px); overflow-y: auto;
+  padding: 6px; margin: -6px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.rando-carte-outils { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 14px; }
+.rando-fond { margin: 0; padding: 0; border: 0; min-width: 0; }
+.rando-fond legend { float: left; margin: 6px 12px 0 0; padding: 0; font-size: .92rem; font-weight: 700; }
+.rando-carte-boutons { margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.rando-carte-boutons .bouton { padding: .42em .8em; font-size: .92rem; }
+.rando-carte { position: relative; flex: none; height: calc(100vh - 340px); min-height: 360px; overflow: hidden; border: 1px solid var(--ligne); border-radius: var(--rayon); background: var(--surface-2); font-family: var(--police-texte); }
+.rando-carte:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+.rando-carte-attente { margin: 0; padding: 18px; }
+.rando-carte-aide { margin: 0; font-size: .85rem; }
+.statut-carte { margin: 0; font-weight: 600; }
+.statut-carte:empty { display: none; }
+.rando-selection { padding: 12px 14px; border-radius: 12px; background: var(--accent-pale); }
+.rando-selection p { margin: 0; }
+.rando-selection-titre { display: flex; flex-direction: column; }
+.rando-selection-titre .surtitre { margin: 0; }
+.rando-selection-titre strong { font-size: 1.1rem; }
+.rando-selection .rando-chiffres { margin: 8px 0; }
+.rando-selection .rando-chiffres div { background: var(--surface); }
+.rando-selection-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 18px; }
+.rando-explorateur--agrandi { grid-template-columns: minmax(0, 1fr); }
+.rando-explorateur--agrandi .rando-carte-colonne { position: static; max-height: none; overflow: visible; }
+.rando-explorateur--agrandi .rando-carte { height: 80vh; }
+@media (max-width: 1079px) {
+  .rando-explorateur { grid-template-columns: minmax(0, 1fr); }
+  .rando-carte-colonne { position: static; max-height: none; overflow: visible; }
+  .rando-carte { height: 60vh; min-height: 300px; }
+}
+@media (max-height: 520px) { .rando-carte { min-height: 240px; } }
+/* Commandes des cartes : couleurs fixes (les cartes restent claires, même en mode sombre) */
+.rando-carte .leaflet-control-attribution, .cm-carte .leaflet-control-attribution { color: #1A2133; background: rgba(255, 255, 255, .9); }
+.rando-carte .leaflet-control-attribution a, .cm-carte .leaflet-control-attribution a { color: #2747B0; text-decoration: underline; text-underline-offset: 2px; }
+.rando-carte .leaflet-bar a, .cm-carte .leaflet-bar a { color: #1A2133; background: #FFFFFF; }
+.rando-carte .leaflet-control a:focus-visible, .cm-carte .leaflet-control a:focus-visible { outline: 3px solid #0B5ED7; outline-offset: 1px; box-shadow: 0 0 0 6px #FFFFFF; }
+.rando-carte .leaflet-control-scale-line, .cm-carte .leaflet-control-scale-line { color: #1A2133; background: rgba(255, 255, 255, .85); border-color: #1A2133; }
+.rando-repere span { display: inline-block; transform: translate(-50%, -150%); white-space: nowrap; padding: 2px 8px; border-radius: 999px; background: #1E2B5E; color: #FFFFFF; font: 700 12px/1.45 var(--police-texte); box-shadow: 0 1px 3px rgba(0, 0, 0, .35); }
+
+.rando-liste { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; }
+.rando { margin: 0; scroll-margin-top: 20px; }
+.rando-fiche { padding: 20px 22px; }
+.rando-fiche h3 { margin-bottom: .55em; font-size: 1.28rem; }
+.rando-fiche h3:focus { outline: none; }
+.rando-chiffres { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 8px; margin: 0 0 12px; }
+.rando-chiffres div { margin: 0; padding: 8px 10px; border-radius: 10px; background: var(--surface-2); }
+.rando-chiffres dt { font-size: .74rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--encre-3); }
+.rando-chiffres dd { margin: 0; font-weight: 700; color: var(--accent); }
+.rando-chiffres .rando-difficulte { grid-column: 1 / -1; }
+.rando-source { display: block; font-size: .84rem; font-weight: 400; color: var(--encre-2); }
+.rando-depart { display: flex; align-items: flex-start; gap: 10px; margin: 0 0 10px; }
+.rando-depart .icone { margin-top: .2em; color: var(--accent); }
+.rando-resume { margin: 0 0 10px; color: var(--encre-2); }
+.rando-etiquettes { list-style: none; margin: 0 0 14px; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.rando-etiquettes li { margin: 0; padding: 3px 10px; border-radius: 999px; background: var(--vert-pale); color: var(--vert); font-size: .86rem; font-weight: 600; overflow-wrap: anywhere; }
+.rando-etiquettes .rando-attention { display: inline-flex; align-items: center; gap: 6px; background: var(--or-pale); color: var(--encre); }
+.rando-etiquettes .rando-attention .icone { color: var(--or); }
+.rando-actions { margin: 0 0 12px; display: flex; flex-wrap: wrap; gap: 8px; }
+.rando-actions .bouton { padding: .5em .9em; font-size: .93rem; }
+.rando-details summary {
+  display: inline-flex; align-items: center; gap: 6px; cursor: pointer; font-weight: 700; color: var(--lien);
+  list-style: none; padding: 4px 0; text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px;
+}
+.rando-details summary::-webkit-details-marker { display: none; }
+.rando-details summary::before { content: ""; flex: none; width: 8px; height: 8px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; transform: rotate(-45deg); transition: transform .15s; margin-right: 4px; }
+.rando-details[open] summary::before { transform: rotate(45deg); }
+.rando-details-contenu { margin-top: 10px; padding: 16px 18px 10px; border-radius: 10px; background: var(--surface-2); }
+.rando-details-contenu > :first-child { margin-top: 0; }
+.rando-details h4 { margin: 18px 0 6px; font-family: var(--police-texte); font-size: 1rem; font-weight: 800; color: var(--encre); }
+.rando-texte p { margin: 0 0 .55em; }
+.rando-texte ul { margin: 0 0 .55em; padding-left: 1.2em; }
+.rando-pratique { margin: 0; display: grid; gap: 8px; }
+.rando-pratique div { margin: 0; }
+.rando-pratique dt { font-weight: 700; }
+.rando-pratique dd { margin: 0; }
+.rando-pratique dd p { margin: 0 0 .3em; }
+.rando-liens { list-style: none; margin: 14px 0 6px; padding: 0; display: grid; gap: 6px; }
+.rando-liens a { display: inline-flex; align-items: flex-start; gap: 6px; }
+.rando-liens .icone { margin-top: .2em; }
+.rando-profil { margin: 0 0 12px; }
+.rando-profil svg { display: block; width: 100%; height: 70px; }
+.rando-profil-aire { fill: var(--accent-pale); }
+.rando-profil-ligne { fill: none; stroke: var(--accent); stroke-width: 2; vector-effect: non-scaling-stroke; }
+.rando-profil figcaption { font-size: .86rem; color: var(--encre-2); }
+.rando-meteo { margin: 12px 0 8px; }
+.rando-meteo-titre { margin: 8px 0; font-weight: 700; }
+.rando-meteo-titre:focus { outline: none; }
+.rando-meteo .meteo-jours { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.rando-meteo .meteo-jours li { background: var(--surface); }
+@media (max-width: 600px) { .rando-meteo .meteo-jours { grid-template-columns: minmax(0, 1fr); } }
+
 /* ---------- Impression ---------- */
 @media print {
-  .bandeau-haut, .suggestion-langue, .navigation, .bouton-menu, .entete-actions, .acces-rapides, .pied-grille, .filtres, .autres-articles { display: none !important; }
+  .bandeau-haut, .suggestion-langue, .navigation, .bouton-menu, .entete-actions, .acces-rapides, .pied-grille, .filtres, .autres-articles,
+  .rando-filtres, .statut-filtre, .rando-carte-colonne, .rando-actions button, .rando-meteo,
+  .carte-commandes, .cm-carte, .cm-aide, .cm-legende, .cm-tableau, .ca-legende { display: none !important; }
+  .rando-explorateur { display: block; }
   body { background: #fff; color: #000; font-size: 11pt; }
   .entete-page, .heros { background: none !important; color: #000; min-height: 0; padding: 0; }
   .entete-page h1, .heros h1 { color: #000; }
