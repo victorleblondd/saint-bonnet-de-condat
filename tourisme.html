@@ -2,8 +2,9 @@
 title: "Tourisme"
 permalink: /tourisme/
 ref: tourisme
-chapo: "Séjourner à Saint-Bonnet-de-Condat, dans la vallée de la Santoire, au cœur du Parc naturel régional des Volcans d'Auvergne."
-description: "Tourisme à Saint-Bonnet-de-Condat (Cantal) : Camping-Bar de la Santoire, NaturÉpure (séjours bien-être et stages détox), La Maison des Volcans (location saisonnière)."
+chapo: "Séjourner et randonner à Saint-Bonnet-de-Condat, dans la vallée de la Santoire, au cœur du Parc naturel régional des Volcans d'Auvergne."
+description: "Tourisme à Saint-Bonnet-de-Condat (Cantal) : hébergements, météo et qualité de l'air en direct avec cartes interactives, 42 randonnées de Destination Haut Cantal avec carte, tracés GPX et fiches PDF."
+feuilles_de_style: ["/assets/leaflet/leaflet.css"]
 ---
 <section class="bloc" id="sejourner" aria-labelledby="titre-sejourner">
   <h2 id="titre-sejourner" class="titre-decore">Séjourner sur la commune</h2>
@@ -43,6 +44,11 @@ description: "Tourisme à Saint-Bonnet-de-Condat (Cantal) : Camping-Bar de la Sa
       </div>
     </article>
   </div>
-  <p class="note">À voir aussi sur la commune&nbsp;: <a href="{{ '/decouvrir/' | relative_url }}#patrimoine">le patrimoine</a> et <a href="{{ '/decouvrir/' | relative_url }}#randonnee">la randonnée des orgues volcaniques</a>.</p>
+  <p class="note">À voir aussi sur la commune&nbsp;: <a href="{{ '/decouvrir/' | relative_url }}#patrimoine">le patrimoine</a> et <a href="#rando-chaussonet">la randonnée des orgues basaltiques (Chaussonet)</a>.</p>
   <p class="note">Vous proposez un hébergement ou une activité touristique sur la commune&nbsp;? Contactez la mairie.</p>
 </section>
+
+{% include tourisme-meteo.html %}
+
+{% include tourisme-randonnees.html %}
+{% include tourisme-scripts.html -%}
