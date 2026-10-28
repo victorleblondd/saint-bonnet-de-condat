@@ -11,39 +11,39 @@
 # =====================================================================
 
 etat: "totalement conforme"
-date: "2026-10-27"
-conformes: 61
+date: "2026-10-28"
+conformes: 72
 non_conformes: 0
-non_applicables: 45
+non_applicables: 34
 taux: 100
 
 # Non-conformités relevées (une phrase par contenu non accessible) ; vide si aucune
 non_conformites: []
 
-non_applicables_detail: "Les critères non applicables portent sur des contenus que le site ne comporte pas : cadres, contenus audio ou vidéo, CAPTCHA, images complexes, images texte ou images légendées, tableaux complexes ou de mise en forme, champs de formulaire, moteur de recherche, raccourcis clavier, contenus apparaissant au survol, limites de temps, effets de flash, gestes complexes et commandes par mouvement de l'appareil."
+non_applicables_detail: "Les critères non applicables portent sur des contenus que le site ne comporte pas : cadres, contenus audio ou vidéo, CAPTCHA, images complexes, images texte, tableaux complexes ou de mise en forme, contrôles de saisie dans les formulaires, moteur de recherche, contenus apparaissant au survol, limites de temps, effets de flash et commandes par mouvement de l'appareil."
 
 environnement: "Les vérifications ont été réalisées avec le navigateur Chromium 141, sur ordinateur (1 280 pixels de large) et en affichage de téléphone simulé (375 et 320 pixels de large), en thème clair et en thème sombre, avec un zoom à 200 % et un espacement du texte agrandi, sur les pages en français, en anglais et en néerlandais. La restitution des contenus a été contrôlée dans l'arbre d'accessibilité du navigateur. Aucun test n'a été réalisé avec un lecteur d'écran."
 
 outils:
   - "axe-core 4.14 (Deque Systems) : tests automatiques, en thème clair et en thème sombre ;"
   - "Nu Html Checker (validateur du W3C) : validité du code HTML ;"
-  - "Playwright et Chromium : parcours au clavier, visibilité et contraste du focus, affichage à 320 pixels, zoom, espacement du texte et contraste des textes sur les photos ;"
+  - "Playwright et Chromium : parcours au clavier, visibilité et contraste du focus, affichage à 320 pixels, zoom, espacement du texte et contraste des textes sur les photos ; carte, filtres et météo de la page Tourisme, y compris sans JavaScript et en cas de panne des services de météo, de qualité de l'air et de cartographie ;"
   - "vérification manuelle de chacun des 106 critères du RGAA, dont la langue des pages et des passages dans une autre langue."
 
 # Traductions (pages anglaise et néerlandaise de la déclaration)
 en:
-  non_applicables_detail: "The criteria that do not apply concern content that the website does not contain: frames, audio or video content, CAPTCHAs, complex images, images of text or captioned images, complex or layout tables, form fields, search engine, keyboard shortcuts, content appearing on hover, time limits, flashing effects, complex gestures and device motion controls."
+  non_applicables_detail: "The criteria that do not apply concern content that the website does not contain: frames, audio or video content, CAPTCHAs, complex images, images of text, complex or layout tables, input validation in forms, search engine, content appearing on hover, time limits, flashing effects and device motion controls."
   environnement: "The checks were carried out with the Chromium 141 browser, on a computer (1,280 pixels wide) and in a simulated phone display (375 and 320 pixels wide), in light and dark themes, with 200% zoom and increased text spacing, on the pages in French, English and Dutch. How the content is conveyed was checked in the browser's accessibility tree. No tests were carried out with a screen reader."
   outils:
     - "axe-core 4.14 (Deque Systems): automated tests, in light and dark themes;"
     - "Nu Html Checker (W3C validator): validity of the HTML code;"
-    - "Playwright and Chromium: keyboard navigation, focus visibility and contrast, display at 320 pixels, zoom, text spacing and contrast of text over photos;"
+    - "Playwright and Chromium: keyboard navigation, focus visibility and contrast, display at 320 pixels, zoom, text spacing and contrast of text over photos; map, filters and weather on the Tourism page, including without JavaScript and when the weather, air quality and map services are down;"
     - "manual check of each of the 106 RGAA criteria, including the language of the pages and of passages in another language."
 nl:
-  non_applicables_detail: "De niet-toepasselijke criteria gaan over inhoud die de website niet bevat: frames, audio- of video-inhoud, CAPTCHA's, complexe afbeeldingen, afbeeldingen van tekst of afbeeldingen met bijschrift, complexe tabellen of opmaaktabellen, formuliervelden, zoekmachine, sneltoetsen, inhoud die verschijnt bij aanwijzen, tijdslimieten, flitsende effecten, complexe gebaren en bediening door bewegingen van het apparaat."
+  non_applicables_detail: "De niet-toepasselijke criteria gaan over inhoud die de website niet bevat: frames, audio- of video-inhoud, CAPTCHA's, complexe afbeeldingen, afbeeldingen van tekst, complexe tabellen of opmaaktabellen, invoercontrole in formulieren, zoekmachine, inhoud die verschijnt bij aanwijzen, tijdslimieten, flitsende effecten en bediening door bewegingen van het apparaat."
   environnement: "De controles zijn uitgevoerd met de browser Chromium 141, op een computer (1280 pixels breed) en in een gesimuleerde telefoonweergave (375 en 320 pixels breed), in licht en donker thema, met 200% zoom en vergrote tekstafstand, op de pagina's in het Frans, Engels en Nederlands. Hoe de inhoud wordt weergegeven, is gecontroleerd in de toegankelijkheidsboom van de browser. Er is niet getest met een schermlezer."
   outils:
     - "axe-core 4.14 (Deque Systems): automatische tests, in licht en donker thema;"
     - "Nu Html Checker (validator van het W3C): geldigheid van de HTML-code;"
-    - "Playwright en Chromium: navigatie met het toetsenbord, zichtbaarheid en contrast van de focus, weergave op 320 pixels, zoom, tekstafstand en contrast van tekst op foto's;"
+    - "Playwright en Chromium: navigatie met het toetsenbord, zichtbaarheid en contrast van de focus, weergave op 320 pixels, zoom, tekstafstand en contrast van tekst op foto's; kaart, filters en weer op de pagina Toerisme, ook zonder JavaScript en bij uitval van de diensten voor weer, luchtkwaliteit en kaarten;"
     - "handmatige controle van elk van de 106 RGAA-criteria, waaronder de taal van de pagina's en van passages in een andere taal."

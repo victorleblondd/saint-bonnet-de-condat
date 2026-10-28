@@ -90,7 +90,7 @@
     <aside class="carte carte-mairie" aria-labelledby="titre-mairie">
       <h2 id="titre-mairie">{{ A.mairie_titre }}</h2>
       <div class="coordonnees">
-        <p>{% include icone.html nom="lieu" %}<span>{{ m.adresse_ligne1 }}<br>{{ m.adresse_ligne2 }}</span></p>
+        <p>{% include icone.html nom="lieu" %}<a href="{{ m.carte_url | escape }}" rel="noopener">{{ m.adresse_ligne1 }}<br>{{ m.adresse_ligne2 }}<span class="visuellement-cache">{{ t.carte_cache }}</span></a></p>
         <p>{% include icone.html nom="telephone" %}<a href="tel:{{ m.telephone_lien }}">{{ m.telephone }}</a></p>
         <p>{% include icone.html nom="email" %}<a href="mailto:{{ m.email }}">{{ m.email | replace: "@", "@<wbr>" }}</a></p>
       </div>

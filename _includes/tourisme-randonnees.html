@@ -1,0 +1,228 @@
+{%- comment -%}
+  Page Tourisme (trois langues) : les randonnées de l'office de tourisme Destination Haut Cantal.
+  Données : _data/randonnees.json, fabriqué par outils/randonnees/generer.py (voir le README, « Page Tourisme »).
+  La liste se lit sans JavaScript ; assets/js/tourisme.js ajoute la carte, les filtres et le tri.
+{%- endcomment -%}
+{%- assign _t = site.data.langues[page.lang] | default: site.data.langues.fr -%}
+{%- assign tt = _t.tourisme -%}
+{%- assign L = page.lang | default: "fr" -%}
+{%- assign R = site.data.randonnees -%}
+{%- capture _date_releve %}{% include date.html date=R.source.extrait_le %}{% endcapture -%}
+{%- if L == "fr" -%}{%- assign _gu = "« " -%}{%- assign _gf = " »" -%}
+{%- elsif L == "nl" -%}{%- assign _gu = "‘" -%}{%- assign _gf = "’" -%}
+{%- else -%}{%- assign _gu = "“" -%}{%- assign _gf = "”" -%}{%- endif -%}
+<section class="bloc" id="randonnees" aria-labelledby="titre-randonnees">
+  <svg class="sprite-icones" aria-hidden="true" focusable="false"><defs>
+    <symbol id="ri-lieu" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.2a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.6"/></g></symbol>
+    <symbol id="ri-alerte" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 4.2 2.6 18a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 4.2a2 2 0 0 0-3.4 0z"/><path d="M12 9.5v4.5M12 17.2h.01"/></g></symbol>
+    <symbol id="ri-externe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-8.5 8.5"/><path d="M18 14v4.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 4 18.5v-11A1.5 1.5 0 0 1 5.5 6H10"/></g></symbol>
+    <symbol id="ri-soleil" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></g></symbol>
+    <symbol id="ri-telecharger" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5M5 20h14"/></g></symbol>
+    <symbol id="ri-carte" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4.5 3.5 6.5v13L9 17.5l6 2 5.5-2v-13L15 6.5z"/><path d="M9 4.5v13M15 6.5v13"/></g></symbol>
+  </defs></svg>
+  <h2 id="titre-randonnees" class="titre-decore">{{ tt.rando_titre }}</h2>
+  <p>{{ tt.rando_intro | replace: "{n}", R.source.nombre }}</p>
+  <p class="note">{{ tt.rando_source_html | replace: "{url}", R.source.url | replace: "{date}", _date_releve | replace: "{tel_lien}", R.source.telephone_lien | replace: "{tel}", R.source.telephone }}</p>
+
+  <form class="panneau panneau--info rando-filtres js-seulement" data-rando-filtres aria-labelledby="titre-rando-filtres">
+    <h3 id="titre-rando-filtres">{{ tt.filtres_titre }}</h3>
+    <div class="rando-filtres-grille">
+      <p class="champ champ--large"><label for="rando-recherche">{{ tt.recherche }}</label><input type="search" id="rando-recherche" name="recherche" autocomplete="off" spellcheck="false"></p>
+      <p class="champ"><label for="rando-distance">{{ tt.distance }}</label><select id="rando-distance" name="distance">
+        <option value="">{{ tt.distance_toutes }}</option>
+        <option value="0-5">{{ tt.distance_5 }}</option>
+        <option value="5-10">{{ tt.distance_10 }}</option>
+        <option value="10-20">{{ tt.distance_20 }}</option>
+        <option value="20-">{{ tt.distance_plus }}</option>
+      </select></p>
+      <p class="champ"><label for="rando-duree">{{ tt.duree }}</label><select id="rando-duree" name="duree">
+        <option value="">{{ tt.duree_toutes }}</option>
+        <option value="0-90">{{ tt.duree_90 }}</option>
+        <option value="91-180">{{ tt.duree_180 }}</option>
+        <option value="181-">{{ tt.duree_plus }}</option>
+        <option value="jours">{{ tt.duree_jours }}</option>
+      </select></p>
+      <p class="champ"><label for="rando-difficulte">{{ tt.difficulte }}</label><select id="rando-difficulte" name="difficulte">
+        <option value="">{{ tt.difficulte_toutes }}</option>
+        <option value="facile">{{ tt.difficulte_facile }}</option>
+        <option value="moyen">{{ tt.difficulte_moyen }}</option>
+        <option value="difficile">{{ tt.difficulte_difficile }}</option>
+        <option value="aucune">{{ tt.difficulte_aucune }}</option>
+      </select></p>
+      <p class="champ"><label for="rando-tri">{{ tt.tri }}</label><select id="rando-tri" name="tri">
+        <option value="proches">{{ tt.tri_proches }}</option>
+        <option value="courtes">{{ tt.tri_courtes }}</option>
+        <option value="longues">{{ tt.tri_longues }}</option>
+        <option value="denivele">{{ tt.tri_denivele }}</option>
+        <option value="nom">{{ tt.tri_nom }}</option>
+      </select></p>
+    </div>
+    <fieldset class="rando-options">
+      <legend>{{ tt.options }}</legend>
+      <label><input type="checkbox" name="chiens" value="1"> {{ tt.option_chiens }}</label>
+      <label><input type="checkbox" name="famille" value="1"> {{ tt.option_famille }}</label>
+      <label><input type="checkbox" name="parking" value="1"> {{ tt.option_parking }}</label>
+      <label><input type="checkbox" name="commune" value="1"> {{ tt.option_commune }}</label>
+    </fieldset>
+    <p class="rando-filtres-pied"><button type="reset" class="bouton bouton--secondaire">{{ tt.reinitialiser }}</button></p>
+  </form>
+  <p class="statut-filtre js-seulement" role="status" data-rando-statut></p>
+  <p class="note">{{ tt.rando_difficulte_note }}</p>
+
+  <div class="rando-explorateur" data-rando>
+    <div class="rando-carte-colonne js-seulement">
+      <div class="rando-carte-outils">
+        <fieldset class="rando-fond">
+          <legend>{{ tt.carte_fond }}</legend>
+          <label><input type="radio" name="rando-fond" value="plan" checked> {{ tt.carte_plan }}</label>
+          <label><input type="radio" name="rando-fond" value="photo"> {{ tt.carte_photo }}</label>
+        </fieldset>
+        <p class="rando-carte-boutons">
+          <button type="button" class="bouton bouton--secondaire" data-carte-ensemble>{{ tt.carte_ensemble }}</button>
+          <button type="button" class="bouton bouton--secondaire" data-carte-position>{% include icone.html nom="lieu" %}{{ tt.carte_position }}</button>
+          <button type="button" class="bouton bouton--secondaire" data-carte-agrandir aria-pressed="false">{{ tt.carte_agrandir }}</button>
+          <a class="bouton bouton--secondaire" data-carte-osm href="https://www.openstreetmap.org/#map=13/45.27861/2.80935">{{ tt.carte_osm }}</a>
+        </p>
+      </div>
+      <div class="rando-carte" id="rando-carte" role="region" aria-label="{{ tt.carte_nom }}" aria-describedby="rando-carte-aide" data-traces="{{ '/assets/data/randonnees.json' | relative_url }}?v={{ R.source.extrait_le }}">
+        <p class="note rando-carte-attente">{{ tt.carte_chargement }}</p>
+      </div>
+      <p class="statut-carte" role="status" data-carte-message></p>
+      <div class="rando-selection" data-rando-selection aria-live="polite"><p class="note">{{ tt.selection_aucune }}</p></div>
+      <p class="note rando-carte-aide" id="rando-carte-aide">{{ tt.carte_aide }}</p>
+    </div>
+
+    <div class="rando-liste-colonne">
+      <noscript><p class="note">{{ tt.carte_sans_js }}</p></noscript>
+      <ul class="rando-liste" data-rando-liste>
+        {%- for r in R.liste %}
+        {%- assign x = r.texte[L] %}
+        {%- capture _id %}rando-{{ r.slug }}{% endcapture %}
+        {%- capture _nom_cache %}<span class="visuellement-cache"{% if L != "fr" %} lang="fr"{% endif %}> – {{ r.nom | escape }}</span>{% endcapture %}
+        <li class="rando" id="{{ _id }}" data-slug="{{ r.slug }}" data-nom="{{ r.nom | append: ' ' | append: r.commune | downcase | escape }}" data-distance="{{ r.distance_km }}" data-duree="{{ r.duree_min }}" data-jours="{{ r.jours }}" data-denivele="{{ r.denivele }}" data-difficulte="{% if r.difficulte %}{{ r.difficulte.cle }}{% else %}aucune{% endif %}" data-chiens="{{ r.chiens }}" data-famille="{% if r.famille %}1{% endif %}" data-parking="{% if r.parking %}1{% endif %}" data-commune="{% if r.passe_commune or r.dans_commune %}1{% endif %}" data-eloignement="{{ r.eloignement_km }}" data-lat="{{ r.lat }}" data-lon="{{ r.lon }}" data-altitude="{{ x.altitude_depart }}">
+          <article class="panneau rando-fiche" aria-labelledby="titre-{{ _id }}">
+            <p class="surtitre">{{ r.commune | escape }} · {{ x.eloignement }}</p>
+            <h3 id="titre-{{ _id }}"{% if L != "fr" %} lang="fr"{% endif %}>{{ r.nom | escape }}</h3>
+            <dl class="rando-chiffres">
+              {%- if x.duree %}
+              <div><dt>{{ tt.fiche_duree }}</dt><dd>{{ x.duree }}</dd></div>
+              {%- endif %}
+              {%- if x.distance %}
+              <div><dt>{{ tt.fiche_distance }}</dt><dd>{{ x.distance }}</dd></div>
+              {%- endif %}
+              {%- if x.denivele %}
+              <div><dt>{{ tt.fiche_denivele }}</dt><dd>{{ x.denivele }}</dd></div>
+              {%- endif %}
+              <div class="rando-difficulte"><dt>{{ tt.fiche_difficulte }}</dt><dd>
+                {%- if r.difficulte -%}
+                {%- if r.difficulte.source == "dhc-texte" -%}
+                {%- if L == "fr" -%}{{ _gu }}{{ r.difficulte.fr }}{{ _gf }}{%- else -%}{{ _gu }}{{ r.difficulte[L] }}{{ _gf }} <span lang="fr">(« {{ r.difficulte.fr }} »)</span>{%- endif -%}
+                <span class="rando-source">{{ tt.source_texte }}</span>
+                {%- else -%}
+                {{ r.difficulte[L] }}<span class="rando-source">{% if r.difficulte.source == "parc" %}{{ tt.source_parc }}{% else %}{{ tt.source_dhc }}{% endif %}</span>
+                {%- endif -%}
+                {%- else -%}
+                {{ tt.non_precisee }}
+                {%- endif -%}
+              </dd></div>
+            </dl>
+            <p class="rando-depart"><svg class="icone" aria-hidden="true" focusable="false"><use href="#ri-lieu"/></svg><span><strong>{{ tt.depart }}</strong>{{ _t.deux_points }}<span{% if L != "fr" %} lang="fr"{% endif %}>{% if r.depart != "" %}{{ r.depart | escape }}, {% endif %}{{ r.code_postal }} {{ r.commune | escape }}</span>{% if x.altitude_depart %} ({{ x.altitude_depart }}){% endif %}</span></p>
+            <p class="rando-resume">{{ r.resume[L] | escape }}</p>
+            {%- capture _etiquettes %}
+              {%- if r.type == "boucle" %}<li>{{ tt.boucle }}</li>{% elsif r.type == "aller-retour" %}<li>{{ tt.aller_retour }}</li>{% endif %}
+              {%- if r.balise == true %}<li>{{ tt.balisage }}{% if r.couleur %}{{ _t.deux_points }}{{ r.couleur[L] }}{% endif %}</li>{% elsif r.balise == false %}<li>{{ tt.non_balise }}</li>{% endif %}
+              {%- if r.chiens == "oui" %}<li>{{ tt.chiens_oui }}</li>{% elsif r.chiens == "non" %}<li>{{ tt.chiens_non }}</li>{% endif %}
+              {%- if r.famille %}<li>{{ tt.famille }}</li>{% endif %}
+              {%- if r.passe_commune %}<li>{{ tt.passe_commune }}</li>{% endif %}
+              {%- if r.troupeaux %}<li class="rando-attention"><svg class="icone" aria-hidden="true" focusable="false"><use href="#ri-alerte"/></svg>{{ tt.troupeaux }}</li>{% endif %}
+            {%- endcapture %}
+            {%- assign _etiquettes = _etiquettes | strip %}
+            {%- if _etiquettes != "" %}
+            <ul class="rando-etiquettes">{{ _etiquettes }}</ul>
+            {%- endif %}
+            <p class="rando-actions">
+              <button type="button" class="bouton bouton--secondaire js-seulement" data-voir-carte><svg class="icone" aria-hidden="true" focusable="false"><use href="#ri-carte"/></svg>{{ tt.voir_carte }}{{ _nom_cache }}</button>
+              {%- for f in r.fichiers %}
+              {%- if f.generique == "gpx" or f.generique == "kml" or f.generique == "topoguide" or f.generique == "hebergements" %}{% assign _libelle = tt[f.generique] %}{% assign _titre_fr = false %}{% else %}{% assign _libelle = f.titre %}{% assign _titre_fr = true %}{% endif %}
+              <a class="bouton bouton--pdf" href="{{ f.url }}"{% if f.format == "pdf" and L != "fr" %} hreflang="fr"{% endif %}><svg class="icone" aria-hidden="true" focusable="false"><use href="#ri-telecharger"/></svg><span>{% if _titre_fr and L != "fr" %}<span lang="fr">{{ _libelle | escape }}</span>{% else %}{{ _libelle | escape }}{% endif %}{% if f.format == "pdf" %} ({{ tt.format_pdf }}){% endif %}</span>{{ _nom_cache }}</a>
+              {%- endfor %}
+            </p>
+            <details class="rando-details">
+              <summary>{{ tt.details }}{{ _nom_cache }}</summary>
+              <div class="rando-details-contenu">
+                {%- if r.profil %}
+                {%- capture _legende_profil %}{{ tt.profil | replace: "{min}", x.profil.min | replace: "{max}", x.profil.max }}{% endcapture %}
+                <figure class="rando-profil" role="figure" aria-label="{{ _legende_profil | escape }}">
+                  <svg viewBox="0 0 120 60" preserveAspectRatio="none" role="img" aria-label="{{ tt.profil_alt }}" focusable="false"><path class="rando-profil-aire" d="{{ r.profil.aire }}"/><path class="rando-profil-ligne" d="{{ r.profil.ligne }}"/></svg>
+                  <figcaption>{{ _legende_profil }}</figcaption>
+                </figure>
+                {%- endif %}
+                {%- if r.topo_html != "" %}
+                <h4>{{ tt.pas_a_pas }}</h4>
+                {%- if L != "fr" %}
+                <p class="note">{{ tt.en_francais }}</p>
+                {%- endif %}
+                <div class="rando-texte"{% if L != "fr" %} lang="fr"{% endif %}>{{ r.topo_html }}</div>
+                {%- endif %}
+                {%- if r.description_html != "" %}
+                <h4>{{ tt.presentation }}</h4>
+                {%- if L != "fr" %}
+                <p class="note">{{ tt.en_francais }}</p>
+                {%- endif %}
+                <div class="rando-texte"{% if L != "fr" %} lang="fr"{% endif %}>{{ r.description_html }}</div>
+                {%- endif %}
+                {%- if r.points_forts %}
+                <h4>{{ tt.points_forts }}</h4>
+                <div class="rando-texte">{{ r.points_forts[L] }}</div>
+                {%- endif %}
+                <h4>{{ tt.pratique }}</h4>
+                <dl class="rando-pratique">
+                  {%- if r.periode %}
+                  <div><dt>{{ tt.periode }}</dt><dd>{{ r.periode[L] }}</dd></div>
+                  {%- endif %}
+                  {%- if r.chiens_texte %}
+                  <div><dt>{{ tt.chiens }}</dt><dd>{{ r.chiens_texte[L] }}</dd></div>
+                  {%- endif %}
+                  {%- if r.passages_delicats %}
+                  <div><dt>{{ tt.passages_delicats }}</dt><dd>{{ r.passages_delicats[L] }}</dd></div>
+                  {%- endif %}
+                  {%- if r.conseils %}
+                  <div><dt>{{ tt.conseils }}</dt><dd>{{ r.conseils[L] }}</dd></div>
+                  {%- endif %}
+                  {%- if r.terrains.size > 0 %}
+                  <div><dt>{{ tt.terrain }}</dt><dd>{% for e in r.terrains %}{{ e[L] }}{% unless forloop.last %}, {% endunless %}{% endfor %}</dd></div>
+                  {%- endif %}
+                  {%- if r.equipements.size > 0 %}
+                  <div><dt>{{ tt.equipements }}</dt><dd>{% for e in r.equipements %}{{ e[L] }}{% unless forloop.last %}, {% endunless %}{% endfor %}</dd></div>
+                  {%- endif %}
+                  {%- if r.environnements.size > 0 %}
+                  <div><dt>{{ tt.environnement }}</dt><dd>{% for e in r.environnements %}{{ e[L] }}{% unless forloop.last %}, {% endunless %}{% endfor %}</dd></div>
+                  {%- endif %}
+                  {%- if r.topoguide %}
+                  <div><dt>{{ tt.topoguide_ref }}</dt><dd>{{ r.topoguide[L] }}</dd></div>
+                  {%- endif %}
+                  {%- if r.carte_ign %}
+                  <div><dt>{{ tt.carte_ref }}</dt><dd>{{ r.carte_ign[L] }}</dd></div>
+                  {%- endif %}
+                  <div><dt>{{ tt.coordonnees }}</dt><dd>{{ x.coordonnees }}</dd></div>
+                  {%- if r.credit_trace %}
+                  <div><dt>{{ tt.credit_trace }}</dt><dd>© {{ r.credit_trace | escape }}</dd></div>
+                  {%- endif %}
+                </dl>
+                <ul class="rando-liens">
+                  <li><a href="https://www.google.com/maps/dir/?api=1&amp;destination={{ r.lat }},{{ r.lon }}"><svg class="icone" aria-hidden="true" focusable="false"><use href="#ri-externe"/></svg>{{ tt.itineraire_voiture }}{{ _nom_cache }}</a></li>
+                  <li><a href="{{ R.source.url }}"{% if L != "fr" %} hreflang="fr"{% endif %}><svg class="icone" aria-hidden="true" focusable="false"><use href="#ri-externe"/></svg>{{ tt.plus_infos }}{{ _nom_cache }}</a></li>
+                </ul>
+                <div class="rando-meteo js-seulement" data-rando-meteo>
+                  <button type="button" class="bouton bouton--secondaire"><svg class="icone" aria-hidden="true" focusable="false"><use href="#ri-soleil"/></svg>{{ tt.meteo_depart }}{{ _nom_cache }}</button>
+                  <div class="rando-meteo-contenu" data-rando-meteo-contenu aria-live="polite"></div>
+                </div>
+              </div>
+            </details>
+          </article>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

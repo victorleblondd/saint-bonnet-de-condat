@@ -1,0 +1,11 @@
+{%- comment -%}
+  Drapeau d'une langue du site (sélecteur de langue du bandeau du haut) : fr = France, en = Royaume-Uni, nl = Pays-Bas.
+  Image décorative : le nom de la langue est donné en texte par le lien. Paramètre : code.
+{%- endcomment -%}
+{%- if include.code == "fr" -%}
+<svg class="drapeau" viewBox="0 0 3 2" width="24" height="16" aria-hidden="true" focusable="false"><rect width="1" height="2" fill="#000091"/><rect x="1" width="1" height="2" fill="#FFFFFF"/><rect x="2" width="1" height="2" fill="#E1000F"/></svg>
+{%- elsif include.code == "en" -%}
+<svg class="drapeau" viewBox="0 0 60 30" width="24" height="16" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><clipPath id="drapeau-en-a"><path d="M0 0v30h60V0z"/></clipPath><clipPath id="drapeau-en-b"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath><g clip-path="url(#drapeau-en-a)"><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#FFFFFF" stroke-width="6"/><path d="M0 0l60 30m0-30L0 30" clip-path="url(#drapeau-en-b)" stroke="#C8102E" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#FFFFFF" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#C8102E" stroke-width="6"/></g></svg>
+{%- elsif include.code == "nl" -%}
+<svg class="drapeau" viewBox="0 0 9 6" width="24" height="16" aria-hidden="true" focusable="false"><rect width="9" height="6" fill="#21468B"/><rect width="9" height="4" fill="#FFFFFF"/><rect width="9" height="2" fill="#AE1C28"/></svg>
+{%- endif -%}

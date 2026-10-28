@@ -3,8 +3,9 @@ title: "Tourism"
 permalink: /en/tourism/
 ref: tourisme
 lang: en
-chapo: "Stay in Saint-Bonnet-de-Condat, in the Santoire valley, in the heart of the Volcans d'Auvergne Regional Nature Park."
-description: "Tourism in Saint-Bonnet-de-Condat (Cantal, France): Camping-Bar de la Santoire, NaturÉpure (wellbeing retreats and detox courses), La Maison des Volcans (holiday rental)."
+chapo: "Stay and hike in Saint-Bonnet-de-Condat, in the Santoire valley, in the heart of the Volcans d'Auvergne Regional Nature Park."
+description: "Tourism in Saint-Bonnet-de-Condat (Cantal, France): places to stay, live weather and air quality with interactive maps, and 42 hikes from Destination Haut Cantal with a map, GPX tracks and PDF sheets."
+feuilles_de_style: ["/assets/leaflet/leaflet.css"]
 ---
 <section class="bloc" id="sejourner" aria-labelledby="titre-sejourner">
   <h2 id="titre-sejourner" class="titre-decore">Where to stay</h2>
@@ -44,6 +45,11 @@ description: "Tourism in Saint-Bonnet-de-Condat (Cantal, France): Camping-Bar de
       </div>
     </article>
   </div>
-  <p class="note">Also worth seeing in the municipality: <a href="{{ '/en/discover/' | relative_url }}#patrimoine">its heritage</a> and <a href="{{ '/en/discover/' | relative_url }}#randonnee">the volcanic columns walk</a>.</p>
+  <p class="note">Also worth seeing in the municipality: <a href="{{ '/en/discover/' | relative_url }}#patrimoine">its heritage</a> and <a href="#rando-chaussonet">the basalt columns walk (<span lang="fr">Chaussonet</span>)</a>.</p>
   <p class="note">Do you offer accommodation or a tourist activity in the municipality? Contact the town hall.</p>
 </section>
+
+{% include tourisme-meteo.html %}
+
+{% include tourisme-randonnees.html %}
+{% include tourisme-scripts.html -%}

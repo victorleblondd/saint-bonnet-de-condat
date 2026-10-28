@@ -3,8 +3,9 @@ title: "Toerisme"
 permalink: /nl/toerisme/
 ref: tourisme
 lang: nl
-chapo: "Verblijven in Saint-Bonnet-de-Condat, in het dal van de Santoire, in het hart van het regionaal natuurpark Volcans d'Auvergne."
-description: "Toerisme in Saint-Bonnet-de-Condat (Cantal, Frankrijk): Camping-Bar de la Santoire, NaturÉpure (welzijnsverblijven en detoxstages), La Maison des Volcans (vakantiewoning)."
+chapo: "Verblijven en wandelen in Saint-Bonnet-de-Condat, in het dal van de Santoire, in het hart van het regionaal natuurpark Volcans d'Auvergne."
+description: "Toerisme in Saint-Bonnet-de-Condat (Cantal, Frankrijk): logies, actueel weer en luchtkwaliteit met interactieve kaarten, en 42 wandelingen van Destination Haut Cantal met kaart, GPX-tracks en pdf-fiches."
+feuilles_de_style: ["/assets/leaflet/leaflet.css"]
 ---
 <section class="bloc" id="sejourner" aria-labelledby="titre-sejourner">
   <h2 id="titre-sejourner" class="titre-decore">Verblijven in de gemeente</h2>
@@ -44,6 +45,11 @@ description: "Toerisme in Saint-Bonnet-de-Condat (Cantal, Frankrijk): Camping-Ba
       </div>
     </article>
   </div>
-  <p class="note">Ook de moeite waard in de gemeente: <a href="{{ '/nl/ontdekken/' | relative_url }}#patrimoine">het erfgoed</a> en <a href="{{ '/nl/ontdekken/' | relative_url }}#randonnee">de wandeling langs de vulkanische basaltzuilen</a>.</p>
+  <p class="note">Ook de moeite waard in de gemeente: <a href="{{ '/nl/ontdekken/' | relative_url }}#patrimoine">het erfgoed</a> en <a href="#rando-chaussonet">de wandeling langs de basaltzuilen (<span lang="fr">Chaussonet</span>)</a>.</p>
   <p class="note">Biedt u in de gemeente logies of een toeristische activiteit aan? Neem contact op met het gemeentehuis.</p>
 </section>
+
+{% include tourisme-meteo.html %}
+
+{% include tourisme-randonnees.html %}
+{% include tourisme-scripts.html -%}
