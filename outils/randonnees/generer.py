@@ -8,8 +8,8 @@ Entrées :
 - outils/randonnees/traductions.yml (textes anglais et néerlandais).
 
 Sorties :
-- _data/randonnees.yml : les fiches, dans l'ordre de distance depuis Saint-Bonnet-de-Condat,
-  avec les valeurs mises en forme dans les trois langues ;
+- _data/randonnees.json : les fiches, dans l'ordre de distance depuis Saint-Bonnet-de-Condat,
+  avec les valeurs mises en forme dans les trois langues (lues par Jekyll comme site.data.randonnees) ;
 - assets/data/randonnees.json : les tracés pour la carte.
 
 Rien n'est inventé : les valeurs viennent des fiches de l'office de tourisme. La difficulté vient,
@@ -151,6 +151,17 @@ def profil(valeurs, points=61):
         morceaux.append(f"{round(120 * i / (points - 1))} {round(57 - (v - bas) / ecart * 52)}")
     ligne = "M" + "L".join(morceaux)
     return {"ligne": ligne, "aire": ligne + "L120 60L0 60Z", "min": int(bas), "max": int(haut)}
+
+
+def entiers(v):
+    """Écrit 10 plutôt que 10.0 dans les fichiers JSON (nombres entiers)."""
+    if isinstance(v, float) and v.is_integer():
+        return int(v)
+    if isinstance(v, dict):
+        return {k: entiers(x) for k, x in v.items()}
+    if isinstance(v, list):
+        return [entiers(x) for x in v]
+    return v
 
 
 def charger(chemin):
@@ -361,14 +372,9 @@ def main():
         sys.exit(f"Identifiants en double : {sorted(doublons)}")
 
     extrait = donnees["extrait_le"][:10]
-    entete = (
-        "# =====================================================================\n"
-        "#  RANDONNÉES de la page Tourisme : fichier FABRIQUÉ par outils/randonnees/generer.py\n"
-        "#  à partir des fiches de l'office de tourisme Destination Haut Cantal.\n"
-        "#  Ne pas modifier à la main : voir le README, « Page Tourisme ».\n"
-        "# =====================================================================\n"
-    )
     contenu = {
+        "_note": ("Randonnées de la page Tourisme : fichier fabriqué par outils/randonnees/generer.py à partir des fiches "
+                  "de l'office de tourisme Destination Haut Cantal. Ne pas modifier à la main : voir le README, « Page Tourisme »."),
         "source": {
             "nom": "Destination Haut Cantal",
             "url": SOURCE_URL,
@@ -380,12 +386,12 @@ def main():
         },
         "liste": fiches,
     }
-    with open(os.path.join(DEPOT, "_data/randonnees.yml"), "w", encoding="utf-8") as f:
-        f.write(entete)
-        yaml.safe_dump(contenu, f, allow_unicode=True, sort_keys=False, width=100000, default_flow_style=False)
+    with open(os.path.join(DEPOT, "_data/randonnees.json"), "w", encoding="utf-8") as f:
+        json.dump(entiers(contenu), f, ensure_ascii=False, indent=1)
+        f.write("\n")
     os.makedirs(os.path.join(DEPOT, "assets/data"), exist_ok=True)
     with open(os.path.join(DEPOT, "assets/data/randonnees.json"), "w", encoding="utf-8") as f:
-        json.dump({"extrait_le": extrait, "repere": list(REPERE), "randonnees": traces}, f, ensure_ascii=False, separators=(",", ":"))
+        json.dump(entiers({"extrait_le": extrait, "repere": list(REPERE), "randonnees": traces}), f, ensure_ascii=False, separators=(",", ":"))
 
     print(f"{len(fiches)} randonnées (source : {os.path.relpath(chemin, DEPOT)}, extraite le {extrait})")
     print("Difficulté : " + ", ".join(f"{k} {v}" for k, v in sources_difficulte.items()))

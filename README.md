@@ -79,13 +79,16 @@ réglages dans `manifest.webmanifest`) et recevoir les actualités de la mairie 
 | Articles du bulletin municipal | `_posts/AAAA-MM-JJ-titre.html` (un fichier par article), traductions dans `_posts/en/` et `_posts/nl/` |
 | Professionnels de santé et de bien-être | `vie-locale.html` (rubrique `sante-bien-etre`), logos dans `assets/images/vie-locale/` |
 | Établissements de la page Tourisme | `tourisme.html`, logos dans `assets/images/tourisme/` |
+| Randonnées de la page Tourisme | ne pas modifier à la main : voir « Page Tourisme : randonnées, météo et qualité de l'air » |
+| Textes de la météo, de la qualité de l'air et des randonnées (trois langues) | `_data/langues.yml` (rubrique `tourisme`) |
+| Lieux de la carte météo (nom, coordonnées de la mairie, ordre d'affichage) | `_data/meteo_lieux.yml` |
 | Pages | `mairie.html`, `vie-pratique.html`, `vie-locale.html`, `tourisme.html`, `decouvrir.html`… |
 | Apparence | `assets/css/site.css` |
 | État d'accessibilité (bas de chaque page, page Accessibilité) | `_data/accessibilite.yml` |
 
 ## Accessibilité
 
-Le site suit le référentiel RGAA 4.1.2. Dernière évaluation : 27 octobre 2026, en français, en anglais et en
+Le site suit le référentiel RGAA 4.1.2. Dernière évaluation : 28 octobre 2026, en français, en anglais et en
 néerlandais, **totalement conforme** (grille détaillée dans `outils/accessibilite/`). La déclaration d'accessibilité est la page `/accessibilite/`
 (`accessibilite.html`) ; son état et ses chiffres, comme la mention « Accessibilité : … » en bas de chaque page,
 viennent de `_data/accessibilite.yml`. Le plan du site (`plan-du-site.html`) se met à jour tout seul.
@@ -101,7 +104,7 @@ Pour garder la conformité :
 ## Langues : français, anglais, néerlandais
 
 Le site existe en français (langue principale, aux adresses habituelles), en anglais (`/en/`) et en néerlandais
-(`/nl/`). Les liens « Français · English · Nederlands » du bandeau du haut ouvrent la même page dans l'autre langue
+(`/nl/`). Les drapeaux du bandeau du haut (français, britannique, néerlandais ; `_includes/drapeau.html`) ouvrent la même page dans l'autre langue
 (et la même actualité). Le choix est gardé sur l'appareil. Si le navigateur du visiteur est réglé en anglais ou en
 néerlandais, un bandeau lui propose la page dans sa langue (jamais de redirection automatique).
 
@@ -120,6 +123,51 @@ néerlandais, un bandeau lui propose la page dans sa langue (jamais de redirecti
   Les ancres des actualités viennent du titre français : elles sont les mêmes dans les trois langues.
 - **Notifications** : voir « Écran d'accueil et notifications » ; textes de la page dans `_data/langues.yml`
   (rubrique `notifications`), manifestes dans `en/manifest.webmanifest` et `nl/manifest.webmanifest`.
+
+## Page Tourisme : randonnées, météo et qualité de l'air
+
+La page Tourisme (et ses versions anglaise et néerlandaise) montre la météo et la qualité de l'air du jour, et une
+carte des 42 randonnées de l'office de tourisme Destination Haut Cantal, avec des filtres et une fiche par randonnée.
+Sans JavaScript, la liste des randonnées reste complète ; la météo et la qualité de l'air renvoient alors aux sites
+de Météo-France et d'Atmo Auvergne-Rhône-Alpes.
+
+- **Randonnées** : relevé des fiches Apidae de Destination Haut Cantal (dernier relevé : 28 octobre 2026). Elles ne
+  sont pas lues en direct, car le service Apidae de l'office de tourisme refuse les autres sites. Pour mettre le
+  relevé à jour :
+  1. ouvrir https://www.destinationhautcantal.fr/jy-suis/activites-de-pleine-nature/randonnees/ dans un navigateur ;
+  2. dans la console du navigateur, coller le contenu de `outils/randonnees/extraire.js`, puis lancer
+     `extraireRandonnees()` et, quand il a fini, `telechargerExtrait()` ;
+  3. ranger le fichier téléchargé (`destination-haut-cantal-AAAA-MM-JJ.json`) dans `outils/randonnees/source/` ;
+  4. lancer `python3 outils/randonnees/generer.py` (Python 3 et PyYAML) : il écrit `_data/randonnees.json` (fiches)
+     et `assets/data/randonnees.json` (tracés de la carte). S'il manque la traduction d'un nouveau texte, il s'arrête
+     et le nomme : l'ajouter dans `outils/randonnees/traductions.yml` (résumés par numéro de fiche, autres textes
+     par empreinte, libellés).
+- **Difficulté** : niveau donné par l'office de tourisme ; sinon, niveau du Parc naturel régional des Volcans
+  d'Auvergne pour la même randonnée (même départ, même longueur à 10 % près) ; sinon, expression de la description
+  de l'office de tourisme, citée telle quelle (« promenade facile »…) ; sinon, « non précisée ». Le site n'estime rien.
+- **Traductions** : les résumés, les périodes, les conseils et les libellés sont traduits dans
+  `outils/randonnees/traductions.yml` ; l'itinéraire pas à pas et la présentation restent en français.
+- **Cartes** : Leaflet 1.9.4 (`assets/leaflet/`, licence BSD-2-Clause). Fond de carte OpenStreetMap
+  (`tile.openstreetmap.org`, règles d'usage : mention « © les contributeurs d'OpenStreetMap » visible sur la carte,
+  pas de téléchargement en masse) ; photographies aériennes de l'IGN (Géoplateforme, sans clé, licence ouverte
+  Etalab 2.0). La carte des randonnées s'ouvre sur la commune ; « Vue d'ensemble » montre les 42 randonnées.
+  Les cartes météo et de la qualité de l'air ne se chargent que lorsqu'elles arrivent à l'écran.
+- **Météo** : Open-Meteo, modèles de Météo-France (gratuit pour un usage non commercial, licence CC BY 4.0 : la
+  mention « Données Open-Meteo.com… » doit rester à côté des données). Les prévisions vont jusqu'à 4 jours.
+  La carte météo montre, pour chaque jour et chaque moment de la journée (3 h, 9 h, 15 h, 21 h), le temps et la
+  température, le vent ou l'indice UV des lieux de `_data/meteo_lieux.yml` (coordonnées des mairies,
+  geo.api.gouv.fr ; l'ordre fixe la priorité d'affichage quand deux lieux se chevauchent). L'indice UV vient du
+  modèle GFS (Open-Meteo, `models=gfs_seamless`) : les modèles de Météo-France ne le donnent pas.
+- **Qualité de l'air** : indice ATMO de la commune (code 15173), publié chaque jour par Atmo Auvergne-Rhône-Alpes
+  (couche `ind_aura:agol_indices_2021_7J` de son serveur cartographique). Seul l'indice est demandé : avec les
+  sous-indices des polluants, le serveur ne répond pas à temps. La carte reprend les couches de prévision du site
+  d'Atmo (WMTS) : `aura:atmo_aura_jp0` (aujourd'hui) et `jp1` (demain), style `max_atmo` pour l'indice ATMO ;
+  `aura:o3hd_aura_jp0`, `no2hd`, `pm25hd`, `pm10hd`, `so2hd`, style `o3_atmo`, `no2_atmo`… pour chaque polluant.
+  La prévision heure par heure et le commentaire du jour ne sont lisibles que sur le site d'Atmo (lien sous la carte).
+- **Code** : `assets/js/tourisme.js`, `_includes/tourisme-meteo.html`, `_includes/tourisme-randonnees.html` et
+  `_includes/tourisme-scripts.html` ; textes dans la rubrique `tourisme` de `_data/langues.yml`.
+- Les services interrogés par la page sont décrits dans les mentions légales (« Données personnelles »). Si l'un
+  d'eux change, mettre à jour les mentions légales et leurs traductions.
 
 ## Organisation
 
@@ -145,6 +193,12 @@ Blason du Cantal : dessin de Gretaz et contributeurs (Wikimedia Commons), licenc
 Photo du camping (diaporama de l'accueil, `assets/images/camping.jpg`) : [Camping La Santoire](https://www.campinglasantoire.fr/en/),
 photo de son site, réduite à 1 400 px. Photos de la mairie, du village sous la neige et du coucher de soleil :
 fournies par Victor Leblond.
+
+Randonnées de la page Tourisme : fiches, tracés et documents de l'office de tourisme Destination Haut Cantal (base
+Apidae) ; niveaux de difficulté du Parc naturel régional des Volcans d'Auvergne. Cartes : fond © les contributeurs
+d'OpenStreetMap, photographies aériennes © IGN (licence ouverte Etalab 2.0), Leaflet (licence BSD-2-Clause,
+`assets/leaflet/LICENSE.txt`). Météo : Open-Meteo.com (CC BY 4.0), modèles de Météo-France ; indice UV : modèle GFS
+de la NOAA. Qualité de l'air : indice et cartes d'Atmo Auvergne-Rhône-Alpes. Mairies de la carte météo : geo.api.gouv.fr.
 
 Logos de la page Tourisme (`assets/images/tourisme/`) : logos officiels du Camping La Santoire, de NaturÉpure
 et de La Maison des Volcans, repris de leurs sites (campinglasantoire.fr, naturepuredetox.fr,
