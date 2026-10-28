@@ -34,5 +34,8 @@
 <meta property="og:description" content="{{ description | escape }}">
 <meta property="og:url" content="{{ page.url | absolute_url }}">
 <meta property="og:image" content="{{ page.image | default: '/assets/images/mairie.jpg' | absolute_url }}">
-<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v=15">
+{%- for _feuille in page.feuilles_de_style %}
+<link rel="stylesheet" href="{{ _feuille | relative_url }}">
+{%- endfor %}
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v=16">
 <script>document.documentElement.className += ' js';</script>

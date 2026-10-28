@@ -23,7 +23,7 @@
         {%- unless version %}{% assign version = site.posts | where: "ref", page.ref | where: "lang", code | first %}{% endunless -%}
         {%- endif -%}
         {%- if version %}{% assign lien_langue = version.url %}{% else %}{% assign lien_langue = L[code].pages.accueil %}{% endif %}
-        <li><a href="{{ lien_langue | relative_url }}" hreflang="{{ code }}" lang="{{ code }}"{% if version %} data-version{% endif %}{% if code == langue %} aria-current="true"{% endif %}>{{ L[code].nom }}</a></li>
+        <li><a href="{{ lien_langue | relative_url }}" hreflang="{{ code }}" lang="{{ code }}"{% if version %} data-version{% endif %}{% if code == langue %} aria-current="true"{% endif %} title="{{ L[code].nom }}">{% include drapeau.html code=code %}<span class="visuellement-cache">{{ L[code].nom }}</span></a></li>
         {%- endfor %}
       </ul>
     </nav>

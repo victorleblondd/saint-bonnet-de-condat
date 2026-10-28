@@ -1,0 +1,122 @@
+{%- comment -%}
+  Page Tourisme (trois langues) : météo et qualité de l'air à Saint-Bonnet-de-Condat.
+  Les valeurs sont chargées par assets/js/tourisme.js à chaque visite (Open-Meteo, modèles de Météo-France ;
+  indice et cartes d'Atmo Auvergne-Rhône-Alpes). Sans JavaScript, la section renvoie aux sites officiels.
+  Lieux de la carte météo : _data/meteo_lieux.yml.
+{%- endcomment -%}
+{%- assign _t = site.data.langues[page.lang] | default: site.data.langues.fr -%}
+{%- assign tt = _t.tourisme -%}
+<section class="bloc" id="meteo" aria-labelledby="titre-meteo">
+  <h2 id="titre-meteo" class="titre-decore">{{ tt.meteo_titre }}</h2>
+  <p>{{ tt.meteo_intro }}</p>
+  <div class="grille-meteo">
+    <article class="panneau meteo" aria-labelledby="titre-meteo-panneau">
+      <h3 id="titre-meteo-panneau">{% include icone.html nom="soleil" %}{{ tt.meteo_panneau }}</h3>
+      <div class="meteo-contenu" data-meteo aria-busy="true">
+        <p class="note js-seulement">{{ tt.meteo_chargement }}</p>
+        <noscript><p class="note">{{ tt.meteo_sans_js }}</p></noscript>
+      </div>
+      <p class="source">{{ tt.meteo_source_html }}</p>
+      <p class="source">{{ tt.meteo_officiel_html }}</p>
+    </article>
+    <article class="panneau air" aria-labelledby="titre-air-panneau">
+      <h3 id="titre-air-panneau">{% include icone.html nom="feuille" %}{{ tt.air_panneau }}</h3>
+      <p class="note">{{ tt.air_intro }}</p>
+      <div class="air-contenu" data-air aria-busy="true">
+        <p class="note js-seulement">{{ tt.air_chargement }}</p>
+        <noscript><p class="note">{{ tt.air_sans_js }}</p></noscript>
+      </div>
+      <p class="source">{{ tt.air_source_html }}</p>
+    </article>
+  </div>
+
+  <article class="panneau carte-bloc" id="carte-meteo-bloc" aria-labelledby="titre-carte-meteo" data-carte-meteo>
+    <h3 id="titre-carte-meteo">{% include icone.html nom="carte" %}{{ tt.cm_titre }}</h3>
+    <p>{{ tt.cm_intro }}</p>
+    <noscript><p class="note">{{ tt.cm_sans_js }}</p></noscript>
+    <div class="js-seulement">
+      <form class="carte-commandes" data-cm-commandes>
+        <fieldset class="segments-groupe">
+          <legend>{{ tt.cm_jour }}</legend>
+          <div class="segments" data-cm-jours></div>
+        </fieldset>
+        <fieldset class="segments-groupe">
+          <legend>{{ tt.cm_moment }}</legend>
+          <div class="segments">
+            {%- for m in tt.cm_moments %}
+            <label><input type="radio" name="cm-moment" value="{{ m.heure }}"><span>{{ m.nom }}</span></label>
+            {%- endfor %}
+          </div>
+        </fieldset>
+        <fieldset class="segments-groupe">
+          <legend>{{ tt.cm_couche }}</legend>
+          <div class="segments">
+            <label><input type="radio" name="cm-couche" value="temps" checked><span>{{ tt.cm_temps }}</span></label>
+            <label><input type="radio" name="cm-couche" value="vent"><span>{{ tt.cm_vent }}</span></label>
+            <label><input type="radio" name="cm-couche" value="uv"><span>{{ tt.cm_uv }}</span></label>
+          </div>
+        </fieldset>
+        <p class="champ carte-commandes-lieu"><label for="cm-lieu">{{ tt.cm_lieu }}</label><select id="cm-lieu" name="cm-lieu">
+          {%- for l in site.data.meteo_lieux %}
+          <option value="{{ forloop.index0 }}" data-lat="{{ l.lat }}" data-lon="{{ l.lon }}"{% if forloop.first %} selected{% endif %}>{{ l.nom }}</option>
+          {%- endfor %}
+        </select></p>
+      </form>
+      <p class="note cm-legende" data-cm-legende>{{ tt.cm_legende_temps }}</p>
+      <div class="cm-carte" id="carte-meteo" data-centre-repere role="region" aria-label="{{ tt.cm_nom }}" aria-describedby="carte-meteo-aide">
+        <p class="note rando-carte-attente">{{ tt.cm_chargement }}</p>
+      </div>
+      <p class="note cm-aide" id="carte-meteo-aide">{{ tt.cm_aide }}</p>
+      <p class="statut-carte" role="status" data-cm-message></p>
+      <div class="cm-detail" data-cm-detail aria-live="polite"></div>
+      <details class="cm-tableau">
+        <summary>{{ tt.cm_tableau }}</summary>
+        <div class="cm-tableau-contenu" data-cm-tableau></div>
+      </details>
+      <p class="source">{{ tt.meteo_source_html }}</p>
+      <p class="source" data-cm-source-uv hidden>{{ tt.cm_uv_source_html }}</p>
+    </div>
+    <p class="source">{{ tt.cm_officiel_html }}</p>
+  </article>
+
+  <article class="panneau carte-bloc" id="carte-air-bloc" aria-labelledby="titre-carte-air" data-carte-air>
+    <h3 id="titre-carte-air">{% include icone.html nom="feuille" %}{{ tt.ca_titre }}</h3>
+    <p>{{ tt.ca_intro }}</p>
+    <noscript><p class="note">{{ tt.ca_sans_js }}</p></noscript>
+    <div class="js-seulement">
+      <form class="carte-commandes" data-ca-commandes>
+        <fieldset class="segments-groupe">
+          <legend>{{ tt.cm_jour }}</legend>
+          <div class="segments">
+            <label><input type="radio" name="ca-jour" value="0" checked><span>{{ tt.meteo_aujourdhui }}</span></label>
+            <label><input type="radio" name="ca-jour" value="1"><span>{{ tt.meteo_demain }}</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="segments-groupe">
+          <legend>{{ tt.ca_polluant }}</legend>
+          <div class="segments">
+            {%- for p in tt.ca_polluants %}
+            <label><input type="radio" name="ca-polluant" value="{{ p.code }}"{% if forloop.first %} checked{% endif %}><span>{{ p.nom_html }}</span></label>
+            {%- endfor %}
+          </div>
+        </fieldset>
+      </form>
+      <div class="cm-carte ca-carte" id="carte-air" role="region" aria-label="{{ tt.ca_nom }}" aria-describedby="carte-air-aide">
+        <p class="note rando-carte-attente">{{ tt.ca_chargement }}</p>
+      </div>
+      <p class="note cm-aide" id="carte-air-aide">{{ tt.ca_aide }}</p>
+      <p class="statut-carte" role="status" data-ca-message></p>
+      <div class="ca-legende">
+        <p class="ca-legende-titre" id="ca-legende-titre">{{ tt.ca_legende }}</p>
+        <ul aria-labelledby="ca-legende-titre">
+          {%- assign _couleurs = "#DDDDDD,#50F0E6,#50CCAA,#F0E641,#FF5050,#960032,#872181,#888888" | split: "," %}
+          {%- for n in (0..7) %}
+          {%- capture _n %}{{ n }}{% endcapture %}
+          <li><span class="air-pastille" style="background-color: {{ _couleurs[n] }}" aria-hidden="true"></span>{{ tt.air_niveaux[_n] }}</li>
+          {%- endfor %}
+        </ul>
+      </div>
+    </div>
+    <p class="source">{{ tt.ca_source_html }}</p>
+  </article>
+</section>

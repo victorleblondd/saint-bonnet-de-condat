@@ -1,0 +1,5 @@
+{%- comment -%} Scripts de la page Tourisme (trois langues) et leurs textes, tirés de _data/langues.yml {%- endcomment -%}
+{%- assign _t = site.data.langues[page.lang] | default: site.data.langues.fr -%}
+<script id="textes-tourisme" type="application/json">{{ _t.tourisme | jsonify }}</script>
+<script src="{{ '/assets/leaflet/leaflet.js' | relative_url }}?v=1.9.4" defer></script>
+<script src="{{ '/assets/js/tourisme.js' | relative_url }}?v=1" defer></script>

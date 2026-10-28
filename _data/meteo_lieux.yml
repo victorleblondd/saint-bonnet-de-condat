@@ -1,0 +1,31 @@
+# =====================================================================
+#  CARTE MÉTÉO de la page Tourisme : lieux affichés sur la carte
+#  Coordonnées des mairies (geo.api.gouv.fr, champ « mairie »), relevées le 28/10/2026.
+#  Ordre = priorité d'affichage : quand deux lieux se chevauchent sur la carte,
+#  le premier de la liste reste affiché (les autres apparaissent en zoomant).
+# =====================================================================
+- {nom: "Saint-Bonnet-de-Condat", code: "15173", lat: 45.27904, lon: 2.78795}
+- {nom: "Riom-ès-Montagnes", code: "15162", lat: 45.2815, lon: 2.6604}
+- {nom: "Condat", code: "15054", lat: 45.3412, lon: 2.7582}
+- {nom: "Allanche", code: "15001", lat: 45.229, lon: 2.9346}
+- {nom: "Murat", code: "15138", lat: 45.1107, lon: 2.8696}
+- {nom: "Marcenat", code: "15114", lat: 45.3063, lon: 2.8271}
+- {nom: "Cheylade", code: "15049", lat: 45.2094, lon: 2.717}
+- {nom: "Égliseneuve-d'Entraigues", code: "63144", lat: 45.4088, lon: 2.8254}
+- {nom: "Besse-et-Saint-Anastaise", code: "63038", lat: 45.5124, lon: 2.9338}
+- {nom: "Champs-sur-Tarentaine-Marchal", code: "15038", lat: 45.3956, lon: 2.561}
+- {nom: "Dienne", code: "15061", lat: 45.1582, lon: 2.7899}
+- {nom: "Ségur-les-Villas", code: "15225", lat: 45.2247, lon: 2.8176}
+- {nom: "Saint-Amandin", code: "15170", lat: 45.3435, lon: 2.6949}
+- {nom: "Montgreleix", code: "15132", lat: 45.3433, lon: 2.8706}
+- {nom: "Landeyrat", code: "15091", lat: 45.2742, lon: 2.8643}
+- {nom: "Marchastel", code: "15116", lat: 45.2832, lon: 2.7247}
+- {nom: "Lugarde", code: "15110", lat: 45.2878, lon: 2.7605}
+- {nom: "Saint-Saturnin", code: "15213", lat: 45.2552, lon: 2.7952}
+- {nom: "Apchon", code: "15009", lat: 45.2466, lon: 2.6931}
+- {nom: "Picherande", code: "63279", lat: 45.4642, lon: 2.7704}
+- {nom: "Le Claux", code: "15050", lat: 45.1598, lon: 2.7057}
+- {nom: "Trizac", code: "15243", lat: 45.2533, lon: 2.5379}
+- {nom: "Mauriac", code: "15120", lat: 45.2178, lon: 2.3324}
+- {nom: "Saint-Flour", code: "15187", lat: 45.033, lon: 3.095}
+- {nom: "Aurillac", code: "15014", lat: 44.93, lon: 2.4455}
