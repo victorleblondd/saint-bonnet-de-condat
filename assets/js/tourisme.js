@@ -37,7 +37,7 @@
       .then(function (j) { clearTimeout(minuteur); return j; }, function (e) { clearTimeout(minuteur); throw e; });
   }
   function sansAccents(s) {
-    return String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/­/g, '').toLowerCase();
+    return String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/\xad/g, '').toLowerCase();
   }
   function defiler(element) {
     if (element && element.scrollIntoView) { element.scrollIntoView({ behavior: MOUVEMENT_REDUIT ? 'auto' : 'smooth', block: 'start' }); }
