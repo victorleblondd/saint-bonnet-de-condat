@@ -618,6 +618,9 @@
     var parSlug = {};
     fiches.forEach(function (f) { parSlug[f.slug] = f; });
     var position = null, carte = null, fonds = {}, choisie = null, repereVous = null;
+    /* Liste : cinq fiches au plus ; le bouton « Afficher les N randonnées » montre les autres, jusqu'au changement suivant des filtres ou du tri */
+    var LIMITE = 5, deplie = false, suivante = null;
+    var plus = racine.querySelector('[data-rando-plus]'), boutonTout = racine.querySelector('[data-rando-tout]');
 
     /* Filtres et tri */
     function criteres() {
@@ -651,12 +654,10 @@
       position: function (a, b) { return kilometres(position, [a.lat, a.lon]) - kilometres(position, [b.lat, b.lon]); }
     };
     var minuteurStatut = null;
-    function appliquer(delaiAnnonce) {
-      var k = criteres(), visibles = 0;
+    function appliquer(delaiAnnonce, cible) {
+      var k = criteres();
       fiches.forEach(function (f) {
         f.visible = correspond(f, k);
-        f.li.hidden = !f.visible;
-        if (f.visible) { visibles++; }
         if (carte && f.couche) {
           if (f.visible && !carte.hasLayer(f.couche.groupe)) { f.couche.groupe.addTo(carte); }
           if (!f.visible && carte.hasLayer(f.couche.groupe)) { carte.removeLayer(f.couche.groupe); }
@@ -664,15 +665,46 @@
       });
       if (choisie && !choisie.visible) { retirer(); }
       var ordre = ordres[k.tri === 'position' && !position ? 'proches' : k.tri] || ordres.proches;
-      fiches.slice().sort(ordre).forEach(function (f) { liste.appendChild(f.li); });
-      var annonce = visibles === 0 ? texte('statut_aucune') : visibles === 1 ? texte('statut_une') : remplir(texte('statut_plusieurs'), { n: visibles });
+      var triees = fiches.slice().sort(ordre);
+      triees.forEach(function (f) { liste.appendChild(f.li); });
+      /* Fiches retenues par les filtres, dans l'ordre du tri ; la carte les montre toutes, la liste les cinq premières */
+      var retenues = triees.filter(function (f) { return f.visible; }), visibles = retenues.length;
+      if (cible && retenues.indexOf(cible) >= LIMITE) { deplie = true; }   /* fiche visée par l'adresse (#rando-…) */
+      var replie = visibles > LIMITE && !deplie;
+      triees.forEach(function (f) { f.li.hidden = !f.visible || (replie && retenues.indexOf(f) >= LIMITE); });
+      suivante = replie ? retenues[LIMITE] : null;
+      if (plus) { plus.hidden = !replie; }
+      if (boutonTout) { boutonTout.textContent = remplir(texte('tout_afficher'), { n: visibles }); }
+      var annonce = visibles === 0 ? texte('statut_aucune') : visibles === 1 ? texte('statut_une')
+        : replie ? remplir(texte('statut_partiel'), { n: visibles, m: LIMITE }) : remplir(texte('statut_plusieurs'), { n: visibles });
       clearTimeout(minuteurStatut);
       minuteurStatut = setTimeout(function () { if (statut) { statut.textContent = annonce; } }, delaiAnnonce || 0);
     }
+    /* Aller à une fiche (lien « Voir la fiche », adresse #rando-…) : repliée, elle fait afficher toute la liste */
+    function allerA(f) {
+      if (f.visible && f.li.hidden) { deplie = true; appliquer(0); }
+      var titre = f.li.querySelector('h3');
+      defiler(f.li);
+      if (titre) { titre.setAttribute('tabindex', '-1'); titre.focus({ preventScroll: true }); }
+    }
+    function nouveauChoix(delai) { deplie = false; appliquer(delai); }
     formulaire.addEventListener('submit', function (e) { e.preventDefault(); });
-    formulaire.addEventListener('input', function (e) { if (e.target.name === 'recherche') { appliquer(700); } });
-    formulaire.addEventListener('change', function (e) { if (e.target.name !== 'recherche') { appliquer(0); } });
-    formulaire.addEventListener('reset', function () { setTimeout(function () { appliquer(0); }, 0); });
+    formulaire.addEventListener('input', function (e) { if (e.target.name === 'recherche') { nouveauChoix(700); } });
+    formulaire.addEventListener('change', function (e) { if (e.target.name !== 'recherche') { nouveauChoix(0); } });
+    formulaire.addEventListener('reset', function () { setTimeout(function () { nouveauChoix(0); }, 0); });
+    if (boutonTout) {
+      boutonTout.addEventListener('click', function () {
+        var premiere = suivante;                       /* le focus va à la première fiche qui apparaît */
+        deplie = true;
+        appliquer(0);
+        var titre = premiere && premiere.li.querySelector('h3');
+        if (titre) { titre.setAttribute('tabindex', '-1'); titre.focus(); }
+      });
+    }
+    window.addEventListener('hashchange', function () {
+      var c = /^#rando-([a-z0-9-]+)$/.exec(location.hash || ''), f = c && parSlug[c[1]];
+      if (f && f.visible && f.li.hidden) { allerA(f); }
+    });
 
     /* Panneau de la randonnée choisie */
     function panneauVide() {
@@ -686,9 +718,7 @@
       var bouton = creer('button', { type: 'button', 'class': 'bouton-discret' }, texte('selection_retirer'));
       lien.addEventListener('click', function (e) {
         e.preventDefault();
-        var titre = f.li.querySelector('h3');
-        defiler(f.li);
-        if (titre) { titre.setAttribute('tabindex', '-1'); titre.focus({ preventScroll: true }); }
+        allerA(f);
       });
       bouton.addEventListener('click', function () { retirer(); if (conteneurCarte) { conteneurCarte.focus(); } });
       panneau.textContent = '';
@@ -834,7 +864,7 @@
               tri.appendChild(creer('option', { value: 'position' }, texte('tri_position')));
             }
             if (tri) { tri.value = 'position'; }
-            appliquer(0);
+            nouveauChoix(0);
             annoncer(texte('position_trouvee'));
           }, function () { annoncer(texte('position_erreur')); }, { enableHighAccuracy: true, timeout: 15000, maximumAge: 60000 });
         });
@@ -873,7 +903,8 @@
       });
     });
 
-    appliquer(0);
+    var cibleDepart = /^#rando-([a-z0-9-]+)$/.exec(location.hash || '');
+    appliquer(0, cibleDepart ? parSlug[cibleDepart[1]] : null);
     panneauVide();
     initCarte();
   }
