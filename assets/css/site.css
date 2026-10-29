@@ -780,6 +780,7 @@ html:not(.js) .js-seulement { display: none !important; }
 .rando-repere span { display: inline-block; transform: translate(-50%, -150%); white-space: nowrap; padding: 2px 8px; border-radius: 999px; background: #1E2B5E; color: #FFFFFF; font: 700 12px/1.45 var(--police-texte); box-shadow: 0 1px 3px rgba(0, 0, 0, .35); }
 
 .rando-liste { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; }
+.rando-plus { margin: 18px 0 0; text-align: center; }
 .rando { margin: 0; scroll-margin-top: 20px; }
 .rando-fiche { padding: 20px 22px; }
 .rando-fiche h3 { margin-bottom: .55em; font-size: 1.28rem; }
@@ -834,7 +835,7 @@ html:not(.js) .js-seulement { display: none !important; }
 /* ---------- Impression ---------- */
 @media print {
   .bandeau-haut, .suggestion-langue, .navigation, .bouton-menu, .entete-actions, .acces-rapides, .pied-grille, .filtres, .autres-articles,
-  .rando-filtres, .statut-filtre, .rando-carte-colonne, .rando-actions button, .rando-meteo,
+  .rando-filtres, .statut-filtre, .rando-carte-colonne, .rando-actions button, .rando-meteo, .rando-plus,
   .carte-commandes, .cm-carte, .cm-aide, .cm-legende, .cm-tableau, .ca-legende { display: none !important; }
   .rando-explorateur { display: block; }
   body { background: #fff; color: #000; font-size: 11pt; }
