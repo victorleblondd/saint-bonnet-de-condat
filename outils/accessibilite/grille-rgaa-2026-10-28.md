@@ -16,6 +16,11 @@ Changements par rapport à la grille du 27 octobre 2026 : les critères 1.9 (lé
 (champs de formulaire et leurs regroupements), 12.10 (raccourcis clavier à une touche) et 13.10 (gestes complexes)
 deviennent applicables et conformes, avec la page Tourisme.
 
+Mise à jour du 29 octobre 2026 : la liste des randonnées montre cinq fiches au plus, avec un bouton « Afficher les
+N randonnées » ; le bouton « Tout afficher » des filtres devient « Effacer les filtres ». Vérifié sur la page Tourisme
+dans les trois langues (axe-core sur ses états, validateur sur le code généré, clavier et focus, 320 px, texte espacé,
+mode sombre) : critères 7.1, 7.3, 7.5 et 10.7 toujours conformes ; résultat inchangé.
+
 C = conforme · NC = non conforme · NA = non applicable
 
 ## Environnement et outils
@@ -109,9 +114,9 @@ C = conforme · NC = non conforme · NA = non applicable
 |---|---|---|
 | 7.1 Compatibilité avec les technologies d'assistance | C | Menu (`aria-expanded`), filtres (`aria-pressed`), diaporama (étiquettes), `details` natifs ; bandeau de proposition : région nommée ; cartes : régions nommées (« Carte des randonnées », « Carte météo », « Carte de la qualité de l'air ») reliées à leur aide (`aria-describedby`), focalisables ; bouton « Agrandir la carte » (`aria-pressed`) ; choix des cartes en boutons radio natifs ; profil d'altitude en `role="img"` |
 | 7.2 Pertinence des alternatives | C | Sans JavaScript, toutes les actualités, les documents et les 42 randonnées restent affichés (fiches complètes, liens GPX et PDF), le sélecteur de langue reste un ensemble de liens ; messages `noscript` (notifications, météo, qualité de l'air, cartes) avec les liens des sites officiels ; les informations des cartes sont aussi données en texte (liste des randonnées, tableau de la carte météo, indice de la commune) |
-| 7.3 Contrôle au clavier et à la souris | C | Boutons et liens natifs ; après « Non merci », le focus passe au premier lien du bandeau du haut ; cartes : flèches pour déplacer, + et − pour zoomer ; carte météo : Entrée ou Espace pour la prévision du centre de la carte (un repère marque le centre au focus), liste des lieux ; randonnées : bouton « Voir sur la carte » de chaque fiche, puis lien « Voir la fiche » |
+| 7.3 Contrôle au clavier et à la souris | C | Boutons et liens natifs ; après « Non merci », le focus passe au premier lien du bandeau du haut ; cartes : flèches pour déplacer, + et − pour zoomer ; carte météo : Entrée ou Espace pour la prévision du centre de la carte (un repère marque le centre au focus), liste des lieux ; randonnées : bouton « Voir sur la carte » de chaque fiche, puis lien « Voir la fiche » ; bouton « Afficher les N randonnées », qui place le focus sur le titre de la première fiche qui apparaît ; un lien vers une fiche cachée (`#rando-…`) affiche toute la liste |
 | 7.4 Changement de contexte | C | Aucune redirection automatique selon la langue du navigateur ; les filtres, le tri et les choix des cartes mettent à jour la page sans changer de contexte (le focus reste sur le champ) |
-| 7.5 Messages de statut | C | Filtres des actualités : « N actualités affichées » ; filtres des randonnées : « N randonnées affichées. » / « N hikes shown. » / « N wandelingen getoond. » (`role="status"`) ; messages des cartes (chargement, panne, position) en `role="status"` ; détail de la prévision et randonnée choisie en `aria-live="polite"` ; état des notifications dans la langue de la page |
+| 7.5 Messages de statut | C | Filtres des actualités : « N actualités affichées » ; filtres des randonnées : « N randonnées trouvées, 5 affichées. » puis, avec toute la liste, « N randonnées affichées. » (« N hikes found, 5 shown. », « N wandelingen gevonden, 5 getoond. »…, `role="status"`) ; messages des cartes (chargement, panne, position) en `role="status"` ; détail de la prévision et randonnée choisie en `aria-live="polite"` ; état des notifications dans la langue de la page |
 
 ## 8. Éléments obligatoires
 
@@ -168,7 +173,7 @@ C = conforme · NC = non conforme · NA = non applicable
 | 11.6 Légende de chaque regroupement | C | `legend` |
 | 11.7 Pertinence des légendes | C | |
 | 11.8 Items de même nature d'une liste de choix regroupés | C | Listes courtes et homogènes (distances, durées, difficultés, tris, lieux) : pas de groupe nécessaire |
-| 11.9 Intitulé des boutons | C | Boutons des filtres, du menu, du diaporama et des notifications, « Non merci », « Tout afficher », « Vue d'ensemble », « Me localiser », « Agrandir la carte », « Voir sur la carte » et « Itinéraire pas à pas » (avec le nom de la randonnée), boutons de zoom (« Zoom avant », « Zoom arrière », traduits) |
+| 11.9 Intitulé des boutons | C | Boutons des filtres, du menu, du diaporama et des notifications, « Non merci », « Effacer les filtres », « Afficher les N randonnées » (nombre à jour), « Vue d'ensemble », « Me localiser », « Agrandir la carte », « Voir sur la carte » et « Itinéraire pas à pas » (avec le nom de la randonnée), boutons de zoom (« Zoom avant », « Zoom arrière », traduits) |
 | 11.10 à 11.13 | NA | Aucun contrôle de saisie, aucune donnée personnelle demandée |
 
 ## 12. Navigation

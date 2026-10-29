@@ -147,6 +147,10 @@ de Météo-France et d'Atmo Auvergne-Rhône-Alpes.
   de l'office de tourisme, citée telle quelle (« promenade facile »…) ; sinon, « non précisée ». Le site n'estime rien.
 - **Traductions** : les résumés, les périodes, les conseils et les libellés sont traduits dans
   `outils/randonnees/traductions.yml` ; l'itinéraire pas à pas et la présentation restent en français.
+- **Liste** : cinq fiches au plus (les premières selon les filtres et le tri) ; le bouton « Afficher les N randonnées »
+  montre les autres, jusqu'au changement suivant des filtres ou du tri. Une adresse ou un lien vers une fiche cachée
+  (`#rando-…`) affiche toute la liste. La carte montre toujours toutes les randonnées retenues par les filtres ; sans
+  JavaScript, les 42 fiches s'affichent.
 - **Cartes** : Leaflet 1.9.4 (`assets/leaflet/`, licence BSD-2-Clause). Fond de carte OpenStreetMap
   (`tile.openstreetmap.org`, règles d'usage : mention « © les contributeurs d'OpenStreetMap » visible sur la carte,
   pas de téléchargement en masse) ; photographies aériennes de l'IGN (Géoplateforme, sans clé, licence ouverte
