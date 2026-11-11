@@ -1,0 +1,3 @@
+/* Page Tourisme : liste des liens Komoot (boutons côte à côte, sans puces) */
+ul.boutons { list-style: none; padding-left: 0; }
+ul.boutons > li { margin: 0; }
