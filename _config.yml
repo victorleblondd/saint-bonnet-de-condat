@@ -47,3 +47,7 @@ exclude:
   - node_modules
   - vendor
   - outils
+  # Archives de la page Tourisme (météo, qualité de l'air, randonnées ; Release v1.11.0) : gardées, non publiées
+  - assets/leaflet
+  - assets/data
+  - assets/js/tourisme.js

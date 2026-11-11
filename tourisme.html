@@ -2,9 +2,9 @@
 title: "Tourisme"
 permalink: /tourisme/
 ref: tourisme
-chapo: "Séjourner et randonner à Saint-Bonnet-de-Condat, dans la vallée de la Santoire, au cœur du Parc naturel régional des Volcans d'Auvergne."
-description: "Tourisme à Saint-Bonnet-de-Condat (Cantal) : hébergements, météo et qualité de l'air en direct avec cartes interactives, 42 randonnées de Destination Haut Cantal avec carte, tracés GPX et fiches PDF."
-feuilles_de_style: ["/assets/leaflet/leaflet.css"]
+chapo: "Séjourner à Saint-Bonnet-de-Condat et parcourir ses environs à pied ou à vélo, dans la vallée de la Santoire, au cœur du Parc naturel régional des Volcans d'Auvergne."
+description: "Tourisme à Saint-Bonnet-de-Condat (Cantal) : Camping-Bar de la Santoire, NaturÉpure, La Maison des Volcans, et itinéraires de randonnée, de course à pied et de vélo sur Komoot."
+feuilles_de_style: ["/assets/css/tourisme.css"]
 ---
 <section class="bloc" id="sejourner" aria-labelledby="titre-sejourner">
   <h2 id="titre-sejourner" class="titre-decore">Séjourner sur la commune</h2>
@@ -44,11 +44,19 @@ feuilles_de_style: ["/assets/leaflet/leaflet.css"]
       </div>
     </article>
   </div>
-  <p class="note">À voir aussi sur la commune&nbsp;: <a href="{{ '/decouvrir/' | relative_url }}#patrimoine">le patrimoine</a> et <a href="#rando-chaussonet">la randonnée des orgues basaltiques (Chaussonet)</a>.</p>
+  <p class="note">À voir aussi sur la commune&nbsp;: <a href="{{ '/decouvrir/' | relative_url }}#patrimoine">le patrimoine</a> et <a href="{{ '/decouvrir/' | relative_url }}#randonnee">la randonnée des orgues volcaniques</a>.</p>
   <p class="note">Vous proposez un hébergement ou une activité touristique sur la commune&nbsp;? Contactez la mairie.</p>
 </section>
 
-{% include tourisme-meteo.html %}
-
-{% include tourisme-randonnees.html %}
-{% include tourisme-scripts.html -%}
+<section class="bloc" id="itineraires" aria-labelledby="titre-itineraires">
+  <h2 id="titre-itineraires" class="titre-decore">Randonnée, course à pied et vélo</h2>
+  <p class="bloc-intro">Choisissez une activité pour voir les itinéraires proposés sur Komoot dans un rayon de 5&nbsp;km autour de Saint-Bonnet-de-Condat, avec leur carte, leur distance, leur durée et leur dénivelé. Komoot est un site externe, indépendant de la mairie.</p>
+  <ul class="boutons">
+    <li><a class="bouton bouton--secondaire" href="https://www.komoot.com/discover/Saint-Bonnet-de-Condat/@45.2801230,2.7883240/tours?sport=hike&amp;map=true&amp;max_distance=5000&amp;pageNumber=1" rel="noopener">{% include icone.html nom="externe" %}Randonnée<span class="visuellement-cache"> (itinéraires sur Komoot)</span></a></li>
+    <li><a class="bouton bouton--secondaire" href="https://www.komoot.com/discover/Saint-Bonnet-de-Condat/@45.2801230,2.7883240/tours?sport=jogging&amp;map=true&amp;max_distance=5000&amp;pageNumber=1" rel="noopener">{% include icone.html nom="externe" %}Course à pied<span class="visuellement-cache"> (itinéraires sur Komoot)</span></a></li>
+    <li><a class="bouton bouton--secondaire" href="https://www.komoot.com/discover/Saint-Bonnet-de-Condat/@45.2801230,2.7883240/tours?sport=mtb&amp;map=true&amp;max_distance=5000&amp;pageNumber=1" rel="noopener">{% include icone.html nom="externe" %}VTT<span class="visuellement-cache"> (itinéraires sur Komoot)</span></a></li>
+    <li><a class="bouton bouton--secondaire" href="https://www.komoot.com/discover/Saint-Bonnet-de-Condat/@45.2801230,2.7883240/tours?sport=racebike&amp;map=true&amp;max_distance=5000&amp;pageNumber=1" rel="noopener">{% include icone.html nom="externe" %}Vélo de route<span class="visuellement-cache"> (itinéraires sur Komoot)</span></a></li>
+    <li><a class="bouton bouton--secondaire" href="https://www.komoot.com/discover/Saint-Bonnet-de-Condat/@45.2801230,2.7883240/tours?sport=touringbicycle&amp;map=true&amp;max_distance=5000&amp;pageNumber=1" rel="noopener">{% include icone.html nom="externe" %}Vélo<span class="visuellement-cache"> (itinéraires sur Komoot)</span></a></li>
+    <li><a class="bouton bouton--secondaire" href="https://www.komoot.com/discover/Saint-Bonnet-de-Condat/@45.2801230,2.7883240/tours?sport=mtb_easy&amp;map=true&amp;max_distance=5000&amp;pageNumber=1" rel="noopener">{% include icone.html nom="externe" %}Gravel<span class="visuellement-cache"> (itinéraires sur Komoot)</span></a></li>
+  </ul>
+</section>

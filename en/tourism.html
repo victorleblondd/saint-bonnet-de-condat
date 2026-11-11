@@ -3,9 +3,9 @@ title: "Tourism"
 permalink: /en/tourism/
 ref: tourisme
 lang: en
-chapo: "Stay and hike in Saint-Bonnet-de-Condat, in the Santoire valley, in the heart of the Volcans d'Auvergne Regional Nature Park."
-description: "Tourism in Saint-Bonnet-de-Condat (Cantal, France): places to stay, live weather and air quality with interactive maps, and 42 hikes from Destination Haut Cantal with a map, GPX tracks and PDF sheets."
-feuilles_de_style: ["/assets/leaflet/leaflet.css"]
+chapo: "Stay in Saint-Bonnet-de-Condat and explore the surroundings on foot or by bike, in the Santoire valley, in the heart of the Volcans d'Auvergne Regional Nature Park."
+description: "Tourism in Saint-Bonnet-de-Condat (Cantal, France): Camping-Bar de la Santoire, NaturÉpure, La Maison des Volcans, and hiking, running and cycling routes on Komoot."
+feuilles_de_style: ["/assets/css/tourisme.css"]
 ---
 <section class="bloc" id="sejourner" aria-labelledby="titre-sejourner">
   <h2 id="titre-sejourner" class="titre-decore">Where to stay</h2>
@@ -45,11 +45,19 @@ feuilles_de_style: ["/assets/leaflet/leaflet.css"]
       </div>
     </article>
   </div>
-  <p class="note">Also worth seeing in the municipality: <a href="{{ '/en/discover/' | relative_url }}#patrimoine">its heritage</a> and <a href="#rando-chaussonet">the basalt columns walk (<span lang="fr">Chaussonet</span>)</a>.</p>
+  <p class="note">Also worth seeing in the municipality: <a href="{{ '/en/discover/' | relative_url }}#patrimoine">its heritage</a> and <a href="{{ '/en/discover/' | relative_url }}#randonnee">the volcanic columns walk</a>.</p>
   <p class="note">Do you offer accommodation or a tourist activity in the municipality? Contact the town hall.</p>
 </section>
 
-{% include tourisme-meteo.html %}
-
-{% include tourisme-randonnees.html %}
-{% include tourisme-scripts.html -%}
+<section class="bloc" id="itineraires" aria-labelledby="titre-itineraires">
+  <h2 id="titre-itineraires" class="titre-decore">Hiking, running and cycling</h2>
+  <p class="bloc-intro">Choose an activity to see the routes suggested on Komoot within 5&nbsp;km of Saint-Bonnet-de-Condat, with their map, distance, duration and elevation gain. Komoot is an external website, independent of the town hall.</p>
+  <ul class="boutons">
+    <li><a class="bouton bouton--secondaire" href="https://www.komoot.com/discover/Saint-Bonnet-de-Condat/@45.2801230,2.7883240/tours?sport=hike&amp;map=true&amp;max_distance=5000&amp;pageNumber=1" rel="noopener">{% include icone.html nom="externe" %}Hiking<span class="visuellement-cache"> (routes on Komoot)</span></a></li>
+    <li><a class="bouton bouton--secondaire" href="https://www.komoot.com/discover/Saint-Bonnet-de-Condat/@45.2801230,2.7883240/tours?sport=jogging&amp;map=true&amp;max_distance=5000&amp;pageNumber=1" rel="noopener">{% include icone.html nom="externe" %}Running<span class="visuellement-cache"> (routes on Komoot)</span></a></li>
+    <li><a class="bouton bouton--secondaire" href="https://www.komoot.com/discover/Saint-Bonnet-de-Condat/@45.2801230,2.7883240/tours?sport=mtb&amp;map=true&amp;max_distance=5000&amp;pageNumber=1" rel="noopener">{% include icone.html nom="externe" %}Mountain biking<span class="visuellement-cache"> (routes on Komoot)</span></a></li>
+    <li><a class="bouton bouton--secondaire" href="https://www.komoot.com/discover/Saint-Bonnet-de-Condat/@45.2801230,2.7883240/tours?sport=racebike&amp;map=true&amp;max_distance=5000&amp;pageNumber=1" rel="noopener">{% include icone.html nom="externe" %}Road cycling<span class="visuellement-cache"> (routes on Komoot)</span></a></li>
+    <li><a class="bouton bouton--secondaire" href="https://www.komoot.com/discover/Saint-Bonnet-de-Condat/@45.2801230,2.7883240/tours?sport=touringbicycle&amp;map=true&amp;max_distance=5000&amp;pageNumber=1" rel="noopener">{% include icone.html nom="externe" %}Cycling<span class="visuellement-cache"> (routes on Komoot)</span></a></li>
+    <li><a class="bouton bouton--secondaire" href="https://www.komoot.com/discover/Saint-Bonnet-de-Condat/@45.2801230,2.7883240/tours?sport=mtb_easy&amp;map=true&amp;max_distance=5000&amp;pageNumber=1" rel="noopener">{% include icone.html nom="externe" %}Gravel riding<span class="visuellement-cache"> (routes on Komoot)</span></a></li>
+  </ul>
+</section>
